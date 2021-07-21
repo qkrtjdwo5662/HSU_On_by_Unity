@@ -44,8 +44,7 @@ public class LoadingSceneController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    [SerializeField]
-    private CanvasGroup canvasGroup;
+    public CanvasGroup canvasGroup;
 
     [SerializeField]
     private Image progressBar;
@@ -79,7 +78,7 @@ public class LoadingSceneController : MonoBehaviour
             else
             {
                 timer += Time.unscaledDeltaTime;
-                progressBar.fillAmount = Mathf.Lerp(0.9f, 1f, timer);
+                progressBar.fillAmount = Mathf.Lerp(0.1f, 1f, timer);
                 if(progressBar.fillAmount>=1f)
                 {
                     op.allowSceneActivation = true;
