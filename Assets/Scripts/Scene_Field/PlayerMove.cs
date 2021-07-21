@@ -4,30 +4,31 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+
     public int Speed;
+
+    Rigidbody rigidbody;
+
+    Vector3 movement;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.LeftArrow)) {
-            transform.Translate(Vector3.left * Speed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Translate(Vector3.right * Speed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.Translate(Vector3.forward * Speed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.Translate(Vector3.back * Speed * Time.deltaTime);
-        }
+        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
+
+        Run(h,v);
+    }
+    void Run(float h, float v) {
+        movement.Set(h, 0, v);
+        movement = movement.normalized * Speed * Time.deltaTime;
+
+        rigidbody.MovePosition(transform.position + movement);
     }
 }
