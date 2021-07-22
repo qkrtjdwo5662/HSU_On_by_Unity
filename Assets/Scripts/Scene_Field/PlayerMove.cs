@@ -26,6 +26,7 @@ public class PlayerMove : MonoBehaviour
         Run(h,v);
     }
     void Run(float h, float v) {
+        //Debug.Log("keyBoard");
         movement.Set(h, 0, v);
         movement = movement.normalized * Speed * Time.deltaTime;
 
