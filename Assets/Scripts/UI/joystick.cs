@@ -27,14 +27,14 @@ public class joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     public void OnBeginDrag(PointerEventData eventData)
     {
         ControlJoystickLever(eventData);
-        Debug.Log("Begin");
+        //Debug.Log("Begin");
         isInput = true;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         ControlJoystickLever(eventData);
-        Debug.Log("Drag");
+        //Debug.Log("Drag");
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -50,7 +50,7 @@ public class joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
                 controller.LookAround(Vector2.zero);
                 break;
         }
-        Debug.Log("End");
+        //Debug.Log("End");
     }
 
     private void ControlJoystickLever(PointerEventData eventData) {
@@ -72,7 +72,7 @@ public class joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
                 break;
         }
 
-        Debug.Log(inputDirection.x + "/" + inputDirection.y);
+        //Debug.Log(inputDirection.x + "/" + inputDirection.y);
     }
     
 
@@ -81,7 +81,7 @@ public class joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("JoystickStart");
+        //Debug.Log("JoystickStart");
     }
 
     // Update is called once per frame
