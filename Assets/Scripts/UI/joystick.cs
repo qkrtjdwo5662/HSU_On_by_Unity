@@ -9,7 +9,7 @@ public class joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     private RectTransform lever;
     private RectTransform rectTransform;
 
-    [SerializeField, Range(10,150)]
+    [SerializeField]
     private float leverRange;
 
     private Vector2 inputDirection;
