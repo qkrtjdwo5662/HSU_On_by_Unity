@@ -5,6 +5,7 @@ using UnityEngine;
 public class Scene2Manager : MonoBehaviour
 {
     GameManager gm;
+
     void Start()
     {
         gm = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
