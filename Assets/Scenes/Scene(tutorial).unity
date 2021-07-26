@@ -468,7 +468,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "HUS-ON\uC5D0 \uC624\uC2E0\uAC83\uC744 \uD658\uC601\uD569\uB2C8\uB2E4.\n\n\uC6B0\uB9AC\uD300
+  m_Text: "HSU-ON\uC5D0 \uC624\uC2E0\uAC83\uC744 \uD658\uC601\uD569\uB2C8\uB2E4.\n\n\uC6B0\uB9AC\uD300
     \uD654\uC774\uD305!!"
 --- !u!222 &1417791127
 CanvasRenderer:
