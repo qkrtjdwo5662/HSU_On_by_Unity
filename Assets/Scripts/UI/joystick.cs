@@ -26,14 +26,32 @@ public class joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        ControlJoystickLever(eventData);
+        switch (joystickType)
+        {
+            case JoystickType.Move:
+                ControlJoystickLever(eventData);
+                break;
+            case JoystickType.Rotate:
+                ControlCamera(eventData);
+                break;
+        }
+        //ControlJoystickLever(eventData);
         //Debug.Log("Begin");
         isInput = true;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        ControlJoystickLever(eventData);
+        switch (joystickType)
+        {
+            case JoystickType.Move:
+                ControlJoystickLever(eventData);
+                break;
+            case JoystickType.Rotate:
+                ControlCamera(eventData);
+                break;
+        }
+        //ControlJoystickLever(eventData);
         //Debug.Log("Drag");
     }
 
@@ -60,6 +78,15 @@ public class joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         inputDirection = inputVector / leverRange;
     }
 
+
+    private void ControlCamera(PointerEventData eventData)
+    {
+        var inputPos = eventData.position - rectTransform.anchoredPosition;
+        var inputVector = inputPos.magnitude < leverRange ? inputPos : inputPos.normalized * leverRange;
+        lever.anchoredPosition = inputVector;
+        inputDirection = inputVector / leverRange;
+    }
+
     private void InputControlVector() {
         //controller.Move(inputDirection);
 
@@ -69,10 +96,11 @@ public class joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
                 break;
             case JoystickType.Rotate:
                 controller.LookAround(inputDirection);
+
                 break;
         }
 
-        //Debug.Log(inputDirection.x + "/" + inputDirection.y);
+        Debug.Log(inputDirection.x + "/" + inputDirection.y);
     }
     
 

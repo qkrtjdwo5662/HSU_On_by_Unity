@@ -320,7 +320,7 @@ RectTransform:
   m_GameObject: {fileID: 127555211}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 12, y: 6, z: 6}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 995405337}
   m_Father: {fileID: 187298432}
@@ -328,8 +328,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1266, y: 490}
-  m_SizeDelta: {x: 145, y: 145}
+  m_AnchoredPosition: {x: 1364, y: 461.2}
+  m_SizeDelta: {x: 800, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &127555213
 MonoBehaviour:
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lever: {fileID: 995405337}
-  leverRange: 500
+  leverRange: 300
   controller: {fileID: 1287859081}
   joystickType: 1
 --- !u!114 &127555214
