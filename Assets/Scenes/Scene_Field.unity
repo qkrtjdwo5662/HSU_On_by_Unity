@@ -328,8 +328,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1364, y: 461.2}
-  m_SizeDelta: {x: 800, y: 800}
+  m_AnchoredPosition: {x: 1080.7, y: 542.2}
+  m_SizeDelta: {x: 721.0604, y: 520.72534}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &127555213
 MonoBehaviour:
@@ -344,7 +344,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lever: {fileID: 995405337}
-  leverRange: 300
+  CaremaSpeed: 50
+  leverRange: 400
   controller: {fileID: 1287859081}
   joystickType: 1
 --- !u!114 &127555214
@@ -778,6 +779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lever: {fileID: 1907226328}
+  CaremaSpeed: 50
   leverRange: 75
   controller: {fileID: 1287859081}
   joystickType: 1
@@ -1603,6 +1605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lever: {fileID: 265766682}
+  CaremaSpeed: 50
   leverRange: 75
   controller: {fileID: 1287859081}
   joystickType: 0
