@@ -10,9 +10,13 @@ public class joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     private RectTransform rectTransform;
 
     [SerializeField]
+    float CaremaSpeed = 50;
+
+    [SerializeField]
     private float leverRange;
 
     private Vector2 inputDirection;
+    private Vector2 before;
     private bool isInput;
 
     [SerializeField]
@@ -81,10 +85,12 @@ public class joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     private void ControlCamera(PointerEventData eventData)
     {
-        var inputPos = eventData.position - rectTransform.anchoredPosition;
-        var inputVector = inputPos.magnitude < leverRange ? inputPos : inputPos.normalized * leverRange;
-        lever.anchoredPosition = inputVector;
-        inputDirection = inputVector / leverRange;
+        
+        var inputPos = eventData.position - before;
+        //var inputVector = inputPos.magnitude < leverRange ? inputPos : inputPos.normalized * leverRange;
+        lever.anchoredPosition = inputPos;
+        inputDirection = inputPos / (leverRange / CaremaSpeed);
+        before = eventData.position;
     }
 
     private void InputControlVector() {
