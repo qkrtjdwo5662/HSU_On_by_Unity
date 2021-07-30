@@ -8,6 +8,9 @@ public class TPSCharacterController : MonoBehaviour
     private Transform characterBody;
     [SerializeField]
     private Transform cameraArm;
+    [SerializeField]
+    public float movingSpeed = 2.5f;
+
 
     Animator animator;
     // Start is called before the first frame update
@@ -51,7 +54,7 @@ public class TPSCharacterController : MonoBehaviour
             // 이동할 때 이동 방향 바라보기
             characterBody.forward = moveDir;
             // 이동
-            transform.position += moveDir * Time.deltaTime * 5f;
+            transform.position += moveDir * Time.deltaTime * movingSpeed;
         }
     }
 
