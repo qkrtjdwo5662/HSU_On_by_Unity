@@ -6,6 +6,13 @@ using Photon.Realtime;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
+	/*[Header("DisconnectedPanel")]
+	public InputField NickNameInput;
+	//닉네임 필드, 접속 버튼
+
+	[Header("LobbyPanel")]
+	public Text WelcomeText;*/
+
 	string networkState;
 
 	private void Start()
@@ -20,7 +27,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 	}
 	public override void OnJoinedLobby()//로비 연결시 작동
 	{
-		PhotonNetwork.JoinOrCreateRoom("room", new RoomOptions { MaxPlayers = 4 }, null);
+		//LobbyPanel.SetActive(true);
+		//Choose_Chanel_Panel.SetActive(false);
+		//PhotonNetwork.LocalPlayer.NickName = NickNameInput.text;
+		//WelcomeText.text = PhotonNetwork.LocalPlayer.NickName + "님 환영합니다";
+		PhotonNetwork.JoinOrCreateRoom("room", new RoomOptions { MaxPlayers = 5}, null);
 	}
 	void Update()
 	{
