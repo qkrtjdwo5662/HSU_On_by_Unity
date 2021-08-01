@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "134106217825",
+    "firebase_url": "https://hsu-on-default-rtdb.firebaseio.com",
     "project_id": "hsu-on",
     "storage_bucket": "hsu-on.appspot.com"
   },
