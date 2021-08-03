@@ -22,6 +22,6 @@ public class DataMgr : MonoBehaviour
     {
        
         Debug.Log("로그인");
-        LoadingSceneController.Instance.LoadScene("Scene_Field");
+       
     }
 }
