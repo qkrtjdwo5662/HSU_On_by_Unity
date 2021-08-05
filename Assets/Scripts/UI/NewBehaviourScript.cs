@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    [SerializeField]
+    private Transform characterBody;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,6 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position = characterBody.position + new Vector3(0, 2, 0) ;
     }
 }
