@@ -52,11 +52,14 @@ public class TPSCharacterController : MonoBehaviour
             Vector3 moveDir = lookForward * moveInput.y + lookRight * moveInput.x;
 
             // 이동할 때 카메라가 보는 방향 바라보기
-            //characterBody.forward = lookForward;
+            characterBody.forward = lookForward;
             // 이동할 때 이동 방향 바라보기
             characterBody.forward = moveDir;
+           
             // 이동
             transform.position += moveDir * Time.deltaTime * movingSpeed;
+            //Debug.Log("char"+ characterBody.position.x + "," + characterBody.position.y + ","+characterBody.position.z);
+            //Debug.Log("came" + cameraArm.position.x + "," + cameraArm.position.y + "," + cameraArm.position.z);
         }
     }
 
