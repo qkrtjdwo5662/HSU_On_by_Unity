@@ -106,7 +106,7 @@ public class Join : MonoBehaviour
             Debug.LogFormat("Firebase user created successfully: {0}({1})",
                 newUser.DisplayName, newUser.UserId);
 
-            LoginNext();
+            //LoginNext();
             queue.Enqueue("LoginNext");
             //Invoke("LoginNext", 0.1f);
         });
