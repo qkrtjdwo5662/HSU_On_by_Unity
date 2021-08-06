@@ -216,7 +216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &57348174
 RectTransform:
   m_ObjectHideFlags: 0
@@ -292,7 +292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &133450825
 RectTransform:
   m_ObjectHideFlags: 0
@@ -304,8 +304,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 325481141}
   - {fileID: 1178418720}
+  - {fileID: 325481141}
   - {fileID: 704593830}
   - {fileID: 1074538134}
   m_Father: {fileID: 1423418069}
@@ -551,7 +551,7 @@ GameObject:
   - component: {fileID: 325481143}
   - component: {fileID: 325481142}
   m_Layer: 5
-  m_Name: Button
+  m_Name: QuickBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -570,7 +570,7 @@ RectTransform:
   m_Children:
   - {fileID: 899979748}
   m_Father: {fileID: 133450825}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -957,29 +957,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 496139232}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 57348173}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 133450824}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &496139232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1262,6 +1240,7 @@ GameObject:
   - component: {fileID: 704593830}
   - component: {fileID: 704593832}
   - component: {fileID: 704593831}
+  - component: {fileID: 704593833}
   m_Layer: 5
   m_Name: WelcomeText
   m_TagString: Untagged
@@ -1320,7 +1299,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD658\uC601\uD569\uB2C8\uB2E4."
+  m_Text: 
 --- !u!222 &704593832
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1329,6 +1308,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 704593829}
   m_CullTransparentMesh: 0
+--- !u!114 &704593833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704593829}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9be4a15731f47824b81cb48cab429f5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NickNameInput: {fileID: 464061267}
+  ConnectBtn: {fileID: 0}
+  WelcomeText: {fileID: 704593831}
+  BackBtn: {fileID: 0}
+  SelectChanelBtn: {fileID: 0}
+  QuickBtn: {fileID: 0}
+  chanel1: {fileID: 0}
+  chanel2: {fileID: 0}
+  chanel3: {fileID: 0}
+  chanel4: {fileID: 0}
 --- !u!1 &758291219
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,7 +1342,7 @@ GameObject:
   - component: {fileID: 758291222}
   - component: {fileID: 758291221}
   m_Layer: 5
-  m_Name: Choose_Chanel_Panel
+  m_Name: ChanelPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1710,7 +1711,7 @@ GameObject:
   - component: {fileID: 1074538136}
   - component: {fileID: 1074538135}
   m_Layer: 5
-  m_Name: Button
+  m_Name: BackBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2007,7 +2008,7 @@ GameObject:
   - component: {fileID: 1178418722}
   - component: {fileID: 1178418721}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: SelectChanelBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2026,7 +2027,7 @@ RectTransform:
   m_Children:
   - {fileID: 499145671}
   m_Father: {fileID: 133450825}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2704,6 +2705,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1644992172}
   m_CullTransparentMesh: 0
+--- !u!1 &1805571372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1805571374}
+  - component: {fileID: 1805571373}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1805571373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805571372}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9be4a15731f47824b81cb48cab429f5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NickNameInput: {fileID: 464061267}
+  ConnectBtn: {fileID: 0}
+  WelcomeText: {fileID: 704593831}
+  BackBtn: {fileID: 1074538135}
+  SelectChanelBtn: {fileID: 0}
+  QuickBtn: {fileID: 325481142}
+  chanel1: {fileID: 1360754655}
+  chanel2: {fileID: 1644992174}
+  chanel3: {fileID: 135978760}
+  chanel4: {fileID: 867208406}
+--- !u!4 &1805571374
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805571372}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 973.95013, y: 408.70657, z: -323.7614}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1815398412
 GameObject:
   m_ObjectHideFlags: 0
