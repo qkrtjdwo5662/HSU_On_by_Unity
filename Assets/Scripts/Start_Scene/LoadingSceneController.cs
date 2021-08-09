@@ -51,7 +51,7 @@ public class LoadingSceneController : MonoBehaviour
 
     private string loadSceneName;
 
-    public async void LoadScene(string sceneName)
+    public  void LoadScene(string sceneName)
     {
         gameObject.SetActive(true);
         SceneManager.sceneLoaded += OnSceneLoaded;
