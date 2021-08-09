@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene_Field.unity
     guid: b4dae9d60124b754aad8298dc5a1775e
+  - enabled: 1
+    path: Assets/Scenes/Scene(choose chanel).unity
+    guid: a5e37ad1067a37d4b8f818a71cd28bc4
   m_configObjects: {}

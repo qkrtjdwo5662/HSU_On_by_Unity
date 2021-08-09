@@ -32,12 +32,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
 	void Awake() => Screen.SetResolution(2220, 1080, false);
 
-	private void Start()
+	public void OnEnable()
 	{
-		Debug.Log("Connecting to Master");
-		PhotonNetwork.ConnectUsingSettings();//클라이언트 게임 버전 및 pun2 설정파일
+		PhotonNetwork.AutomaticallySyncScene = true;
+		Connect();
 	}
-
 
 	public override void OnConnectedToMaster()
 	{
@@ -45,6 +44,15 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 		PhotonNetwork.JoinLobby();
 
 	}
+	private void Connect()
+	{
+		Debug.Log("Connecting to Master");
+		PhotonNetwork.GameVersion = "1.0";
+		PhotonNetwork.ConnectUsingSettings();//클라이언트 게임 버전 및 pun2 설정파일
+	}
+
+
+	
 
 	public override void OnJoinedLobby()//로비 연결시 작동
 	{
@@ -63,7 +71,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
 		PhotonNetwork.JoinOrCreateRoom("room", new RoomOptions { MaxPlayers = 5}, null);
 	}
-
+	
 	
 
 	public void Test(Text text)
