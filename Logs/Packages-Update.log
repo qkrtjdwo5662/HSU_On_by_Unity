@@ -52,3 +52,11 @@ Update Mode: mergeDefaultDependencies
 
 The following packages were added:
   com.unity.2d.sprite@1.0.0
+
+=== Tue Aug 10 16:57:46 2021
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.render-pipelines.high-definition@7.3.1
