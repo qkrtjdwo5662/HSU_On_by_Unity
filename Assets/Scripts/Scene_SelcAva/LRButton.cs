@@ -51,7 +51,7 @@ public class LRButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                     
                     break;
                 case BtnType.Next:
-                    Debug.Log("NextButton is Click");
+                    LoadingSceneController.Instance.LoadScene("Scene_Field");
                     break;
             }
         }
