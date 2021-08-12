@@ -679,6 +679,7 @@ GameObject:
   - component: {fileID: 340538663}
   - component: {fileID: 340538662}
   - component: {fileID: 340538661}
+  - component: {fileID: 340538664}
   m_Layer: 5
   m_Name: stevebody
   m_TagString: Untagged
@@ -787,6 +788,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340538659}
   m_CullTransparentMesh: 0
+--- !u!114 &340538664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340538659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19a912ad205b49742af993f80f0a5455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 537172024}
+  btn: {fileID: 340538661}
+  body1: {fileID: 21300000, guid: 162deebd27e4e514182dfce587a96df0, type: 3}
+  body2: {fileID: 21300000, guid: fad743f7ca063dc45872dcc922272925, type: 3}
+  body3: {fileID: 21300000, guid: acc87ebe54de54f43b7e6d0086413d94, type: 3}
+  body4: {fileID: 21300000, guid: 399ac80cdea6779488d6ed93135d97bc, type: 3}
+  body5: {fileID: 21300000, guid: 2e7afeb18a1bc1d47b2096d2d6a3ebe9, type: 3}
+  leftarm1: {fileID: 21300000, guid: fa8ef1677f1b2784ab3dcd62d3608fa4, type: 3}
+  leftarm2: {fileID: 21300000, guid: fa8ef1677f1b2784ab3dcd62d3608fa4, type: 3}
+  leftarm3: {fileID: 21300000, guid: 5a0bd59129c136e44a39af8ecfbd1ed5, type: 3}
+  leftarm4: {fileID: 21300000, guid: b1a4494ca5edb5a4088817c68c0cc6be, type: 3}
+  leftarm5: {fileID: 21300000, guid: 866e0e74ec0e4e043b43309a3ff474e1, type: 3}
+  leftarm6: {fileID: 21300000, guid: 8f94ee793c5b46b4789e70f73e633b80, type: 3}
+  rightarm1: {fileID: 21300000, guid: c9eb37712956be049b2a50c4e6429976, type: 3}
+  rightarm2: {fileID: 21300000, guid: 1d5b855276fa91646924c2fff7b43d05, type: 3}
+  rightarm3: {fileID: 21300000, guid: 0d6a7fe8cd5775743b3c86cee5705dec, type: 3}
+  rightarm4: {fileID: 21300000, guid: 0d87da18fbe41124d884c2ddd1a1ef1f, type: 3}
+  rightarm5: {fileID: 21300000, guid: 3375bb7d0a4bb5a47a3c21333d9f292a, type: 3}
+  rightarm6: {fileID: 21300000, guid: 51c15e0434ce2f94c842331e885a9d5f, type: 3}
 --- !u!1 &343479319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1665,7 +1697,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 537172024}
   btn: {fileID: 757186013}
-  img: {fileID: 21300000, guid: 76db04b5a5a123646889c458755a02f8, type: 3}
+  body1: {fileID: 21300000, guid: 76db04b5a5a123646889c458755a02f8, type: 3}
+  body2: {fileID: 21300000, guid: 109f878a3e9ca004f853c8888a4e6e71, type: 3}
+  body3: {fileID: 21300000, guid: 7346177c41833d547ba83fc94c7ddb9f, type: 3}
+  body4: {fileID: 21300000, guid: d4f87ce4c04a50e43ac7479af2527653, type: 3}
+  body5: {fileID: 21300000, guid: b348437f0b4468d4bad5cb310edb5ff5, type: 3}
+  leftarm1: {fileID: 21300000, guid: fce58ae21b37a904581715505597e07f, type: 3}
+  leftarm2: {fileID: 0}
+  leftarm3: {fileID: 21300000, guid: 02e14ad8bb6d6d04699761e5aeb3b68a, type: 3}
+  leftarm4: {fileID: 21300000, guid: 1970c550f9aab9947b4d4d1ea09478fc, type: 3}
+  leftarm5: {fileID: 21300000, guid: 8e990a1544584f3489faa49a8ac44731, type: 3}
+  leftarm6: {fileID: 21300000, guid: 0f13bcd2ad9ae5040a1fd2d09f7fcc7b, type: 3}
+  rightarm1: {fileID: 21300000, guid: 2207495e48132f54dacbd3f501d235d4, type: 3}
+  rightarm2: {fileID: 21300000, guid: a80bf9f7898b5744092bf626d87ad8e7, type: 3}
+  rightarm3: {fileID: 21300000, guid: 8e640d2870bdf4a4085444bcddf8bf8c, type: 3}
+  rightarm4: {fileID: 21300000, guid: 74e4bbf0b15e9164081e8d0336476022, type: 3}
+  rightarm5: {fileID: 21300000, guid: bf21beda91f73464899d6d6fdca78e9d, type: 3}
+  rightarm6: {fileID: 21300000, guid: 6ca189c19a2999e4b89dcf56cfdc4e18, type: 3}
 --- !u!114 &757186013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3559,7 +3607,7 @@ GameObject:
   - component: {fileID: 1427393044}
   - component: {fileID: 1427393045}
   m_Layer: 0
-  m_Name: 'leftArm_2 '
+  m_Name: leftArm_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
