@@ -79,7 +79,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 	{
         //접속 상태 표시
         connectionInfoText.text = "방 참가 성공";
-        //모든 룸 참가자들이 Main 씬을 로드하게 한다.
         PhotonNetwork.LoadLevel("Scene_Field");
 
 
