@@ -115,6 +115,6 @@ public class Join : MonoBehaviour
     public  void LoginNext()
     {
         Debug.Log("다음신넘어가라");
-        LoadingSceneController.Instance.LoadScene("Scene_Field"); 
+        LoadingSceneController.Instance.LoadScene("LobbyScene"); 
     }
 }
