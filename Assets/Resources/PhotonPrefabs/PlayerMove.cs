@@ -8,7 +8,7 @@ public class PlayerMove : MonoBehaviour
 
     public int Speed;
 
-    Rigidbody rigidbody;
+    Rigidbody rb;
     PhotonView PV;
 
     Vector3 movement;
@@ -16,7 +16,7 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
         PV = GetComponent<PhotonView>();
     }
 
@@ -42,7 +42,7 @@ public class PlayerMove : MonoBehaviour
         movement.Set(h, 0, v);
         movement = movement.normalized * Speed * Time.deltaTime;
 
-        rigidbody.MovePosition(transform.position + movement);
+        rb.MovePosition(transform.position + movement);
     }
 
     void Update()
