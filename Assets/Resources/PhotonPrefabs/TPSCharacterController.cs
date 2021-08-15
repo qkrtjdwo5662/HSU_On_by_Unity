@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class TPSCharacterController : MonoBehaviour
 {
@@ -11,12 +12,16 @@ public class TPSCharacterController : MonoBehaviour
     [SerializeField]
     public float movingSpeed = 2.5f;
 
+    Rigidbody rb;
+    PhotonView PV;
 
     Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         animator = characterBody.GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
+        PV = GetComponent<PhotonView>();
     }
 
     // Update is called once per frame
