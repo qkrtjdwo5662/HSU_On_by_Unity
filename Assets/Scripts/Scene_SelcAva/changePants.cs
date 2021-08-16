@@ -45,6 +45,7 @@ public class changePants : MonoBehaviour
         GameObject rightleg_3 = GameObject.Find("rightLeg_3");
         GameObject rightleg_4 = GameObject.Find("rightLeg_4");
 
+        
 
 
         //body_1.GetComponent<Image>().sprite = Resources.Load("Assets/Resources/avatar/body/GwaJam/body_1.png") as Sprite;
