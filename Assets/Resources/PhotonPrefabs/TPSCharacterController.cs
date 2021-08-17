@@ -17,18 +17,24 @@ public class TPSCharacterController : MonoBehaviour
 
     Animator animator;
     // Start is called before the first frame update
+    void Awake()
+	{
+        rb = characterBody.GetComponent<Rigidbody>();
+        PV = characterBody.GetComponent<PhotonView>();
+    }
+
     void Start()
     {
         animator = characterBody.GetComponent<Animator>();
-        rb = GetComponent<Rigidbody>();
-        PV = GetComponent<PhotonView>();
+        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-       //LookAround();
-       // Move();
+             //LookAround();
+              // Move();
     }
 
     public void Move(Vector2 inputDirection)
@@ -90,4 +96,5 @@ public class TPSCharacterController : MonoBehaviour
         // 카메라 암 회전 시키기
         cameraArm.rotation = Quaternion.Euler(x, camAngle.y + mouseDelta.x, camAngle.z);
     }
+    
 }

@@ -33,7 +33,9 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         joinButton.interactable = true;
 
         connectionInfoText.text = "온라인 : 마스터 서버와 연결완료";
-	}
+
+        PhotonNetwork.JoinLobby();//마스터 서버 연결시 로비로 연결
+    }
     
     //마스터 서버 접속 실패시
     public override void OnDisconnected(DisconnectCause cause)
@@ -46,6 +48,13 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         //마스터 서버로의 재접속 시도
         PhotonNetwork.ConnectUsingSettings();
 	}
+
+    public override void OnJoinedLobby()//로비에 연결시 작동
+    {
+        Debug.Log("Joined Lobby");
+        PhotonNetwork.NickName = "Player " + Random.Range(0, 1000).ToString("0000");
+        //들어온사람 이름 랜덤으로 숫자붙여서 정해주기
+    }
 
     //룸 접속 시도
     public void Connect()
@@ -71,7 +80,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         connectionInfoText.text = "빈 방이 없음, 새로운 방 생성";
 
 
-        PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 4 });
+        PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 5 });
 
 	}
     
