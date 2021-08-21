@@ -1,8 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 using UnityEngine.UI;
 using Firebase.Auth;
+
+using Firebase;
+using Firebase.Database;
 
 public class Join : MonoBehaviour 
 {
@@ -18,6 +22,18 @@ public class Join : MonoBehaviour
 
 
     FirebaseAuth auth;
+
+
+    private void Start()
+    {
+        FirebaseApp.DefaultInstance.Options.DatabaseUrl =
+                   new System.Uri("https://dbexample-b0dc2-default-rtdb.firebaseio.com/");
+
+        // 파이어베이스의 메인 참조 얻기
+        reference = FirebaseDatabase.DefaultInstance.RootReference;
+
+
+    }
 
 
     private void Awake()
@@ -117,4 +133,33 @@ public class Join : MonoBehaviour
         Debug.Log("다음신넘어가라");
         LoadingSceneController.Instance.LoadScene("LobbyScene"); 
     }
+
+    public class JoinDB
+    {
+        public string name;
+        public string dept;
+        public int stdID;
+
+        public JoinDB(string name,string dept,int stdID)
+        {
+            this.name = name;
+            this.dept = dept;
+            this.stdID = stdID;
+        }
+
+        public Dictionary<string,object> ToDictionary()
+        {
+            Dictionary<string, object> dic = new Dictionary<string, object>();
+            dic["name"] = this.name;
+            dic["dept"] = this.dept;
+            dic["stdID"] = this.stdID;
+            return dic;
+        }
+    }
+
+    private DatabaseReference reference = null;
+
+ 
+
+
 }
