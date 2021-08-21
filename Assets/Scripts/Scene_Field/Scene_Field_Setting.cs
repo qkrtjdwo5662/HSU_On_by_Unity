@@ -8,6 +8,9 @@ public class Scene_Field_Setting : MonoBehaviour
     void Start() 
     {
         GameObject avatar = GameObject.Find("Avatar");
+        if (avatar == null) {
+            return;
+        }
         GameObject head_1 = GameObject.Find("head_1");
         GameObject head_2 = GameObject.Find("head_2");
         GameObject head_3 = GameObject.Find("head_3");

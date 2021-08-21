@@ -9,12 +9,14 @@ public class DoJump : MonoBehaviour
     private Transform Character;
     [SerializeField]
     private Button btn;
-
+    private bool isJump;
 
     // Start is called before the first frame update
     void Start()
     {
-        btn.onClick.AddListener(Jump);
+        
+            btn.onClick.AddListener(Jump);
+        
     }
 
     // Update is called once per frame
@@ -24,12 +26,19 @@ public class DoJump : MonoBehaviour
     }
 
     private void Jump() {
-        /*for (int i = 0; i < 10; i++)
+        if (isJump == false)
         {
-            Character.position += new Vector3(0, 0.1f, 0);
-        }*/
-
-
-        Character.position += new Vector3(0, 1, 0);
+            isJump = true;
+            Character.GetComponent<Rigidbody>().AddForce(0, 0.02f, 0);
+        }
     }
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "ground")
+        {
+            isJump = false;    //Ground에 닿으면 isGround는 true
+        }
+
+    }
+    
 }
