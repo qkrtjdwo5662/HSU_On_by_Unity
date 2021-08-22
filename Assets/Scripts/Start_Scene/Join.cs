@@ -7,6 +7,7 @@ using Firebase.Auth;
 
 using Firebase;
 using Firebase.Database;
+using System;
 
 public class Join : MonoBehaviour 
 {
@@ -15,11 +16,19 @@ public class Join : MonoBehaviour
 
     [SerializeField] string email;
     [SerializeField] string password;
+    [SerializeField] string name;
+    [SerializeField] string dept;
+    [SerializeField] string stdID;
 
     public InputField inputTextEmail;
     public InputField inputTextPassword;
+    public InputField inputName;
+    public InputField inputStdId;
+    public InputField inputDept;
+
     public Text loginResult;
 
+    JoinDB user;
 
     FirebaseAuth auth;
 
@@ -32,9 +41,11 @@ public class Join : MonoBehaviour
         // 파이어베이스의 메인 참조 얻기
         reference = FirebaseDatabase.DefaultInstance.RootReference;
 
+      
+
+
 
     }
-
 
     private void Awake()
     {
@@ -56,7 +67,9 @@ public class Join : MonoBehaviour
     {
         email = inputTextEmail.text;
         password = inputTextPassword.text;
-
+        name = inputName.text;
+        dept = inputDept.text;
+        stdID = inputStdId.text;
         Debug.Log("email:" + email + ",password:" + password);
 
         CreateUser();
@@ -79,16 +92,30 @@ public class Join : MonoBehaviour
                 return;
             }
 
+
             Firebase.Auth.FirebaseUser newUser = task.Result;
             Debug.LogFormat("Firebase user created successfully: {0}({1})",
                 newUser.DisplayName, newUser.UserId);
+            Debug.Log("회원가입 성공");
+            user = new JoinDB(email, password, name, dept, stdID);
 
-            loginResult.text = "회원가입 성공";
-
+        
+   
+            CreateUserWithJson(stdID, new JoinDB(email,password,name,dept,stdID));
+          
         });
 
     }
 
+
+    public void  CreateUserWithJson(string _userID, JoinDB _userInfo)
+    {
+        
+        string data = JsonUtility.ToJson(_userInfo);
+        Debug.Log(data);
+        reference.Child("users").Child(_userInfo.stdID).SetRawJsonValueAsync(data);
+        
+    }
 
     public void LoginBtnOnClick()
     {
@@ -136,12 +163,16 @@ public class Join : MonoBehaviour
 
     public class JoinDB
     {
+        public string email;
+        public string password;
         public string name;
         public string dept;
-        public int stdID;
+        public string stdID;
 
-        public JoinDB(string name,string dept,int stdID)
+        public JoinDB(string email,string password,string name,string dept,string stdID)
         {
+            this.email = email;
+            this.password = password;
             this.name = name;
             this.dept = dept;
             this.stdID = stdID;
@@ -150,6 +181,8 @@ public class Join : MonoBehaviour
         public Dictionary<string,object> ToDictionary()
         {
             Dictionary<string, object> dic = new Dictionary<string, object>();
+            dic["email"] = this.email;
+            dic["password"] = this.password;
             dic["name"] = this.name;
             dic["dept"] = this.dept;
             dic["stdID"] = this.stdID;
@@ -157,7 +190,7 @@ public class Join : MonoBehaviour
         }
     }
 
-    private DatabaseReference reference = null;
+    public DatabaseReference reference = null;
 
  
 
