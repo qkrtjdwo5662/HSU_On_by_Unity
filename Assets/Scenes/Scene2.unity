@@ -1482,8 +1482,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   email: 
   password: 
+  name: 
+  dept: 
+  stdID: 
   inputTextEmail: {fileID: 759101524}
   inputTextPassword: {fileID: 1727978773}
+  inputName: {fileID: 503629230}
+  inputStdId: {fileID: 672142328}
+  inputDept: {fileID: 1574555049}
   loginResult: {fileID: 0}
 --- !u!4 &1222389714
 Transform:
