@@ -13,17 +13,17 @@ public class  ChatManager : MonoBehaviourPunCallbacks
     public Text chattingList;
     public InputField input;
     string chatters;
-   
+    private ScrollRect scroll_rect;
     // Start is called before the first frame update
     void Start()
     {
         PhotonNetwork.IsMessageQueueRunning = true;
-        //scroll_rect = GameObject.FindObjectOfType<ScrollRect>();
+        scroll_rect = GameObject.FindObjectOfType<ScrollRect>();
     }
     public void SendButtonOnclicked()
 	{
         if(input.text.Equals("")) { Debug.Log("Empty"); return; }
-        string msg = string.Format("[{0}] {1}", PhotonNetwork.NickName, input.text);
+        string msg = string.Format("[{0}] : {1}", PhotonNetwork.NickName, input.text);
         photonView.RPC("ReceiveMsg", RpcTarget.OthersBuffered, msg);
         ReceiveMsg(msg);
         input.ActivateInputField();
@@ -48,6 +48,6 @@ public class  ChatManager : MonoBehaviourPunCallbacks
     public void ReceiveMsg(string msg)
 	{
         chatLog.text += "\n" + msg;
-       // scroll_rect.verticalNormalizedPosition = 0.0f;
+        scroll_rect.verticalNormalizedPosition = 0.0f;
 	}
 }
