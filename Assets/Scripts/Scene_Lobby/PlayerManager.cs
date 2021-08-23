@@ -7,6 +7,7 @@ using System.IO;//path사용위해
 public class PlayerManager : MonoBehaviour
 {
     PhotonView PV;//포톤뷰 선언
+    GameObject character;
 
     void Awake()
     {
@@ -22,7 +23,8 @@ public class PlayerManager : MonoBehaviour
     }
     void CreateController()//플레이어 컨트롤러 만들기
     {
-        Debug.Log("Instantiated Player Controller");
-        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Character"), Vector3.zero, Quaternion.identity);
+       
+        Debug.Log("Instantiated Controller");
+        character = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Character"), Vector3.zero, Quaternion.identity,0,new object[] { PV.ViewID });
     }
 }
