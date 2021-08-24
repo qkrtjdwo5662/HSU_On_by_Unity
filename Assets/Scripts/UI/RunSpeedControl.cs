@@ -16,7 +16,7 @@ public class RunSpeedControl : MonoBehaviour, IPointerUpHandler, IPointerDownHan
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        controller.movingSpeed = 2.5f;
+        controller.movingSpeed = 5f;
         Debug.Log("ButtonUp" + controller.movingSpeed);
     }
 

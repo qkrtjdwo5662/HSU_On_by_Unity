@@ -88,8 +88,8 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 	{
         //접속 상태 표시
         connectionInfoText.text = "방 참가 성공";
-        PhotonNetwork.LoadLevel("Scene_selcAva");
-
+        //PhotonNetwork.LoadLevel("Scene_selcAva");
+        LoadingSceneController.Instance.LoadScene("Scene_selcAva");
 
 	}
     

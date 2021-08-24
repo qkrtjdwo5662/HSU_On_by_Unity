@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class LRButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
@@ -51,7 +53,8 @@ public class LRButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                     
                     break;
                 case BtnType.Next:
-                    LoadingSceneController.Instance.LoadScene("Scene_Field");
+                    //LoadingSceneController.Instance.LoadScene("Scene_Field");
+                    PhotonNetwork.LoadLevel("Scene_Field");
                     break;
             }
         }

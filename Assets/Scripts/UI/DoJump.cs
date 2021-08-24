@@ -10,7 +10,7 @@ public class DoJump : MonoBehaviour
     [SerializeField]
     private Button btn;
     private bool isJump;
-
+    float y1, y2;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,12 +26,19 @@ public class DoJump : MonoBehaviour
     }
 
     private void Jump() {
+       
+
         if (isJump == false)
         {
-            isJump = true;
+            //isJump = true;
             Character.GetComponent<Rigidbody>().AddForce(0, 0.02f, 0);
+            
         }
     }
+    
+
+
+
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "ground")
