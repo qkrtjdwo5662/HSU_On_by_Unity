@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene_Field.unity
     guid: b4dae9d60124b754aad8298dc5a1775e
+  - enabled: 1
+    path: Assets/Scenes/Scene_Jinli1.unity
+    guid: 50eb8777b27476540a1f8df4ea34eedd
+  - enabled: 1
+    path: Assets/Scenes/Scene_Field 1.unity
+    guid: 279bddb31a850634e835ff3e7e033e6f
+  - enabled: 1
+    path: Assets/Scenes/Scene_Jinli2.unity
+    guid: b2b604cad3d8716438a7b4b739ce059e
   m_configObjects: {}
