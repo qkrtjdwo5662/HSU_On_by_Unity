@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Photon.Pun;
 
 public class joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -15,18 +16,21 @@ public class joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     [SerializeField]
     private float leverRange;
 
-    private Vector2 inputDirection;
-    private Vector2 before;
-    private bool isInput;
-
     [SerializeField]
     private TPSCharacterController controller;
 
+    [SerializeField]
+    private GameObject cha;
     public enum JoystickType { Move, Rotate }
     public JoystickType joystickType;
+    private Vector2 inputDirection;
+    private Vector2 before;
+    private bool isInput;
+    PhotonView PV;
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
+        PV = cha.GetComponent<PhotonView>();
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -116,6 +120,7 @@ public class joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     void Start()
     {
         //Debug.Log("JoystickStart");
+        
     }
 
     // Update is called once per frame
@@ -124,5 +129,10 @@ public class joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         if (isInput) {
             InputControlVector();
         }
+        
+        if (!PV.IsMine)
+            return;
+
+        
     }
 }

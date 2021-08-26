@@ -10,6 +10,8 @@ public class TPSCharacterController : MonoBehaviour
     [SerializeField]
     private Transform cameraArm;
     [SerializeField]
+    private GameObject cha;
+    [SerializeField]
     public float movingSpeed = 2.5f;
 
     Rigidbody rb;
@@ -20,7 +22,7 @@ public class TPSCharacterController : MonoBehaviour
     void Awake()
 	{
         rb = characterBody.GetComponent<Rigidbody>();
-        PV = characterBody.GetComponent<PhotonView>();
+        PV = cha.GetComponent<PhotonView>();
     }
 
     void Start()
@@ -33,8 +35,9 @@ public class TPSCharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-             //LookAround();
-              // Move();
+        if (!PV.IsMine)
+            return;
+
     }
 
     public void Move(Vector2 inputDirection)
