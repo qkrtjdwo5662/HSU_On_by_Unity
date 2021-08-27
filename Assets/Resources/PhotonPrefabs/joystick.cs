@@ -19,8 +19,7 @@ public class joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     [SerializeField]
     private TPSCharacterController controller;
 
-    [SerializeField]
-    private GameObject cha;
+    
     public enum JoystickType { Move, Rotate }
     public JoystickType joystickType;
     private Vector2 inputDirection;
@@ -30,7 +29,7 @@ public class joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
-        PV = cha.GetComponent<PhotonView>();
+        PV = GetComponent<PhotonView>();
     }
     public void OnBeginDrag(PointerEventData eventData)
     {

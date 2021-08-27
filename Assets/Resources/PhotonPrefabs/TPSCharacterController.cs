@@ -9,8 +9,7 @@ public class TPSCharacterController : MonoBehaviour
     private Transform characterBody;
     [SerializeField]
     private Transform cameraArm;
-    [SerializeField]
-    private GameObject cha;
+    
     [SerializeField]
     public float movingSpeed = 2.5f;
 
@@ -22,7 +21,7 @@ public class TPSCharacterController : MonoBehaviour
     void Awake()
 	{
         rb = characterBody.GetComponent<Rigidbody>();
-        PV = cha.GetComponent<PhotonView>();
+        PV = GetComponent<PhotonView>();
     }
 
     void Start()
