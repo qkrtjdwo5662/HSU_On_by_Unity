@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using Photon.Pun;
 
-public class joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class joystick : MonoBehaviourPunCallbacks, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [SerializeField]
     private RectTransform lever;
@@ -18,6 +18,9 @@ public class joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     [SerializeField]
     private TPSCharacterController controller;
+
+    [SerializeField]
+    private GameObject canvas;
 
     
     public enum JoystickType { Move, Rotate }
@@ -125,12 +128,19 @@ public class joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     // Update is called once per frame
     void Update()
     {
-        if (isInput) {
-            InputControlVector();
-        }
         
+
         if (!PV.IsMine)
-            return;
+        {
+            canvas.SetActive(false);
+        }
+        else {
+            if (isInput)
+            {
+                InputControlVector();
+            }
+        }
+            
 
         
     }

@@ -25,6 +25,6 @@ public class PlayerManager : MonoBehaviour
     {
        
         Debug.Log("Instantiated Controller");
-        character = PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), new Vector3(-108f,0.1f,80f), Quaternion.identity,0,new object[] { PV.ViewID });
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), new Vector3(-108f,0.1f,80f), Quaternion.identity,0,new object[] { PV.ViewID });
     }
 }

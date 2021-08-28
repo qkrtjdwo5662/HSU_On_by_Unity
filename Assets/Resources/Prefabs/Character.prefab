@@ -1610,16 +1610,16 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: isMove
   - Type: 1
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: Blend
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: isRun
   m_SynchronizeLayers:
-  - SynchronizeType: 0
+  - SynchronizeType: 2
     LayerIndex: 0
 --- !u!1 &3166283437333573033
 GameObject:
@@ -2002,6 +2002,8 @@ GameObject:
   - component: {fileID: 6464353391837882742}
   - component: {fileID: 6464353391837882737}
   - component: {fileID: 854765035678828444}
+  - component: {fileID: 6853687537955815429}
+  - component: {fileID: 8040318595230349166}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2017,7 +2019,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6464353391837882739}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalPosition: {x: 0, y: 2, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6464353392902686973}
@@ -2091,11 +2093,41 @@ MonoBehaviour:
   prefixField: -1
   Synchronization: 0
   OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents: []
+  observableSearch: 0
+  ObservedComponents:
+  - {fileID: 6853687537955815429}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &6853687537955815429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6464353391837882739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
+--- !u!114 &8040318595230349166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6464353391837882739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f98cc36d7a3d41f4f9c36d0fefb442f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 6464353391837882739}
 --- !u!1 &6464353391846087916
 GameObject:
   m_ObjectHideFlags: 0
@@ -3595,6 +3627,7 @@ MonoBehaviour:
   CaremaSpeed: 50
   leverRange: 75
   controller: {fileID: 6464353393720676803}
+  canvas: {fileID: 6464353392535078966}
   joystickType: 0
 --- !u!114 &1996689923433355432
 MonoBehaviour:
@@ -3611,7 +3644,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 3
+  Synchronization: 0
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
@@ -5244,6 +5277,7 @@ MonoBehaviour:
   CaremaSpeed: 50
   leverRange: 400
   controller: {fileID: 6464353393720676803}
+  canvas: {fileID: 0}
   joystickType: 1
 --- !u!114 &440688889200558951
 MonoBehaviour:
@@ -5260,7 +5294,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 3
+  Synchronization: 0
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
@@ -5903,7 +5937,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6464353392902686973}
-  - component: {fileID: 6464353392902686962}
   m_Layer: 0
   m_Name: Camera Arm
   m_TagString: Untagged
@@ -5919,26 +5952,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6464353392902686972}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6464353391837882736}
   m_Father: {fileID: 6464353393720676800}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6464353392902686962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6464353392902686972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f98cc36d7a3d41f4f9c36d0fefb442f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterBody: {fileID: 6464353393720676800}
 --- !u!1 &6464353392903300615
 GameObject:
   m_ObjectHideFlags: 0
