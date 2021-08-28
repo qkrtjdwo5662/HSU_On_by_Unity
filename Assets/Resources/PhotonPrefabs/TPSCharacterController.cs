@@ -13,6 +13,9 @@ public class TPSCharacterController : MonoBehaviour
     [SerializeField]
     public float movingSpeed = 2.5f;
 
+    [SerializeField]
+    private GameObject character;
+
     Rigidbody rb;
     PhotonView PV;
 
@@ -35,7 +38,11 @@ public class TPSCharacterController : MonoBehaviour
     void Update()
     {
         if (!PV.IsMine)
+        {
+            //character.SetActive(false);
             return;
+        }
+            
 
     }
 

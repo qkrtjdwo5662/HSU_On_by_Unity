@@ -132,7 +132,8 @@ public class joystick : MonoBehaviourPunCallbacks, IBeginDragHandler, IDragHandl
 
         if (!PV.IsMine)
         {
-            canvas.SetActive(false);
+            //canvas.SetActive(false);
+            Destroy(canvas);
         }
         else {
             if (isInput)

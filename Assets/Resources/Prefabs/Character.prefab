@@ -7969,6 +7969,7 @@ MonoBehaviour:
   characterBody: {fileID: 2075961411525818924}
   cameraArm: {fileID: 6464353392902686973}
   movingSpeed: 5
+  character: {fileID: 6464353393720676802}
 --- !u!33 &6464353393720676807
 MeshFilter:
   m_ObjectHideFlags: 0

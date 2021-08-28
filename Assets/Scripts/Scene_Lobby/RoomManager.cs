@@ -20,6 +20,11 @@ public class RoomManager : MonoBehaviourPunCallbacks//다른 포톤 반응 받�
         Instance = this;
     }
 
+    void Update()
+    {
+        
+    }
+
     public override void OnEnable()
     {
         base.OnEnable();

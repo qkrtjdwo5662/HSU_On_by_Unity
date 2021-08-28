@@ -80,7 +80,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         connectionInfoText.text = "빈 방이 없음, 새로운 방 생성";
 
 
-        PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 5 });
+        PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 0 });
 
 	}
     

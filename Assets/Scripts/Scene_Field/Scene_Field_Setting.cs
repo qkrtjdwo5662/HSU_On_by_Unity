@@ -80,7 +80,7 @@ public class Scene_Field_Setting : MonoBehaviour
         rightArm5.GetComponent<SpriteRenderer>().sprite = rightArm_5.GetComponent<SpriteRenderer>().sprite;
         rightArm6.GetComponent<SpriteRenderer>().sprite = rightArm_6.GetComponent<SpriteRenderer>().sprite;
 
-        //Destroy(avatar);
+        Destroy(avatar);
     }
 
     // Update is called once per frame
