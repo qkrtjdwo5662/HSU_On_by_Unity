@@ -14,11 +14,19 @@ public class  ChatManager : MonoBehaviourPunCallbacks
     public InputField input;
     string chatters;
     private ScrollRect scroll_rect;
+    PhotonView PV;
+
+    [SerializeField]
+    private GameObject CM;
     // Start is called before the first frame update
     void Start()
     {
         PhotonNetwork.IsMessageQueueRunning = true;
         scroll_rect = GameObject.FindObjectOfType<ScrollRect>();
+    }
+    private void Awake()
+    {
+        PV = GetComponent<PhotonView>();
     }
     public void SendButtonOnclicked()
 	{
@@ -33,7 +41,12 @@ public class  ChatManager : MonoBehaviourPunCallbacks
 	{
         chatterUpdate();
         if (Input.GetKeyDown(KeyCode.Return) && !input.isFocused) SendButtonOnclicked();
-	}
+        if (!PV.IsMine)
+        {
+            CM.SetActive(false);
+           // Destroy(CM);
+        }
+    }
     void chatterUpdate()
     {
         chatters = "Player List\n";

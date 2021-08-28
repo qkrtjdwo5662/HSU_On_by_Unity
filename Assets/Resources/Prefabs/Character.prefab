@@ -1610,13 +1610,13 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 4
-    SynchronizeType: 1
+    SynchronizeType: 2
     Name: isMove
   - Type: 1
-    SynchronizeType: 1
+    SynchronizeType: 2
     Name: Blend
   - Type: 4
-    SynchronizeType: 1
+    SynchronizeType: 2
     Name: isRun
   m_SynchronizeLayers:
   - SynchronizeType: 2
@@ -2001,9 +2001,8 @@ GameObject:
   - component: {fileID: 6464353391837882736}
   - component: {fileID: 6464353391837882742}
   - component: {fileID: 6464353391837882737}
-  - component: {fileID: 854765035678828444}
-  - component: {fileID: 6853687537955815429}
   - component: {fileID: 8040318595230349166}
+  - component: {fileID: 6406408169042778843}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2076,7 +2075,20 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6464353391837882739}
   m_Enabled: 0
---- !u!114 &854765035678828444
+--- !u!114 &8040318595230349166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6464353391837882739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f98cc36d7a3d41f4f9c36d0fefb442f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 6464353392902686972}
+--- !u!114 &6406408169042778843
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2093,41 +2105,11 @@ MonoBehaviour:
   prefixField: -1
   Synchronization: 0
   OwnershipTransfer: 0
-  observableSearch: 0
-  ObservedComponents:
-  - {fileID: 6853687537955815429}
+  observableSearch: 2
+  ObservedComponents: []
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &6853687537955815429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6464353391837882739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
---- !u!114 &8040318595230349166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6464353391837882739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f98cc36d7a3d41f4f9c36d0fefb442f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 6464353391837882739}
 --- !u!1 &6464353391846087916
 GameObject:
   m_ObjectHideFlags: 0
@@ -2602,6 +2584,7 @@ MonoBehaviour:
   chatLog: {fileID: 6464353391771283840}
   chattingList: {fileID: 6464353393668135101}
   input: {fileID: 6464353392296688903}
+  CM: {fileID: 6464353391916457030}
 --- !u!114 &6464353391916457029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3546,7 +3529,7 @@ GameObject:
   - component: {fileID: 6464353392198977286}
   - component: {fileID: 6464353392198977281}
   - component: {fileID: 6464353392198977280}
-  - component: {fileID: 1996689923433355432}
+  - component: {fileID: 4323713651492393129}
   m_Layer: 5
   m_Name: Joystick
   m_TagString: Untagged
@@ -3629,7 +3612,7 @@ MonoBehaviour:
   controller: {fileID: 6464353393720676803}
   canvas: {fileID: 6464353392535078966}
   joystickType: 0
---- !u!114 &1996689923433355432
+--- !u!114 &4323713651492393129
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5196,7 +5179,7 @@ GameObject:
   - component: {fileID: 6464353392727076037}
   - component: {fileID: 6464353392727076036}
   - component: {fileID: 6464353392727076039}
-  - component: {fileID: 440688889200558951}
+  - component: {fileID: 7828919314440887871}
   m_Layer: 5
   m_Name: Joystick_test
   m_TagString: Untagged
@@ -5277,9 +5260,9 @@ MonoBehaviour:
   CaremaSpeed: 50
   leverRange: 400
   controller: {fileID: 6464353393720676803}
-  canvas: {fileID: 0}
+  canvas: {fileID: 6464353392535078966}
   joystickType: 1
---- !u!114 &440688889200558951
+--- !u!114 &7828919314440887871
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5294,7 +5277,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 0
+  Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
