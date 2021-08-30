@@ -18,17 +18,17 @@ public class PlayerManager : MonoBehaviour
 
     void Start()
     {
-        /*if (PV.IsMine)//내 포톤 네트워크이면
+        if (PV.IsMine)//내 포톤 네트워크이면
         {
             CreateController();//플레이어 컨트롤러 붙여준다. 
         }
         else {
             //GameObject card = (GameObject)Instantiate(Resources.Load("Prefabs/character"));
-            
 
-            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), new Vector3(-108f, 0.1f, 80f), Quaternion.identity, 0, new object[] { PV.ViewID });
-        }*/
-        CreateController();
+
+            GameObject character1 = MonoBehaviour.Instantiate(character) as GameObject;
+        }
+        //CreateController();
     }
     void CreateController()//플레이어 컨트롤러 만들기
     {
