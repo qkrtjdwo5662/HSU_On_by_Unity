@@ -13,9 +13,12 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public Button joinButton;
 
+    
   
     private void Start()
     {
+        PhotonNetwork.AutomaticallySyncScene = true;
+
         PhotonNetwork.GameVersion = gameVersion;
 
         PhotonNetwork.ConnectUsingSettings();
@@ -88,8 +91,8 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 	{
         //접속 상태 표시
         connectionInfoText.text = "방 참가 성공";
-        //PhotonNetwork.LoadLevel("Scene_selcAva");
-        LoadingSceneController.Instance.LoadScene("Scene_selcAva");
+        PhotonNetwork.LoadLevel("Scene_Field");
+        //LoadingSceneController.Instance.LoadScene("Scene_selcAva");
 
 	}
     

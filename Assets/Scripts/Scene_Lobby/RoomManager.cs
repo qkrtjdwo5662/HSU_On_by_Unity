@@ -9,9 +9,13 @@ using System.IO;//Path사용위에 사용
 public class RoomManager : MonoBehaviourPunCallbacks//다른 포톤 반응 받아들이기
 {
     public static RoomManager Instance;//Room Manager 스크립트를 메서드로 사용하기 위해 선언
-
+    PhotonView PV;
     void Awake()
     {
+        PhotonNetwork.AutomaticallySyncScene = true;
+
+        PV = GetComponent<PhotonView>();
+
         if (Instance)//다른 룸매니저 존재확인
         {
             Destroy(gameObject);//있으면 파괴
@@ -45,7 +49,8 @@ public class RoomManager : MonoBehaviourPunCallbacks//다른 포톤 반응 받�
     {
         if (scene.buildIndex == 2)//게임씬이면. 0은 현재 시작메뉴 씬이다. 
         {
-            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Player Manager"), Vector3.zero, Quaternion.identity); ;
+
+            //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Player Manager"), Vector3.zero, Quaternion.identity);
             //포톤 프리펩에 있는 플레이어 매니저를 저 위치에 저 각도로 만들어주기
 
             //foreach (Player p in PhotonNetwork.PlayerList)
