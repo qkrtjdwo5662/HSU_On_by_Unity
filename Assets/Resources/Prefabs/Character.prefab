@@ -4759,6 +4759,7 @@ GameObject:
   - component: {fileID: 6464353392535078964}
   - component: {fileID: 6464353392535078967}
   - component: {fileID: 6464353392535079115}
+  - component: {fileID: 6175599543607696641}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4859,6 +4860,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bdbb68d4ed1aa645a8eb1c319797204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6175599543607696641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6464353392535078966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afa049003606cbd47b80452b5adc65db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sendBtn: {fileID: 6464353393793428628}
+  chatLog: {fileID: 6464353391771283840}
+  chattingList: {fileID: 6464353393668135101}
+  input: {fileID: 6464353392296688903}
 --- !u!1 &6464353392553189041
 GameObject:
   m_ObjectHideFlags: 0
@@ -8302,18 +8319,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6464353393793428630}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6464353391916457031}
-        m_MethodName: SendButtonOnclicked
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &6464353393827744881
 GameObject:
   m_ObjectHideFlags: 0
