@@ -11,12 +11,22 @@ public class DoJump : MonoBehaviour
     private Button btn;
     private bool isJump;
     float y1, y2;
+
+    private GameObject Cha;
+
+
+
+    private void Awake()
+    {
+        
+    }
     // Start is called before the first frame update
     void Start()
     {
         
-            btn.onClick.AddListener(Jump);
-        
+        btn.onClick.AddListener(Jump);
+        Cha = GameObject.Find("Character(Clone)");
+        Character = Cha.GetComponent<Transform>();
     }
 
     // Update is called once per frame

@@ -8,6 +8,7 @@ public class RunSpeedControl : MonoBehaviour, IPointerUpHandler, IPointerDownHan
     [SerializeField]
     private TPSCharacterController controller;
 
+    private GameObject Character;
     public void OnPointerDown(PointerEventData eventData)
     {
         controller.movingSpeed = 10f;
@@ -23,11 +24,16 @@ public class RunSpeedControl : MonoBehaviour, IPointerUpHandler, IPointerDownHan
     // Start is called before the first frame update
 
 
+    void Awake() 
+    {
+        
 
+    }
 
     void Start()
     {
-        
+        Character = GameObject.Find("Character(Clone)");
+        controller = Character.GetComponent<TPSCharacterController>();
     }
 
     // Update is called once per frame

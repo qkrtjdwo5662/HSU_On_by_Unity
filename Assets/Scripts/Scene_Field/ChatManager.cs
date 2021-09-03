@@ -18,6 +18,7 @@ public class  ChatManager : MonoBehaviourPunCallbacks
 
     [SerializeField]
     public GameObject CM;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,16 +30,20 @@ public class  ChatManager : MonoBehaviourPunCallbacks
     {
         PV = GetComponent<PhotonView>();
         //sendBtn = GameObject.Find("ChatLog");
+        /*PV.ViewID = 0;
+        if (PV.IsMine)
+        {
+            PV.ViewID = 9;
+        }*/
         
-
-
 
     }
     public void SendButtonOnclicked()
 	{
         if(input.text.Equals("")) { Debug.Log("Empty"); return; }
         string msg = string.Format("[{0}] : {1}", PhotonNetwork.NickName, input.text);
-        photonView.RPC("ReceiveMsg", RpcTarget.OthersBuffered, msg);
+        PV.RPC("ReceiveMsg", RpcTarget.OthersBuffered, msg);
+
         ReceiveMsg(msg);
         input.ActivateInputField();
         input.text = "";

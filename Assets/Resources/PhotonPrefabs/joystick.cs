@@ -22,7 +22,8 @@ public class joystick : MonoBehaviourPunCallbacks, IBeginDragHandler, IDragHandl
     [SerializeField]
     private GameObject canvas;
 
-    
+    private GameObject Character;
+
     public enum JoystickType { Move, Rotate }
     public JoystickType joystickType;
     private Vector2 inputDirection;
@@ -32,7 +33,8 @@ public class joystick : MonoBehaviourPunCallbacks, IBeginDragHandler, IDragHandl
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
-        PV = GetComponent<PhotonView>();
+        //PV = GetComponent<PhotonView>();
+        
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -122,27 +124,31 @@ public class joystick : MonoBehaviourPunCallbacks, IBeginDragHandler, IDragHandl
     void Start()
     {
         //Debug.Log("JoystickStart");
-        
+        Character = GameObject.Find("Character(Clone)");
+        controller = Character.GetComponent<TPSCharacterController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
 
-        if (!PV.IsMine)
+
+        /*if (!PV.IsMine)
         {
             //canvas.SetActive(false);
-            Destroy(canvas);
+            //Destroy(canvas);
         }
         else {
             if (isInput)
             {
                 InputControlVector();
             }
+        }*/
+        if (isInput)
+        {
+            InputControlVector();
         }
-            
 
-        
+
     }
 }
