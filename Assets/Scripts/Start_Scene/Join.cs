@@ -138,7 +138,7 @@ public class Join : MonoBehaviourPunCallbacks
         connectionInfoText.text = "로그인 성공, 새로운 방 생성중..";
 
 
-        PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 0 });
+        PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 5 });
 
     }
 
