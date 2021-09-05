@@ -22,10 +22,13 @@ public class Join : MonoBehaviour
 
     public InputField inputTextEmail;
     public InputField inputTextPassword;
+    public InputField inputTextEmail2;
+    public InputField inputTextPassword2;
     public InputField inputName;
     public InputField inputStdId;
     public InputField inputDept;
 
+    public Text joinResult;
     public Text loginResult;
 
     JoinDB user;
@@ -82,13 +85,13 @@ public class Join : MonoBehaviour
             if (task.IsCanceled)
             {
                 Debug.LogError("CreateUserWithEmailAndPasswordAsync was cnaceled.");
-                loginResult.text = "회원가입 실패";
+                joinResult.text = "회원가입 실패";
                 return;
             }
             if (task.IsFaulted)
             {
                 Debug.LogError("CreateUserWithEmailAndPasswordAsync encountered an error:" + task.Exception);
-                loginResult.text = "회원가입 실패";
+                joinResult.text = "회원가입 실패";
                 return;
             }
 
@@ -96,6 +99,7 @@ public class Join : MonoBehaviour
             Firebase.Auth.FirebaseUser newUser = task.Result;
             Debug.LogFormat("Firebase user created successfully: {0}({1})",
                 newUser.DisplayName, newUser.UserId);
+            joinResult.text = "회원가입 성공";
             Debug.Log("회원가입 성공");
             user = new JoinDB(email, password, name, dept, stdID);
 
@@ -119,8 +123,8 @@ public class Join : MonoBehaviour
 
     public void LoginBtnOnClick()
     {
-        email = inputTextEmail.text;
-        password = inputTextPassword.text;
+        email = inputTextEmail2.text;
+        password = inputTextPassword2.text;
 
         Debug.Log("email:" + email + ",password:" + password);
 
@@ -148,6 +152,7 @@ public class Join : MonoBehaviour
 
             Debug.LogFormat("Firebase user created successfully: {0}({1})",
                 newUser.DisplayName, newUser.UserId);
+            loginResult.text = "로그인 성공";
 
             //LoginNext();
             queue.Enqueue("LoginNext");
