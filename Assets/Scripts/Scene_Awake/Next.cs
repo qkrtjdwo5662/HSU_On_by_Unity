@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class Next : MonoBehaviour
 {
-    public float LimitTime;
+    
     
 
     public Button NextButton;
     // Start is called before the first frame update
     void Start()
     {
+        
         NextButton.onClick.AddListener(ButtonClick);
     }
 
