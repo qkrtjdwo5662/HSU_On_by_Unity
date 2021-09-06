@@ -14,6 +14,19 @@ public class TestAgentScript : MonoBehaviour
 
     private NavMeshAgent agent;
 
+    private readonly int hashOffset = Animator.StringToHash("Offset");
+    private readonly int hashWalkSpeed = Animator.StringToHash("WalkSpeed");
+
+    private Animator animator;
+
+    private void Awake()
+	{
+        animator = GetComponent<Animator>();
+
+        animator.SetFloat(hashOffset, Random.Range(0.0f, 1.0f));
+        animator.SetFloat(hashWalkSpeed, Random.Range(1.0f, 1.2f));
+	}
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -25,8 +38,11 @@ public class TestAgentScript : MonoBehaviour
 		{
             group.GetComponentsInChildren<Transform>(wayPoints);
             wayPoints.RemoveAt(0);
+
+            nextIdx = Random.Range(0, wayPoints.Count);
 		}
 
+       
         MoveWayPoint();
     }
     
@@ -43,7 +59,8 @@ public class TestAgentScript : MonoBehaviour
        if(agent.velocity.sqrMagnitude >=0.2f * 0.2f
             && agent.remainingDistance <= 0.5f)
 		{
-            nextIdx = ++nextIdx % wayPoints.Count;
+            // nextIdx = ++nextIdx % wayPoints.Count;
+            nextIdx = Random.Range(0, wayPoints.Count);
             MoveWayPoint();
 		}            
     }
