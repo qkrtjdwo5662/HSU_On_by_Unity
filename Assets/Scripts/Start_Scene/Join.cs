@@ -18,7 +18,7 @@ public class Join : MonoBehaviourPunCallbacks
     private string gameVersion = "1";
 
     public Text connectionInfoText;
-
+    public Text JoinInfoText;
     public Button LoginBtn;
 
     Queue<string> queue = new Queue<string>();
@@ -161,7 +161,9 @@ public class Join : MonoBehaviourPunCallbacks
         stdID = inputStdId.text;
         Debug.Log("email:" + email + ",password:" + password);
 
-        
+        JoinInfoText.text = "회원가입 성공";
+
+
         CreateUser();
     }
 
