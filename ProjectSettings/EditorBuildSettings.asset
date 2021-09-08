@@ -15,8 +15,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene2.unity
     guid: 5f5881e521a42724b9c7b723341398ea
   - enabled: 0
-    path: Assets/Scenes/LobbyScene.unity
-    guid: 25018159d4e331f4a97a3a3a523bc1ce
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Scene_selcAva.unity
     guid: 56644e4e60899ee4f9fa494c709fe1d4
