@@ -41,6 +41,7 @@ public class Join : MonoBehaviourPunCallbacks
 
     public Text joinResult;
     public Text loginResult;
+    public Text LogZone;
 
     JoinDB user;
 
@@ -146,8 +147,8 @@ public class Join : MonoBehaviourPunCallbacks
     {
         //접속 상태 표시
         connectionInfoText.text = "로그인 성공, 생성된 방 접속 중...";
-        PhotonNetwork.LoadLevel("Scene_Field");
-        //LoadingSceneController.Instance.LoadScene("Scene_selcAva");
+        //PhotonNetwork.LoadLevel("Scene_Field");
+        LoadingSceneController.Instance.LoadScene("Scene_selcAva");
 
     }
 
@@ -242,6 +243,7 @@ public class Join : MonoBehaviourPunCallbacks
             Debug.LogFormat("Firebase user created successfully: {0}({1})",
                 newUser.DisplayName, newUser.UserId);
             loginResult.text = "로그인 성공";
+
 
             //LoginNext();
             queue.Enqueue("LoginNext");

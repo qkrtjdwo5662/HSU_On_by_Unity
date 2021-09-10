@@ -25,8 +25,18 @@ public class DoJump : MonoBehaviour
     {
         
         btn.onClick.AddListener(Jump);
-        Cha = GameObject.Find("Character(Clone)");
-        Character = Cha.GetComponent<Transform>();
+
+        if (Cha = GameObject.Find("Boy(Clone)"))
+        {
+            Character = Cha.GetComponent<Transform>();
+        }
+        if (Cha = GameObject.Find("Girl(Clone)"))
+        {
+            Character = Cha.GetComponent<Transform>();
+        }
+
+        //Cha = GameObject.Find("Character(Clone)");
+        //Character = Cha.GetComponent<Transform>();
     }
 
     // Update is called once per frame

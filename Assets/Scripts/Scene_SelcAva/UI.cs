@@ -8,6 +8,8 @@ public class UI : MonoBehaviour
 {
     [SerializeField]
     public float y=0;
+
+    public int WhatisSex;
     void Start()
     {
         

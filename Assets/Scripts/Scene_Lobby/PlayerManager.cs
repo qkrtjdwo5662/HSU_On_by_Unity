@@ -11,6 +11,9 @@ public class PlayerManager : MonoBehaviour, IPunObservable
     [SerializeField]
     GameObject character;
 
+
+    
+    UI ui;
     void Awake()
     {
         PV = GetComponent<PhotonView>();
@@ -18,20 +21,41 @@ public class PlayerManager : MonoBehaviour, IPunObservable
 
     void Start()
     {
+        GameObject avatar = GameObject.Find("Avatar");
+        ui = avatar.GetComponent<UI>();
+        if (ui == null) {
+            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "character"), Vector3.zero, Quaternion.identity, 0);
+            return;
+        }
+
+
+        if (ui.WhatisSex == 1) {
+            CreateControllerBoy();
+        }
+        else if (ui.WhatisSex ==2) {
+            CreateControllerGirl();
+        }
+        Destroy(avatar);
         
-        CreateController();
         
 
     }
     [PunRPC]
-    static void CreateController()//플레이어 컨트롤러 만들기
+    static void CreateControllerBoy()//플레이어 컨트롤러 만들기
     {
 
         Debug.Log("Instantiated Controller");
         //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
-        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Boy"), new Vector3 (0f,2f,0f), Quaternion.identity, 0);
     }
-        void Update()
+    static void CreateControllerGirl()//플레이어 컨트롤러 만들기
+    {
+
+        Debug.Log("Instantiated Controller");
+        //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Girl"), new Vector3(0f, 2f, 0f), Quaternion.identity, 0);
+    }
+    void Update()
     {
         
     }

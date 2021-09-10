@@ -124,8 +124,16 @@ public class joystick : MonoBehaviourPunCallbacks, IBeginDragHandler, IDragHandl
     void Start()
     {
         //Debug.Log("JoystickStart");
-        Character = GameObject.Find("Character(Clone)");
-        controller = Character.GetComponent<TPSCharacterController>();
+        if (Character = GameObject.Find("Boy(Clone)"))
+        {
+            controller = Character.GetComponent<TPSCharacterController>();
+        }
+        if (Character = GameObject.Find("Girl(Clone)"))
+        {
+            controller = Character.GetComponent<TPSCharacterController>();
+        }
+        //Character = GameObject.Find("Character(Clone)");
+        //controller = Character.GetComponent<TPSCharacterController>();
     }
 
     // Update is called once per frame

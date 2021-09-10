@@ -24,6 +24,12 @@ public class changeAvatar : MonoBehaviour
     public Sprite rightarm4;
     public Sprite rightarm5;
     public Sprite rightarm6;
+
+    public UI ui;
+
+    [SerializeField]
+    public enum Gender { female, male }
+    public Gender gender;
     // Start is called before the first frame update
     void Start()
     {
@@ -75,6 +81,15 @@ public class changeAvatar : MonoBehaviour
         rightarm_4.GetComponent<SpriteRenderer>().sprite = rightarm4;
         rightarm_5.GetComponent<SpriteRenderer>().sprite = rightarm5;
         rightarm_6.GetComponent<SpriteRenderer>().sprite = rightarm6;
-        Debug.Log("GwajamChange");
+
+        switch (gender) {
+            case Gender.female:
+                ui.WhatisSex = 2;
+                break;
+            case Gender.male:
+                ui.WhatisSex = 1;
+                break;
+        }
+        
     }
 }
