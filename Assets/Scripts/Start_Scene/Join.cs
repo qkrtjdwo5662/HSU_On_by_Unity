@@ -15,7 +15,7 @@ using Photon.Realtime;
 
 public class Join : MonoBehaviourPunCallbacks
 {
-    private string gameVersion = "1";
+    //private string gameVersion = "1";
 
     public Text connectionInfoText;
     public Text JoinInfoText;
@@ -57,28 +57,28 @@ public class Join : MonoBehaviourPunCallbacks
         reference = FirebaseDatabase.DefaultInstance.RootReference;
 
 
-        PhotonNetwork.AutomaticallySyncScene = true;
+        //PhotonNetwork.AutomaticallySyncScene = true;
 
-        PhotonNetwork.GameVersion = gameVersion;
+        /*PhotonNetwork.GameVersion = gameVersion;
 
         PhotonNetwork.ConnectUsingSettings();
 
         LoginBtn.interactable = false;
         LoginBtn.onClick.AddListener(Connect);
 
-        connectionInfoText.text = "서버에 접속중..";
+        connectionInfoText.text = "서버에 접속중..";*/
 
    
     }
     //마스터 서버 접속 성공시
-    public override void OnConnectedToMaster()
+    /*public override void OnConnectedToMaster()
     {
         LoginBtn.interactable = true;
 
         connectionInfoText.text = "온라인 : 마스터 서버와 연결완료";
 
         PhotonNetwork.JoinLobby();//마스터 서버 연결시 로비로 연결
-    }
+    }*/
 
     private void Awake()
     {
@@ -97,7 +97,7 @@ public class Join : MonoBehaviourPunCallbacks
 
     
     //마스터 서버 접속 실패시
-    public override void OnDisconnected(DisconnectCause cause)
+   /* public override void OnDisconnected(DisconnectCause cause)
     {
         // 룸 접속 버튼을 비활성화
         LoginBtn.interactable = false;
@@ -113,10 +113,10 @@ public class Join : MonoBehaviourPunCallbacks
         Debug.Log("Joined Lobby");
         PhotonNetwork.NickName = "Player " + UnityEngine.Random.Range(0, 1000).ToString("0000");
         //들어온사람 이름 랜덤으로 숫자붙여서 정해주기
-    }
+    }*/
 
     //룸 접속 시도
-    public void Connect()
+   /* public void Connect()
     {
         LoginBtn.interactable = false;
 
@@ -150,7 +150,7 @@ public class Join : MonoBehaviourPunCallbacks
         //PhotonNetwork.LoadLevel("Scene_Field");
         LoadingSceneController.Instance.LoadScene("Scene_selcAva");
 
-    }
+    }*/
 
     //버튼이 눌리면 실행할 함수.
     public void JoinBtnOnClick()
@@ -219,6 +219,7 @@ public class Join : MonoBehaviourPunCallbacks
         Debug.Log("email:" + email + ",password:" + password);
 
         LoginUser();
+        LoginNext();
     }
 
     void LoginUser()
@@ -245,7 +246,7 @@ public class Join : MonoBehaviourPunCallbacks
             loginResult.text = "로그인 성공";
 
 
-            //LoginNext();
+            
             queue.Enqueue("LoginNext");
             //Invoke("LoginNext", 0.1f);
         });
@@ -254,7 +255,7 @@ public class Join : MonoBehaviourPunCallbacks
     public  void LoginNext()
     {
         Debug.Log("다음신넘어가라");
-        LoadingSceneController.Instance.LoadScene("LobbyScene"); 
+        PhotonNetwork.LoadLevel("Scene_selcAva");
     }
 
     public class JoinDB

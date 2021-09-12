@@ -20,27 +20,31 @@ public class PlayerManager : MonoBehaviour, IPunObservable
     }
 
     void Start()
-    {
-        GameObject avatar = GameObject.Find("Avatar");
-        ui = avatar.GetComponent<UI>();
-        if (ui == null) {
-            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "character"), Vector3.zero, Quaternion.identity, 0);
-            return;
-        }
+	{
+		GameObject avatar = GameObject.Find("Avatar");
+		ui = avatar.GetComponent<UI>();
+		if (ui == null)
+		{
+			PhotonNetwork.Instantiate(Path.Combine("Prefabs", "character"), Vector3.zero, Quaternion.identity, 0);
+			return;
+		}
+		else
+		{
+			if (ui.WhatisSex == 1)
+			{
+				CreateControllerBoy();
+			}
+			else if (ui.WhatisSex == 2)
+			{
+				CreateControllerGirl();
+			}
+			Destroy(avatar);
+		}
 
 
-        if (ui.WhatisSex == 1) {
-            CreateControllerBoy();
-        }
-        else if (ui.WhatisSex ==2) {
-            CreateControllerGirl();
-        }
-        Destroy(avatar);
-        
-        
 
-    }
-    [PunRPC]
+	}
+	[PunRPC]
     static void CreateControllerBoy()//플레이어 컨트롤러 만들기
     {
 
