@@ -8,7 +8,7 @@ using Photon.Realtime;
 public class NextJoin : MonoBehaviourPunCallbacks
 {
     public Button NextBtn;
-    //public Text connectionInfoText;
+    public Text connectionInfoText;
     private string gameVersion = "1";
 
 
@@ -24,13 +24,13 @@ public class NextJoin : MonoBehaviourPunCallbacks
         NextBtn.interactable = false;
         NextBtn.onClick.AddListener(Connect);
 
-       // connectionInfoText.text = "서버에 접속중..";
+       connectionInfoText.text = "서버에 접속중..";
     }
 
     public override void OnConnectedToMaster()
     {
         NextBtn.interactable = true;
-        //connectionInfoText.text = "온라인 : 마스터 서버와 연결완료";
+        connectionInfoText.text = "온라인 : 마스터 서버와 연결완료";
         PhotonNetwork.JoinLobby();//마스터 서버 연결시 로비로 연결
     }
 
@@ -39,7 +39,7 @@ public class NextJoin : MonoBehaviourPunCallbacks
         // 룸 접속 버튼을 비활성화
         NextBtn.interactable = false;
 
-       // connectionInfoText.text = "오프라인 : 마스터 서버와 연결되지 않음\n 접속 재시도중...";
+        connectionInfoText.text = "오프라인 : 마스터 서버와 연결되지 않음\n 접속 재시도중...";
 
         //마스터 서버로의 재접속 시도
         PhotonNetwork.ConnectUsingSettings();
@@ -59,14 +59,14 @@ public class NextJoin : MonoBehaviourPunCallbacks
         if (PhotonNetwork.IsConnected)
         {
             //룸 접속 실행
-            //connectionInfoText.text = "룸에 접속..";
+            connectionInfoText.text = "룸에 접속..";
             PhotonNetwork.JoinRandomRoom();
         }
         else
         {
 
             //마스터 서버로의 재접속 시도
-            //connectionInfoText.text = "오프라인 : 마스터 서버와 연결되지 않음\n 접속 재시도중...";
+            connectionInfoText.text = "오프라인 : 마스터 서버와 연결되지 않음\n 접속 재시도중...";
             PhotonNetwork.ConnectUsingSettings();
         }
     }
@@ -74,8 +74,8 @@ public class NextJoin : MonoBehaviourPunCallbacks
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
 
-       // connectionInfoText.text = "빈 방이 없음, 새로운 방 생성";
-
+        connectionInfoText.text = "빈 방이 없음, 새로운 방 생성";
+        Debug.Log("Creating Room");
         PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 5 });
 
     }
@@ -83,7 +83,8 @@ public class NextJoin : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         //접속 상태 표시
-        //connectionInfoText.text = "방 참가 성공";
+        connectionInfoText.text = "방 참가 성공";
+        Debug.Log("Join Room");
         PhotonNetwork.LoadLevel("Scene_Field");
         //LoadingSceneController.Instance.LoadScene("Scene_Field");
 

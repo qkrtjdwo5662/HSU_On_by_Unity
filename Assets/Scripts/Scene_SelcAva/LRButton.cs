@@ -54,7 +54,7 @@ public class LRButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                     break;
                 case BtnType.Next:
                     //LoadingSceneController.Instance.LoadScene("Scene_Field");
-                    PhotonNetwork.LoadLevel("Scene_Field");
+                    //PhotonNetwork.LoadLevel("Scene_Field");
                     break;
             }
         }

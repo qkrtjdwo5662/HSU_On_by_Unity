@@ -21,12 +21,19 @@ public class PlayerManager : MonoBehaviour, IPunObservable
 
     void Start()
 	{
-		GameObject avatar = GameObject.Find("Avatar");
-		ui = avatar.GetComponent<UI>();
-		if (ui == null)
+        GameObject avatar;
+        if (avatar = GameObject.Find("Avatar"))
+        {
+            ui = avatar.GetComponent<UI>();
+        }
+        else
+            Debug.Log("avatar is Null");
+        
+        if (ui == null)
 		{
 			PhotonNetwork.Instantiate(Path.Combine("Prefabs", "character"), Vector3.zero, Quaternion.identity, 0);
-			return;
+            Debug.Log("UI is Null");
+            
 		}
 		else
 		{
