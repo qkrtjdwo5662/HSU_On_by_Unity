@@ -21,5 +21,9 @@ public class CameraControl : MonoBehaviour
     void Update()
     {
         cam1.transform.position += new Vector3(0.01f, 0, 0);
+        cam2.transform.position += new Vector3(0.01f, 0, 0);
+        cam3.transform.position += new Vector3(-0.02f, 0, 0);
+        cam4.transform.position += new Vector3(0.01f, 0, 0);
+        cam5.transform.position += new Vector3(0.01f, 0, 0);
     }
 }
