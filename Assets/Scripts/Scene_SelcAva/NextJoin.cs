@@ -10,11 +10,11 @@ public class NextJoin : MonoBehaviourPunCallbacks
     public Button NextBtn;
     public Text connectionInfoText;
     private string gameVersion = "1";
-
+    Text NickName;
 
     private void Start()
     {
-
+        NickName = GameObject.Find("NickName").GetComponent<Text>();
         PhotonNetwork.AutomaticallySyncScene = true;
 
         PhotonNetwork.GameVersion = gameVersion;
@@ -30,7 +30,7 @@ public class NextJoin : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         NextBtn.interactable = true;
-        connectionInfoText.text = "온라인 : 마스터 서버와 연결완료";
+        connectionInfoText.text = "온라인 : 환영합니다! " + NickName.text + "님!";
         PhotonNetwork.JoinLobby();//마스터 서버 연결시 로비로 연결
     }
 
@@ -48,7 +48,8 @@ public class NextJoin : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby()//로비에 연결시 작동
     {
         Debug.Log("Joined Lobby");
-        PhotonNetwork.NickName = "Player " + UnityEngine.Random.Range(0, 1000).ToString("0000");
+        //PhotonNetwork.NickName = "Player " + UnityEngine.Random.Range(0, 1000).ToString("0000");
+        PhotonNetwork.NickName = NickName.text;
         //들어온사람 이름 랜덤으로 숫자붙여서 정해주기
     }
 
