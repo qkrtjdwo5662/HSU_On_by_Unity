@@ -3503,6 +3503,7 @@ GameObject:
   - component: {fileID: 5857014134415848634}
   - component: {fileID: 3043068474612552621}
   - component: {fileID: 3745110514389026122}
+  - component: {fileID: 8438499235546477291}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3680,6 +3681,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TMP: {fileID: 7433313200463943770}
+--- !u!114 &8438499235546477291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7433313200463943770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &7864341920874198105
 GameObject:
   m_ObjectHideFlags: 0
