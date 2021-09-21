@@ -5,20 +5,21 @@ using UnityEngine.UI;
 
 public class Crash_Object : MonoBehaviour
 {
-    private Button btn;
+    public GameObject Image;
     // Start is called before the first frame update
+
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.tag == "Player")
         {
-            other.gameObject.SetActive(true);
+            Image.SetActive(true);
         }
     }
 
     // Update is called once per frame
     void OnTriggerExit(Collider other)
     {
-
+        Image.SetActive(false);
     }
 }
 
