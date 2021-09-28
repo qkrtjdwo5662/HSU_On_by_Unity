@@ -46,7 +46,7 @@ public class  ChatManager : MonoBehaviourPunCallbacks
 
         ReceiveMsg(msg);
         input.ActivateInputField();
-        input.text = "";
+        //input.text = "";
 	}
     void Update()
 	{
