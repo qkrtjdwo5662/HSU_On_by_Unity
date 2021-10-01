@@ -45,7 +45,11 @@ public class PlayerManager : MonoBehaviour, IPunObservable
 			{
 				CreateControllerGirl();
 			}
-			Destroy(avatar);
+            else if (ui.WhatisSex == 3)
+            {
+                CreateControllerBoxer();
+            }
+            Destroy(avatar);
 		}
 
 
@@ -65,6 +69,13 @@ public class PlayerManager : MonoBehaviour, IPunObservable
         Debug.Log("Instantiated Controller");
         //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
         PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Girl"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+    }
+    static void CreateControllerBoxer()//플레이어 컨트롤러 만들기
+    {
+
+        Debug.Log("Instantiated Controller");
+        //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Boxer"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
     }
     void Update()
     {

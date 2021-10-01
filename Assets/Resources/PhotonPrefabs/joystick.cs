@@ -132,6 +132,10 @@ public class joystick : MonoBehaviourPunCallbacks, IBeginDragHandler, IDragHandl
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
+        if (Character = GameObject.Find("Boxer(Clone)"))
+        {
+            controller = Character.GetComponent<TPSCharacterController>();
+        }
         //Character = GameObject.Find("Character(Clone)");
         //controller = Character.GetComponent<TPSCharacterController>();
     }
