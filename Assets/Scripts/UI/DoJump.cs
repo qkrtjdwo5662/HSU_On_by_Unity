@@ -34,7 +34,50 @@ public class DoJump : MonoBehaviour
         {
             Character = Cha.GetComponent<Transform>();
         }
-
+        if (Cha = GameObject.Find("Boy2(Clone)"))
+        {
+            Character = Cha.GetComponent<Transform>();
+        }
+        if (Cha = GameObject.Find("Girl2(Clone)"))
+        {
+            Character = Cha.GetComponent<Transform>();
+        }
+        if (Cha = GameObject.Find("Boy3(Clone)"))
+        {
+            Character = Cha.GetComponent<Transform>();
+        }
+        if (Cha = GameObject.Find("Girl3(Clone)"))
+        {
+            Character = Cha.GetComponent<Transform>();
+        }
+        if (Cha = GameObject.Find("Boy4(Clone)"))
+        {
+            Character = Cha.GetComponent<Transform>();
+        }
+        if (Cha = GameObject.Find("Girl4(Clone)"))
+        {
+            Character = Cha.GetComponent<Transform>();
+        }
+        if (Cha = GameObject.Find("Boy5(Clone)"))
+        {
+            Character = Cha.GetComponent<Transform>();
+        }
+        if (Cha = GameObject.Find("Girl5(Clone)"))
+        {
+            Character = Cha.GetComponent<Transform>();
+        }
+        if (Cha = GameObject.Find("Bono(Clone)"))
+        {
+            Character = Cha.GetComponent<Transform>();
+        }
+        if (Cha = GameObject.Find("Ghost(Clone)"))
+        {
+            Character = Cha.GetComponent<Transform>();
+        }
+        if (Cha = GameObject.Find("Dora(Clone)"))
+        {
+            Character = Cha.GetComponent<Transform>();
+        }
         //Cha = GameObject.Find("Character(Clone)");
         //Character = Cha.GetComponent<Transform>();
     }

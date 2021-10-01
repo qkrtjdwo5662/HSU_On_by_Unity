@@ -47,7 +47,56 @@ public class PlayerManager : MonoBehaviour, IPunObservable
 			}
             else if (ui.WhatisSex == 3)
             {
-                CreateControllerBoxer();
+                CreateControllerBoy2();
+            }      
+
+            else if (ui.WhatisSex == 4)
+            {
+                CreateControllerGirl2();
+            }
+
+            else if (ui.WhatisSex == 5)
+            {
+                CreateControllerBoy3();
+            }
+
+            else if (ui.WhatisSex == 6)
+            {
+                CreateControllerGirl3();
+            }
+
+            else if (ui.WhatisSex == 7)
+            {
+                CreateControllerBoy4();
+            }
+
+            else if (ui.WhatisSex == 8)
+            {
+                CreateControllerGirl4();
+            }
+            else if (ui.WhatisSex == 9)
+            {
+                CreateControllerBoy5();
+            }
+
+            else if (ui.WhatisSex == 10)
+            {
+                CreateControllerGirl5();
+            }
+
+            else if (ui.WhatisSex == 11)
+            {
+                CreateControllerBono();
+            }
+
+            else if (ui.WhatisSex == 12)
+            {
+                CreateControllerGhost();
+            }
+
+            else if (ui.WhatisSex == 13)
+            {
+                CreateControllerDora();
             }
             Destroy(avatar);
 		}
@@ -70,13 +119,92 @@ public class PlayerManager : MonoBehaviour, IPunObservable
         //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
         PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Girl"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
     }
-    static void CreateControllerBoxer()//플레이어 컨트롤러 만들기
+
+    static void CreateControllerBoy2()//플레이어 컨트롤러 만들기
     {
 
         Debug.Log("Instantiated Controller");
         //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
-        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Boxer"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Boy2"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
     }
+    static void CreateControllerGirl2()//플레이어 컨트롤러 만들기
+    {
+
+        Debug.Log("Instantiated Controller");
+        //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Girl2"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+    }
+
+    static void CreateControllerBoy3()//플레이어 컨트롤러 만들기
+    {
+
+        Debug.Log("Instantiated Controller");
+        //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Boy3"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+    }
+    static void CreateControllerGirl3()//플레이어 컨트롤러 만들기
+    {
+
+        Debug.Log("Instantiated Controller");
+        //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Girl3"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+    }
+
+    static void CreateControllerBoy4()//플레이어 컨트롤러 만들기
+    {
+
+        Debug.Log("Instantiated Controller");
+        //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Boy4"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+    }
+    static void CreateControllerGirl4()//플레이어 컨트롤러 만들기
+    {
+
+        Debug.Log("Instantiated Controller");
+        //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Girl4"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+    }
+
+    static void CreateControllerBoy5()//플레이어 컨트롤러 만들기
+    {
+
+        Debug.Log("Instantiated Controller");
+        //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Boy5"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+    }
+    static void CreateControllerGirl5()//플레이어 컨트롤러 만들기
+    {
+
+        Debug.Log("Instantiated Controller");
+        //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Girl5"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+    }
+
+    static void CreateControllerBono()//플레이어 컨트롤러 만들기
+    {
+
+        Debug.Log("Instantiated Controller");
+        //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Bono"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+    }
+    static void CreateControllerGhost()//플레이어 컨트롤러 만들기
+    {
+
+        Debug.Log("Instantiated Controller");
+        //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Ghost"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+    }
+    static void CreateControllerDora()//플레이어 컨트롤러 만들기
+    {
+
+        Debug.Log("Instantiated Controller");
+        //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Dora"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+    }
+
+
+
+
     void Update()
     {
         

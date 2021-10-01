@@ -28,7 +28,7 @@ public class changeAvatar : MonoBehaviour
     public UI ui;
 
     [SerializeField]
-    public enum Gender { female, male, Boxer }
+    public enum Gender { female, male, female2, male2, female3, male3, female4, male4, female5, male5, bono, ghost, dora }
     public Gender gender;
     // Start is called before the first frame update
     void Start()
@@ -89,9 +89,40 @@ public class changeAvatar : MonoBehaviour
             case Gender.male:
                 ui.WhatisSex = 1;
                 break;
-            case Gender.Boxer:
+            case Gender.female2:
+                ui.WhatisSex = 4;
+                break;
+            case Gender.male2:
                 ui.WhatisSex = 3;
                 break;
+            case Gender.female3:
+                ui.WhatisSex = 6;
+                break;
+            case Gender.male3:
+                ui.WhatisSex = 5;
+                break;
+            case Gender.female4:
+                ui.WhatisSex = 8;
+                break;
+            case Gender.male4:
+                ui.WhatisSex = 7;
+                break;
+            case Gender.female5:
+                ui.WhatisSex = 10;
+                break;
+            case Gender.male5:
+                ui.WhatisSex = 9;
+                break;
+            case Gender.bono:
+                ui.WhatisSex = 11;
+                break;
+            case Gender.ghost:
+                ui.WhatisSex = 12;
+                break;
+            case Gender.dora:
+                ui.WhatisSex = 13;
+                break;
+         
         }
         
     }

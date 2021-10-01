@@ -40,6 +40,51 @@ public class RunSpeedControl : MonoBehaviour, IPointerUpHandler, IPointerDownHan
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
+        if (Character = GameObject.Find("Boy2(Clone)"))
+        {
+            controller = Character.GetComponent<TPSCharacterController>();
+        }
+        if (Character = GameObject.Find("Girl2(Clone)"))
+        {
+            controller = Character.GetComponent<TPSCharacterController>();
+        }
+        if (Character = GameObject.Find("Boy3(Clone)"))
+        {
+            controller = Character.GetComponent<TPSCharacterController>();
+        }
+        if (Character = GameObject.Find("Girl3(Clone)"))
+        {
+            controller = Character.GetComponent<TPSCharacterController>();
+        }
+        if (Character = GameObject.Find("Boy4(Clone)"))
+        {
+            controller = Character.GetComponent<TPSCharacterController>();
+        }
+        if (Character = GameObject.Find("Girl4(Clone)"))
+        {
+            controller = Character.GetComponent<TPSCharacterController>();
+        }
+        if (Character = GameObject.Find("Boy5(Clone)"))
+        {
+            controller = Character.GetComponent<TPSCharacterController>();
+        }
+        if (Character = GameObject.Find("Girl5(Clone)"))
+        {
+            controller = Character.GetComponent<TPSCharacterController>();
+        }
+        if (Character = GameObject.Find("Bono(Clone)"))
+        {
+            controller = Character.GetComponent<TPSCharacterController>();
+        }
+        if (Character = GameObject.Find("Ghost(Clone)"))
+        {
+            controller = Character.GetComponent<TPSCharacterController>();
+        }
+        if (Character = GameObject.Find("Dora(Clone)"))
+        {
+            controller = Character.GetComponent<TPSCharacterController>();
+        }
+    
         //Character = GameObject.Find("Character(Clone)");
         //controller = Character.GetComponent<TPSCharacterController>();
     }
