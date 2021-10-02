@@ -7,6 +7,13 @@ public class QuestManager : MonoBehaviour
 {
     public int questId;
     public InputField question1;
+
+    public Button M1;
+    public Button M2;
+    public Button M3;
+    public Button M4;
+    public Button M5;
+
     public Button H1;
     public Button H2;
     public Button H3;
@@ -15,7 +22,7 @@ public class QuestManager : MonoBehaviour
     public Button Submit;
     public Image right;
     public Image Wrong;
-    public Image Stamp1;
+    public Image CompleteStamp;
 
     Dictionary<int, QuestData> questList;
 
@@ -27,6 +34,12 @@ public class QuestManager : MonoBehaviour
 
     void Start()
     {
+        M1.interactable = false;
+        M2.interactable = false;
+        M3.interactable = false;
+        M4.interactable = false;
+        M5.interactable = false;
+
         H1.interactable = false;
         H2.interactable = false;
         H3.interactable = false;
@@ -46,10 +59,23 @@ public class QuestManager : MonoBehaviour
             }
       
     }
+    
+    public void Mission1QuestOpen()
+	{
+        M1.interactable = true;
+
+	}
+
+    public void Mission2QuestOpen()
+	{
+        M1.interactable = true;
+        M2.interactable = true;
+	}
+
 
     public void Complete()
 	{
-        Stamp1.gameObject.SetActive(true);
+        CompleteStamp.gameObject.SetActive(true);
 	}
 
   
