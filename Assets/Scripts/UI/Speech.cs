@@ -50,9 +50,11 @@ public class Speech : MonoBehaviour
     void speechRun() 
     {
         if (PV.IsMine) {
-            PV.RPC("gotoTM", RpcTarget.All, input.text);
-            input.text = "";
+            PV.RPC("gotoTM", RpcTarget.Others, input.text);
+            gotoTM(input.text);
+            
         }
+        input.text = "";
     }
     [PunRPC]
     void gotoTM(string text) 
