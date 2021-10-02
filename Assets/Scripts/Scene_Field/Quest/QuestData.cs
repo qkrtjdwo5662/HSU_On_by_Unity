@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class QuestData : MonoBehaviour
 {
+    
     public string questName;
-    public int[] npcId;
+    public int[] npc_number;
 
     public QuestData(string name, int[] npc)
 	{
         questName = name;
-        npcId = npc;
+        npc_number = npc;
 	}
 }
