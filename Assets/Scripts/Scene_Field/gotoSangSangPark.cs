@@ -9,76 +9,90 @@ public class gotoSangSangPark : MonoBehaviour
     public GameObject Character;
     int cheak = 0;
     public Image im;
-    public PhotonView PV;
+    private PhotonView PV;
 
     public float start = 0.0f;
     float finish = 2.1f;
     public bool fade = false;
     void Start()
     {
+        
         if (Character = GameObject.Find("Boy(Clone)"))
         {
+            PV = Character.GetPhotonView();
             if(PV.IsMine)
                 cheak = 1;
         }
         else if (Character = GameObject.Find("Girl(Clone)"))
         {
+            PV = Character.GetPhotonView();
             if (PV.IsMine)
                 cheak = 1;
         }
         else if (Character = GameObject.Find("Boy2(Clone)"))
         {
+            PV = Character.GetPhotonView();
             if (PV.IsMine)
                 cheak = 1;
         }
         else if (Character = GameObject.Find("Girl2(Clone)"))
         {
+            PV = Character.GetPhotonView();
             if (PV.IsMine)
                 cheak = 1;
 
         }
         else if (Character = GameObject.Find("Boy3(Clone)"))
         {
+            PV = Character.GetPhotonView();
             if (PV.IsMine)
                 cheak = 1;
         }
         else if (Character = GameObject.Find("Girl3(Clone)"))
         {
+            PV = Character.GetPhotonView();
             if (PV.IsMine)
                 cheak = 1;
         }
         else if (Character = GameObject.Find("Boy4(Clone)"))
         {
+            PV = Character.GetPhotonView();
             if (PV.IsMine)
                 cheak = 1;
         }
         else if (Character = GameObject.Find("Girl4(Clone)"))
         {
+            PV = Character.GetPhotonView();
             if (PV.IsMine)
                 cheak = 1;
         }
         else if (Character = GameObject.Find("Boy5(Clone)"))
         {
+            PV = Character.GetPhotonView();
             if (PV.IsMine)
                 cheak = 1;
         }
         else if (Character = GameObject.Find("Girl5(Clone)"))
         {
+            PV = Character.GetPhotonView();
             if (PV.IsMine)
                 cheak = 1;
         }
         else if (Character = GameObject.Find("Bono(Clone)"))
         {
+            PV = Character.GetPhotonView();
             if (PV.IsMine)
                 cheak = 1;
         }
         else if (Character = GameObject.Find("Ghost(Clone)"))
         {
+            PV = Character.GetPhotonView();
             if (PV.IsMine)
                 cheak = 1;
         }
         else if (Character = GameObject.Find("Dora(Clone)"))
         {
+            PV = Character.GetPhotonView();
             if (PV.IsMine)
                 cheak = 1;
         }
