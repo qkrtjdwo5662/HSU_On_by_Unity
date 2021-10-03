@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class QuestManager : MonoBehaviour
 {
     public int questId;
-    public InputField question1;
+    public InputField question1, question2;
+   
 
     public Button M1;
     public Button M2;
@@ -49,7 +50,7 @@ public class QuestManager : MonoBehaviour
     public void Button()
     {
 
-            if (question1.text == "2")
+            if (question1.text == "2"|| question2.text =="박성재")
             {
                 right.gameObject.SetActive(true);
             }
@@ -57,9 +58,12 @@ public class QuestManager : MonoBehaviour
             {
                 Wrong.gameObject.SetActive(true);
             }
-      
+       
+
+
     }
     
+
     public void Mission1QuestOpen()
 	{
         M1.interactable = true;
@@ -79,7 +83,14 @@ public class QuestManager : MonoBehaviour
         M3.interactable = true;
     }
 
-   
+    public void Mission4QuestOpen()
+    {
+        M1.interactable = true;
+        M2.interactable = true;
+        M3.interactable = true;
+        M4.interactable = true;
+    }
+
 
     public void Complete()
 	{
