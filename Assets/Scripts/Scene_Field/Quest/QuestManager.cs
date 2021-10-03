@@ -72,6 +72,14 @@ public class QuestManager : MonoBehaviour
         M2.interactable = true;
 	}
 
+    public void Mission3QuestOpen()
+    {
+        M1.interactable = true;
+        M2.interactable = true;
+        M3.interactable = true;
+    }
+
+   
 
     public void Complete()
 	{

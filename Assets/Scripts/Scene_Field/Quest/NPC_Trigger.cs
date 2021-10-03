@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class NPC_Trigger : MonoBehaviour
 {
     public GameObject NpcTalk;
-    public Image Talk1;
+    public GameObject YesAfter;
     public GameObject NpcTalkSub;
+    
     public Button YES_Button;
+    //public Image Talk0;
     // Start is called before the first frame update
 
     void OnTriggerEnter(Collider other)
@@ -17,20 +19,25 @@ public class NPC_Trigger : MonoBehaviour
         {
             NpcTalk.SetActive(true);
             NpcTalkSub.SetActive(false);
-            Talk1.gameObject.SetActive(true);
+           
+            YesAfter.SetActive(true);
+            
         }
     }
 
     public void YesButtonClick()
     {
-        Talk1.gameObject.SetActive(false);
+        
+           //Talk0.gameObject.SetActive(true);
+        
     }
 
     // Update is called once per frame
     void OnTriggerExit(Collider other)
     {
-        //NpcTalk.SetActive(false);
-        //NpcTalkSub.SetActive(false);
+        NpcTalk.SetActive(false);
+        NpcTalkSub.SetActive(false);
+        YesAfter.SetActive(false);
     }
 }
 
