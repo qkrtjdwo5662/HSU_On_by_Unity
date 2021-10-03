@@ -9,7 +9,7 @@ public class gotoSangSangPark : MonoBehaviour
     public GameObject Character;
     int cheak = 0;
     public Image im;
-    private PhotonView PV;
+    public PhotonView PV;
 
     public float start = 0.0f;
     float finish = 2.1f;
