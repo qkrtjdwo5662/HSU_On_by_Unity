@@ -27,6 +27,7 @@ public class QuestManager : MonoBehaviour
 
     Dictionary<int, QuestData> questList;
 
+    //private string quiz3answer = "박성재";
     void Awake()
     {
         questList = new Dictionary<int, QuestData>();
@@ -50,7 +51,7 @@ public class QuestManager : MonoBehaviour
     public void Button()
     {
 
-            if (question1.text == "2"|| question2.text =="박성재")
+            if (question1.text == "2")
             {
                 right.gameObject.SetActive(true);
             }
@@ -59,10 +60,21 @@ public class QuestManager : MonoBehaviour
                 Wrong.gameObject.SetActive(true);
             }
        
+            
 
 
     }
-    
+    /*public void Quiz3Button()
+    {
+        if (question2.text == quiz3answer)
+        {
+            right.gameObject.SetActive(true);
+        }
+        else
+        {
+            Wrong.gameObject.SetActive(true);
+        }
+    }*/
 
     public void Mission1QuestOpen()
 	{
