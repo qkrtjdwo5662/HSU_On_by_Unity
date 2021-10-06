@@ -21,13 +21,16 @@ public class QuestManager : MonoBehaviour
     public Button H4;
     public Button H5;
     public Button Submit;
-    public Image right;
-    public Image Wrong;
+    public Image right1;
+    public Image Wrong1;
+
+    public Image right4;
+    public Image Wrong4;
     public Image CompleteStamp;
 
     Dictionary<int, QuestData> questList;
 
-    //private string quiz3answer = "박성재";
+    
     void Awake()
     {
         questList = new Dictionary<int, QuestData>();
@@ -53,28 +56,28 @@ public class QuestManager : MonoBehaviour
 
             if (question1.text == "2")
             {
-                right.gameObject.SetActive(true);
+                right1.gameObject.SetActive(true);
             }
             else
             {
-                Wrong.gameObject.SetActive(true);
+                Wrong1.gameObject.SetActive(true);
             }
        
             
 
 
     }
-    /*public void Quiz3Button()
+    public void Quiz3Button()
     {
-        if (question2.text == quiz3answer)
+        if (question2.text == "박성재")
         {
-            right.gameObject.SetActive(true);
+            right4.gameObject.SetActive(true);
         }
         else
         {
-            Wrong.gameObject.SetActive(true);
+            Wrong4.gameObject.SetActive(true);
         }
-    }*/
+    }
 
     public void Mission1QuestOpen()
 	{
@@ -103,7 +106,14 @@ public class QuestManager : MonoBehaviour
         M4.interactable = true;
     }
 
-
+    public void Mission5QuestOpen()
+    {
+        M1.interactable = true;
+        M2.interactable = true;
+        M3.interactable = true;
+        M4.interactable = true;
+        M5.interactable = true;
+    }
     public void Complete()
 	{
         CompleteStamp.gameObject.SetActive(true);
