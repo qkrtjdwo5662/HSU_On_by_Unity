@@ -8,7 +8,6 @@ public class Puzzle : MonoBehaviour
 {
     public GameObject puzzlePieceSet;
     public GameObject puzzlePosSet;
-    public Button button;
     public Image image;
     // Start is called before the first frame update
     public bool IsClear()
@@ -29,10 +28,12 @@ public class Puzzle : MonoBehaviour
         return true;
     }
 
-    public void Button()
+    public void button()
 	{
-        if (IsClear())
+        if(IsClear())
+		{
             image.gameObject.SetActive(true);
-            
+		}
 	}
 }
+    

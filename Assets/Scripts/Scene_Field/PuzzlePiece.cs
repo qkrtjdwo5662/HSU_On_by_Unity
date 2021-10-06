@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class PuzzlePiece : MonoBehaviour, IDragHandler,IEndDragHandler
@@ -9,6 +10,8 @@ public class PuzzlePiece : MonoBehaviour, IDragHandler,IEndDragHandler
     public GameObject piecePos;
     public Puzzle puzzle;
     public int piece_no;
+
+
     bool CheckSnapPuzzle()
     {
         for (int i = 0; i < puzzle.puzzlePosSet.transform.childCount; i++)
@@ -53,14 +56,16 @@ public class PuzzlePiece : MonoBehaviour, IDragHandler,IEndDragHandler
         if (puzzle.IsClear())
         {
             Debug.Log("Clear");
+          
         }
     }
-
+    
     // Start is called before the first frame update
     void Start()
     {
         piece_no = gameObject.name[gameObject.name.Length - 1] - '0';
     }
 
+    
     
 }
