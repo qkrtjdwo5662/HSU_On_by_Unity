@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class QuestManager : MonoBehaviour
 {
     public int questId;
-    public InputField question1, question2;
+    public InputField No_1_quiz_answer, question2;
    
 
     public Button M1;
@@ -51,10 +51,10 @@ public class QuestManager : MonoBehaviour
         H4.interactable = false;
         H5.interactable = false;
     }
-    public void Button()
+    public void No_1_Quiz()
     {
 
-            if (question1.text == "2")
+            if (No_1_quiz_answer.text == "1234")
             {
                 right1.gameObject.SetActive(true);
             }
