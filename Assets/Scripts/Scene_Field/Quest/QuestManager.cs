@@ -45,7 +45,7 @@ public class QuestManager : MonoBehaviour
         M4.interactable = false;
         M5.interactable = false;
 
-        H1.interactable = false;
+        H1.interactable = true;
         H2.interactable = false;
         H3.interactable = false;
         H4.interactable = false;
@@ -87,31 +87,25 @@ public class QuestManager : MonoBehaviour
 
     public void Mission2QuestOpen()
 	{
-        M1.interactable = true;
+        
         M2.interactable = true;
 	}
 
     public void Mission3QuestOpen()
     {
-        M1.interactable = true;
-        M2.interactable = true;
+       
         M3.interactable = true;
     }
 
     public void Mission4QuestOpen()
     {
-        M1.interactable = true;
-        M2.interactable = true;
-        M3.interactable = true;
+        
         M4.interactable = true;
     }
 
     public void Mission5QuestOpen()
     {
-        M1.interactable = true;
-        M2.interactable = true;
-        M3.interactable = true;
-        M4.interactable = true;
+        
         M5.interactable = true;
     }
     public void Complete()
