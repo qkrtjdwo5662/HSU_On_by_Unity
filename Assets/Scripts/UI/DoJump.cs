@@ -10,7 +10,8 @@ public class DoJump : MonoBehaviour
     [SerializeField]
     private Button btn;
     private bool isJump;
-    float y1, y2;
+    float start = 0.0f, finish = 1.0f;
+
 
     private GameObject Cha;
 
@@ -85,7 +86,13 @@ public class DoJump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isJump == true) {
+            if (start >= finish) {
+                isJump = false;
+                start = 0.0f;
+            }
+            start += Time.deltaTime;
+        } 
     }
 
     private void Jump() {
@@ -93,7 +100,7 @@ public class DoJump : MonoBehaviour
 
         if (isJump == false)
         {
-            //isJump = true;
+            isJump = true;
             Character.GetComponent<Rigidbody>().AddForce(0, 0.02f, 0);
             
         }
