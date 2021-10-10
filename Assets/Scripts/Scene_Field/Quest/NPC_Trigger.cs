@@ -29,7 +29,7 @@ public class NPC_Trigger : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         Dialog.SetActive(false);
-       
+        MainNpcTalk.SetActive(false);
     }
 }
 
