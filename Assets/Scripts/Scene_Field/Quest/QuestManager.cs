@@ -108,6 +108,10 @@ public class QuestManager : MonoBehaviour
         
         M5.interactable = true;
     }
+    public void Hidden1QuestOpen()
+    {
+        H1.interactable = true;
+    }
     public void Complete()
 	{
         CompleteStamp.gameObject.SetActive(true);
