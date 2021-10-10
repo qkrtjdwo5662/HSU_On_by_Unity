@@ -6,8 +6,22 @@ using UnityEngine.UI;
 public class QuestManager : MonoBehaviour
 {
     public int questId;
-    public InputField No_1_quiz_answer, question2;
-   
+    //NPC1 Quiz
+    public InputField NPC_1_Quiz_1_Answer;
+    public Image right1;
+    public Image Wrong1;
+
+    public InputField question2;
+
+    //NPC4 Quiz
+    public InputField NPC_4_Quiz_1_Answer, NPC_4_Quiz_2_Answer, NPC_4_Quiz_3_Answer;
+    public Image Right41;
+    public Image Right42;
+    public Image Right43;
+    public Image Wrong41;
+    public Image Wrong42;
+    public Image Wrong43;
+    //NPC4 Quiz end
 
     public Button M1;
     public Button M2;
@@ -21,8 +35,7 @@ public class QuestManager : MonoBehaviour
     public Button H4;
     public Button H5;
     public Button Submit;
-    public Image right1;
-    public Image Wrong1;
+    
 
     public Image right4;
     public Image Wrong4;
@@ -51,10 +64,12 @@ public class QuestManager : MonoBehaviour
         H4.interactable = false;
         H5.interactable = false;
     }
-    public void No_1_Quiz()
+
+    //NPC1 Quiz
+    public void NPC_1_Quiz()
     {
 
-            if (No_1_quiz_answer.text == "1234")
+            if (NPC_1_Quiz_1_Answer.text == "4268")
             {
                 right1.gameObject.SetActive(true);
             }
@@ -62,11 +77,52 @@ public class QuestManager : MonoBehaviour
             {
                 Wrong1.gameObject.SetActive(true);
             }
-       
-            
-
 
     }
+
+    //NPC4 Quiz
+    public void NPC_4_Quiz_1()
+    {
+
+        if (NPC_4_Quiz_1_Answer.text == "2")
+        {
+            Right41.gameObject.SetActive(true);
+        }
+        else
+        {
+            Wrong41.gameObject.SetActive(true);
+        }
+
+    }
+    public void NPC_4_Quiz_2()
+    {
+
+        if (NPC_4_Quiz_2_Answer.text == "1")
+        {
+            Right42.gameObject.SetActive(true);
+        }
+        else
+        {
+            Wrong42.gameObject.SetActive(true);
+        }
+
+    }
+    public void NPC_4_Quiz_3()
+    {
+
+        if (NPC_4_Quiz_3_Answer.text == "4")
+        {
+            Right43.gameObject.SetActive(true);
+        }
+        else
+        {
+            Wrong43.gameObject.SetActive(true);
+        }
+
+    }
+    //NPC4 Quiz end
+
+
     public void Quiz3Button()
     {
         if (question2.text == "박성재")
