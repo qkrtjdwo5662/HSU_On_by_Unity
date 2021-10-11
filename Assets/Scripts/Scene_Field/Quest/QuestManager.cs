@@ -13,6 +13,11 @@ public class QuestManager : MonoBehaviour
 
     public InputField question2;
 
+    //NPC Chicken Quiz
+    public InputField NPC_Chicken_Answer;
+    public Image right2;
+    public Image Wrong2;
+    public Image HcompletStamp;
     //NPC4 Quiz
     public InputField NPC_4_Quiz_1_Answer, NPC_4_Quiz_2_Answer, NPC_4_Quiz_3_Answer;
     public Image Right41;
@@ -81,6 +86,18 @@ public class QuestManager : MonoBehaviour
 
     }
 
+    //NPC Chicken Quiz
+    public void NPC_Chicken_Quiz()
+    {
+        if(NPC_Chicken_Answer.text == "I'm not a chicken")
+        {
+            right2.gameObject.SetActive(true);
+        }
+        else
+        {
+            Wrong2.gameObject.SetActive(true);
+        }
+    }
     //NPC4 Quiz
     public void NPC_4_Quiz_1()
     {
@@ -178,7 +195,10 @@ public class QuestManager : MonoBehaviour
 	}
 
   
-
+    public void CompleteH2()
+    {
+        HcompletStamp.gameObject.SetActive(true);
+    }
    
 
     void GenerateData()

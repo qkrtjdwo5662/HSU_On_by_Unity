@@ -16,7 +16,7 @@ public class Bomul_Trigger : MonoBehaviour
         if (other.tag == "Player")
         {
             Bomul.SetActive(true);
-            
+            BomulSub.SetActive(true);
             
             
           
@@ -29,7 +29,7 @@ public class Bomul_Trigger : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         Bomul.SetActive(false);
-        
+        BomulSub.SetActive(false);
     }
 }
 
