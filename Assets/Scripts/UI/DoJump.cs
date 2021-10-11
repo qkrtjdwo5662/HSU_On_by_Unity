@@ -10,7 +10,7 @@ public class DoJump : MonoBehaviour
     [SerializeField]
     private Button btn;
     private bool isJump;
-    float start = 0.0f, finish = 1.0f;
+    float start = 0.0f, finish = 0.8f;
 
 
     private GameObject Cha;
