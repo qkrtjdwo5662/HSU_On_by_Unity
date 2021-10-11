@@ -76,6 +76,7 @@ public class QuestManager : MonoBehaviour
             else
             {
                 Wrong1.gameObject.SetActive(true);
+                NPC_1_Quiz_1_Answer.text = "";
             }
 
     }
@@ -91,6 +92,7 @@ public class QuestManager : MonoBehaviour
         else
         {
             Wrong41.gameObject.SetActive(true);
+            NPC_4_Quiz_1_Answer.text = "";
         }
 
     }
@@ -104,6 +106,7 @@ public class QuestManager : MonoBehaviour
         else
         {
             Wrong42.gameObject.SetActive(true);
+            NPC_4_Quiz_2_Answer.text = "";
         }
 
     }
@@ -117,6 +120,7 @@ public class QuestManager : MonoBehaviour
         else
         {
             Wrong43.gameObject.SetActive(true);
+            NPC_4_Quiz_3_Answer.text = "";
         }
 
     }
