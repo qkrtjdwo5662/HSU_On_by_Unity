@@ -12,7 +12,14 @@ public class QuestManager : MonoBehaviour
     public Image Wrong1;
 
     public InputField question2;
-
+    //NPC5 Quiz
+    public InputField NPC_5_Quiz_1_Answer, NPC_5_Quiz_2_Answer, NPC_5_Quiz_3_Answer;
+    public Image right5;
+    public Image Wrong5;
+    public Image right6;
+    public Image Wrong6;
+    public Image right7;
+    public Image Wrong7;
     //NPC Chicken Quiz
     public InputField NPC_Chicken_Answer;
     public Image right2;
@@ -40,6 +47,7 @@ public class QuestManager : MonoBehaviour
     public Text H2Text;
     public Button H3;
     public Button H4;
+    public Text H4Text;
     public Button H5;
     public Button Submit;
     
@@ -146,7 +154,43 @@ public class QuestManager : MonoBehaviour
     }
     //NPC4 Quiz end
 
-
+    //NPC5 Quiz
+    public void NPC_5_Quiz_1()
+    {
+        if(NPC_5_Quiz_1_Answer.text == "25")
+        {
+            right5.gameObject.SetActive(true);
+        }
+        else
+        {
+            Wrong5.gameObject.SetActive(true);
+            NPC_5_Quiz_1_Answer.text = "";
+        }
+    }
+    public void NPC_5_Quiz_2()
+    {
+        if (NPC_5_Quiz_2_Answer.text == "낙산멍멍")
+        {
+            right6.gameObject.SetActive(true);
+        }
+        else
+        {
+            Wrong6.gameObject.SetActive(true);
+            NPC_5_Quiz_2_Answer.text = "";
+        }
+    }
+    public void NPC_5_Quiz_3()
+    {
+        if (NPC_5_Quiz_3_Answer.text == "학생원스톱지원센터")
+        {
+            right7.gameObject.SetActive(true);
+        }
+        else
+        {
+            Wrong7.gameObject.SetActive(true);
+            NPC_5_Quiz_3_Answer.text = "";
+        }
+    }
     public void Quiz3Button()
     {
         if (question2.text == "박성재")
@@ -208,6 +252,7 @@ public class QuestManager : MonoBehaviour
     public void Hidden4QuestOpen()
     {
         H4.interactable = true;
+        H4Text.text = "선물상자 열기";
     }
     public void Hidden5QuestOpen()
     {
