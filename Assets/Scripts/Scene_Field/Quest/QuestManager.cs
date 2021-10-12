@@ -35,7 +35,9 @@ public class QuestManager : MonoBehaviour
     public Button M5;
 
     public Button H1;
+    public Text H1Text;
     public Button H2;
+    public Text H2Text;
     public Button H3;
     public Button H4;
     public Button H5;
@@ -63,7 +65,7 @@ public class QuestManager : MonoBehaviour
         M4.interactable = false;
         M5.interactable = false;
 
-        H1.interactable = true;
+        H1.interactable = false;
         H2.interactable = false;
         H3.interactable = false;
         H4.interactable = false;
@@ -96,6 +98,7 @@ public class QuestManager : MonoBehaviour
         else
         {
             Wrong2.gameObject.SetActive(true);
+            NPC_Chicken_Answer.text = "";
         }
     }
     //NPC4 Quiz
@@ -188,7 +191,29 @@ public class QuestManager : MonoBehaviour
     public void Hidden1QuestOpen()
     {
         H1.interactable = true;
+        H1Text.text = "꼬꼬&꾸꾸 밥 주기";
     }
+    
+
+    public void Hidden2QuestOpen()
+    {
+        H2.interactable = true;
+        H2Text.text = "그라지에 메뉴 맞추기";
+    }
+   
+    public void Hidden3QuestOpen()
+    {
+        H3.interactable = true;
+    }
+    public void Hidden4QuestOpen()
+    {
+        H4.interactable = true;
+    }
+    public void Hidden5QuestOpen()
+    {
+        H5.interactable = true;
+    }
+
     public void Complete()
 	{
         CompleteStamp.gameObject.SetActive(true);
