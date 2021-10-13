@@ -17,6 +17,7 @@ public class gotoSangSangPark : MonoBehaviour
     void Start()
     {
         
+
         if (Character = GameObject.Find("Boy(Clone)"))
         {
             PV = Character.GetPhotonView();
@@ -103,9 +104,11 @@ public class gotoSangSangPark : MonoBehaviour
         
         if (other.tag == "Player")
         {
-            fade = true;
-            
-                
+            if (PV.IsMine)
+            {
+                fade = true;
+
+            }
             
         }
         
@@ -119,27 +122,30 @@ public class gotoSangSangPark : MonoBehaviour
     private void Update()
     {
 
-        if (fade == true)
+        if (PV.IsMine)
         {
-            if (start <= 1.0f)
+            if (fade == true)
             {
-                im.color += new Color(0, 0, 0, Time.deltaTime);
+                if (start <= 1.0f)
+                {
+                    im.color += new Color(0, 0, 0, Time.deltaTime);
+                }
+                else if (start > 1.0f && start < 1.1f)
+                {
+                    Character.GetComponent<Transform>().position = new Vector3(-350, 1.75f, 71);
+                }
+                else if (start >= 1.1f && start <= finish)
+                {
+                    im.color -= new Color(0, 0, 0, Time.deltaTime);
+                }
+                else if (start > finish)
+                {
+                    start = 0.0f;
+                    fade = false;
+                }
+                start += Time.deltaTime;
             }
-            else if (start > 1.0f && start < 1.1f) {
-                Character.GetComponent<Transform>().position = new Vector3(-350, 1.75f, 71);
-            }
-            else if (start >= 1.1f && start <= finish)
-            {
-                im.color -= new Color(0, 0, 0, Time.deltaTime);
-            }
-            else if (start > finish)
-            {
-                start = 0.0f;
-                fade = false;
-            }
-            start += Time.deltaTime;
         }
-        
     }
 }
 

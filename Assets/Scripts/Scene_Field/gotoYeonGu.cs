@@ -99,10 +99,14 @@ public class gotoYeonGu : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-
         if (other.tag == "Player")
         {
-            fade = true;
+            if (PV.IsMine)
+            {
+                fade = true;
+
+            }
+
         }
 
     }
@@ -115,26 +119,29 @@ public class gotoYeonGu : MonoBehaviour
     private void Update()
     {
 
-        if (fade == true)
+        if (PV.IsMine)
         {
-            if (start <= 1.0f)
+            if (fade == true)
             {
-                im.color += new Color(0, 0, 0, Time.deltaTime);
+                if (start <= 1.0f)
+                {
+                    im.color += new Color(0, 0, 0, Time.deltaTime);
+                }
+                else if (start > 1.0f && start < 1.1f)
+                {
+                    Character.GetComponent<Transform>().position = new Vector3(-77.9f, 9.75f, 3.03f);
+                }
+                else if (start >= 1.1f && start <= finish)
+                {
+                    im.color -= new Color(0, 0, 0, Time.deltaTime);
+                }
+                else if (start > finish)
+                {
+                    start = 0.0f;
+                    fade = false;
+                }
+                start += Time.deltaTime;
             }
-            else if (start > 1.0f && start < 1.1f)
-            {
-                Character.GetComponent<Transform>().position = new Vector3(-77.9f, 9.75f, 3.03f);
-            }
-            else if (start >= 1.1f && start <= finish)
-            {
-                im.color -= new Color(0, 0, 0, Time.deltaTime);
-            }
-            else if (start > finish)
-            {
-                start = 0.0f;
-                fade = false;
-            }
-            start += Time.deltaTime;
         }
 
     }
