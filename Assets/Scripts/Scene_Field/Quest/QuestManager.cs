@@ -51,6 +51,7 @@ public class QuestManager : MonoBehaviour
     public Button H2;
     public Text H2Text;
     public Button H3;
+    public Text H3Text;
     public Button H4;
     public Text H4Text;
     public Button H5;
@@ -282,6 +283,7 @@ public class QuestManager : MonoBehaviour
     public void Hidden3QuestOpen()
     {
         H3.interactable = true;
+        H3Text.text = "기념 사진 촬영하기";
     }
     public void Hidden4QuestOpen()
     {
