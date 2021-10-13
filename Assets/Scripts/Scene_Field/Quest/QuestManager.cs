@@ -12,6 +12,7 @@ public class QuestManager : MonoBehaviour
     public Image Wrong1;
 
     public InputField question2;
+
     //NPC5 Quiz
     public InputField NPC_5_Quiz_1_Answer, NPC_5_Quiz_2_Answer, NPC_5_Quiz_3_Answer;
     public Image right5;
@@ -20,11 +21,14 @@ public class QuestManager : MonoBehaviour
     public Image Wrong6;
     public Image right7;
     public Image Wrong7;
+    //NPC5 Quiz end
+
     //NPC Chicken Quiz
     public InputField NPC_Chicken_Answer;
     public Image right2;
     public Image Wrong2;
     public Image HcompletStamp;
+
     //NPC4 Quiz
     public InputField NPC_4_Quiz_1_Answer, NPC_4_Quiz_2_Answer, NPC_4_Quiz_3_Answer;
     public Image Right41;
@@ -116,6 +120,7 @@ public class QuestManager : MonoBehaviour
         if (NPC_4_Quiz_1_Answer.text == "2")
         {
             Right41.gameObject.SetActive(true);
+            NPC_4_Quiz_1_Answer.text = "";
         }
         else
         {
@@ -130,6 +135,7 @@ public class QuestManager : MonoBehaviour
         if (NPC_4_Quiz_2_Answer.text == "1")
         {
             Right42.gameObject.SetActive(true);
+            NPC_4_Quiz_2_Answer.text = "";
         }
         else
         {
@@ -144,6 +150,7 @@ public class QuestManager : MonoBehaviour
         if (NPC_4_Quiz_3_Answer.text == "4")
         {
             Right43.gameObject.SetActive(true);
+            NPC_4_Quiz_3_Answer.text = "";
         }
         else
         {
@@ -160,6 +167,7 @@ public class QuestManager : MonoBehaviour
         if(NPC_5_Quiz_1_Answer.text == "25")
         {
             right5.gameObject.SetActive(true);
+            NPC_5_Quiz_1_Answer.text = "";
         }
         else
         {
@@ -172,6 +180,7 @@ public class QuestManager : MonoBehaviour
         if (NPC_5_Quiz_2_Answer.text == "낙산멍멍")
         {
             right6.gameObject.SetActive(true);
+            NPC_5_Quiz_2_Answer.text = "";
         }
         else
         {
@@ -184,6 +193,7 @@ public class QuestManager : MonoBehaviour
         if (NPC_5_Quiz_3_Answer.text == "학생원스톱지원센터")
         {
             right7.gameObject.SetActive(true);
+            NPC_5_Quiz_3_Answer.text = "";
         }
         else
         {
@@ -191,6 +201,8 @@ public class QuestManager : MonoBehaviour
             NPC_5_Quiz_3_Answer.text = "";
         }
     }
+    //NPC5 Quiz end
+
     public void Quiz3Button()
     {
         if (question2.text == "박성재")
