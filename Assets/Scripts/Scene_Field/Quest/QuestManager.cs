@@ -103,9 +103,10 @@ public class QuestManager : MonoBehaviour
     //NPC Chicken Quiz
     public void NPC_Chicken_Quiz()
     {
-        if(NPC_Chicken_Answer.text == "I'm not a chicken")
+        if(NPC_Chicken_Answer.text == "chicken")
         {
             right2.gameObject.SetActive(true);
+            NPC_Chicken_Answer.text = "";
         }
         else
         {
@@ -177,7 +178,7 @@ public class QuestManager : MonoBehaviour
     }
     public void NPC_5_Quiz_2()
     {
-        if (NPC_5_Quiz_2_Answer.text == "낙산멍멍")
+        if (NPC_5_Quiz_2_Answer.text == "낙산멍이")
         {
             right6.gameObject.SetActive(true);
             NPC_5_Quiz_2_Answer.text = "";
