@@ -37,6 +37,7 @@ public class QuestManager : MonoBehaviour
     public Image Wrong41;
     public Image Wrong42;
     public Image Wrong43;
+
     //NPC4 Quiz end
 
     public Button M1;
@@ -53,7 +54,13 @@ public class QuestManager : MonoBehaviour
     public Button H4;
     public Text H4Text;
     public Button H5;
+    public Text H5Text;
     public Button Submit;
+
+    //NPC FoodZone Quiz
+    public InputField NPC_Food_Answer;
+    public Image right8;
+    public Image Wrong8;
     
 
     public Image right4;
@@ -112,6 +119,20 @@ public class QuestManager : MonoBehaviour
         {
             Wrong2.gameObject.SetActive(true);
             NPC_Chicken_Answer.text = "";
+        }
+    }
+    //NPC FoodZone Quiz
+    public void NPC_Food_Quiz()
+    {
+        if (NPC_Food_Answer.text == "70500")
+        {
+            right8.gameObject.SetActive(true);
+            NPC_Food_Answer.text = "";
+        }
+        else
+        {
+            Wrong8.gameObject.SetActive(true);
+            NPC_Food_Answer.text = "";
         }
     }
     //NPC4 Quiz
@@ -270,6 +291,7 @@ public class QuestManager : MonoBehaviour
     public void Hidden5QuestOpen()
     {
         H5.interactable = true;
+        H5Text.text = "매출액 계산하기";
     }
 
     public void Complete()
