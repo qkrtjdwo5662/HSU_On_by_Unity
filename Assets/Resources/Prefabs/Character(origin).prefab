@@ -7930,7 +7930,7 @@ GameObject:
   - component: {fileID: 6464353393720676805}
   - component: {fileID: 8841147587133253595}
   m_Layer: 0
-  m_Name: Character
+  m_Name: Character(origin)
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

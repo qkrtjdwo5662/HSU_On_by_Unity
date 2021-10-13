@@ -6,124 +6,42 @@ using UnityEngine.UI;
 public class gotoSangSangPark : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject Character;
-    int cheak = 0;
-    public Image im;
-    private PhotonView PV;
+
+
+    //public Image im;
+    
+    bool go = false;
 
     public float start = 0.0f;
     float finish = 2.1f;
     public bool fade = false;
+
     void Start()
     {
         
 
-        if (Character = GameObject.Find("Boy(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if(PV.IsMine)
-                cheak = 1;
-        }
-        else if (Character = GameObject.Find("Girl(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-        }
-        else if (Character = GameObject.Find("Boy2(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-        }
-        else if (Character = GameObject.Find("Girl2(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-
-        }
-        else if (Character = GameObject.Find("Boy3(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-        }
-        else if (Character = GameObject.Find("Girl3(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-        }
-        else if (Character = GameObject.Find("Boy4(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-        }
-        else if (Character = GameObject.Find("Girl4(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-        }
-        else if (Character = GameObject.Find("Boy5(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-        }
-        else if (Character = GameObject.Find("Girl5(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-        }
-        else if (Character = GameObject.Find("Bono(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-        }
-        else if (Character = GameObject.Find("Ghost(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-        }
-        else if (Character = GameObject.Find("Dora(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-        }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        
         if (other.tag == "Player")
         {
-            if (PV.IsMine)
-            {
-                fade = true;
+            other.GetComponent<Transform>().position = new Vector3(-352f, 1.75f, 72f);
 
-            }
-            
         }
-        
+
     }
 
+   
     // Update is called once per frame
     void OnTriggerExit(Collider other)
     {
-        
+
     }
     private void Update()
     {
 
-        if (PV.IsMine)
-        {
+        /*
             if (fade == true)
             {
                 if (start <= 1.0f)
@@ -132,7 +50,7 @@ public class gotoSangSangPark : MonoBehaviour
                 }
                 else if (start > 1.0f && start < 1.1f)
                 {
-                    Character.GetComponent<Transform>().position = new Vector3(-350, 1.75f, 71);
+                    //GetComponent<Transform>().position = new Vector3(-352f, 1.75f, 72f);
                 }
                 else if (start >= 1.1f && start <= finish)
                 {
@@ -145,7 +63,8 @@ public class gotoSangSangPark : MonoBehaviour
                 }
                 start += Time.deltaTime;
             }
-        }
+        */
     }
 }
+    
 

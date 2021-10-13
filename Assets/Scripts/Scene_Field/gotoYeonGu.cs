@@ -6,111 +6,32 @@ using UnityEngine.UI;
 public class gotoYeonGu : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject Character;
-    int cheak = 0;
-    public Image im;
-    public PhotonView PV;
+   
+    //public Image im;
+    
 
     public float start = 0.0f;
     float finish = 2.1f;
     public bool fade = false;
+
+    
     void Start()
     {
-        if (Character = GameObject.Find("Boy(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-        }
-        else if (Character = GameObject.Find("Girl(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-        }
-        else if (Character = GameObject.Find("Boy2(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-        }
-        else if (Character = GameObject.Find("Girl2(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-
-        }
-        else if (Character = GameObject.Find("Boy3(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-        }
-        else if (Character = GameObject.Find("Girl3(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-        }
-        else if (Character = GameObject.Find("Boy4(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-        }
-        else if (Character = GameObject.Find("Girl4(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-        }
-        else if (Character = GameObject.Find("Boy5(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-        }
-        else if (Character = GameObject.Find("Girl5(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-        }
-        else if (Character = GameObject.Find("Bono(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-        }
-        else if (Character = GameObject.Find("Ghost(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-        }
-        else if (Character = GameObject.Find("Dora(Clone)"))
-        {
-            PV = Character.GetPhotonView();
-            if (PV.IsMine)
-                cheak = 1;
-        }
+        
+        
+           
+        
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            if (PV.IsMine)
-            {
-                fade = true;
-
-            }
-
+            other.GetComponent<Transform>().position = new Vector3(-77.9f, 9.75f, 3.03f);
         }
 
     }
-
+   
     // Update is called once per frame
     void OnTriggerExit(Collider other)
     {
@@ -119,9 +40,8 @@ public class gotoYeonGu : MonoBehaviour
     private void Update()
     {
 
-        if (PV.IsMine)
-        {
-            if (fade == true)
+       
+            /*if (fade == true )
             {
                 if (start <= 1.0f)
                 {
@@ -129,7 +49,7 @@ public class gotoYeonGu : MonoBehaviour
                 }
                 else if (start > 1.0f && start < 1.1f)
                 {
-                    Character.GetComponent<Transform>().position = new Vector3(-77.9f, 9.75f, 3.03f);
+                    //GetComponent<Transform>().position = new Vector3(-77.9f, 9.75f, 3.03f);
                 }
                 else if (start >= 1.1f && start <= finish)
                 {
@@ -142,7 +62,7 @@ public class gotoYeonGu : MonoBehaviour
                 }
                 start += Time.deltaTime;
             }
-        }
+        */
 
     }
 }
