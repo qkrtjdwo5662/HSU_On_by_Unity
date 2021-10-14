@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,7 +14,7 @@ public class Bomul_Trigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && other.GetComponent<PhotonView>().IsMine)
         {
             Bomul.SetActive(true);
             BomulSub.SetActive(true);
