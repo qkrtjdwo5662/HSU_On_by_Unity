@@ -7,22 +7,20 @@ public class NPC_Trigger : MonoBehaviour
 {
     public GameObject Dialog;
     public GameObject MainNpcTalk;
-  
     
    
 
     void OnTriggerEnter(Collider other)
     {
+
         if (other.tag == "Player")
         {
             Dialog.SetActive(true);
-
             MainNpcTalk.SetActive(true);
-            
-          
-            
         }
-    }
+			
+	}
+	
 
    
     // Update is called once per frame
