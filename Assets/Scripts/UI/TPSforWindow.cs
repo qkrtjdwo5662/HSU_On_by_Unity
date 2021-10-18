@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class TPSforWindow : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -20,13 +20,18 @@ public class TPSforWindow : MonoBehaviour
     private bool isJump;
     float start = 0.0f, finish = 0.8f;
 
-    PhotonView PV;
+    bool SetMouseMod = true;
+    float camTurnSpeed = 2.0f;
 
+    private float xRotate = 0.0f; 
+
+    PhotonView PV;
+    public InputField input;
     Animator animator;
     // Start is called before the first frame update
     void Awake()
     {
-       
+        Cursor.visible = false;
         PV = GetComponent<PhotonView>();
     }
 
@@ -40,7 +45,7 @@ public class TPSforWindow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PV.IsMine)
+        if (PV.IsMine && SetMouseMod)
         {
             Vector2 moveInput = Vector2.zero;
 
@@ -108,7 +113,7 @@ public class TPSforWindow : MonoBehaviour
                 // 이동
                 transform.position += moveDir * Time.deltaTime * movingSpeed;
             }
-
+            Vision();
         }
 
         if (isJump == true)
@@ -120,9 +125,62 @@ public class TPSforWindow : MonoBehaviour
             }
             start += Time.deltaTime;
         }
+        /*if (Input.GetKeyDown(KeyCode.LeftAlt))
+        {
+            //_ = (SetMouseMod == true) ? SetMouseMod = false : SetMouseMod = true;
+            SetMouseMod = false;
+            Cursor.visible = true;
 
+
+        }
+        if (Input.GetKeyUp(KeyCode.LeftAlt))
+        {
+            //_ = (SetMouseMod == true) ? SetMouseMod = false : SetMouseMod = true;
+            SetMouseMod = true;
+            Cursor.visible = false;
+
+        }*/
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            if (SetMouseMod == true)
+            {
+                SetMouseMod = false;
+                Cursor.visible = true;
+               
+            }
+            else {
+                SetMouseMod = true;
+                Cursor.visible = false;
+               
+            }
+
+        }
+        if (Input.GetKey(KeyCode.Return))
+        {
+            if (SetMouseMod == true)
+            {
+                SetMouseMod = false;
+                Cursor.visible = true;
+                input.ActivateInputField();
+            }
+            else
+            {
+                SetMouseMod = true;
+                Cursor.visible = false;
+                input.DeactivateInputField();
+            }
+        }
+    }
+    void Vision() 
+    {
+        float yRotateSize = Input.GetAxis("Mouse X") * camTurnSpeed;
+        float yRotate = cameraArm.transform.eulerAngles.y + yRotateSize;    
+        float xRotateSize = -Input.GetAxis("Mouse Y") * camTurnSpeed;
+            
+        xRotate = Mathf.Clamp(xRotate + xRotateSize, -15, 80);
+        cameraArm.transform.eulerAngles = new Vector3(xRotate, yRotate, 0);
+        
     }
 
-  
-
+    
 }

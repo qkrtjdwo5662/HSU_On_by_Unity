@@ -19,11 +19,14 @@ public class  ChatManager : MonoBehaviourPunCallbacks
     [SerializeField]
     public GameObject CM;
 
+    Speech sp;
     // Start is called before the first frame update
     void Start()
     {
         PhotonNetwork.IsMessageQueueRunning = true;
         scroll_rect = GameObject.FindObjectOfType<ScrollRect>();
+        sp = GameObject.Find("speechObject").GetComponent<Speech>();
+
         sendBtn.onClick.AddListener(SendButtonOnclicked);
     }
     private void Awake()
@@ -43,10 +46,10 @@ public class  ChatManager : MonoBehaviourPunCallbacks
         if(input.text.Equals("")) { Debug.Log("Empty"); return; }
         string msg = string.Format("[{0}] : {1}", PhotonNetwork.NickName, input.text);
         PV.RPC("ReceiveMsg", RpcTarget.OthersBuffered, msg);
-
+        sp.speechRun(input.text);
         ReceiveMsg(msg);
         input.ActivateInputField();
-        //input.text = "";
+        input.text = "";
 	}
     void Update()
 	{

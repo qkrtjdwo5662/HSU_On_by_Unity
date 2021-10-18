@@ -8,8 +8,8 @@ using UnityEngine.UI;
 public class Speech : MonoBehaviour
 {
     public GameObject CameraArm;
-    public Button send;
-    public InputField input;
+    //public Button send;
+    //public InputField input;
     public GameObject tm;
     public GameObject dialog;
     public float start = 0.0f;
@@ -17,16 +17,18 @@ public class Speech : MonoBehaviour
     public int cheak = 0;
 
     PhotonView PV;
-
+    
     // Start is called before the first frame update
     void Start()
     {
-        send = GameObject.Find("Send").GetComponent<Button>();
-        input = GameObject.Find("InputField").GetComponent<InputField>();
+        //send = GameObject.Find("Send").GetComponent<Button>();
+        //input = GameObject.Find("InputField").GetComponent<InputField>();
         PV = GetComponent<PhotonView>();
         CameraArm = GameObject.Find("Camera Arm");
+        
+        //send.onClick.AddListener(speechRun);
+        
 
-        send.onClick.AddListener(speechRun);
     }
 
     // Update is called once per frame
@@ -47,14 +49,14 @@ public class Speech : MonoBehaviour
     }
 
 
-    void speechRun() 
+    public void speechRun(string msg) 
     {
         if (PV.IsMine) {
-            PV.RPC("gotoTM", RpcTarget.Others, input.text);
-            gotoTM(input.text);
+            PV.RPC("gotoTM", RpcTarget.Others, msg);
+            gotoTM(msg);
             
         }
-        input.text = "";
+        
     }
     [PunRPC]
     void gotoTM(string text) 
