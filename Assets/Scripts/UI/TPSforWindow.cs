@@ -18,7 +18,11 @@ public class TPSforWindow : MonoBehaviour
     private GameObject character;
 
     private bool isJump;
-    float start = 0.0f, finish = 0.8f;
+    private bool escCool = true, enterCool = true;
+
+    float jumpStart = 0.0f, jumpFinish = 0.8f;
+    float escStart = 0.0f, escFinish = 0.25f;
+    float enterStart = 0.0f, enterFinish = 0.25f;
 
     bool SetMouseMod = true;
     float camTurnSpeed = 2.0f;
@@ -94,7 +98,7 @@ public class TPSforWindow : MonoBehaviour
                 if (isJump == false)
                 {
                     isJump = true;
-                    character.GetComponent<Rigidbody>().AddForce(0, 0.02f, 0);
+                    character.GetComponent<Rigidbody>().AddForce(0, 0.03f, 0);
 
                 }
             }
@@ -116,15 +120,7 @@ public class TPSforWindow : MonoBehaviour
             Vision();
         }
 
-        if (isJump == true)
-        {
-            if (start >= finish)
-            {
-                isJump = false;
-                start = 0.0f;
-            }
-            start += Time.deltaTime;
-        }
+        
         /*if (Input.GetKeyDown(KeyCode.LeftAlt))
         {
             //_ = (SetMouseMod == true) ? SetMouseMod = false : SetMouseMod = true;
@@ -140,7 +136,7 @@ public class TPSforWindow : MonoBehaviour
             Cursor.visible = false;
 
         }*/
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKey(KeyCode.Escape) && escCool)
         {
             if (SetMouseMod == true)
             {
@@ -155,7 +151,7 @@ public class TPSforWindow : MonoBehaviour
             }
 
         }
-        if (Input.GetKey(KeyCode.Return))
+        if (Input.GetKey(KeyCode.Return) && enterCool)
         {
             if (SetMouseMod == true)
             {
@@ -170,6 +166,35 @@ public class TPSforWindow : MonoBehaviour
                 input.DeactivateInputField();
             }
         }
+
+        if (isJump == true)
+        {
+            if (jumpStart >= jumpFinish)
+            {
+                isJump = false;
+                jumpStart = 0.0f;
+            }
+            jumpStart += Time.deltaTime;
+        }
+        if (enterCool == false)
+        {
+            if (enterStart >= enterFinish)
+            {
+                enterCool = true;
+                enterStart = 0.0f;
+            }
+            enterStart += Time.deltaTime;
+        }
+        if (escCool == false)
+        {
+            if (escStart >= escFinish)
+            {
+                escCool = true;
+                escStart = 0.0f;
+            }
+            escStart += Time.deltaTime;
+        }
+
     }
     void Vision() 
     {

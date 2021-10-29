@@ -8,6 +8,7 @@ public class Scene2Manager : MonoBehaviour
 
     void Start()
     {
+        /*
         gm = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
         if(gm.userType == "1")
         {
@@ -20,6 +21,7 @@ public class Scene2Manager : MonoBehaviour
         {
             Debug.Log("학생 로그인");
         }
+        */
     }
 
     // Update is called once per frame

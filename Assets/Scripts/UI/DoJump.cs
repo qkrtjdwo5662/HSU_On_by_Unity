@@ -101,7 +101,7 @@ public class DoJump : MonoBehaviour
         if (isJump == false)
         {
             isJump = true;
-            Character.GetComponent<Rigidbody>().AddForce(0, 0.02f, 0);
+            Character.GetComponent<Rigidbody>().AddForce(0, 0.03f, 0);
             
         }
     }
