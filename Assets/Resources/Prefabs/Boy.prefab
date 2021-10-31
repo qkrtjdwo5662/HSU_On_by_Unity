@@ -473,8 +473,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraArm: {fileID: 0}
-  send: {fileID: 0}
-  input: {fileID: 0}
   tm: {fileID: 1880855775549144021}
   dialog: {fileID: 8306212260221060578}
   start: 0
