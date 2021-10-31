@@ -143,7 +143,15 @@ public class Join : MonoBehaviourPunCallbacks
         Debug.Log("email:" + email + ",password:" + password);
 
         LoginUser();
-        //LoginNext();
+        if (loginFlag)
+        {
+            loginResult.text = "로그인 성공";
+        }
+        else
+        {
+            loginResult.text = "로그인 실패 : 이메일과 비밀번호를 확인해 주세요";
+        }
+            //LoginNext();
     }
 
     void LoginUser()
@@ -153,13 +161,11 @@ public class Join : MonoBehaviourPunCallbacks
             if (task.IsCanceled)
             {
                 Debug.LogError("SignInWithEmailAndPasswordAsync was cnaceled.");
-                loginResult.text = "로그인 실패";
                 return;
             }
             if (task.IsFaulted)
             {
                 Debug.LogError("SignInWithEmailAndPasswordAsync encountered an error:" + task.Exception);
-                loginResult.text = "로그인 실패";
                 return;
             }
            
@@ -178,7 +184,7 @@ public class Join : MonoBehaviourPunCallbacks
             
            
         });
-        loginResult.text = "로그인 성공";
+        
     }
 
     public  void LoginNext()
