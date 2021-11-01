@@ -30,6 +30,16 @@ public class Join : MonoBehaviourPunCallbacks
     [SerializeField] string name;
     [SerializeField] string dept;
     [SerializeField] string stdID;
+    [SerializeField] bool M1 = false;
+    [SerializeField] bool M2 = false;
+    [SerializeField] bool M3 = false;
+    [SerializeField] bool M4 = false;
+    [SerializeField] bool M5 = false;
+    [SerializeField] bool H1 = false;
+    [SerializeField] bool H2 = false;
+    [SerializeField] bool H3 = false;
+    [SerializeField] bool H4 = false;
+    [SerializeField] bool H5 = false;
 
     public InputField inputTextEmail;
     public InputField inputTextPassword;
@@ -52,7 +62,7 @@ public class Join : MonoBehaviourPunCallbacks
     private void Start()
     {
         FirebaseApp.DefaultInstance.Options.DatabaseUrl =
-                   new System.Uri("https://hsu-on-default-rtdb.firebaseio.com/");
+                   new System.Uri("https://hsu-on-festival-default-rtdb.firebaseio.com/");
 
         // 파이어베이스의 메인 참조 얻기
         reference = FirebaseDatabase.DefaultInstance.RootReference;   
@@ -84,16 +94,17 @@ public class Join : MonoBehaviourPunCallbacks
         name = inputName.text;
         dept = inputDept.text;
         stdID = inputStdId.text;
-        Debug.Log("email:" + email + ",password:" + password);
 
-        JoinInfoText.text = "회원가입 성공";
+        Debug.Log("email:" + email + ",password:" + password);
 
 
         CreateUser();
+  
     }
 
     void CreateUser()
     {
+
         auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
         {
             if (task.IsCanceled)
@@ -113,13 +124,12 @@ public class Join : MonoBehaviourPunCallbacks
             Firebase.Auth.FirebaseUser newUser = task.Result;
             Debug.LogFormat("Firebase user created successfully: {0}({1})",
                 newUser.DisplayName, newUser.UserId);
-            joinResult.text = "회원가입 성공";
             Debug.Log("회원가입 성공");
-            user = new JoinDB(email, password, name, dept, stdID);
+            user = new JoinDB(email, password, name, dept, stdID,M1, M2, M3, M4, M5, H1, H2, H3, H4, H5);
 
         
    
-            CreateUserWithJson(stdID, new JoinDB(email,password,name,dept,stdID));
+            CreateUserWithJson(stdID, new JoinDB(email,password,name,dept, stdID,M1, M2, M3, M4, M5, H1, H2, H3, H4, H5));
           
         });
 
@@ -128,11 +138,11 @@ public class Join : MonoBehaviourPunCallbacks
 
     public void  CreateUserWithJson(string _userID, JoinDB _userInfo)
     {
-        
+
         string data = JsonUtility.ToJson(_userInfo);
         Debug.Log(data);
         reference.Child("users").Child(_userInfo.stdID).SetRawJsonValueAsync(data);
-        
+
     }
 
     public void LoginBtnOnClick()
@@ -204,14 +214,34 @@ public class Join : MonoBehaviourPunCallbacks
         public string name;
         public string dept;
         public string stdID;
+        public bool M1;
+        public bool M2;
+        public bool M3;
+        public bool M4;
+        public bool M5;
+        public bool H1;
+        public bool H2;
+        public bool H3;
+        public bool H4;
+        public bool H5;
 
-        public JoinDB(string email,string password,string name,string dept,string stdID)
+        public JoinDB(string email,string password,string name,string dept,string stdID,bool M1, bool M2, bool M3, bool M4, bool M5, bool H1, bool H2, bool H3, bool H4, bool H5)
         {
             this.email = email;
             this.password = password;
             this.name = name;
             this.dept = dept;
             this.stdID = stdID;
+            this.M1 = M1;
+           this.M2 = M2;
+            this.M3 = M3;
+            this.M4 = M4;
+            this.M5 = M5;
+            this.H1 = H1;
+            this.H2 = H2;
+            this.H3 = H3;
+            this.H4 = H4;
+            this.H5 = H5;
         }
 
         public Dictionary<string,object> ToDictionary()
@@ -221,7 +251,18 @@ public class Join : MonoBehaviourPunCallbacks
             dic["password"] = this.password;
             dic["name"] = this.name;
             dic["dept"] = this.dept;
-            dic["stdID"] = this.stdID;
+           dic["stdID"] = this.stdID;
+           dic["M1"] = this.M1;
+           dic["M2"] = this.M2;
+            dic["M3"] = this.M3;
+            dic["M4"] = this.M4;
+           dic["M5"] = this.M5;
+           dic["H1"] = this.H1;
+            dic["H2"] = this.H2;
+            dic["H3"] = this.H3;
+            dic["H4"] = this.H4;
+            dic["H5"] = this.H5;
+
             return dic;
         }
     }

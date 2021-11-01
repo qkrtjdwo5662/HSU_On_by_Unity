@@ -27,6 +27,6 @@ public class Next : MonoBehaviour
             NextButton.image.color += new Color(0,0,0,i);
         }*/
 
-        LoadingSceneController.Instance.LoadScene("Scene_Festival");
+        LoadingSceneController.Instance.LoadScene("Scene2");
     }
 }
