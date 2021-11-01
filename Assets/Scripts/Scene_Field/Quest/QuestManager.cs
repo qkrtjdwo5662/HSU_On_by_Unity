@@ -79,6 +79,10 @@ public class QuestManager : MonoBehaviour
 
     void Start()
     {
+        //파이어베이스 스키마 가져올거임 m1~m5, h1~h5 까지 bool값으로 
+        
+        
+        
         M1.interactable = false;
         M2.interactable = false;
         M3.interactable = false;
@@ -99,6 +103,7 @@ public class QuestManager : MonoBehaviour
             if (NPC_1_Quiz_1_Answer.text == "4268")
             {
                 right1.gameObject.SetActive(true);
+                //파이어베이스 현재로그인된 계정으로 m1 스키마 true 바꾸는 코드 (수정)
             }
             else
             {
