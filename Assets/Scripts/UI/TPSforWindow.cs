@@ -55,27 +55,27 @@ public class TPSforWindow : MonoBehaviour
 
             if (Input.GetKey(KeyCode.W))
             {
-                transform.Translate(cameraArm.forward * movingSpeed * Time.deltaTime);
+                transform.Translate(cameraArm.forward * movingSpeed * Time.deltaTime, Space.World);
                 animator.SetBool("isMove",true);
                 moveInput += Vector2.up;
                
             }
             if (Input.GetKey(KeyCode.S))
             {
-                transform.Translate(cameraArm.forward * -movingSpeed * Time.deltaTime);
+                transform.Translate(cameraArm.forward * -movingSpeed * Time.deltaTime, Space.World);
                 animator.SetBool("isMove", true);
                 moveInput += Vector2.down;
 
             }
             if (Input.GetKey(KeyCode.D))
             {
-                transform.Translate(cameraArm.right * movingSpeed * Time.deltaTime);
+                transform.Translate(cameraArm.right * movingSpeed * Time.deltaTime, Space.World);
                 animator.SetBool("isMove", true);
                 moveInput += Vector2.right;
             }
             if (Input.GetKey(KeyCode.A))
             {
-                transform.Translate(cameraArm.right * -movingSpeed * Time.deltaTime);
+                transform.Translate(cameraArm.right * -movingSpeed * Time.deltaTime, Space.World);
                 animator.SetBool("isMove", true);
                 moveInput += Vector2.left;
 
