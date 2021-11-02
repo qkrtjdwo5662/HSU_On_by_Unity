@@ -81,7 +81,7 @@ public class TPSforWindow : MonoBehaviour
 
             }
             if (Input.GetKeyDown(KeyCode.Space)) {
-                movingSpeed = 5f;
+                movingSpeed = 5.0f;
                 animator.SetBool("isRun",true);
             }
             if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) {
@@ -98,6 +98,7 @@ public class TPSforWindow : MonoBehaviour
                 if (isJump == false)
                 {
                     isJump = true;
+                    animator.SetBool("isJump", true);
                     character.GetComponent<Rigidbody>().AddForce(0, 0.03f, 0);
 
                 }
@@ -172,6 +173,7 @@ public class TPSforWindow : MonoBehaviour
             if (jumpStart >= jumpFinish)
             {
                 isJump = false;
+                animator.SetBool("isJump", false);
                 jumpStart = 0.0f;
             }
             jumpStart += Time.deltaTime;
