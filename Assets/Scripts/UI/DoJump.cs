@@ -14,7 +14,7 @@ public class DoJump : MonoBehaviour
 
 
     private GameObject Cha;
-
+    private TPSCharacterController controller;
 
 
     private void Awake()
@@ -26,7 +26,7 @@ public class DoJump : MonoBehaviour
     {
         
         btn.onClick.AddListener(Jump);
-
+        /*
         if (Cha = GameObject.Find("Boy(Clone)"))
         {
             Character = Cha.GetComponent<Transform>();
@@ -81,6 +81,12 @@ public class DoJump : MonoBehaviour
         }
         //Cha = GameObject.Find("Character(Clone)");
         //Character = Cha.GetComponent<Transform>();
+        */
+        if (Cha = GameObject.Find("Male1"))
+        {
+            Character = Cha.GetComponent<Transform>();
+            controller = Cha.GetComponent<TPSCharacterController>();
+        }
     }
 
     // Update is called once per frame
@@ -89,8 +95,10 @@ public class DoJump : MonoBehaviour
         if (isJump == true) {
             if (start >= finish) {
                 isJump = false;
+                controller.animator.SetBool("isJump", false);
                 start = 0.0f;
             }
+
             start += Time.deltaTime;
         } 
     }
@@ -101,6 +109,7 @@ public class DoJump : MonoBehaviour
         if (isJump == false)
         {
             isJump = true;
+            controller.animator.SetBool("isJump", true);
             Character.GetComponent<Rigidbody>().AddForce(0, 0.03f, 0);
             
         }

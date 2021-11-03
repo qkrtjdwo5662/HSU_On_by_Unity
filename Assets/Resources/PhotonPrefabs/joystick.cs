@@ -124,6 +124,7 @@ public class joystick : MonoBehaviourPunCallbacks, IBeginDragHandler, IDragHandl
     void Start()
     {
         //Debug.Log("JoystickStart");
+        /*
         if (Character = GameObject.Find("Boy(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
@@ -173,6 +174,10 @@ public class joystick : MonoBehaviourPunCallbacks, IBeginDragHandler, IDragHandl
             controller = Character.GetComponent<TPSCharacterController>();
         }
         if (Character = GameObject.Find("Dora(Clone)"))
+        {
+            controller = Character.GetComponent<TPSCharacterController>();
+        }*/
+        if (Character = GameObject.Find("Male1"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }

@@ -19,7 +19,7 @@ public class TPSCharacterController : MonoBehaviour
     Rigidbody rb;
     PhotonView PV;
 
-    Animator animator;
+    public Animator animator;
     // Start is called before the first frame update
     void Awake()
 	{

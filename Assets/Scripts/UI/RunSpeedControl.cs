@@ -11,14 +11,17 @@ public class RunSpeedControl : MonoBehaviour, IPointerUpHandler, IPointerDownHan
     private GameObject Character;
     public void OnPointerDown(PointerEventData eventData)
     {
-        controller.movingSpeed = 10f;
+        controller.movingSpeed = 5.0f;
+       
         Debug.Log("ButtonDown" + controller.movingSpeed);
+
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        controller.movingSpeed = 5f;
-        Debug.Log("ButtonUp" + controller.movingSpeed);
+        controller.movingSpeed = 2.5f;
+        
+        
     }
 
     // Start is called before the first frame update
@@ -32,6 +35,7 @@ public class RunSpeedControl : MonoBehaviour, IPointerUpHandler, IPointerDownHan
 
     void Start()
     {
+        /*
         if (Character = GameObject.Find("Boy(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
@@ -84,9 +88,15 @@ public class RunSpeedControl : MonoBehaviour, IPointerUpHandler, IPointerDownHan
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-    
+        */
         //Character = GameObject.Find("Character(Clone)");
         //controller = Character.GetComponent<TPSCharacterController>();
+        if (Character = GameObject.Find("Male1"))
+        {
+            controller = Character.GetComponent<TPSCharacterController>();
+        }
+
+        
     }
 
     // Update is called once per frame
