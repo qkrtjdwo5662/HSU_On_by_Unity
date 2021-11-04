@@ -13,7 +13,7 @@ public class PlayerManager : MonoBehaviour, IPunObservable
 
 
     
-    UI ui;
+    Scene_newCharacter_Setting ui;
     void Awake()
     {
         PV = GetComponent<PhotonView>();
@@ -22,9 +22,9 @@ public class PlayerManager : MonoBehaviour, IPunObservable
     void Start()
 	{
         GameObject avatar;
-        if (avatar = GameObject.Find("Avatar"))
+        if (avatar = GameObject.Find("Setting"))
         {
-            ui = avatar.GetComponent<UI>();
+            ui = avatar.GetComponent<Scene_newCharacter_Setting>();
         }
         else
             Debug.Log("avatar is Null");
@@ -37,66 +37,74 @@ public class PlayerManager : MonoBehaviour, IPunObservable
 		}
 		else
 		{
-			if (ui.WhatisSex == 1)
+            if (ui.WhatSelected == 0)
+            {
+                CreateControllerBoy1();
+            }
+            if (ui.WhatSelected == 1)
 			{
-				CreateControllerBoy();
-			}
-			else if (ui.WhatisSex == 2)
+                CreateControllerBoy1();
+            }
+			else if (ui.WhatSelected == 2)
 			{
-				CreateControllerGirl();
-			}
-            else if (ui.WhatisSex == 3)
+                CreateControllerBoy1_1();
+            }
+            else if (ui.WhatSelected == 3)
             {
                 CreateControllerBoy2();
             }      
 
-            else if (ui.WhatisSex == 4)
+            else if (ui.WhatSelected == 4)
             {
-                CreateControllerGirl2();
+                CreateControllerBoy2_1();
             }
 
-            else if (ui.WhatisSex == 5)
+            else if (ui.WhatSelected == 5)
             {
                 CreateControllerBoy3();
             }
 
-            else if (ui.WhatisSex == 6)
+            else if (ui.WhatSelected == 6)
             {
-                CreateControllerGirl3();
+                CreateControllerBoy3_1();
             }
 
-            else if (ui.WhatisSex == 7)
+            else if (ui.WhatSelected == 7)
             {
                 CreateControllerBoy4();
             }
 
-            else if (ui.WhatisSex == 8)
+            else if (ui.WhatSelected == 8)
             {
-                CreateControllerGirl4();
+                CreateControllerBoy4_1();
             }
-            else if (ui.WhatisSex == 9)
+            else if (ui.WhatSelected == 9)
             {
-                CreateControllerBoy5();
-            }
-
-            else if (ui.WhatisSex == 10)
-            {
-                CreateControllerGirl5();
+                CreateControllergirl1();
             }
 
-            else if (ui.WhatisSex == 11)
+            else if (ui.WhatSelected == 10)
             {
-                CreateControllerBono();
+                CreateControllergirl1_1();
             }
 
-            else if (ui.WhatisSex == 12)
+            else if (ui.WhatSelected == 11)
             {
-                CreateControllerGhost();
+                CreateControllergirl3();
             }
 
-            else if (ui.WhatisSex == 13)
+            else if (ui.WhatSelected == 12)
             {
-                CreateControllerDora();
+                CreateControllergirl3_1();
+            }
+
+            else if (ui.WhatSelected == 13)
+            {
+                CreateControllergirl4();
+            }
+            else if (ui.WhatSelected == 14)
+            {
+                CreateControllergirl4_1();
             }
             Destroy(avatar);
 		}
@@ -105,106 +113,108 @@ public class PlayerManager : MonoBehaviour, IPunObservable
 
 	}
 	[PunRPC]
-    static void CreateControllerBoy()//플레이어 컨트롤러 만들기
+    static void CreateControllerBoy1()//플레이어 컨트롤러 만들기
     {
 
         Debug.Log("Instantiated Controller");
         //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
-        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Boy"), new Vector3 (83f,3f,18f), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Male1"), new Vector3 (83f,3f,18f), Quaternion.identity, 0);
     }
-    static void CreateControllerGirl()//플레이어 컨트롤러 만들기
+
+    static void CreateControllerBoy1_1()//플레이어 컨트롤러 만들기
     {
 
         Debug.Log("Instantiated Controller");
         //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
-        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Girl"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Male1_1"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
     }
-
     static void CreateControllerBoy2()//플레이어 컨트롤러 만들기
     {
 
         Debug.Log("Instantiated Controller");
         //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
-        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Boy2"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Male2"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
     }
-    static void CreateControllerGirl2()//플레이어 컨트롤러 만들기
+    static void CreateControllerBoy2_1()//플레이어 컨트롤러 만들기
     {
 
         Debug.Log("Instantiated Controller");
         //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
-        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Girl2"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Male2_1"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
     }
-
     static void CreateControllerBoy3()//플레이어 컨트롤러 만들기
     {
 
         Debug.Log("Instantiated Controller");
         //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
-        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Boy3"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Male3"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
     }
-    static void CreateControllerGirl3()//플레이어 컨트롤러 만들기
+
+    static void CreateControllerBoy3_1()//플레이어 컨트롤러 만들기
     {
 
         Debug.Log("Instantiated Controller");
         //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
-        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Girl3"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Male3_1"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
     }
-
     static void CreateControllerBoy4()//플레이어 컨트롤러 만들기
     {
 
         Debug.Log("Instantiated Controller");
         //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
-        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Boy4"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Male4"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
     }
-    static void CreateControllerGirl4()//플레이어 컨트롤러 만들기
+
+    static void CreateControllerBoy4_1()//플레이어 컨트롤러 만들기
     {
 
         Debug.Log("Instantiated Controller");
         //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
-        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Girl4"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Male4_1"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
     }
 
-    static void CreateControllerBoy5()//플레이어 컨트롤러 만들기
+    static void CreateControllergirl1()//플레이어 컨트롤러 만들기
     {
 
         Debug.Log("Instantiated Controller");
         //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
-        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Boy5"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Female1"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
     }
-    static void CreateControllerGirl5()//플레이어 컨트롤러 만들기
+    static void CreateControllergirl1_1()//플레이어 컨트롤러 만들기
     {
 
         Debug.Log("Instantiated Controller");
         //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
-        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Girl5"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Female1_1"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
     }
-
-    static void CreateControllerBono()//플레이어 컨트롤러 만들기
+    static void CreateControllergirl3()//플레이어 컨트롤러 만들기
     {
 
         Debug.Log("Instantiated Controller");
         //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
-        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Bono"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Female3"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
     }
-    static void CreateControllerGhost()//플레이어 컨트롤러 만들기
+    static void CreateControllergirl3_1()//플레이어 컨트롤러 만들기
     {
 
         Debug.Log("Instantiated Controller");
         //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
-        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Ghost"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Female3_1"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
     }
-    static void CreateControllerDora()//플레이어 컨트롤러 만들기
+    static void CreateControllergirl4()//플레이어 컨트롤러 만들기
     {
 
         Debug.Log("Instantiated Controller");
         //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
-        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Dora"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Female4"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
     }
+    static void CreateControllergirl4_1()//플레이어 컨트롤러 만들기
+    {
 
-
-
-
+        Debug.Log("Instantiated Controller");
+        //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Female4_1"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+    }
     void Update()
     {
         
