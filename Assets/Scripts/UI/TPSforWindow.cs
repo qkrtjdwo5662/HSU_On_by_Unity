@@ -122,7 +122,7 @@ public class TPSforWindow : MonoBehaviour
         }
 
         
-        /*if (Input.GetKeyDown(KeyCode.LeftAlt))
+        if (Input.GetKeyDown(KeyCode.LeftAlt))
         {
             //_ = (SetMouseMod == true) ? SetMouseMod = false : SetMouseMod = true;
             SetMouseMod = false;
@@ -136,8 +136,8 @@ public class TPSforWindow : MonoBehaviour
             SetMouseMod = true;
             Cursor.visible = false;
 
-        }*/
-        if (Input.GetKey(KeyCode.Escape) && escCool)
+        }
+        /*if (Input.GetKey(KeyCode.Escape) && escCool)
         {
             if (SetMouseMod == true)
             {
@@ -152,20 +152,16 @@ public class TPSforWindow : MonoBehaviour
             }
 
         }
+        */
+        
+
         if (Input.GetKey(KeyCode.Return) && enterCool)
         {
-            if (SetMouseMod == true)
-            {
-                SetMouseMod = false;
-                Cursor.visible = true;
-                input.ActivateInputField();
-            }
-            else
-            {
-                SetMouseMod = true;
-                Cursor.visible = false;
-                input.DeactivateInputField();
-            }
+            
+                //input.ActivateInputField();
+                //Cursor.visible = false;
+                //input.DeactivateInputField();
+            
         }
 
         if (isJump == true)
