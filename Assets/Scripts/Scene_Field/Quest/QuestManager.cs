@@ -30,13 +30,19 @@ public class QuestManager : MonoBehaviour
     public Image HcompletStamp;
 
     //NPC4 Quiz
-    public InputField NPC_4_Quiz_1_Answer, NPC_4_Quiz_2_Answer, NPC_4_Quiz_3_Answer;
+    public int count_1 = 0;
+    public int count_2 = 0;
+    public InputField NPC_4_Quiz_1_Answer, NPC_4_Quiz_2_Answer, NPC_4_Quiz_3_Answer, NPC_4_Quiz_4_Answer;
     public Image Right41;
     public Image Right42;
     public Image Right43;
+    public Image Right44;
     public Image Wrong41;
     public Image Wrong42;
     public Image Wrong43;
+    public Image Wrong44;
+    public Image Wrong45;
+    public Image Wrong46;
 
     //NPC4 Quiz end
 
@@ -57,6 +63,13 @@ public class QuestManager : MonoBehaviour
     public Button H5;
     public Text H5Text;
     public Button Submit;
+
+    //NPC Tutle Puzzle Quiz
+    public InputField NPC_Puzzle1_Answer, NPC_Puzzle2_Answer;
+    public Image rightPuzzle1;
+    public Image rightPuzzle2;
+    public Image WrongPuzzle1;
+    public Image WrongPuzzle2;
 
     //NPC FoodZone Quiz
     public InputField NPC_Food_Answer;
@@ -150,9 +163,16 @@ public class QuestManager : MonoBehaviour
             Right41.gameObject.SetActive(true);
             NPC_4_Quiz_1_Answer.text = "";
         }
-        else
+        else if(count_1 == 0)
         {
             Wrong41.gameObject.SetActive(true);
+            NPC_4_Quiz_1_Answer.text = "";
+            count_1++;
+        }
+        else if(count_1 == 1)
+        {
+            Wrong41.gameObject.SetActive(false);
+            Wrong44.gameObject.SetActive(true);
             NPC_4_Quiz_1_Answer.text = "";
         }
 
@@ -160,14 +180,21 @@ public class QuestManager : MonoBehaviour
     public void NPC_4_Quiz_2()
     {
 
-        if (NPC_4_Quiz_2_Answer.text == "1")
+        if (NPC_4_Quiz_2_Answer.text == "4")
         {
             Right42.gameObject.SetActive(true);
             NPC_4_Quiz_2_Answer.text = "";
         }
-        else
+        else if(count_2 ==0)
         {
             Wrong42.gameObject.SetActive(true);
+            NPC_4_Quiz_2_Answer.text = "";
+            count_2++;
+        }
+        else if(count_2 == 1)
+        {
+            Wrong42.gameObject.SetActive(false);
+            Wrong45.gameObject.SetActive(true);
             NPC_4_Quiz_2_Answer.text = "";
         }
 
@@ -175,7 +202,7 @@ public class QuestManager : MonoBehaviour
     public void NPC_4_Quiz_3()
     {
 
-        if (NPC_4_Quiz_3_Answer.text == "4")
+        if (NPC_4_Quiz_3_Answer.text == "이보영")
         {
             Right43.gameObject.SetActive(true);
             NPC_4_Quiz_3_Answer.text = "";
@@ -184,6 +211,21 @@ public class QuestManager : MonoBehaviour
         {
             Wrong43.gameObject.SetActive(true);
             NPC_4_Quiz_3_Answer.text = "";
+        }
+
+    }
+    public void NPC_4_Quiz_4()
+    {
+
+        if (NPC_4_Quiz_4_Answer.text == "다이빙")
+        {
+            Right44.gameObject.SetActive(true);
+            NPC_4_Quiz_4_Answer.text = "";
+        }
+        else
+        {
+            Wrong46.gameObject.SetActive(true);
+            NPC_4_Quiz_4_Answer.text = "";
         }
 
     }
@@ -218,7 +260,7 @@ public class QuestManager : MonoBehaviour
     }
     public void NPC_5_Quiz_3()
     {
-        if (NPC_5_Quiz_3_Answer.text == "학생원스톱지원센터")
+        if (NPC_5_Quiz_3_Answer.text == "코딩하는쿼카")
         {
             right7.gameObject.SetActive(true);
             NPC_5_Quiz_3_Answer.text = "";
@@ -231,6 +273,35 @@ public class QuestManager : MonoBehaviour
     }
     //NPC5 Quiz end
 
+    //NPC Tutle Puzzle Quiz
+    public void NPC_Puzzle_Quiz_1()
+    {
+        if(NPC_Puzzle1_Answer.text == "대동제")
+        {
+            rightPuzzle1.gameObject.SetActive(true);
+            NPC_Puzzle1_Answer.text = "";
+        }
+        else
+        {
+            WrongPuzzle1.gameObject.SetActive(true);
+            NPC_Puzzle1_Answer.text = "";
+        }
+    }
+
+    public void NPC_Puzzle_Quiz_2()
+    {
+        if (NPC_Puzzle2_Answer.text == "낙산공원")
+        {
+            rightPuzzle2.gameObject.SetActive(true);
+            NPC_Puzzle2_Answer.text = "";
+        }
+        else
+        {
+            WrongPuzzle2.gameObject.SetActive(true);
+            NPC_Puzzle2_Answer.text = "";
+        }
+    }
+    //NPC Tutle Puzzle end
     public void Quiz3Button()
     {
         if (question2.text == "박성재")
@@ -288,7 +359,7 @@ public class QuestManager : MonoBehaviour
     public void Hidden3QuestOpen()
     {
         H3.interactable = true;
-        H3Text.text = "기념 사진 촬영하기";
+        H3Text.text = "낱말퍼즐 풀기";
     }
     public void Hidden4QuestOpen()
     {
