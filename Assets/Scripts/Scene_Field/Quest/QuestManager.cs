@@ -70,7 +70,16 @@ public class QuestManager : MonoBehaviour
     public Image rightPuzzle2;
     public Image WrongPuzzle1;
     public Image WrongPuzzle2;
-
+    /*//NPC 한성냥이
+    public Text gameTimeUI;
+    
+    public int Cor_Count = 0;
+    public GameObject FindER;
+    public Button ER1;
+    public Button ER2;
+    public Button ER3;
+    public Button ER4;
+    public Button ER5; */
     //NPC FoodZone Quiz
     public InputField NPC_Food_Answer;
     public Image right8;
@@ -108,11 +117,11 @@ public class QuestManager : MonoBehaviour
         H4.interactable = false;
         H5.interactable = false;
     }
-
+    
     //NPC1 Quiz
     public void NPC_1_Quiz()
     {
-
+       
             if (NPC_1_Quiz_1_Answer.text == "4268")
             {
                 right1.gameObject.SetActive(true);
