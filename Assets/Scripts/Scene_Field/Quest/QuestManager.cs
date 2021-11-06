@@ -20,13 +20,12 @@ public class QuestManager : MonoBehaviour
     public InputField question2;
 
     //NPC5 Quiz
-    public InputField NPC_5_Quiz_1_Answer, NPC_5_Quiz_2_Answer, NPC_5_Quiz_3_Answer;
+    public InputField NPC_5_Quiz_1_Answer, NPC_5_Quiz_2_Answer;
     public Image right5;
     public Image Wrong5;
     public Image right6;
     public Image Wrong6;
-    public Image right7;
-    public Image Wrong7;
+    
     //NPC5 Quiz end
 
     //NPC Chicken Quiz
@@ -76,16 +75,7 @@ public class QuestManager : MonoBehaviour
     public Image rightPuzzle2;
     public Image WrongPuzzle1;
     public Image WrongPuzzle2;
-    /*//NPC 한성냥이
-    public Text gameTimeUI;
     
-    public int Cor_Count = 0;
-    public GameObject FindER;
-    public Button ER1;
-    public Button ER2;
-    public Button ER3;
-    public Button ER4;
-    public Button ER5; */
     //NPC FoodZone Quiz
     public InputField NPC_Food_Answer;
     public Image right8;
@@ -310,19 +300,7 @@ public class QuestManager : MonoBehaviour
             NPC_5_Quiz_2_Answer.text = "";
         }
     }
-    public void NPC_5_Quiz_3()
-    {
-        if (NPC_5_Quiz_3_Answer.text == "코딩하는쿼카")
-        {
-            right7.gameObject.SetActive(true);
-            NPC_5_Quiz_3_Answer.text = "";
-        }
-        else
-        {
-            Wrong7.gameObject.SetActive(true);
-            NPC_5_Quiz_3_Answer.text = "";
-        }
-    }
+    
     //NPC5 Quiz end
 
     //NPC Tutle Puzzle Quiz
@@ -416,7 +394,7 @@ public class QuestManager : MonoBehaviour
     public void Hidden4QuestOpen()
     {
         H4.interactable = true;
-        H4Text.text = "선물상자 열기";
+        H4Text.text = "틀린그림찾기";
     }
     public void Hidden5QuestOpen()
     {

@@ -7,13 +7,13 @@ public class Timer : MonoBehaviour
 {
     public GameObject Test1;
     public GameObject Test3;
-    public float LimitTime;
+    public float LimitTime = 60;
     public Text text_Timer;
     // Start is called before the first frame update
 
     public void DoTimerOffset()
     {
-        LimitTime = Time.time;
+        LimitTime = 60;
     }
     // Update is called once per frame
     void Update()
