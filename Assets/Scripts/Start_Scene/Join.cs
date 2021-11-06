@@ -25,7 +25,7 @@ public class Join : MonoBehaviourPunCallbacks
 
 
 
-    [SerializeField] string email;
+    [SerializeField] public string email;
     [SerializeField] string password;
     [SerializeField] string name;
     [SerializeField] string dept;
@@ -53,6 +53,9 @@ public class Join : MonoBehaviourPunCallbacks
     public Text loginResult;
     public Text LogZone;
 
+
+    
+
     JoinDB user;
 
     FirebaseAuth auth;
@@ -61,11 +64,14 @@ public class Join : MonoBehaviourPunCallbacks
 
     private void Start()
     {
+        
+        DontDestroyOnLoad(this);
         FirebaseApp.DefaultInstance.Options.DatabaseUrl =
                    new System.Uri("https://hsu-on-festival-default-rtdb.firebaseio.com/");
 
         // 파이어베이스의 메인 참조 얻기
-        reference = FirebaseDatabase.DefaultInstance.RootReference;   
+        reference = FirebaseDatabase.DefaultInstance.RootReference;
+        
     }
     
 
@@ -129,7 +135,7 @@ public class Join : MonoBehaviourPunCallbacks
 
         
    
-            CreateUserWithJson(stdID, new JoinDB(email,password,name,dept, stdID,M1, M2, M3, M4, M5, H1, H2, H3, H4, H5));
+            CreateUserWithJson(email, new JoinDB(email,password,name,dept, stdID,M1, M2, M3, M4, M5, H1, H2, H3, H4, H5));
           
         });
 

@@ -2,9 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Firebase.Auth;
+using Firebase;
+using Firebase.Database;
+using System.Threading.Tasks;
 
 public class QuestManager : MonoBehaviour
 {
+    private Join join;
+
     public int questId;
     //NPC1 Quiz
     public InputField NPC_1_Quiz_1_Answer;
@@ -90,21 +96,30 @@ public class QuestManager : MonoBehaviour
     public Image Wrong4;
     public Image CompleteStamp;
 
-    Dictionary<int, QuestData> questList;
 
-    
+
+    Dictionary<int, QuestData> questList;
+    JoinDB user;
+    FirebaseAuth auth;
+    public DatabaseReference reference = null;
+
+    DataSnapshot ds;
+
+
     void Awake()
     {
+        auth = FirebaseAuth.DefaultInstance;
         questList = new Dictionary<int, QuestData>();
         GenerateData();
+        
     }
 
     void Start()
     {
         //파이어베이스 스키마 가져올거임 m1~m5, h1~h5 까지 bool값으로 
-        
-        
-        
+
+        join = GameObject.Find("Join").GetComponent<Join>();
+
         M1.interactable = false;
         M2.interactable = false;
         M3.interactable = false;
@@ -116,6 +131,34 @@ public class QuestManager : MonoBehaviour
         H3.interactable = false;
         H4.interactable = false;
         H5.interactable = false;
+
+        FirebaseApp.DefaultInstance.Options.DatabaseUrl =
+                   new System.Uri("https://hsu-on-festival-default-rtdb.firebaseio.com/");
+
+        // 파이어베이스의 메인 참조 얻기
+        //reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(join.email);
+        reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(join.email);
+
+        Query query = reference;
+
+        query.GetValueAsync().ContinueWith(task =>
+        {
+            if (task.IsCompleted)
+            {
+                ds = task.Result;
+                object o = ds.GetValue(true);
+                Debug.LogError(o.ToString());
+                return;
+            }
+        });
+
+
+
+
+        //Debug.Log(a);
+        
+
+
     }
     
     //NPC1 Quiz
@@ -403,4 +446,66 @@ public class QuestManager : MonoBehaviour
         return questId;
 	}
     // Start is called before the first frame update
+
+
+
+    public class JoinDB
+    {
+        public string email;
+        public string password;
+        public string name;
+        public string dept;
+        public string stdID;
+        public bool M1;
+        public bool M2;
+        public bool M3;
+        public bool M4;
+        public bool M5;
+        public bool H1;
+        public bool H2;
+        public bool H3;
+        public bool H4;
+        public bool H5;
+
+        public JoinDB(string email, string password, string name, string dept, string stdID, bool M1, bool M2, bool M3, bool M4, bool M5, bool H1, bool H2, bool H3, bool H4, bool H5)
+        {
+            this.email = email;
+            this.password = password;
+            this.name = name;
+            this.dept = dept;
+            this.stdID = stdID;
+            this.M1 = M1;
+            this.M2 = M2;
+            this.M3 = M3;
+            this.M4 = M4;
+            this.M5 = M5;
+            this.H1 = H1;
+            this.H2 = H2;
+            this.H3 = H3;
+            this.H4 = H4;
+            this.H5 = H5;
+        }
+
+        public Dictionary<string, object> ToDictionary()
+        {
+            Dictionary<string, object> dic = new Dictionary<string, object>();
+            dic["email"] = this.email;
+            dic["password"] = this.password;
+            dic["name"] = this.name;
+            dic["dept"] = this.dept;
+            dic["stdID"] = this.stdID;
+            dic["M1"] = this.M1;
+            dic["M2"] = this.M2;
+            dic["M3"] = this.M3;
+            dic["M4"] = this.M4;
+            dic["M5"] = this.M5;
+            dic["H1"] = this.H1;
+            dic["H2"] = this.H2;
+            dic["H3"] = this.H3;
+            dic["H4"] = this.H4;
+            dic["H5"] = this.H5;
+
+            return dic;
+        }
+    }
 }
