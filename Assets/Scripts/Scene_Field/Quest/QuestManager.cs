@@ -10,9 +10,9 @@ using Firebase.Extensions;
 
 public class QuestManager : MonoBehaviour
 {
+    //Join.cs
     private Join join;
 
-    public int questId;
     //NPC1 Quiz
     public InputField NPC_1_Quiz_1_Answer;
     public Image right1;
@@ -33,7 +33,6 @@ public class QuestManager : MonoBehaviour
     public InputField NPC_Chicken_Answer;
     public Image right2;
     public Image Wrong2;
-    public Image HcompletStamp;
 
     //NPC4 Quiz
     public int count_1 = 0;
@@ -51,6 +50,7 @@ public class QuestManager : MonoBehaviour
     public Image Wrong46;
 
     //NPC4 Quiz end
+    public Button QuestButton;
 
     public Button M1;
     public Button M2;
@@ -85,7 +85,39 @@ public class QuestManager : MonoBehaviour
 
     public Image right4;
     public Image Wrong4;
-    public Image CompleteStamp;
+
+
+    //NPC Object
+    public GameObject NPC0;
+    public GameObject NPC1;
+    public GameObject NPC2;
+    public GameObject NPC3;
+    public GameObject NPC4;
+    public GameObject NPC5;
+
+    //Stamp Imgae
+    public Image M1Stamp;
+    public Image M2Stamp;
+    public Image M3Stamp;
+    public Image M4Stamp;
+    public Image M5Stamp;
+    public Image H1Stamp;
+    public Image H2Stamp;
+    public Image H3Stamp;
+    public Image H4Stamp;
+    public Image H5Stamp;
+
+    //Complete Image
+    public Image M1Complete;
+    public Image M2Complete;
+    public Image M3Complete;
+    public Image M4Complete;
+    public Image M5Complete;
+    public Image H1Complete;
+    public Image H2Complete;
+    public Image H3Complete;
+    public Image H4Complete;
+    public Image H5Complete;
 
 
     Dictionary<int, QuestData> questList;
@@ -94,6 +126,7 @@ public class QuestManager : MonoBehaviour
     [SerializeField]
     public DatabaseReference reference = null;
     string myName="0";
+    string myStdId;
     string m1cleared = "false";
     string m2cleared = "false";
     string m3cleared = "false";
@@ -104,8 +137,6 @@ public class QuestManager : MonoBehaviour
     string h3cleared = "false";
     string h4cleared = "false";
     string h5cleared = "false";
-
-   
 
 
     DataSnapshot ds;
@@ -135,7 +166,6 @@ public class QuestManager : MonoBehaviour
 
         auth = FirebaseAuth.DefaultInstance;
         questList = new Dictionary<int, QuestData>();
-        GenerateData();
         
     }
 
@@ -162,7 +192,7 @@ public class QuestManager : MonoBehaviour
 
         // 파이어베이스의 메인 참조 얻기
         //reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(join.email);
-        reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child("1771293");
+        reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child("1771357");
 
         reference.GetValueAsync().ContinueWithOnMainThread(task => {
             if (task.IsFaulted)
@@ -175,6 +205,8 @@ public class QuestManager : MonoBehaviour
                 ds = dataSnapshot;
                 myName = dataSnapshot.Child("name").GetValue(true).ToString();
                 Debug.Log(myName);
+                myStdId = dataSnapshot.Child("stdID").GetValue(true).ToString();
+                Debug.Log(myStdId);
                 m1cleared = dataSnapshot.Child("M1").GetValue(true).ToString();
                 Debug.Log(m1cleared);
                 m2cleared = dataSnapshot.Child("M2").GetValue(true).ToString();
@@ -196,9 +228,66 @@ public class QuestManager : MonoBehaviour
                 h5cleared = dataSnapshot.Child("H5").GetValue(true).ToString();
                 Debug.Log(h5cleared);
 
-                myName = ds.Child("name").GetValue(true).ToString();
-                Debug.Log(myName);
+             
 
+                if (m1cleared.Equals("True"))
+                {
+                    QuestOpen();
+                    Mission1QuestClear();
+                }
+
+                if (m2cleared.Equals("True"))
+                {
+                    M3.interactable = true;
+
+                    NPC2.gameObject.SetActive(false);
+                    NPC3.gameObject.SetActive(true);
+
+                    M2Stamp.gameObject.SetActive(true);
+                    M2Complete.gameObject.SetActive(true);
+                   
+                }
+
+                if (m3cleared.Equals("True"))
+                {
+                    M4.interactable = true;
+
+                    NPC3.gameObject.SetActive(false);
+                    NPC4.gameObject.SetActive(true);
+
+                    M3Stamp.gameObject.SetActive(true);
+                    M3Complete.gameObject.SetActive(true);
+                    
+                }
+
+                if (m4cleared.Equals("True"))
+                {
+                    M5.interactable = true;
+
+                    NPC4.gameObject.SetActive(false);
+                    NPC5.gameObject.SetActive(true);
+
+                    M4Stamp.gameObject.SetActive(true);
+                    M4Complete.gameObject.SetActive(true);
+                   
+                }
+
+                if (m5cleared.Equals("True"))
+                {
+                    NPC5.gameObject.SetActive(false);
+                   
+                    M5Stamp.gameObject.SetActive(true);
+                    M5Complete.gameObject.SetActive(true);
+                   
+                }
+
+
+
+                else return;
+                /*myName = ds.Child("name").GetValue(true).ToString();
+                myStdId = ds.Child("stdId").GetValue(true).ToString();
+                Debug.Log(myName);
+                Debug.Log(myStdId);*/
                 // Do something with snapshot...
             }
         });
@@ -408,36 +497,74 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    public void Mission1QuestOpen()
+
+    public void QuestOpen()
 	{
+        QuestButton.gameObject.SetActive(true);
+
         M1.interactable = true;
-        reference.Child("M1").SetValueAsync(true);
+        
+        NPC0.gameObject.SetActive(false);
+        NPC1.gameObject.SetActive(true);
 
     }
 
-    public void Mission2QuestOpen()
+    public void Mission1QuestClear()
 	{
         M2.interactable = true;
-        reference.Child("M2").SetValueAsync(true);
+
+        NPC1.gameObject.SetActive(false);
+        NPC2.gameObject.SetActive(true);
+
+        M1Stamp.gameObject.SetActive(true);
+        M1Complete.gameObject.SetActive(true);
+
+        reference.Child("M1").SetValueAsync(true);
+        Debug.Log("Mission1 clear & save");
     }
 
-    public void Mission3QuestOpen()
-    {
+    public void Mission2QuestClear()
+	{
         M3.interactable = true;
-        reference.Child("M3").SetValueAsync(true);
+
+        NPC2.gameObject.SetActive(false);
+        NPC3.gameObject.SetActive(true);
+
+        reference.Child("M2").SetValueAsync(true);
+        Debug.Log("Mission2 clear & save");
     }
 
-    public void Mission4QuestOpen()
+    public void Mission3QuestClear()
     {
         M4.interactable = true;
-        reference.Child("M4").SetValueAsync(true);
+
+        NPC3.gameObject.SetActive(false);
+        NPC4.gameObject.SetActive(true);
+
+        reference.Child("M3").SetValueAsync(true);
+        Debug.Log("Mission3 clear & save");
     }
 
-    public void Mission5QuestOpen()
+    public void Mission4QuestClear()
     {
         M5.interactable = true;
-        reference.Child("M5").SetValueAsync(true);
+
+        NPC4.gameObject.SetActive(false);
+        NPC5.gameObject.SetActive(true);
+
+        reference.Child("M4").SetValueAsync(true);
+        Debug.Log("Mission4 clear & save");
     }
+
+    public void Mission5QuestClear()
+    {
+        NPC4.gameObject.SetActive(false);
+
+        reference.Child("M5").SetValueAsync(true);
+        Debug.Log("Mission5 clear & save");
+
+    }
+
     public void Hidden1QuestOpen()
     {
         H1.interactable = true;
@@ -472,28 +599,43 @@ public class QuestManager : MonoBehaviour
         reference.Child("H5").SetValueAsync(true);
     }
 
-    public void Complete()
-	{
-        CompleteStamp.gameObject.SetActive(true);
-	}
-
-  
-    public void CompleteH2()
-    {
-        HcompletStamp.gameObject.SetActive(true);
-    }
-   
-
-    void GenerateData()
-	{
-        //questList.Add(10, new QuestData("첫 번째 퀘스트", new int[1] { }));
-	}
     
-    public int GetQuestTalkIndex(int id)
+   
+    public void Questreset()
 	{
-        return questId;
-	}
-    // Start is called before the first frame update
+        reference.Child("M1").SetValueAsync(false);
+        reference.Child("M2").SetValueAsync(false);
+        reference.Child("M3").SetValueAsync(false);
+        reference.Child("M4").SetValueAsync(false);
+        reference.Child("M5").SetValueAsync(false);
+        reference.Child("H1").SetValueAsync(false);
+        reference.Child("H2").SetValueAsync(false);
+        reference.Child("H3").SetValueAsync(false);
+        reference.Child("H4").SetValueAsync(false);
+        reference.Child("H5").SetValueAsync(false);
+        //QuestField true -> false
+
+        NPC0.gameObject.SetActive(true);
+        NPC1.gameObject.SetActive(false);
+        NPC2.gameObject.SetActive(false);
+        NPC3.gameObject.SetActive(false);
+        NPC4.gameObject.SetActive(false);
+        NPC5.gameObject.SetActive(false);
+        //NPC reset
+
+        M1Stamp.gameObject.SetActive(false);
+        M2Stamp.gameObject.SetActive(false);
+        M3Stamp.gameObject.SetActive(false);
+        M4Stamp.gameObject.SetActive(false);
+        M5Stamp.gameObject.SetActive(false);
+        //All Stamp reset
+		
+        
+        Debug.Log("Quest Reset");
+    }
+
+    
+
 
 
 
