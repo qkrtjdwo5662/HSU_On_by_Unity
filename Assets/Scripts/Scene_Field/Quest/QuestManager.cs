@@ -6,6 +6,7 @@ using Firebase.Auth;
 using Firebase;
 using Firebase.Database;
 using System.Threading.Tasks;
+using Firebase.Extensions;
 
 public class QuestManager : MonoBehaviour
 {
@@ -87,17 +88,51 @@ public class QuestManager : MonoBehaviour
     public Image CompleteStamp;
 
 
-
     Dictionary<int, QuestData> questList;
     JoinDB user;
     FirebaseAuth auth;
+    [SerializeField]
     public DatabaseReference reference = null;
+    string myName="0";
+    string m1cleared = "false";
+    string m2cleared = "false";
+    string m3cleared = "false";
+    string m4cleared = "false";
+    string m5cleared = "false";
+    string h1cleared = "false";
+    string h2cleared = "false";
+    string h3cleared = "false";
+    string h4cleared = "false";
+    string h5cleared = "false";
+
+   
+
 
     DataSnapshot ds;
-
+    FirebaseApp app;
 
     void Awake()
     {
+        Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
+            var dependencyStatus = task.Result;
+            if (dependencyStatus == Firebase.DependencyStatus.Available)
+            {
+                // Create and hold a reference to your FirebaseApp,
+                // where app is a Firebase.FirebaseApp property of your application class.
+                app = Firebase.FirebaseApp.DefaultInstance;
+
+                // Set a flag here to indicate whether Firebase is ready to use by your app.
+            }
+            else
+            {
+                UnityEngine.Debug.LogError(System.String.Format(
+                  "Could not resolve all Firebase dependencies: {0}", dependencyStatus));
+                // Firebase Unity SDK is not safe to use here.
+            }
+        });
+
+
+
         auth = FirebaseAuth.DefaultInstance;
         questList = new Dictionary<int, QuestData>();
         GenerateData();
@@ -127,30 +162,59 @@ public class QuestManager : MonoBehaviour
 
         // 파이어베이스의 메인 참조 얻기
         //reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(join.email);
-        reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(join.email);
+        reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child("1771293");
 
-        Query query = reference;
-
-        query.GetValueAsync().ContinueWith(task =>
-        {
-            if (task.IsCompleted)
+        reference.GetValueAsync().ContinueWithOnMainThread(task => {
+            if (task.IsFaulted)
             {
-                ds = task.Result;
-                object o = ds.GetValue(true);
-                Debug.LogError(o.ToString());
-                return;
+              // Handle the error...
+            }
+            else if (task.IsCompleted)
+            {
+              DataSnapshot dataSnapshot = task.Result;
+                ds = dataSnapshot;
+                myName = dataSnapshot.Child("name").GetValue(true).ToString();
+                Debug.Log(myName);
+                m1cleared = dataSnapshot.Child("M1").GetValue(true).ToString();
+                Debug.Log(m1cleared);
+                m2cleared = dataSnapshot.Child("M2").GetValue(true).ToString();
+                Debug.Log(m2cleared);
+                m3cleared = dataSnapshot.Child("M3").GetValue(true).ToString();
+                Debug.Log(m3cleared);
+                m4cleared = dataSnapshot.Child("M4").GetValue(true).ToString();
+                Debug.Log(m4cleared);
+                m5cleared = dataSnapshot.Child("M5").GetValue(true).ToString();
+                Debug.Log(m5cleared);
+                h1cleared = dataSnapshot.Child("H1").GetValue(true).ToString();
+                Debug.Log(h1cleared);
+                h2cleared = dataSnapshot.Child("H2").GetValue(true).ToString();
+                Debug.Log(h2cleared);
+                h3cleared = dataSnapshot.Child("H3").GetValue(true).ToString();
+                Debug.Log(h3cleared);
+                h4cleared = dataSnapshot.Child("H4").GetValue(true).ToString();
+                Debug.Log(h4cleared);
+                h5cleared = dataSnapshot.Child("H5").GetValue(true).ToString();
+                Debug.Log(h5cleared);
+
+                myName = ds.Child("name").GetValue(true).ToString();
+                Debug.Log(myName);
+
+                // Do something with snapshot...
             }
         });
-
-
-
-
-        //Debug.Log(a);
         
+
+        
+
+
+
+        //Debug.Log(ds.Children);
+
 
 
     }
     
+
     //NPC1 Quiz
     public void NPC_1_Quiz()
     {
@@ -347,36 +411,38 @@ public class QuestManager : MonoBehaviour
     public void Mission1QuestOpen()
 	{
         M1.interactable = true;
+        reference.Child("M1").SetValueAsync(true);
 
-	}
+    }
 
     public void Mission2QuestOpen()
 	{
-        
         M2.interactable = true;
-	}
+        reference.Child("M2").SetValueAsync(true);
+    }
 
     public void Mission3QuestOpen()
     {
-       
         M3.interactable = true;
+        reference.Child("M3").SetValueAsync(true);
     }
 
     public void Mission4QuestOpen()
     {
-        
         M4.interactable = true;
+        reference.Child("M4").SetValueAsync(true);
     }
 
     public void Mission5QuestOpen()
     {
-        
         M5.interactable = true;
+        reference.Child("M5").SetValueAsync(true);
     }
     public void Hidden1QuestOpen()
     {
         H1.interactable = true;
         H1Text.text = "꼬꼬&꾸꾸 밥 주기";
+        reference.Child("H1").SetValueAsync(true);
     }
     
 
@@ -384,22 +450,26 @@ public class QuestManager : MonoBehaviour
     {
         H2.interactable = true;
         H2Text.text = "그라지에 메뉴 맞추기";
+        reference.Child("H2").SetValueAsync(true);
     }
    
     public void Hidden3QuestOpen()
     {
         H3.interactable = true;
         H3Text.text = "낱말퍼즐 풀기";
+        reference.Child("H3").SetValueAsync(true);
     }
     public void Hidden4QuestOpen()
     {
         H4.interactable = true;
         H4Text.text = "틀린그림찾기";
+        reference.Child("H4").SetValueAsync(true);
     }
     public void Hidden5QuestOpen()
     {
         H5.interactable = true;
         H5Text.text = "매출액 계산하기";
+        reference.Child("H5").SetValueAsync(true);
     }
 
     public void Complete()
