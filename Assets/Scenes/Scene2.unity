@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1231,6 +1231,7 @@ GameObject:
   - component: {fileID: 557734454}
   - component: {fileID: 557734453}
   - component: {fileID: 557734452}
+  - component: {fileID: 557734456}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1319,6 +1320,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &557734456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557734451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51f4d2fe49bf2aa4c9b098831919d029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &568838166
 GameObject:
   m_ObjectHideFlags: 0
@@ -3494,7 +3507,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1769880311}
   - component: {fileID: 1769880310}
-  - component: {fileID: 1769880309}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3502,14 +3514,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1769880309
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1769880308}
-  m_Enabled: 1
 --- !u!20 &1769880310
 Camera:
   m_ObjectHideFlags: 0

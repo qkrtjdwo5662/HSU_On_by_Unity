@@ -67,7 +67,7 @@ public class CameraControl : MonoBehaviour
                 cam3.SetActive(false);
                 cam4.SetActive(true);
                 cam5.SetActive(false);
-                cam4.transform.position += new Vector3(0.001f, 0, 0);
+                cam4.transform.position += new Vector3(0, 0, 0.01f);
                 break;
             case 5: cam1.SetActive(false);
                 cam2.SetActive(false);
