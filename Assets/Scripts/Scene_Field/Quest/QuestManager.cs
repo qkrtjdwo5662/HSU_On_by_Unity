@@ -222,7 +222,7 @@ public class QuestManager : MonoBehaviour
                 Debug.Log(h5cleared);
 
                 IdentityID_text.text = join.IdentityID;
-                StuID_text.text = myStdId;
+                StuID_text.text = "학번 : "+myStdId+ "\n" + "이름 : " + myName;
 
                 if (m0cleared.Equals("True"))
                 {
