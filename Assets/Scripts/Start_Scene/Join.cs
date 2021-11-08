@@ -135,13 +135,14 @@ public class Join : MonoBehaviourPunCallbacks
                 newUser.DisplayName, newUser.UserId);
 
             IdentityID = newUser.UserId;
-
+           
             Debug.Log("회원가입 성공");
             user = new JoinDB(IdentityID, email,password, name, dept, stdID,M0,M1, M2, M3, M4, M5, H1, H2, H3, H4, H5);
 
         
    
             CreateUserWithJson(IdentityID, new JoinDB(IdentityID, email,password,name,dept, stdID,M0,M1, M2, M3, M4, M5, H1, H2, H3, H4, H5));
+
           
         });
 
