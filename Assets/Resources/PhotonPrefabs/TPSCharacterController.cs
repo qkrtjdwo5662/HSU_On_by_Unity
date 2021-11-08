@@ -11,7 +11,7 @@ public class TPSCharacterController : MonoBehaviour
     private Transform cameraArm;
     
     [SerializeField]
-    public float movingSpeed = 2.5f;
+    public float movingSpeed = 1.5f;
 
     [SerializeField]
     private GameObject character;

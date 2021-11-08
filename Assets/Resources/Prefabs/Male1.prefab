@@ -875,7 +875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterBody: {fileID: 3371447334766198696}
   cameraArm: {fileID: 3413891555651109383}
-  movingSpeed: 2.5
+  movingSpeed: 1.5
   character: {fileID: 3413891556477492024}
   input: {fileID: 0}
 --- !u!1 &5234046106970981010

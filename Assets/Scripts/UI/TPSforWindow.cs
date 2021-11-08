@@ -12,7 +12,7 @@ public class TPSforWindow : MonoBehaviour
     private Transform cameraArm;
 
     [SerializeField]
-    public float movingSpeed = 2.5f;
+    public float movingSpeed = 1.5f;
 
     [SerializeField]
     private GameObject character;
@@ -81,7 +81,7 @@ public class TPSforWindow : MonoBehaviour
 
             }
             if (Input.GetKeyDown(KeyCode.Space)) {
-                movingSpeed = 5.0f;
+                movingSpeed = 3.0f;
                 animator.SetBool("isRun",true);
             }
             if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) {
@@ -89,7 +89,7 @@ public class TPSforWindow : MonoBehaviour
             }
             if (Input.GetKeyUp(KeyCode.Space))
             {
-                movingSpeed = 2.5f;
+                movingSpeed = 1.5f;
                 animator.SetBool("isRun", false);
             }
 

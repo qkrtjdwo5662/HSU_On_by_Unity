@@ -123,66 +123,63 @@ public class joystick : MonoBehaviourPunCallbacks, IBeginDragHandler, IDragHandl
     // Start is called before the first frame update
     void Start()
     {
-        //Debug.Log("JoystickStart");
-        /*
-        if (Character = GameObject.Find("Boy(Clone)"))
+        
+        if (Character = GameObject.Find("Male1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Girl(Clone)"))
+        else if (Character = GameObject.Find("Male1_1(Clone)"))
+        {
+                controller = Character.GetComponent<TPSCharacterController>();
+        }
+        else if (Character = GameObject.Find("Male2(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Boy2(Clone)"))
+        else if (Character = GameObject.Find("Male2_1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Girl2(Clone)"))
+        else if (Character = GameObject.Find("Male3(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Boy3(Clone)"))
+        else if (Character = GameObject.Find("Male3_1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Girl3(Clone)"))
+        else if (Character = GameObject.Find("Male4(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Boy4(Clone)"))
+        else if (Character = GameObject.Find("Male4_1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Girl4(Clone)"))
+        else if (Character = GameObject.Find("Female1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Boy5(Clone)"))
+        else if (Character = GameObject.Find("Female1_1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Girl5(Clone)"))
+        else if (Character = GameObject.Find("Female3(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Bono(Clone)"))
+        else if (Character = GameObject.Find("Female3_1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Ghost(Clone)"))
+        else if (Character = GameObject.Find("Female4(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Dora(Clone)"))
-        {
-            controller = Character.GetComponent<TPSCharacterController>();
-        }*/
-        if (Character = GameObject.Find("Male1"))
+        else if (Character = GameObject.Find("Female4_1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-
-
         //Character = GameObject.Find("Character(Clone)");
         //controller = Character.GetComponent<TPSCharacterController>();
     }

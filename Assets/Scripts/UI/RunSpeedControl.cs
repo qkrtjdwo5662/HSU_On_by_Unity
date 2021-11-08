@@ -11,7 +11,7 @@ public class RunSpeedControl : MonoBehaviour, IPointerUpHandler, IPointerDownHan
     private GameObject Character;
     public void OnPointerDown(PointerEventData eventData)
     {
-        controller.movingSpeed = 5.0f;
+        controller.movingSpeed = 3.0f;
        
         Debug.Log("ButtonDown" + controller.movingSpeed);
 
@@ -19,7 +19,7 @@ public class RunSpeedControl : MonoBehaviour, IPointerUpHandler, IPointerDownHan
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        controller.movingSpeed = 2.5f;
+        controller.movingSpeed = 1.5f;
         
         
     }
@@ -35,68 +35,64 @@ public class RunSpeedControl : MonoBehaviour, IPointerUpHandler, IPointerDownHan
 
     void Start()
     {
-        /*
-        if (Character = GameObject.Find("Boy(Clone)"))
+        
+        if (Character = GameObject.Find("Male1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Girl(Clone)"))
+        if (Character = GameObject.Find("Male1_1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Boy2(Clone)"))
+        if (Character = GameObject.Find("Male2(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Girl2(Clone)"))
+        if (Character = GameObject.Find("Male2_1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Boy3(Clone)"))
+        if (Character = GameObject.Find("Male3(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Girl3(Clone)"))
+        if (Character = GameObject.Find("Male3_1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Boy4(Clone)"))
+        if (Character = GameObject.Find("Male4(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Girl4(Clone)"))
+        if (Character = GameObject.Find("Male4_1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Boy5(Clone)"))
+        if (Character = GameObject.Find("Female1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Girl5(Clone)"))
+        if (Character = GameObject.Find("Female1_1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Bono(Clone)"))
+        if (Character = GameObject.Find("Female3(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Ghost(Clone)"))
+        if (Character = GameObject.Find("Female3_1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Dora(Clone)"))
+        if (Character = GameObject.Find("Female4(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        */
-        //Character = GameObject.Find("Character(Clone)");
-        //controller = Character.GetComponent<TPSCharacterController>();
-        if (Character = GameObject.Find("Male1"))
+        if (Character = GameObject.Find("Female4_1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
 
-        
     }
 
     // Update is called once per frame
