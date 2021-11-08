@@ -42,6 +42,8 @@ public class Join : MonoBehaviourPunCallbacks
     [SerializeField] bool H4 = false;
     [SerializeField] bool H5 = false;
 
+    public string IdentityID;
+
     public InputField inputTextEmail;
     public InputField inputTextPassword;
     public InputField inputTextEmail2;
@@ -131,12 +133,15 @@ public class Join : MonoBehaviourPunCallbacks
             Firebase.Auth.FirebaseUser newUser = task.Result;
             Debug.LogFormat("Firebase user created successfully: {0}({1})",
                 newUser.DisplayName, newUser.UserId);
+
+            IdentityID = newUser.UserId;
+
             Debug.Log("회원가입 성공");
-            user = new JoinDB(email,password, name, dept, stdID,M0,M1, M2, M3, M4, M5, H1, H2, H3, H4, H5);
+            user = new JoinDB(IdentityID, email,password, name, dept, stdID,M0,M1, M2, M3, M4, M5, H1, H2, H3, H4, H5);
 
         
    
-            CreateUserWithJson(password, new JoinDB(email,password,name,dept, stdID,M0,M1, M2, M3, M4, M5, H1, H2, H3, H4, H5));
+            CreateUserWithJson(IdentityID, new JoinDB(IdentityID, email,password,name,dept, stdID,M0,M1, M2, M3, M4, M5, H1, H2, H3, H4, H5));
           
         });
 
@@ -148,7 +153,7 @@ public class Join : MonoBehaviourPunCallbacks
 
         string data = JsonUtility.ToJson(_userInfo);
         Debug.Log(data);
-        reference.Child("users").Child(_userInfo.password).SetRawJsonValueAsync(data);
+        reference.Child("users").Child(_userInfo.IdentityID).SetRawJsonValueAsync(data);
 
     }
 
@@ -191,8 +196,8 @@ public class Join : MonoBehaviourPunCallbacks
             Debug.LogFormat("Firebase user login successfully: {0}({1})",
                 newUser.DisplayName, newUser.UserId);
             loginFlag = true;
-            
 
+            IdentityID = newUser.UserId;
 
             
             queue.Enqueue("LoginNext");
@@ -216,6 +221,7 @@ public class Join : MonoBehaviourPunCallbacks
 
     public class JoinDB
     {
+        public string IdentityID;
         public string email;
         public string password;
         public string name;
@@ -233,8 +239,9 @@ public class Join : MonoBehaviourPunCallbacks
         public bool H4;
         public bool H5;
 
-        public JoinDB(string email,  string password,string name,string dept,string stdID,bool M0,bool M1, bool M2, bool M3, bool M4, bool M5, bool H1, bool H2, bool H3, bool H4, bool H5)
+        public JoinDB(string IdentityID, string email,  string password,string name,string dept,string stdID,bool M0,bool M1, bool M2, bool M3, bool M4, bool M5, bool H1, bool H2, bool H3, bool H4, bool H5)
         {
+            this.IdentityID = IdentityID;
             this.email = email;
             this.password = password;
             this.name = name;
@@ -256,6 +263,7 @@ public class Join : MonoBehaviourPunCallbacks
         public Dictionary<string,object> ToDictionary()
         {
             Dictionary<string, object> dic = new Dictionary<string, object>();
+            dic["IdentityID"] = this.IdentityID;
             dic["email"] = this.email;
             dic["password"] = this.password;
             dic["name"] = this.name;

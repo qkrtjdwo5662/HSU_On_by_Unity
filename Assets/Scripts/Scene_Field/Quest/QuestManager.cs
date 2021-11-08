@@ -86,7 +86,8 @@ public class QuestManager : MonoBehaviour
     public Image right4;
     public Image Wrong4;
 
-
+    public Text IdentityID_text;
+    public Text StuID_text;
     //NPC Object
     public GameObject NPC0;
     public GameObject NPC1;
@@ -187,13 +188,15 @@ public class QuestManager : MonoBehaviour
         H4.interactable = false;
         H5.interactable = false;
 
+        
+
         FirebaseApp.DefaultInstance.Options.DatabaseUrl =
                    new System.Uri("https://hsu-on-festival-default-rtdb.firebaseio.com/");
 
         
         // 파이어베이스의 메인 참조 얻기
         //reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(join.email);
-        reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(join.password);
+        reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(join.IdentityID);
         
         reference.GetValueAsync().ContinueWithOnMainThread(task => {
             if (task.IsFaulted)
@@ -231,7 +234,10 @@ public class QuestManager : MonoBehaviour
                 h5cleared = dataSnapshot.Child("H5").GetValue(true).ToString();
                 Debug.Log(h5cleared);
 
-                if(m0cleared.Equals("True"))
+                IdentityID_text.text = join.IdentityID;
+                StuID_text.text = myStdId;
+
+                if (m0cleared.Equals("True"))
                 {
                     QuestOpen();
                 }
