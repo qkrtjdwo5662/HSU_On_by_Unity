@@ -14,50 +14,51 @@ public class QuestManager : MonoBehaviour
     public Join join;
 
     //NPC1 Quiz
-    public InputField NPC_1_Quiz_1_Answer;
-    public Image right1;
-    public Image Wrong1;
-
-    public InputField question2;
-
-    //NPC5 Quiz
-    public InputField NPC_5_Quiz_1_Answer, NPC_5_Quiz_2_Answer;
-    public Image right5;
-    public Image Wrong5;
-    public Image right6;
-    public Image Wrong6;
-    
-    //NPC5 Quiz end
-
-    //NPC Chicken Quiz
-    public InputField NPC_Chicken_Answer;
-    public Image right2;
-    public Image Wrong2;
+    public InputField NPC1_Quiz_Answer;
+    public Image NPC1_Quiz_right, NPC1_Quiz_Wrong;
+    //NPC1 Quiz
 
     //NPC4 Quiz
     public int count_1 = 0;
     public int count_2 = 0;
-    public InputField NPC_4_Quiz_1_Answer, NPC_4_Quiz_2_Answer, NPC_4_Quiz_3_Answer, NPC_4_Quiz_4_Answer;
-    public Image Right41;
-    public Image Right42;
-    public Image Right43;
-    public Image Right44;
-    public Image Wrong41;
-    public Image Wrong42;
-    public Image Wrong43;
-    public Image Wrong44;
-    public Image Wrong45;
-    public Image Wrong46;
-
+    public InputField NPC4_Quiz1_Answer, NPC4_Quiz2_Answer, NPC4_Quiz3_Answer, NPC4_Quiz4_Answer;
+    public Image NPC4_Quiz1_right, NPC4_Quiz1_wrong;
+    public Image NPC4_Quiz2_right, NPC4_Quiz2_wrong;
+    public Image NPC4_Quiz3_right, NPC4_Quiz3_wrong;
+    public Image NPC4_Quiz4_right, NPC4_Quiz4_wrong;
+    public Image NPC4_Quiz1_wrong2, NPC4_Quiz2_wrong2;
     //NPC4 Quiz end
+
+    //NPC5 Quiz
+    public InputField NPC5_Quiz1_Answer, NPC5_Quiz2_Answer;
+    public Image NPC5_Quiz1_right, NPC5_Quiz1_wrong;
+    public Image NPC5_Quiz2_right, NPC5_Quiz2_wrong;
+    //NPC5 Quiz end
+
+    //NPC Chicken Quiz
+    public InputField NPC_Chicken_Quiz_Answer;
+    public Image NPC_Chicken_Quiz_right, NPC_Chicken_Quiz_wrong;
+    //NPC chicken Quiz end
+
+    //NPC Tutle Puzzle Quiz
+    public InputField NPC_WordPuzzle_Quiz1_Answer, NPC_WordPuzzle_Quiz2_Answer;
+    public Image NPC_WordPuzzle_Quiz1_right, NPC_WordPuzzle_Quiz1_wrong;
+    public Image NPC_WordPuzzle_Quiz2_right, NPC_WordPuzzle_Quiz2_wrong;
+    //end
+
+    //NPC FoodZone Quiz
+    public InputField NPC_FoodZone_Quiz_Answer;
+    public Image NPC_FoodZone_Quiz_right, NPC_FoodZone_Quiz_wrong;
+    //end
+
     public Button QuestButton;
 
+    //Quest List Button
     public Button M1;
     public Button M2;
     public Button M3;
     public Button M4;
     public Button M5;
-
     public Button H1;
     public Text H1Text;
     public Button H2;
@@ -70,24 +71,10 @@ public class QuestManager : MonoBehaviour
     public Text H5Text;
     public Button Submit;
 
-    //NPC Tutle Puzzle Quiz
-    public InputField NPC_Puzzle1_Answer, NPC_Puzzle2_Answer;
-    public Image rightPuzzle1;
-    public Image rightPuzzle2;
-    public Image WrongPuzzle1;
-    public Image WrongPuzzle2;
     
-    //NPC FoodZone Quiz
-    public InputField NPC_Food_Answer;
-    public Image right8;
-    public Image Wrong8;
-    
-
-    public Image right4;
-    public Image Wrong4;
-
     public Text IdentityID_text;
     public Text StuID_text;
+
     //NPC Object
     public GameObject NPC0;
     public GameObject NPC1;
@@ -267,221 +254,216 @@ public class QuestManager : MonoBehaviour
                     Mission5QuestClear();
                 }
 
+                if(h1cleared.Equals("True"))
+                {
+                    Hidden1QuestClear();
+                }
 
+                if (h2cleared.Equals("True"))
+                {
+                    Hidden2QuestClear();
+                }
+
+                if (h3cleared.Equals("True"))
+                {
+                    Hidden3QuestClear();
+                }
+
+                if (h4cleared.Equals("True"))
+                {
+                    Hidden4QuestClear();
+                }
+
+                if (h5cleared.Equals("True"))
+                {
+                    Hidden5QuestClear();
+                }
 
                 else return;
-                /*myName = ds.Child("name").GetValue(true).ToString();
-                myStdId = ds.Child("stdId").GetValue(true).ToString();
-                Debug.Log(myName);
-                Debug.Log(myStdId);*/
-                // Do something with snapshot...
             }
         });
-        
-
-        
-
-
-
-        //Debug.Log(ds.Children);
-
-
-
     }
     
 
-    //NPC1 Quiz
-    public void NPC_1_Quiz()
+   
+    public void NPC1_Quiz()
     {
        
-            if (NPC_1_Quiz_1_Answer.text == "4268")
+            if (NPC1_Quiz_Answer.text == "4268")
             {
-                right1.gameObject.SetActive(true);
-                //파이어베이스 현재로그인된 계정으로 m1 스키마 true 바꾸는 코드 (수정)
+                NPC1_Quiz_right.gameObject.SetActive(true);
             }
             else
             {
-                Wrong1.gameObject.SetActive(true);
-                NPC_1_Quiz_1_Answer.text = "";
+                NPC1_Quiz_Wrong.gameObject.SetActive(true);
+                NPC1_Quiz_Answer.text = "";
             }
 
-    }
+    } //NPC1 Quiz
 
-    //NPC Chicken Quiz
-    public void NPC_Chicken_Quiz()
-    {
-        if(NPC_Chicken_Answer.text == "chicken")
-        {
-            right2.gameObject.SetActive(true);
-            NPC_Chicken_Answer.text = "";
-        }
-        else
-        {
-            Wrong2.gameObject.SetActive(true);
-            NPC_Chicken_Answer.text = "";
-        }
-    }
-    //NPC FoodZone Quiz
-    public void NPC_Food_Quiz()
-    {
-        if (NPC_Food_Answer.text == "70500")
-        {
-            right8.gameObject.SetActive(true);
-            NPC_Food_Answer.text = "";
-        }
-        else
-        {
-            Wrong8.gameObject.SetActive(true);
-            NPC_Food_Answer.text = "";
-        }
-    }
-    //NPC4 Quiz
-    public void NPC_4_Quiz_1()
+    
+    public void NPC4_Quiz1()
     {
 
-        if (NPC_4_Quiz_1_Answer.text == "2")
+        if (NPC4_Quiz1_Answer.text == "2")
         {
-            Right41.gameObject.SetActive(true);
-            NPC_4_Quiz_1_Answer.text = "";
+            NPC4_Quiz1_right.gameObject.SetActive(true);
+            NPC4_Quiz1_Answer.text = "";
         }
-        else if(count_1 == 0)
+        else if (count_1 == 0)
         {
-            Wrong41.gameObject.SetActive(true);
-            NPC_4_Quiz_1_Answer.text = "";
+            NPC4_Quiz1_wrong.gameObject.SetActive(true);
+            NPC4_Quiz1_Answer.text = "";
             count_1++;
         }
-        else if(count_1 == 1)
+        else if (count_1 == 1)
         {
-            Wrong41.gameObject.SetActive(false);
-            Wrong44.gameObject.SetActive(true);
-            NPC_4_Quiz_1_Answer.text = "";
+            NPC4_Quiz1_wrong.gameObject.SetActive(false);
+            NPC4_Quiz1_wrong2.gameObject.SetActive(true);
+            NPC4_Quiz1_Answer.text = "";
         }
 
     }
-    public void NPC_4_Quiz_2()
+    public void NPC4_Quiz2()
     {
 
-        if (NPC_4_Quiz_2_Answer.text == "4")
+        if (NPC4_Quiz2_Answer.text == "4")
         {
-            Right42.gameObject.SetActive(true);
-            NPC_4_Quiz_2_Answer.text = "";
+            NPC4_Quiz2_right.gameObject.SetActive(true);
+            NPC4_Quiz2_Answer.text = "";
         }
-        else if(count_2 ==0)
+        else if (count_2 == 0)
         {
-            Wrong42.gameObject.SetActive(true);
-            NPC_4_Quiz_2_Answer.text = "";
+            NPC4_Quiz2_wrong.gameObject.SetActive(true);
+            NPC4_Quiz2_Answer.text = "";
             count_2++;
         }
-        else if(count_2 == 1)
+        else if (count_2 == 1)
         {
-            Wrong42.gameObject.SetActive(false);
-            Wrong45.gameObject.SetActive(true);
-            NPC_4_Quiz_2_Answer.text = "";
+            NPC4_Quiz2_wrong.gameObject.SetActive(false);
+            NPC4_Quiz2_wrong2.gameObject.SetActive(true);
+            NPC4_Quiz2_Answer.text = "";
         }
 
     }
-    public void NPC_4_Quiz_3()
+    public void NPC4_Quiz3()
     {
 
-        if (NPC_4_Quiz_3_Answer.text == "이보영")
+        if (NPC4_Quiz3_Answer.text == "이보영")
         {
-            Right43.gameObject.SetActive(true);
-            NPC_4_Quiz_3_Answer.text = "";
+            NPC4_Quiz3_right.gameObject.SetActive(true);
+            NPC4_Quiz3_Answer.text = "";
         }
         else
         {
-            Wrong43.gameObject.SetActive(true);
-            NPC_4_Quiz_3_Answer.text = "";
+            NPC4_Quiz3_wrong.gameObject.SetActive(true);
+            NPC4_Quiz3_Answer.text = "";
         }
 
     }
-    public void NPC_4_Quiz_4()
+    public void NPC4_Quiz4()
     {
 
-        if (NPC_4_Quiz_4_Answer.text == "다이빙")
+        if (NPC4_Quiz4_Answer.text == "다이빙")
         {
-            Right44.gameObject.SetActive(true);
-            NPC_4_Quiz_4_Answer.text = "";
+            NPC4_Quiz4_right.gameObject.SetActive(true);
+            NPC4_Quiz4_Answer.text = "";
         }
         else
         {
-            Wrong46.gameObject.SetActive(true);
-            NPC_4_Quiz_4_Answer.text = "";
+            NPC4_Quiz4_wrong.gameObject.SetActive(true);
+            NPC4_Quiz4_Answer.text = "";
         }
 
-    }
-    //NPC4 Quiz end
+    }//NPC4 Quiz
 
-    //NPC5 Quiz
-    public void NPC_5_Quiz_1()
+    public void NPC5_Quiz1()
     {
-        if(NPC_5_Quiz_1_Answer.text == "25")
+        if (NPC5_Quiz1_Answer.text == "25")
         {
-            right5.gameObject.SetActive(true);
-            NPC_5_Quiz_1_Answer.text = "";
+            NPC5_Quiz1_right.gameObject.SetActive(true);
+            NPC5_Quiz1_Answer.text = "";
         }
         else
         {
-            Wrong5.gameObject.SetActive(true);
-            NPC_5_Quiz_1_Answer.text = "";
+            NPC5_Quiz1_wrong.gameObject.SetActive(true);
+            NPC5_Quiz1_Answer.text = "";
         }
     }
-    public void NPC_5_Quiz_2()
+    public void NPC5_Quiz2()
     {
-        if (NPC_5_Quiz_2_Answer.text == "낙산멍이")
+        if (NPC5_Quiz2_Answer.text == "낙산멍이")
         {
-            right6.gameObject.SetActive(true);
-            NPC_5_Quiz_2_Answer.text = "";
+            NPC5_Quiz2_right.gameObject.SetActive(true);
+            NPC5_Quiz2_Answer.text = "";
         }
         else
         {
-            Wrong6.gameObject.SetActive(true);
-            NPC_5_Quiz_2_Answer.text = "";
+            NPC5_Quiz2_wrong.gameObject.SetActive(true);
+            NPC5_Quiz2_Answer.text = "";
         }
-    }
-    
-    //NPC5 Quiz end
+    }//NPC5 Quiz
 
-    //NPC Tutle Puzzle Quiz
-    public void NPC_Puzzle_Quiz_1()
+    public void NPC_Chicken_Quiz()
     {
-        if(NPC_Puzzle1_Answer.text == "대동제")
+        if(NPC_Chicken_Quiz_Answer.text == "chicken")
         {
-            rightPuzzle1.gameObject.SetActive(true);
-            NPC_Puzzle1_Answer.text = "";
+            NPC_Chicken_Quiz_right.gameObject.SetActive(true);
+            NPC_Chicken_Quiz_Answer.text = "";
         }
         else
         {
-            WrongPuzzle1.gameObject.SetActive(true);
-            NPC_Puzzle1_Answer.text = "";
+            NPC_Chicken_Quiz_wrong.gameObject.SetActive(true);
+            NPC_Chicken_Quiz_Answer.text = "";
+        }
+    }//NPC Chicken Quiz
+
+
+    public void NPC_Food_Quiz()
+    {
+        if (NPC_FoodZone_Quiz_Answer.text == "70500")
+        {
+            NPC_FoodZone_Quiz_right.gameObject.SetActive(true);
+            NPC_FoodZone_Quiz_Answer.text = "";
+        }
+        else
+        {
+            NPC_FoodZone_Quiz_wrong.gameObject.SetActive(true);
+            NPC_FoodZone_Quiz_Answer.text = "";
+        }
+    }//NPC FoodZone Quiz
+
+
+   
+
+    public void NPC_WordPuzzle_Quiz1()
+    {
+        if(NPC_WordPuzzle_Quiz1_Answer.text == "대동제")
+        {
+            NPC_WordPuzzle_Quiz1_right.gameObject.SetActive(true);
+            NPC_WordPuzzle_Quiz1_Answer.text = "";
+        }
+        else
+        {
+            NPC_WordPuzzle_Quiz1_wrong.gameObject.SetActive(true);
+            NPC_WordPuzzle_Quiz1_Answer.text = "";
         }
     }
 
-    public void NPC_Puzzle_Quiz_2()
+    public void NPC_WordPuzzle_Quiz2()
     {
-        if (NPC_Puzzle2_Answer.text == "낙산공원")
+        if (NPC_WordPuzzle_Quiz2_Answer.text == "낙산공원")
         {
-            rightPuzzle2.gameObject.SetActive(true);
-            NPC_Puzzle2_Answer.text = "";
+            NPC_WordPuzzle_Quiz2_right.gameObject.SetActive(true);
+            NPC_WordPuzzle_Quiz2_Answer.text = "";
         }
         else
         {
-            WrongPuzzle2.gameObject.SetActive(true);
-            NPC_Puzzle2_Answer.text = "";
+            NPC_WordPuzzle_Quiz2_wrong.gameObject.SetActive(true);
+            NPC_WordPuzzle_Quiz2_Answer.text = "";
         }
-    }
-    //NPC Tutle Puzzle end
-    public void Quiz3Button()
-    {
-        if (question2.text == "박성재")
-        {
-            right4.gameObject.SetActive(true);
-        }
-        else
-        {
-            Wrong4.gameObject.SetActive(true);
-        }
-    }
+    }//NPC Tutle Puzzle
+
 
 
     public void QuestOpen()
@@ -565,38 +547,63 @@ public class QuestManager : MonoBehaviour
 
     }
 
-    public void Hidden1QuestOpen()
+    public void Hidden1QuestClear()
     {
         H1.interactable = true;
         H1Text.text = "꼬꼬&꾸꾸 밥 주기";
+
+        H1Stamp.gameObject.SetActive(true);
+        H1Complete.gameObject.SetActive(true);
+
         reference.Child("H1").SetValueAsync(true);
+        Debug.Log("HiddenMission1 clear & save");
     }
     
 
-    public void Hidden2QuestOpen()
+    public void Hidden2QuestClear()
     {
         H2.interactable = true;
         H2Text.text = "그라지에 메뉴 맞추기";
+
+        H2Stamp.gameObject.SetActive(true);
+        H2Complete.gameObject.SetActive(true);
+
         reference.Child("H2").SetValueAsync(true);
+        Debug.Log("HiddenMission2 clear & save");
     }
    
-    public void Hidden3QuestOpen()
+    public void Hidden3QuestClear()
     {
         H3.interactable = true;
         H3Text.text = "낱말퍼즐 풀기";
+
+        H3Stamp.gameObject.SetActive(true);
+        H3Complete.gameObject.SetActive(true);
+
         reference.Child("H3").SetValueAsync(true);
+        Debug.Log("HiddenMission3 clear & save");
     }
-    public void Hidden4QuestOpen()
+    public void Hidden4QuestClear()
     {
         H4.interactable = true;
         H4Text.text = "틀린그림찾기";
+
+        H4Stamp.gameObject.SetActive(true);
+        H4Complete.gameObject.SetActive(true);
+
         reference.Child("H4").SetValueAsync(true);
+        Debug.Log("HiddenMission4 clear & save");
     }
-    public void Hidden5QuestOpen()
+    public void Hidden5QuestClear()
     {
         H5.interactable = true;
         H5Text.text = "매출액 계산하기";
+
+        H5Stamp.gameObject.SetActive(true);
+        H5Complete.gameObject.SetActive(true);
+
         reference.Child("H5").SetValueAsync(true);
+        Debug.Log("HiddenMission5 clear & save");
     }
 
     
@@ -628,9 +635,26 @@ public class QuestManager : MonoBehaviour
         M3Stamp.gameObject.SetActive(false);
         M4Stamp.gameObject.SetActive(false);
         M5Stamp.gameObject.SetActive(false);
+        H1Stamp.gameObject.SetActive(false);
+        H2Stamp.gameObject.SetActive(false);
+        H3Stamp.gameObject.SetActive(false);
+        H4Stamp.gameObject.SetActive(false);
+        H5Stamp.gameObject.SetActive(false);
         //All Stamp reset
-		
-        
+
+        M1Complete.gameObject.SetActive(false);
+        M2Complete.gameObject.SetActive(false);
+        M3Complete.gameObject.SetActive(false);
+        M4Complete.gameObject.SetActive(false);
+        M5Complete.gameObject.SetActive(false);
+        H1Complete.gameObject.SetActive(false);
+        H2Complete.gameObject.SetActive(false);
+        H3Complete.gameObject.SetActive(false);
+        H4Complete.gameObject.SetActive(false);
+        H5Complete.gameObject.SetActive(false);
+        //All Complete reset
+
+
         Debug.Log("Quest Reset");
     }
 
