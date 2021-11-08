@@ -15,6 +15,10 @@ public class  ChatManager : MonoBehaviourPunCallbacks
     string chatters;
     private ScrollRect scroll_rect;
     PhotonView PV;
+    bool cool = true;
+    public float time;
+    
+
 
     [SerializeField]
     public GameObject CM;
@@ -41,6 +45,8 @@ public class  ChatManager : MonoBehaviourPunCallbacks
         
 
     }
+
+    
     public void SendButtonOnclicked()
 	{
         if(input.text.Equals("")) { Debug.Log("Empty"); return; }
@@ -49,12 +55,36 @@ public class  ChatManager : MonoBehaviourPunCallbacks
         sp.speechRun(input.text);
         ReceiveMsg(msg);
         input.ActivateInputField();
-        input.text = "";
+        input.text = null;
 	}
     void Update()
 	{
         chatterUpdate();
-        if (Input.GetKeyDown(KeyCode.Return) && !input.isFocused) SendButtonOnclicked();
+        if (Input.GetKeyDown(KeyCode.Return)) {
+            Debug.Log("do update");
+            if (input.isFocused == true && !cool)
+            {
+                SendButtonOnclicked();
+                input.DeactivateInputField();
+               
+            }
+            else if (input.isFocused == false && cool)
+            {
+                input.ActivateInputField();
+                
+            }
+            cool = false;
+        }
+
+        if (cool == false) {
+
+            if (time >= 3.0f)
+            {
+                time = 0.0f;
+                cool = true;
+            }
+            time += Time.deltaTime;
+        }
         
     }
     void chatterUpdate()

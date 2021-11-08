@@ -32,6 +32,8 @@ public class TPSforWindow : MonoBehaviour
     PhotonView PV;
     public InputField input;
     Animator animator;
+
+    AudioSource Walk;
     // Start is called before the first frame update
     void Awake()
     {
@@ -43,7 +45,7 @@ public class TPSforWindow : MonoBehaviour
     {
         animator = characterBody.GetComponent<Animator>();
 
-
+        Walk = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -117,6 +119,7 @@ public class TPSforWindow : MonoBehaviour
 
                 // 이동
                 transform.position += moveDir * Time.deltaTime * movingSpeed;
+                //Walk.Play();
             }
             Vision();
         }
