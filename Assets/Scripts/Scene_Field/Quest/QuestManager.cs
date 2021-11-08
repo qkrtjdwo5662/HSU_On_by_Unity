@@ -11,7 +11,7 @@ using Firebase.Extensions;
 public class QuestManager : MonoBehaviour
 {
     //Join.cs
-    private Join join;
+    public Join join;
 
     //NPC1 Quiz
     public InputField NPC_1_Quiz_1_Answer;
@@ -127,6 +127,7 @@ public class QuestManager : MonoBehaviour
     public DatabaseReference reference = null;
     string myName="0";
     string myStdId;
+    string m0cleared = "false";
     string m1cleared = "false";
     string m2cleared = "false";
     string m3cleared = "false";
@@ -171,7 +172,6 @@ public class QuestManager : MonoBehaviour
 
     void Start()
     {
-        //파이어베이스 스키마 가져올거임 m1~m5, h1~h5 까지 bool값으로 
 
         join = GameObject.Find("Join").GetComponent<Join>();
 
@@ -190,10 +190,11 @@ public class QuestManager : MonoBehaviour
         FirebaseApp.DefaultInstance.Options.DatabaseUrl =
                    new System.Uri("https://hsu-on-festival-default-rtdb.firebaseio.com/");
 
+        
         // 파이어베이스의 메인 참조 얻기
         //reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(join.email);
-        reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child("1771357");
-
+        reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(join.password);
+        
         reference.GetValueAsync().ContinueWithOnMainThread(task => {
             if (task.IsFaulted)
             {
@@ -207,6 +208,8 @@ public class QuestManager : MonoBehaviour
                 Debug.Log(myName);
                 myStdId = dataSnapshot.Child("stdID").GetValue(true).ToString();
                 Debug.Log(myStdId);
+                m0cleared = dataSnapshot.Child("M0").GetValue(true).ToString();
+                Debug.Log(m0cleared);
                 m1cleared = dataSnapshot.Child("M1").GetValue(true).ToString();
                 Debug.Log(m1cleared);
                 m2cleared = dataSnapshot.Child("M2").GetValue(true).ToString();
@@ -228,57 +231,34 @@ public class QuestManager : MonoBehaviour
                 h5cleared = dataSnapshot.Child("H5").GetValue(true).ToString();
                 Debug.Log(h5cleared);
 
-             
+                if(m0cleared.Equals("True"))
+                {
+                    QuestOpen();
+                }
 
                 if (m1cleared.Equals("True"))
                 {
-                    QuestOpen();
                     Mission1QuestClear();
                 }
 
                 if (m2cleared.Equals("True"))
                 {
-                    M3.interactable = true;
-
-                    NPC2.gameObject.SetActive(false);
-                    NPC3.gameObject.SetActive(true);
-
-                    M2Stamp.gameObject.SetActive(true);
-                    M2Complete.gameObject.SetActive(true);
-                   
+                    Mission2QuestClear();
                 }
 
                 if (m3cleared.Equals("True"))
                 {
-                    M4.interactable = true;
-
-                    NPC3.gameObject.SetActive(false);
-                    NPC4.gameObject.SetActive(true);
-
-                    M3Stamp.gameObject.SetActive(true);
-                    M3Complete.gameObject.SetActive(true);
-                    
+                    Mission3QuestClear();
                 }
 
                 if (m4cleared.Equals("True"))
                 {
-                    M5.interactable = true;
-
-                    NPC4.gameObject.SetActive(false);
-                    NPC5.gameObject.SetActive(true);
-
-                    M4Stamp.gameObject.SetActive(true);
-                    M4Complete.gameObject.SetActive(true);
-                   
+                    Mission4QuestClear();
                 }
 
                 if (m5cleared.Equals("True"))
                 {
-                    NPC5.gameObject.SetActive(false);
-                   
-                    M5Stamp.gameObject.SetActive(true);
-                    M5Complete.gameObject.SetActive(true);
-                   
+                    Mission5QuestClear();
                 }
 
 
@@ -507,6 +487,8 @@ public class QuestManager : MonoBehaviour
         NPC0.gameObject.SetActive(false);
         NPC1.gameObject.SetActive(true);
 
+        reference.Child("M0").SetValueAsync(true);
+        Debug.Log("Quest Open");
     }
 
     public void Mission1QuestClear()
@@ -530,6 +512,9 @@ public class QuestManager : MonoBehaviour
         NPC2.gameObject.SetActive(false);
         NPC3.gameObject.SetActive(true);
 
+        M2Stamp.gameObject.SetActive(true);
+        M2Complete.gameObject.SetActive(true);
+
         reference.Child("M2").SetValueAsync(true);
         Debug.Log("Mission2 clear & save");
     }
@@ -540,6 +525,9 @@ public class QuestManager : MonoBehaviour
 
         NPC3.gameObject.SetActive(false);
         NPC4.gameObject.SetActive(true);
+
+        M3Stamp.gameObject.SetActive(true);
+        M3Complete.gameObject.SetActive(true);
 
         reference.Child("M3").SetValueAsync(true);
         Debug.Log("Mission3 clear & save");
@@ -552,6 +540,9 @@ public class QuestManager : MonoBehaviour
         NPC4.gameObject.SetActive(false);
         NPC5.gameObject.SetActive(true);
 
+        M4Stamp.gameObject.SetActive(true);
+        M4Complete.gameObject.SetActive(true);
+
         reference.Child("M4").SetValueAsync(true);
         Debug.Log("Mission4 clear & save");
     }
@@ -559,6 +550,9 @@ public class QuestManager : MonoBehaviour
     public void Mission5QuestClear()
     {
         NPC4.gameObject.SetActive(false);
+
+        M5Stamp.gameObject.SetActive(true);
+        M5Complete.gameObject.SetActive(true);
 
         reference.Child("M5").SetValueAsync(true);
         Debug.Log("Mission5 clear & save");
@@ -646,6 +640,7 @@ public class QuestManager : MonoBehaviour
         public string name;
         public string dept;
         public string stdID;
+        public bool M0;
         public bool M1;
         public bool M2;
         public bool M3;
@@ -657,13 +652,14 @@ public class QuestManager : MonoBehaviour
         public bool H4;
         public bool H5;
 
-        public JoinDB(string email, string password, string name, string dept, string stdID, bool M1, bool M2, bool M3, bool M4, bool M5, bool H1, bool H2, bool H3, bool H4, bool H5)
+        public JoinDB(string email, string password, string name, string dept, string stdID, bool M0, bool M1, bool M2, bool M3, bool M4, bool M5, bool H1, bool H2, bool H3, bool H4, bool H5)
         {
             this.email = email;
             this.password = password;
             this.name = name;
             this.dept = dept;
             this.stdID = stdID;
+            this.M0 = M0;
             this.M1 = M1;
             this.M2 = M2;
             this.M3 = M3;
@@ -684,6 +680,7 @@ public class QuestManager : MonoBehaviour
             dic["name"] = this.name;
             dic["dept"] = this.dept;
             dic["stdID"] = this.stdID;
+            dic["M0"] = this.M0;
             dic["M1"] = this.M1;
             dic["M2"] = this.M2;
             dic["M3"] = this.M3;

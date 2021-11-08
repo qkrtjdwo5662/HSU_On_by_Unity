@@ -25,11 +25,12 @@ public class Join : MonoBehaviourPunCallbacks
 
 
 
-    [SerializeField] public string email;
-    [SerializeField] string password;
+    [SerializeField] string email;
+    [SerializeField] public string password;
     [SerializeField] string name;
     [SerializeField] string dept;
     [SerializeField] string stdID;
+    [SerializeField] bool M0 = false;
     [SerializeField] bool M1 = false;
     [SerializeField] bool M2 = false;
     [SerializeField] bool M3 = false;
@@ -131,11 +132,11 @@ public class Join : MonoBehaviourPunCallbacks
             Debug.LogFormat("Firebase user created successfully: {0}({1})",
                 newUser.DisplayName, newUser.UserId);
             Debug.Log("회원가입 성공");
-            user = new JoinDB(email, password, name, dept, stdID,M1, M2, M3, M4, M5, H1, H2, H3, H4, H5);
+            user = new JoinDB(email,password, name, dept, stdID,M0,M1, M2, M3, M4, M5, H1, H2, H3, H4, H5);
 
         
    
-            CreateUserWithJson(email, new JoinDB(email,password,name,dept, stdID,M1, M2, M3, M4, M5, H1, H2, H3, H4, H5));
+            CreateUserWithJson(password, new JoinDB(email,password,name,dept, stdID,M0,M1, M2, M3, M4, M5, H1, H2, H3, H4, H5));
           
         });
 
@@ -147,7 +148,7 @@ public class Join : MonoBehaviourPunCallbacks
 
         string data = JsonUtility.ToJson(_userInfo);
         Debug.Log(data);
-        reference.Child("users").Child(_userInfo.stdID).SetRawJsonValueAsync(data);
+        reference.Child("users").Child(_userInfo.password).SetRawJsonValueAsync(data);
 
     }
 
@@ -220,6 +221,7 @@ public class Join : MonoBehaviourPunCallbacks
         public string name;
         public string dept;
         public string stdID;
+        public bool M0;
         public bool M1;
         public bool M2;
         public bool M3;
@@ -231,15 +233,16 @@ public class Join : MonoBehaviourPunCallbacks
         public bool H4;
         public bool H5;
 
-        public JoinDB(string email,string password,string name,string dept,string stdID,bool M1, bool M2, bool M3, bool M4, bool M5, bool H1, bool H2, bool H3, bool H4, bool H5)
+        public JoinDB(string email,  string password,string name,string dept,string stdID,bool M0,bool M1, bool M2, bool M3, bool M4, bool M5, bool H1, bool H2, bool H3, bool H4, bool H5)
         {
             this.email = email;
             this.password = password;
             this.name = name;
             this.dept = dept;
             this.stdID = stdID;
+            this.M0 = M0;
             this.M1 = M1;
-           this.M2 = M2;
+            this.M2 = M2;
             this.M3 = M3;
             this.M4 = M4;
             this.M5 = M5;
@@ -258,7 +261,8 @@ public class Join : MonoBehaviourPunCallbacks
             dic["name"] = this.name;
             dic["dept"] = this.dept;
            dic["stdID"] = this.stdID;
-           dic["M1"] = this.M1;
+            dic["M0"] = this.M0;
+            dic["M1"] = this.M1;
            dic["M2"] = this.M2;
             dic["M3"] = this.M3;
             dic["M4"] = this.M4;
