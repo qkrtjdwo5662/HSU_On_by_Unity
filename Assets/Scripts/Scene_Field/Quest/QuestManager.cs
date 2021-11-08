@@ -221,7 +221,7 @@ public class QuestManager : MonoBehaviour
                 h5cleared = dataSnapshot.Child("H5").GetValue(true).ToString();
                 Debug.Log(h5cleared);
 
-                IdentityID_text.text = join.IdentityID;
+                IdentityID_text.text = join.IdentityID.Substring(10);
                 StuID_text.text = "학번 : "+myStdId+ "\n" + "이름 : " + myName;
 
                 if (m0cleared.Equals("True"))
@@ -606,10 +606,11 @@ public class QuestManager : MonoBehaviour
         Debug.Log("HiddenMission5 clear & save");
     }
 
-    
-   
+
+
     public void Questreset()
-	{
+    {
+        reference.Child("M0").SetValueAsync(false);
         reference.Child("M1").SetValueAsync(false);
         reference.Child("M2").SetValueAsync(false);
         reference.Child("M3").SetValueAsync(false);
@@ -655,10 +656,30 @@ public class QuestManager : MonoBehaviour
         //All Complete reset
 
 
+        M1.interactable = true;
+        M2.interactable = false;
+        M3.interactable = false;
+        M4.interactable = false;
+        M5.interactable = false;
+
+        H1.interactable = false;
+        H2.interactable = false;
+        H3.interactable = false;
+        H4.interactable = false;
+        H5.interactable = false;
+
+        H1Text.text = "?????";
+        H2Text.text = "?????";
+        H3Text.text = "?????";
+        H4Text.text = "?????";
+        H5Text.text = "?????";
+        //Quest List Button reset
+
+
         Debug.Log("Quest Reset");
     }
 
-    
+
 
 
 

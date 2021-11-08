@@ -19,7 +19,7 @@ public class Timer : MonoBehaviour
     void Update()
     {
         LimitTime -= Time.deltaTime;
-        text_Timer.text = "남은 시간: " + Mathf.Round(LimitTime);
+        text_Timer.text = "남은 시간 :   " + Mathf.Round(LimitTime);
         if (LimitTime <= 0)
         {
             Test1.SetActive(false);
