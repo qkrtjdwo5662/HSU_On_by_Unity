@@ -11,7 +11,7 @@ public class TPSCharacterController : MonoBehaviour
     private Transform cameraArm;
     
     [SerializeField]
-    public float movingSpeed = 1.5f;
+    public float movingSpeed = 3.0f;
 
     [SerializeField]
     private GameObject character;
@@ -58,7 +58,7 @@ public class TPSCharacterController : MonoBehaviour
         Vector2 moveInput = inputDirection;
         // 이동 방향키 입력 판정 : 이동 방향 벡터가 0보다 크면 입력이 발생하고 있는 중
         bool isMove = moveInput.magnitude != 0;
-        bool isRun = movingSpeed > 5;
+        bool isRun = movingSpeed >= 5;
         // 입력이 발생하는 중이라면 이동 애니메이션 재생
         animator.SetBool("isMove", isMove);
         animator.SetBool("isRun", isRun);
@@ -77,7 +77,7 @@ public class TPSCharacterController : MonoBehaviour
             characterBody.forward = moveDir;
            
             // 이동
-            transform.position += moveDir * Time.deltaTime * movingSpeed;
+            transform.position += moveDir.normalized * Time.deltaTime * movingSpeed;
             //Debug.Log("char"+ characterBody.position.x + "," + characterBody.position.y + ","+characterBody.position.z);
             //Debug.Log("came" + cameraArm.position.x + "," + cameraArm.position.y + "," + cameraArm.position.z);
         }

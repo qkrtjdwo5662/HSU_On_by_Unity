@@ -637,14 +637,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3413891556477492024}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34d8de58fe27f7942bfc72d67e318a70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterBody: {fileID: 7729404139813826936}
   cameraArm: {fileID: 3413891555651109383}
-  movingSpeed: 5
+  movingSpeed: 3
   character: {fileID: 3413891556477492024}
   animator: {fileID: 0}
 --- !u!33 &3413891556477492029
@@ -731,7 +731,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3413891556477492024}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8913ddd565a48342a774c2fef54768d, type: 3}
   m_Name: 

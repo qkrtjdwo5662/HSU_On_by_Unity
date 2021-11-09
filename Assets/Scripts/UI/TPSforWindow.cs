@@ -118,7 +118,7 @@ public class TPSforWindow : MonoBehaviour
                 characterBody.forward = moveDir;
 
                 // 이동
-                transform.position += moveDir * Time.deltaTime * movingSpeed;
+                transform.position += moveDir.normalized * Time.deltaTime * movingSpeed;
                 //Walk.Play();
             }
             Vision();

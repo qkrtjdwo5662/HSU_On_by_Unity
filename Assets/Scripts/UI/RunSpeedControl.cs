@@ -11,7 +11,7 @@ public class RunSpeedControl : MonoBehaviour, IPointerUpHandler, IPointerDownHan
     private GameObject Character;
     public void OnPointerDown(PointerEventData eventData)
     {
-        controller.movingSpeed = 3.0f;
+        controller.movingSpeed = 6.0f;
        
         Debug.Log("ButtonDown" + controller.movingSpeed);
 
@@ -19,7 +19,7 @@ public class RunSpeedControl : MonoBehaviour, IPointerUpHandler, IPointerDownHan
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        controller.movingSpeed = 1.5f;
+        controller.movingSpeed = 3.0f;
         
         
     }
