@@ -285,7 +285,6 @@ public class QuestManager : MonoBehaviour
                 if (h5cleared.Equals("True"))
                 {
                     Hidden5QuestClear();
-                    Hidden5QuestClear_After();
                 }
 
                 else return;
@@ -473,6 +472,84 @@ public class QuestManager : MonoBehaviour
         }
     }//NPC Tutle Puzzle
 
+    public void Hidden1QuestStart()
+    {
+
+        if (h1cleared.Equals("True"))
+        {
+            H1_talk1.gameObject.SetActive(false);
+            H1_ClearAfterTalk.gameObject.SetActive(true);
+        }
+
+        else
+        {
+            H1_talk1.gameObject.SetActive(true);
+            H1_ClearAfterTalk.gameObject.SetActive(false);
+        }
+    }
+    public void Hidden2QuestStart()
+    {
+
+        if (h2cleared.Equals("True"))
+        {
+            H2_talk1.gameObject.SetActive(false);
+            H2_ClearAfterTalk.gameObject.SetActive(true);
+        }
+
+        else
+        {
+            H2_talk1.gameObject.SetActive(true);
+            H2_ClearAfterTalk.gameObject.SetActive(false);
+        }
+    }
+    public void Hidden3QuestStart()
+    {
+
+        if (h3cleared.Equals("True"))
+        {
+            H3_talk1.gameObject.SetActive(false);
+            H3_ClearAfterTalk.gameObject.SetActive(true);
+        }
+
+        else
+        {
+            H3_talk1.gameObject.SetActive(true);
+            H3_ClearAfterTalk.gameObject.SetActive(false);
+        }
+    }
+    public void Hidden4QuestStart()
+    {
+
+        if (h4cleared.Equals("True"))
+        {
+            H4_talk1.gameObject.SetActive(false);
+            H4_ClearAfterTalk.gameObject.SetActive(true);
+        }
+
+        else
+        {
+            H4_talk1.gameObject.SetActive(true);
+            H4_ClearAfterTalk.gameObject.SetActive(false);
+        }
+    }
+
+
+    public void Hidden5QuestStart()
+    {
+
+        if (h5cleared.Equals("True"))
+        {
+            H5_talk1.gameObject.SetActive(false);
+            H5_ClearAfterTalk.gameObject.SetActive(true);
+        }
+
+        else
+        {
+            H5_talk1.gameObject.SetActive(true);
+            H5_ClearAfterTalk.gameObject.SetActive(false);
+        }
+    }
+
 
 
     public void QuestOpen()
@@ -614,12 +691,8 @@ public class QuestManager : MonoBehaviour
         reference.Child("H5").SetValueAsync(true);
         Debug.Log("HiddenMission5 clear & save");
     }
+    //Clear
 
-    public void Hidden5QuestClear_After()
-    {
-        H5_talk1.gameObject.SetActive(false);
-        H5_ClearAfterTalk.gameObject.SetActive(true);
-    }
 
 
     public void Questreset()

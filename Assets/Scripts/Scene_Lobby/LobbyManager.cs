@@ -7,7 +7,7 @@ using Photon.Realtime;
 
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
-    private string gameVersion = "1";
+    private string gameVersion = "0.9";
 
     public Text connectionInfoText;
 
