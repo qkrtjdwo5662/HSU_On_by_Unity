@@ -17,7 +17,7 @@ public class  ChatManager : MonoBehaviourPunCallbacks
     PhotonView PV;
     bool cool = true;
     public float time;
-    
+    bool focuseFlag = false;
 
 
     [SerializeField]
@@ -28,7 +28,7 @@ public class  ChatManager : MonoBehaviourPunCallbacks
     void Start()
     {
         PhotonNetwork.IsMessageQueueRunning = true;
-        scroll_rect = GameObject.FindObjectOfType<ScrollRect>();
+        //scroll_rect = GameObject.FindObjectOfType<ScrollRect>();
         sp = GameObject.Find("speechObject").GetComponent<Speech>();
 
         sendBtn.onClick.AddListener(SendButtonOnclicked);
@@ -54,31 +54,38 @@ public class  ChatManager : MonoBehaviourPunCallbacks
         PV.RPC("ReceiveMsg", RpcTarget.OthersBuffered, msg);
         sp.speechRun(input.text);
         ReceiveMsg(msg);
-        input.ActivateInputField();
-        input.text = null;
+        //input.ActivateInputField();
+        input.text = "";
 	}
     void Update()
 	{
-        chatterUpdate();
-        if (Input.GetKeyDown(KeyCode.Return)) {
-            Debug.Log("do update");
-            if (input.isFocused == true && !cool)
+        //chatterUpdate();
+        if (Input.GetKey(KeyCode.Return)) {
+            if (cool)
             {
-                SendButtonOnclicked();
-                input.DeactivateInputField();
-               
-            }
-            else if (input.isFocused == false && cool)
-            {
-                input.ActivateInputField();
+                if (focuseFlag == true)
+                {
+                    focuseFlag = false;
+                    SendButtonOnclicked();
+                    Debug.Log("send");
+                    input.DeactivateInputField();
+                }
+                else if (focuseFlag == false)
+                {
+                    focuseFlag = true;
+                    input.ActivateInputField();
+                    Debug.Log("input focuse: " + input.isFocused);
+
+                }
+
+                cool = false;
                 
             }
-            cool = false;
         }
 
         if (cool == false) {
 
-            if (time >= 3.0f)
+            if (time >= 0.5f)
             {
                 time = 0.0f;
                 cool = true;
@@ -87,7 +94,7 @@ public class  ChatManager : MonoBehaviourPunCallbacks
         }
         
     }
-    void chatterUpdate()
+    /*void chatterUpdate()
     {
         chatters = "Player List\n";
         foreach(Player p in PhotonNetwork.PlayerList)
@@ -95,12 +102,12 @@ public class  ChatManager : MonoBehaviourPunCallbacks
             chatters += p.NickName + "\n";
 		}
         chattingList.text = chatters;
-    }
+    }*/
     [PunRPC]
 
     public void ReceiveMsg(string msg)
 	{
         chatLog.text += "\n" + msg;
-        scroll_rect.verticalNormalizedPosition = 0.0f;
+        //scroll_rect.verticalNormalizedPosition = 0.0f;
 	}
 }
