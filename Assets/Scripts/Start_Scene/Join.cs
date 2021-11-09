@@ -64,6 +64,7 @@ public class Join : MonoBehaviourPunCallbacks
     FirebaseAuth auth;
 
     bool loginFlag = false;
+    bool joinFlag = false;
 
     private void Start()
     {
@@ -108,7 +109,7 @@ public class Join : MonoBehaviourPunCallbacks
 
 
         CreateUser();
-  
+        
     }
 
     void CreateUser()
@@ -118,31 +119,29 @@ public class Join : MonoBehaviourPunCallbacks
         {
             if (task.IsCanceled)
             {
-                Debug.LogError("CreateUserWithEmailAndPasswordAsync was cnaceled.");
-                joinResult.text = "회원가입 실패";
+                //Debug.LogError("CreateUserWithEmailAndPasswordAsync was cnaceled.");
+                queue.Enqueue("JoinNext");
                 return;
             }
             if (task.IsFaulted)
             {
-                Debug.LogError("CreateUserWithEmailAndPasswordAsync encountered an error:" + task.Exception);
-                joinResult.text = "회원가입 실패";
+                //Debug.LogError("CreateUserWithEmailAndPasswordAsync encountered an error:" + task.Exception);
+                queue.Enqueue("JoinNext");
                 return;
             }
 
-
-            Firebase.Auth.FirebaseUser newUser = task.Result;
-            Debug.LogFormat("Firebase user created successfully: {0}({1})",
-                newUser.DisplayName, newUser.UserId);
-
-            IdentityID = newUser.UserId;
-           
-            Debug.Log("회원가입 성공");
-            user = new JoinDB(IdentityID, email,password, name, dept, stdID,M0,M1, M2, M3, M4, M5, H1, H2, H3, H4, H5);
-
-        
-   
-            CreateUserWithJson(IdentityID, new JoinDB(IdentityID, email,password,name,dept, stdID,M0,M1, M2, M3, M4, M5, H1, H2, H3, H4, H5));
-
+            if (task.IsCompleted)
+            {
+                Firebase.Auth.FirebaseUser newUser = task.Result;
+                Debug.LogFormat("Firebase user created successfully: {0}({1})", newUser.DisplayName, newUser.UserId);
+                IdentityID = newUser.UserId;
+                Debug.Log("회원가입 성공");
+                user = new JoinDB(IdentityID, email, password, name, dept, stdID, M0, M1, M2, M3, M4, M5, H1, H2, H3, H4, H5);
+                CreateUserWithJson(IdentityID, new JoinDB(IdentityID, email, password, name, dept, stdID, M0, M1, M2, M3, M4, M5, H1, H2, H3, H4, H5));
+                joinFlag = true;
+                queue.Enqueue("JoinNext");
+                return;
+            }
           
         });
 
@@ -166,15 +165,7 @@ public class Join : MonoBehaviourPunCallbacks
         Debug.Log("email:" + email + ",password:" + password);
 
         LoginUser();
-        if (loginFlag)
-        {
-            loginResult.text = "로그인 성공";
-        }
-        else
-        {
-            loginResult.text = "로그인 실패 : 이메일과 비밀번호를 확인해 주세요";
-        }
-            //LoginNext();
+       
     }
 
     void LoginUser()
@@ -183,41 +174,54 @@ public class Join : MonoBehaviourPunCallbacks
         {
             if (task.IsCanceled)
             {
-                Debug.LogError("SignInWithEmailAndPasswordAsync was cnaceled.");
+                //Debug.LogError("SignInWithEmailAndPasswordAsync was cnaceled.");
+                queue.Enqueue("LoginNext");
                 return;
             }
-            if (task.IsFaulted)
+            else if (task.IsFaulted)
             {
-                Debug.LogError("SignInWithEmailAndPasswordAsync encountered an error:" + task.Exception);
+                //Debug.LogError("SignInWithEmailAndPasswordAsync encountered an error:" + task.Exception);
+                queue.Enqueue("LoginNext");
                 return;
             }
-           
-            Firebase.Auth.FirebaseUser newUser = task.Result;
-            
-            Debug.LogFormat("Firebase user login successfully: {0}({1})",
-                newUser.DisplayName, newUser.UserId);
-            loginFlag = true;
-
-            IdentityID = newUser.UserId;
-
-            
-            queue.Enqueue("LoginNext");
+            else if (task.IsCompleted)
+            {
+                Firebase.Auth.FirebaseUser newUser = task.Result;
+                Debug.LogFormat("Firebase user login successfully: {0}({1})", newUser.DisplayName, newUser.UserId);
+                loginFlag = true;
+                IdentityID = newUser.UserId;
+                queue.Enqueue("LoginNext");
+                return;
+            }
             //Invoke("LoginNext", 0.1f);
-            
-            
-           
         });
         
     }
 
     public  void LoginNext()
     {
-        Debug.Log("로그인넥스트 실행");
+        
         if (loginFlag)
+        {
+            loginResult.text = "로그인 성공";
             LoadingSceneController.Instance.LoadScene("Scene_Festival");
-        
-        //PhotonNetwork.LoadLevel("Scene_selcAva");
-        
+        }
+        else
+        {
+            loginResult.text = "로그인 실패 : 이메일과 비밀번호를 확인해 주세요";
+        }
+    }
+    public void JoinNext()
+    {
+        Debug.Log("조인넥스트 실행");
+        if (joinFlag)
+        {
+            joinResult.text = "회원가입 성공";
+        }
+        else
+        {
+            joinResult.text = "회원가입 실패 : 요구사항을 정확히 입력해 주세요";
+        }
     }
 
     public class JoinDB
