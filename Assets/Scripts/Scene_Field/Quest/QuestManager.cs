@@ -474,8 +474,8 @@ public class QuestManager : MonoBehaviour
 
     public void Hidden1QuestStart()
     {
-
-        if (h1cleared.Equals("True"))
+        
+        if (H1Stamp.gameObject.activeSelf==true)
         {
             H1_talk1.gameObject.SetActive(false);
             H1_ClearAfterTalk.gameObject.SetActive(true);
@@ -490,7 +490,7 @@ public class QuestManager : MonoBehaviour
     public void Hidden2QuestStart()
     {
 
-        if (h2cleared.Equals("True"))
+        if (H2Stamp.gameObject.activeSelf == true)
         {
             H2_talk1.gameObject.SetActive(false);
             H2_ClearAfterTalk.gameObject.SetActive(true);
@@ -505,7 +505,7 @@ public class QuestManager : MonoBehaviour
     public void Hidden3QuestStart()
     {
 
-        if (h3cleared.Equals("True"))
+        if (H3Stamp.gameObject.activeSelf == true)
         {
             H3_talk1.gameObject.SetActive(false);
             H3_ClearAfterTalk.gameObject.SetActive(true);
@@ -520,7 +520,7 @@ public class QuestManager : MonoBehaviour
     public void Hidden4QuestStart()
     {
 
-        if (h4cleared.Equals("True"))
+        if (H4Stamp.gameObject.activeSelf == true)
         {
             H4_talk1.gameObject.SetActive(false);
             H4_ClearAfterTalk.gameObject.SetActive(true);
@@ -537,7 +537,7 @@ public class QuestManager : MonoBehaviour
     public void Hidden5QuestStart()
     {
 
-        if (h5cleared.Equals("True"))
+        if (H5Stamp.gameObject.activeSelf == true)
         {
             H5_talk1.gameObject.SetActive(false);
             H5_ClearAfterTalk.gameObject.SetActive(true);
