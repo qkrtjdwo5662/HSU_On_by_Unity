@@ -71,7 +71,15 @@ public class QuestManager : MonoBehaviour
     public Text H5Text;
     public Button Submit;
 
-    
+
+   
+    public Image H1_talk1, H1_ClearAfterTalk;
+    public Image H2_talk1, H2_ClearAfterTalk;
+    public Image H3_talk1, H3_ClearAfterTalk;
+    public Image H4_talk1, H4_ClearAfterTalk;
+    public Image H5_talk1, H5_ClearAfterTalk;
+
+    //info
     public Text IdentityID_text;
     public Text StuID_text;
 
@@ -151,7 +159,7 @@ public class QuestManager : MonoBehaviour
             }
         });
 
-
+        
 
         auth = FirebaseAuth.DefaultInstance;
         questList = new Dictionary<int, QuestData>();
@@ -277,6 +285,7 @@ public class QuestManager : MonoBehaviour
                 if (h5cleared.Equals("True"))
                 {
                     Hidden5QuestClear();
+                    Hidden5QuestClear_After();
                 }
 
                 else return;
@@ -606,6 +615,11 @@ public class QuestManager : MonoBehaviour
         Debug.Log("HiddenMission5 clear & save");
     }
 
+    public void Hidden5QuestClear_After()
+    {
+        H5_talk1.gameObject.SetActive(false);
+        H5_ClearAfterTalk.gameObject.SetActive(true);
+    }
 
 
     public void Questreset()
@@ -679,7 +693,7 @@ public class QuestManager : MonoBehaviour
         Debug.Log("Quest Reset");
     }
 
-
+    
 
 
 

@@ -26,7 +26,7 @@ public class Join : MonoBehaviourPunCallbacks
 
 
     [SerializeField] string email;
-    [SerializeField] public string password;
+    [SerializeField] string password;
     [SerializeField] string name;
     [SerializeField] string dept;
     [SerializeField] string stdID;
