@@ -115,6 +115,18 @@ public class QuestManager : MonoBehaviour
     public Image H4Complete;
     public Image H5Complete;
 
+    //Quest
+    public Image QuestList;
+
+    public Image M_list;
+    public Image H_list;
+    public Image O_list;
+
+    public Image Basic_detail;
+    public GameObject M_detail;
+    public GameObject H_detail;
+    public GameObject O_detail;
+    
 
     Dictionary<int, QuestData> questList;
     JoinDB user;
@@ -549,7 +561,7 @@ public class QuestManager : MonoBehaviour
             H5_ClearAfterTalk.gameObject.SetActive(false);
         }
     }
-
+    //QuestDialog 
 
 
     public void QuestOpen()
@@ -693,7 +705,55 @@ public class QuestManager : MonoBehaviour
     }
     //Clear
 
+    public void QuestButtonClick()
+    {
+        QuestList.gameObject.SetActive(true);
+        M_list.gameObject.SetActive(true);
+        H_list.gameObject.SetActive(false);
+        O_list.gameObject.SetActive(false);
 
+        Basic_detail.gameObject.SetActive(true);
+        M_detail.gameObject.SetActive(false);
+        H_detail.gameObject.SetActive(false);
+        O_detail.gameObject.SetActive(false);
+    }
+
+    public void M_ButtonClick()
+    {
+        M_list.gameObject.SetActive(true);
+        H_list.gameObject.SetActive(false);
+        O_list.gameObject.SetActive(false);
+
+        Basic_detail.gameObject.SetActive(true);
+        M_detail.gameObject.SetActive(false);
+        H_detail.gameObject.SetActive(false);
+        O_detail.gameObject.SetActive(false);
+    }
+
+    public void H_ButtonClick()
+    {
+        M_list.gameObject.SetActive(false);
+        H_list.gameObject.SetActive(true);
+        O_list.gameObject.SetActive(false);
+
+        Basic_detail.gameObject.SetActive(true);
+        M_detail.gameObject.SetActive(false);
+        H_detail.gameObject.SetActive(false);
+        O_detail.gameObject.SetActive(false);
+    }
+
+    public void O_ButtonClick()
+    {
+        M_list.gameObject.SetActive(false);
+        H_list.gameObject.SetActive(false);
+        O_list.gameObject.SetActive(true);
+
+        Basic_detail.gameObject.SetActive(true);
+        M_detail.gameObject.SetActive(false);
+        H_detail.gameObject.SetActive(false);
+        O_detail.gameObject.SetActive(false);
+    }
+    //QuestList
 
     public void Questreset()
     {
