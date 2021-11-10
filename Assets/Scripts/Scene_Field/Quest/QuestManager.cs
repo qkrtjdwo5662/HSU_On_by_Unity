@@ -53,6 +53,8 @@ public class QuestManager : MonoBehaviour
 
     public Button QuestButton;
 
+    public Image Sangjji;
+
     //Quest List Button
     public Button M1;
     public Button M2;
@@ -303,9 +305,35 @@ public class QuestManager : MonoBehaviour
             }
         });
     }
-    
 
-   
+
+
+    public void fade()
+    {
+        IEnumerator FadeCoroutine()
+        {
+            float fadecount = 0;
+            if (fadecount < 1.0f)
+            {
+                while (fadecount < 1.0f)
+                {
+                    fadecount += 0.01f;
+                    yield return new WaitForSeconds(0.01f);
+                    Sangjji.color = new Color(255, 255, 255, fadecount);
+                }
+            }
+            if (fadecount == 1.0f)
+            {
+                while (fadecount > 0.0f)
+                {
+                    fadecount -= 0.01f;
+                    yield return new WaitForSeconds(0.01f);
+                    Sangjji.color = new Color(255, 255, 255, fadecount);
+                }
+            }
+        }
+    }
+
     public void NPC1_Quiz()
     {
        
