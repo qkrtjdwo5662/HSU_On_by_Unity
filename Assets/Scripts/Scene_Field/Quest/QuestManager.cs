@@ -54,6 +54,9 @@ public class QuestManager : MonoBehaviour
     public Button QuestButton;
 
     public Image Sangjji;
+    public float fadeTime = 1.5f;
+    public AnimationCurve fadeCurve;
+
 
     //Quest List Button
     public Button M1;
@@ -128,8 +131,8 @@ public class QuestManager : MonoBehaviour
     public GameObject M_detail;
     public GameObject H_detail;
     public GameObject O_detail;
-    
 
+   
     Dictionary<int, QuestData> questList;
     JoinDB user;
     FirebaseAuth auth;
@@ -306,32 +309,32 @@ public class QuestManager : MonoBehaviour
         });
     }
 
-
-
-    public void fade()
+    IEnumerator CoFade(float start, float end)
     {
-        IEnumerator FadeCoroutine()
-        {
-            float fadecount = 0;
-            if (fadecount < 1.0f)
-            {
-                while (fadecount < 1.0f)
-                {
-                    fadecount += 0.01f;
-                    yield return new WaitForSeconds(0.01f);
-                    Sangjji.color = new Color(255, 255, 255, fadecount);
-                }
-            }
-            if (fadecount == 1.0f)
-            {
-                while (fadecount > 0.0f)
-                {
-                    fadecount -= 0.01f;
-                    yield return new WaitForSeconds(0.01f);
-                    Sangjji.color = new Color(255, 255, 255, fadecount);
-                }
-            }
+        float currentTime = 0.0f;
+        float percent = 0.0f;
+        Color color = Sangjji.color;
+        while(percent < 1f)
+	    {
+            currentTime += Time.deltaTime;
+            percent = currentTime / fadeTime;
+
+            color.a = Mathf.Lerp(start, end, fadeCurve.Evaluate(percent));
+
+            Sangjji.color = color;
+            yield return null;
         }
+
+    }
+
+    public void FadeIn()
+    {
+        StartCoroutine(CoFade(0,1));
+    }
+
+    public void FadeOut()
+	{
+        StartCoroutine(CoFade(1,0));
     }
 
     public void NPC1_Quiz()
@@ -350,6 +353,7 @@ public class QuestManager : MonoBehaviour
     } //NPC1 Quiz
 
     
+
     public void NPC4_Quiz1()
     {
 
