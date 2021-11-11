@@ -170,7 +170,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.HSU.HSU_project
   buildNumber: {}
-  AndroidBundleVersionCode: 1
+  AndroidBundleVersionCode: 2
   AndroidMinSdkVersion: 30
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
