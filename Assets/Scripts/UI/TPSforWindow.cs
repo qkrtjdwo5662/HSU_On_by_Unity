@@ -82,20 +82,20 @@ public class TPSforWindow : MonoBehaviour
                 moveInput += Vector2.left;
 
             }
-            if (Input.GetKeyDown(KeyCode.Space)) {
+            if (Input.GetKeyDown(KeyCode.LeftShift)) {
                 movingSpeed = 3.0f;
                 animator.SetBool("isRun",true);
             }
             if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) {
                 animator.SetBool("isMove", false);
             }
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (Input.GetKeyUp(KeyCode.LeftShift))
             {
                 movingSpeed = 1.5f;
                 animator.SetBool("isRun", false);
             }
 
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.Space))
             {
                 if (isJump == false)
                 {
