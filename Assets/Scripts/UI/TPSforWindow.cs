@@ -34,6 +34,8 @@ public class TPSforWindow : MonoBehaviour
     Animator animator;
 
     AudioSource Walk;
+
+    public Button escButton;
     // Start is called before the first frame update
     void Awake()
     {
@@ -44,8 +46,13 @@ public class TPSforWindow : MonoBehaviour
     void Start()
     {
         animator = characterBody.GetComponent<Animator>();
-
+        escButton = GameObject.Find("위치리셋btn").GetComponent<Button>();
         Walk = GetComponent<AudioSource>();
+        escButton.onClick.AddListener(escAction);
+    }
+    private void escAction()
+    {
+        transform.position = new Vector3(83f, 3f, 21f);
     }
 
     // Update is called once per frame

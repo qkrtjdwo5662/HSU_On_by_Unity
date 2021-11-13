@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.UI;
+using System;
 
 public class TPSCharacterController : MonoBehaviour
 {
@@ -20,6 +22,9 @@ public class TPSCharacterController : MonoBehaviour
     PhotonView PV;
 
     public Animator animator;
+
+
+    public Button escButton;
     // Start is called before the first frame update
     void Awake()
 	{
@@ -30,8 +35,14 @@ public class TPSCharacterController : MonoBehaviour
     void Start()
     {
         animator = characterBody.GetComponent<Animator>();
-        
+        escButton = GameObject.Find("위치리셋btn").GetComponent<Button>();
+        escButton.onClick.AddListener(escAction);
 
+    }
+
+    private void escAction()
+    {
+        transform.position = new Vector3(83f, 3f, 21f);
     }
 
     // Update is called once per frame

@@ -108,6 +108,6 @@ public class  ChatManager : MonoBehaviourPunCallbacks
     public void ReceiveMsg(string msg)
 	{
         chatLog.text += "\n" + msg;
-        //scroll_rect.verticalNormalizedPosition = 0.0f;
+        scroll_rect.verticalNormalizedPosition = 0.0f;
 	}
 }
