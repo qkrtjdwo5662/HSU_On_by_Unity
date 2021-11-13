@@ -8,6 +8,7 @@ public class NPC_Trigger : MonoBehaviour
 {
     public GameObject Dialog;
     public GameObject MainNpcTalk;
+    public GameObject TalkStart;
     
    
 
@@ -19,6 +20,7 @@ public class NPC_Trigger : MonoBehaviour
            
             Dialog.SetActive(true);
             MainNpcTalk.SetActive(true);
+            TalkStart.SetActive(true);
         }
 			
 	}
@@ -30,6 +32,7 @@ public class NPC_Trigger : MonoBehaviour
     {
         Dialog.SetActive(false);
         MainNpcTalk.SetActive(false);
+        TalkStart.SetActive(false);
     }
 }
 
