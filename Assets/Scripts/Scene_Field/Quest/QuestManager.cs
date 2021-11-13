@@ -340,7 +340,7 @@ public class QuestManager : MonoBehaviour
     public void NPC1_Quiz()
     {
        
-            if (NPC1_Quiz_Answer.text == "4268")
+            if (NPC1_Quiz_Answer.text == "2587")
             {
                 NPC1_Quiz_right.gameObject.SetActive(true);
             }
