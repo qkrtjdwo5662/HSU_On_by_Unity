@@ -619,6 +619,8 @@ public class QuestManager : MonoBehaviour
         M1Stamp.gameObject.SetActive(true);
         M1Complete.gameObject.SetActive(true);
 
+        M_ButtonClick();
+
         reference.Child("M1").SetValueAsync(true);
         Debug.Log("Mission1 clear & save");
     }
@@ -632,6 +634,8 @@ public class QuestManager : MonoBehaviour
 
         M2Stamp.gameObject.SetActive(true);
         M2Complete.gameObject.SetActive(true);
+
+        M_ButtonClick();
 
         reference.Child("M2").SetValueAsync(true);
         Debug.Log("Mission2 clear & save");
@@ -647,6 +651,8 @@ public class QuestManager : MonoBehaviour
         M3Stamp.gameObject.SetActive(true);
         M3Complete.gameObject.SetActive(true);
 
+        M_ButtonClick();
+
         reference.Child("M3").SetValueAsync(true);
         Debug.Log("Mission3 clear & save");
     }
@@ -661,6 +667,8 @@ public class QuestManager : MonoBehaviour
         M4Stamp.gameObject.SetActive(true);
         M4Complete.gameObject.SetActive(true);
 
+        M_ButtonClick();
+
         reference.Child("M4").SetValueAsync(true);
         Debug.Log("Mission4 clear & save");
     }
@@ -671,6 +679,8 @@ public class QuestManager : MonoBehaviour
 
         M5Stamp.gameObject.SetActive(true);
         M5Complete.gameObject.SetActive(true);
+
+        M_ButtonClick();
 
         reference.Child("M5").SetValueAsync(true);
         Debug.Log("Mission5 clear & save");
@@ -685,6 +695,8 @@ public class QuestManager : MonoBehaviour
         H1Stamp.gameObject.SetActive(true);
         H1Complete.gameObject.SetActive(true);
 
+        H_ButtonClick();
+
         reference.Child("H1").SetValueAsync(true);
         Debug.Log("HiddenMission1 clear & save");
     }
@@ -698,6 +710,8 @@ public class QuestManager : MonoBehaviour
         H2Stamp.gameObject.SetActive(true);
         H2Complete.gameObject.SetActive(true);
 
+        H_ButtonClick();
+
         reference.Child("H2").SetValueAsync(true);
         Debug.Log("HiddenMission2 clear & save");
     }
@@ -710,6 +724,8 @@ public class QuestManager : MonoBehaviour
         H3Stamp.gameObject.SetActive(true);
         H3Complete.gameObject.SetActive(true);
 
+        H_ButtonClick();
+
         reference.Child("H3").SetValueAsync(true);
         Debug.Log("HiddenMission3 clear & save");
     }
@@ -721,6 +737,8 @@ public class QuestManager : MonoBehaviour
         H4Stamp.gameObject.SetActive(true);
         H4Complete.gameObject.SetActive(true);
 
+        H_ButtonClick();
+
         reference.Child("H4").SetValueAsync(true);
         Debug.Log("HiddenMission4 clear & save");
     }
@@ -731,6 +749,8 @@ public class QuestManager : MonoBehaviour
 
         H5Stamp.gameObject.SetActive(true);
         H5Complete.gameObject.SetActive(true);
+
+        H_ButtonClick();
 
         reference.Child("H5").SetValueAsync(true);
         Debug.Log("HiddenMission5 clear & save");
