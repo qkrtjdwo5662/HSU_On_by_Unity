@@ -20,7 +20,7 @@ public class Join : MonoBehaviourPunCallbacks
     public Text connectionInfoText;
     public Text JoinInfoText;
     public Button LoginBtn;
-
+    public Image arrow;
     Queue<string> queue = new Queue<string>();
 
 
@@ -217,6 +217,7 @@ public class Join : MonoBehaviourPunCallbacks
         if (joinFlag)
         {
             joinResult.text = "회원가입 성공";
+            arrow.gameObject.SetActive(true);
         }
         else
         {
