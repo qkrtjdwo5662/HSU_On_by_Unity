@@ -647,6 +647,7 @@ MonoBehaviour:
   movingSpeed: 3
   character: {fileID: 3413891556477492024}
   animator: {fileID: 0}
+  escButton: {fileID: 0}
 --- !u!33 &3413891556477492029
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -741,6 +742,7 @@ MonoBehaviour:
   movingSpeed: 1.5
   character: {fileID: 3413891556477492024}
   input: {fileID: 0}
+  escButton: {fileID: 0}
 --- !u!82 &6346150907860298878
 AudioSource:
   m_ObjectHideFlags: 0
