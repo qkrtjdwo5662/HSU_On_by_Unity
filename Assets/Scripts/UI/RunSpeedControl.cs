@@ -40,55 +40,55 @@ public class RunSpeedControl : MonoBehaviour, IPointerUpHandler, IPointerDownHan
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Male1_1(Clone)"))
+        else if (Character = GameObject.Find("Male1_1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Male2(Clone)"))
+        else if(Character = GameObject.Find("Male2(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Male2_1(Clone)"))
+        else if (Character = GameObject.Find("Male2_1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Male3(Clone)"))
+        else if (Character = GameObject.Find("Male3(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Male3_1(Clone)"))
+        else if (Character = GameObject.Find("Male3_1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Male4(Clone)"))
+        else if (Character = GameObject.Find("Male4(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Male4_1(Clone)"))
+        else if (Character = GameObject.Find("Male4_1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Female1(Clone)"))
+        else if (Character = GameObject.Find("Female1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Female1_1(Clone)"))
+        else if (Character = GameObject.Find("Female1_1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Female3(Clone)"))
+        else if (Character = GameObject.Find("Female3(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Female3_1(Clone)"))
+        else if (Character = GameObject.Find("Female3_1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Female4(Clone)"))
+        else if (Character = GameObject.Find("Female4(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
-        if (Character = GameObject.Find("Female4_1(Clone)"))
+        else if (Character = GameObject.Find("Female4_1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
