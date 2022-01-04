@@ -242,10 +242,10 @@ public class QuestManager : MonoBehaviour
         OT2.interactable = false;
         OT3.interactable = false;
         OT4.interactable = false;
-        OT5.interactable = false;
+        OT5.interactable = false; 
         */
 
-
+        
 
         FirebaseApp.DefaultInstance.Options.DatabaseUrl =
                    new System.Uri("https://hsu-on-festival-default-rtdb.firebaseio.com/");
