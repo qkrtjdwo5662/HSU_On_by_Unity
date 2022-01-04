@@ -64,6 +64,13 @@ public class QuestManager : MonoBehaviour
     public Button M3;
     public Button M4;
     public Button M5;
+    /*
+    public Button OT1;
+    public Button OT2;
+    public Button OT3;
+    public Button OT4;
+    public Button OT5;
+    */
     public Button H1;
     public Text H1Text;
     public Button H2;
@@ -77,7 +84,7 @@ public class QuestManager : MonoBehaviour
     public Button Submit;
 
 
-   
+
     public Image H1_talk1, H1_ClearAfterTalk;
     public Image H2_talk1, H2_ClearAfterTalk;
     public Image H3_talk1, H3_ClearAfterTalk;
@@ -96,6 +103,14 @@ public class QuestManager : MonoBehaviour
     public GameObject NPC4;
     public GameObject NPC5;
 
+    /* //NPC_OT Object
+    public GameObject OTNPC0;
+    public GameObject OTNPC1;
+    public GameObject OTNPC2;
+    public GameObject OTNPC3;
+    public GameObject OTNPC4;
+    public GameObject OTNPC5;
+    */
     //Stamp Imgae
     public Image M1Stamp;
     public Image M2Stamp;
@@ -107,7 +122,13 @@ public class QuestManager : MonoBehaviour
     public Image H3Stamp;
     public Image H4Stamp;
     public Image H5Stamp;
-
+    /*
+    public Image OT1Stamp;
+    public Image OT2Stamp;
+    public Image OT3Stamp;
+    public Image OT4Stamp;
+    public Image OT5Stamp;
+    */
     //Complete Image
     public Image M1Complete;
     public Image M2Complete;
@@ -120,25 +141,35 @@ public class QuestManager : MonoBehaviour
     public Image H4Complete;
     public Image H5Complete;
 
+    /*
+    public Image OT1Complete;
+    public Image OT2Complete;
+    public Image OT3Complete;
+    public Image OT4Complete;
+    public Image OT5Complete;
+    */
+
     //Quest
     public Image QuestList;
 
     public Image M_list;
     public Image H_list;
     public Image O_list;
+    //public Image OT_list;
 
     public Image Basic_detail;
     public GameObject M_detail;
     public GameObject H_detail;
     public GameObject O_detail;
+    //public GameObject OT_detail;
 
-   
+
     Dictionary<int, QuestData> questList;
     JoinDB user;
     FirebaseAuth auth;
     [SerializeField]
     public DatabaseReference reference = null;
-    string myName="0";
+    string myName = "0";
     string myStdId;
     string m0cleared = "false";
     string m1cleared = "false";
@@ -151,7 +182,14 @@ public class QuestManager : MonoBehaviour
     string h3cleared = "false";
     string h4cleared = "false";
     string h5cleared = "false";
-
+    /*
+    string ot0cleared = "false";
+    string ot1cleared = "false";
+    string ot2cleared = "false";
+    string ot3cleared = "false";
+    string ot4cleared = "false";
+    string ot5cleared = "false";
+    */
 
     DataSnapshot ds;
     FirebaseApp app;
@@ -176,11 +214,11 @@ public class QuestManager : MonoBehaviour
             }
         });
 
-        
+
 
         auth = FirebaseAuth.DefaultInstance;
         questList = new Dictionary<int, QuestData>();
-        
+
     }
 
     void Start()
@@ -199,25 +237,32 @@ public class QuestManager : MonoBehaviour
         H3.interactable = false;
         H4.interactable = false;
         H5.interactable = false;
+        /*
+        OT1.interactable = false;
+        OT2.interactable = false;
+        OT3.interactable = false;
+        OT4.interactable = false;
+        OT5.interactable = false;
+        */
 
-        
+
 
         FirebaseApp.DefaultInstance.Options.DatabaseUrl =
                    new System.Uri("https://hsu-on-festival-default-rtdb.firebaseio.com/");
 
-        
+
         // 파이어베이스의 메인 참조 얻기
         //reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(join.email);
         reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(join.IdentityID);
-        
+
         reference.GetValueAsync().ContinueWithOnMainThread(task => {
             if (task.IsFaulted)
             {
-              // Handle the error...
+                // Handle the error...
             }
             else if (task.IsCompleted)
             {
-              DataSnapshot dataSnapshot = task.Result;
+                DataSnapshot dataSnapshot = task.Result;
                 ds = dataSnapshot;
                 myName = dataSnapshot.Child("name").GetValue(true).ToString();
                 Debug.Log(myName);
@@ -245,15 +290,31 @@ public class QuestManager : MonoBehaviour
                 Debug.Log(h4cleared);
                 h5cleared = dataSnapshot.Child("H5").GetValue(true).ToString();
                 Debug.Log(h5cleared);
-
+                /*
+                ot0cleared = dataSnapshot.Child("OT0").GetValue(true).ToString();
+                Debug.Log(ot0cleared);
+                ot1cleared = dataSnapshot.Child("OT1").GetValue(true).ToString();
+                Debug.Log(ot1cleared);
+                ot2cleared = dataSnapshot.Child("OT2").GetValue(true).ToString();
+                Debug.Log(ot2cleared);
+                ot3cleared = dataSnapshot.Child("OT3").GetValue(true).ToString();
+                Debug.Log(ot3cleared);
+                ot4cleared = dataSnapshot.Child("OT4").GetValue(true).ToString();
+                Debug.Log(ot4cleared);
+                ot5cleared = dataSnapshot.Child("OT5").GetValue(true).ToString();
+                Debug.Log(ot5cleared);
+                */
                 IdentityID_text.text = join.IdentityID.Substring(10);
-                StuID_text.text = "학번 : "+myStdId+ "\n" + "이름 : " + myName;
+                StuID_text.text = "학번 : " + myStdId + "\n" + "이름 : " + myName;
 
                 if (m0cleared.Equals("True"))
                 {
                     QuestOpen();
                 }
-
+                /*if (ot0cleared.Equals("True"))
+                {
+                    QuestOpen();
+                }*/
                 if (m1cleared.Equals("True"))
                 {
                     Mission1QuestClear();
@@ -279,7 +340,7 @@ public class QuestManager : MonoBehaviour
                     Mission5QuestClear();
                 }
 
-                if(h1cleared.Equals("True"))
+                if (h1cleared.Equals("True"))
                 {
                     Hidden1QuestClear();
                 }
@@ -303,7 +364,32 @@ public class QuestManager : MonoBehaviour
                 {
                     Hidden5QuestClear();
                 }
+                /*
+                if (ot1cleared.Equals("True"))
+                {
+                    OT1QuestClear();
+                }
+                ///////
+                if (ot2cleared.Equals("True"))
+                {
+                    OT2QuestClear();
+                }
 
+                if (ot3cleared.Equals("True"))
+                {
+                    OT3QuestClear();
+                }
+
+                if (ot4cleared.Equals("True"))
+                {
+                    OT4QuestClear();
+                }
+
+                if (ot5cleared.Equals("True"))
+                {
+                    OT5QuestClear();
+                }
+                */
                 else return;
             }
         });
@@ -314,8 +400,8 @@ public class QuestManager : MonoBehaviour
         float currentTime = 0.0f;
         float percent = 0.0f;
         Color color = Sangjji.color;
-        while(percent < 1f)
-	    {
+        while (percent < 1f)
+        {
             currentTime += Time.deltaTime;
             percent = currentTime / fadeTime;
 
@@ -329,30 +415,30 @@ public class QuestManager : MonoBehaviour
 
     public void FadeIn()
     {
-        StartCoroutine(CoFade(0,1));
+        StartCoroutine(CoFade(0, 1));
     }
 
     public void FadeOut()
-	{
-        StartCoroutine(CoFade(1,0));
+    {
+        StartCoroutine(CoFade(1, 0));
     }
 
     public void NPC1_Quiz()
     {
-       
-            if (NPC1_Quiz_Answer.text == "2587")
-            {
-                NPC1_Quiz_right.gameObject.SetActive(true);
-            }
-            else
-            {
-                NPC1_Quiz_Wrong.gameObject.SetActive(true);
-                NPC1_Quiz_Answer.text = "";
-            }
+
+        if (NPC1_Quiz_Answer.text == "2587")
+        {
+            NPC1_Quiz_right.gameObject.SetActive(true);
+        }
+        else
+        {
+            NPC1_Quiz_Wrong.gameObject.SetActive(true);
+            NPC1_Quiz_Answer.text = "";
+        }
 
     } //NPC1 Quiz
 
-    
+
 
     public void NPC4_Quiz1()
     {
@@ -458,7 +544,7 @@ public class QuestManager : MonoBehaviour
 
     public void NPC_Chicken_Quiz()
     {
-        if(NPC_Chicken_Quiz_Answer.text == "chicken")
+        if (NPC_Chicken_Quiz_Answer.text == "chicken")
         {
             NPC_Chicken_Quiz_right.gameObject.SetActive(true);
             NPC_Chicken_Quiz_Answer.text = "";
@@ -486,11 +572,11 @@ public class QuestManager : MonoBehaviour
     }//NPC FoodZone Quiz
 
 
-   
+
 
     public void NPC_WordPuzzle_Quiz1()
     {
-        if(NPC_WordPuzzle_Quiz1_Answer.text == "대동제")
+        if (NPC_WordPuzzle_Quiz1_Answer.text == "대동제")
         {
             NPC_WordPuzzle_Quiz1_right.gameObject.SetActive(true);
             NPC_WordPuzzle_Quiz1_Answer.text = "";
@@ -518,8 +604,8 @@ public class QuestManager : MonoBehaviour
 
     public void Hidden1QuestStart()
     {
-        
-        if (H1Stamp.gameObject.activeSelf==true)
+
+        if (H1Stamp.gameObject.activeSelf == true)
         {
             H1_talk1.gameObject.SetActive(false);
             H1_ClearAfterTalk.gameObject.SetActive(true);
@@ -597,20 +683,105 @@ public class QuestManager : MonoBehaviour
 
 
     public void QuestOpen()
-	{
+    {
         QuestButton.gameObject.SetActive(true);
 
         M1.interactable = true;
-        
+        //OT1.interactable = true;
+
         NPC0.gameObject.SetActive(false);
         NPC1.gameObject.SetActive(true);
 
+        //OTNPC0.gameObject.SetActive(false);
+        //OTNPC1.gameObject.SetActive(true);
+
         reference.Child("M0").SetValueAsync(true);
+        //reference.Child("OT0").SetValueAsync(true);
         Debug.Log("Quest Open");
     }
 
+    /* //OT Mission
+    public void OT1QuestClear()
+    {
+        OT2.interactable = true;
+
+        OTNPC1.gameObject.SetActive(false);
+        OTNPC2.gameObject.SetActive(true);
+
+        OT1Stamp.gameObject.SetActive(true);
+        OT1Complete.gameObject.SetActive(true);
+
+        OT_ButtonClick();
+
+        reference.Child("OT1").SetValueAsync(true);
+        Debug.Log("OT1 clear & save");
+    }
+
+    public void OT2QuestClear()
+    {
+        OT3.interactable = true;
+
+        OTNPC2.gameObject.SetActive(false);
+        OTNPC3.gameObject.SetActive(true);
+
+        OT2Stamp.gameObject.SetActive(true);
+        OT2Complete.gameObject.SetActive(true);
+
+        OT_ButtonClick();
+
+        reference.Child("OT2").SetValueAsync(true);
+        Debug.Log("OT2 clear & save");
+    }
+
+    public void OT3QuestClear()
+    {
+        OT4.interactable = true;
+
+        OTNPC3.gameObject.SetActive(false);
+        OTNPC4.gameObject.SetActive(true);
+
+        OT3Stamp.gameObject.SetActive(true);
+        OT3Complete.gameObject.SetActive(true);
+
+        OT_ButtonClick();
+
+        reference.Child("OT3").SetValueAsync(true);
+        Debug.Log("OT3 clear & save");
+    }
+
+    public void OT4QuestClear()
+    {
+        OT5.interactable = true;
+
+        OTNPC4.gameObject.SetActive(false);
+        OTNPC5.gameObject.SetActive(true);
+
+        OT4Stamp.gameObject.SetActive(true);
+        OT4Complete.gameObject.SetActive(true);
+
+        OT_ButtonClick();
+
+        reference.Child("OT4").SetValueAsync(true);
+        Debug.Log("OT4 clear & save");
+    }
+
+    public void OT5QuestClear()
+    {
+        OTNPC4.gameObject.SetActive(false);
+
+        OT5Stamp.gameObject.SetActive(true);
+        OT5Complete.gameObject.SetActive(true);
+
+        OT_ButtonClick();
+
+        reference.Child("OT5").SetValueAsync(true);
+        Debug.Log("OT5 clear & save");
+
+    }
+    // OT End */
+
     public void Mission1QuestClear()
-	{
+    {
         M2.interactable = true;
 
         NPC1.gameObject.SetActive(false);
@@ -626,7 +797,7 @@ public class QuestManager : MonoBehaviour
     }
 
     public void Mission2QuestClear()
-	{
+    {
         M3.interactable = true;
 
         NPC2.gameObject.SetActive(false);
@@ -700,7 +871,7 @@ public class QuestManager : MonoBehaviour
         reference.Child("H1").SetValueAsync(true);
         Debug.Log("HiddenMission1 clear & save");
     }
-    
+
 
     public void Hidden2QuestClear()
     {
@@ -715,7 +886,7 @@ public class QuestManager : MonoBehaviour
         reference.Child("H2").SetValueAsync(true);
         Debug.Log("HiddenMission2 clear & save");
     }
-   
+
     public void Hidden3QuestClear()
     {
         H3.interactable = true;
@@ -760,14 +931,16 @@ public class QuestManager : MonoBehaviour
     public void QuestButtonClick()
     {
         QuestList.gameObject.SetActive(true);
-        M_list.gameObject.SetActive(true);
+        M_list.gameObject.SetActive(true); //나중에 바꿔야함!!
         H_list.gameObject.SetActive(false);
         O_list.gameObject.SetActive(false);
+        //OT_list.gameObject.SetActive(true);
 
         Basic_detail.gameObject.SetActive(true);
         M_detail.gameObject.SetActive(false);
         H_detail.gameObject.SetActive(false);
         O_detail.gameObject.SetActive(false);
+        //OT_detail.gameObject.SetActive(false);
     }
 
     public void M_ButtonClick()
@@ -775,11 +948,13 @@ public class QuestManager : MonoBehaviour
         M_list.gameObject.SetActive(true);
         H_list.gameObject.SetActive(false);
         O_list.gameObject.SetActive(false);
+       // OT_list.gameObject.SetActive(false);
 
         Basic_detail.gameObject.SetActive(true);
         M_detail.gameObject.SetActive(false);
         H_detail.gameObject.SetActive(false);
         O_detail.gameObject.SetActive(false);
+        //OT_detail.gameObject.SetActive(false);
     }
 
     public void H_ButtonClick()
@@ -787,11 +962,13 @@ public class QuestManager : MonoBehaviour
         M_list.gameObject.SetActive(false);
         H_list.gameObject.SetActive(true);
         O_list.gameObject.SetActive(false);
+        //OT_list.gameObject.SetActive(false);
 
         Basic_detail.gameObject.SetActive(true);
         M_detail.gameObject.SetActive(false);
         H_detail.gameObject.SetActive(false);
         O_detail.gameObject.SetActive(false);
+        //OT_detail.gameObject.SetActive(false);
     }
 
     public void O_ButtonClick()
@@ -804,6 +981,20 @@ public class QuestManager : MonoBehaviour
         M_detail.gameObject.SetActive(false);
         H_detail.gameObject.SetActive(false);
         O_detail.gameObject.SetActive(false);
+    }
+
+    public void OT_ButtonClick()
+    {
+        M_list.gameObject.SetActive(false);
+        H_list.gameObject.SetActive(false);
+        O_list.gameObject.SetActive(false);
+        //OT_list.gameObject.SetActive(true);
+
+        Basic_detail.gameObject.SetActive(false);
+        M_detail.gameObject.SetActive(false);
+        H_detail.gameObject.SetActive(false);
+        O_detail.gameObject.SetActive(false);
+        //OT_detail.gameObject.SetActive(true);
     }
     //QuestList
 
@@ -878,7 +1069,7 @@ public class QuestManager : MonoBehaviour
         Debug.Log("Quest Reset");
     }
 
-    
+
 
 
 
@@ -901,8 +1092,15 @@ public class QuestManager : MonoBehaviour
         public bool H3;
         public bool H4;
         public bool H5;
-
-        public JoinDB(string email, string password, string name, string dept, string stdID, bool M0, bool M1, bool M2, bool M3, bool M4, bool M5, bool H1, bool H2, bool H3, bool H4, bool H5)
+        /*
+        public bool OT0;
+        public bool OT1;
+        public bool OT2;
+        public bool OT3;
+        public bool OT4;
+        public bool OT5;
+        */
+        public JoinDB(string email, string password, string name, string dept, string stdID, bool M0, bool M1, bool M2, bool M3, bool M4, bool M5, bool H1, bool H2, bool H3, bool H4, bool H5 /*bool OT0, bool, OT1, bool OT2, bool OT3, bool OT4, bool OT5*/)
         {
             this.email = email;
             this.password = password;
@@ -920,6 +1118,14 @@ public class QuestManager : MonoBehaviour
             this.H3 = H3;
             this.H4 = H4;
             this.H5 = H5;
+            /*
+            this.OT0 = OT0;
+            this.OT1 = OT1;
+            this.OT2 = OT2;
+            this.OT3 = OT3;
+            this.OT4 = OT4;
+            this.OT5 = OT5;
+            */
         }
 
         public Dictionary<string, object> ToDictionary()
@@ -941,6 +1147,12 @@ public class QuestManager : MonoBehaviour
             dic["H3"] = this.H3;
             dic["H4"] = this.H4;
             dic["H5"] = this.H5;
+            /*dic["OT0"] = this.OT0;
+            dic["OT1"] = this.OT1;
+            dic["OT2"] = this.OT2;
+            dic["OT3"] = this.OT3;
+            dic["OT4"] = this.OT4;
+            dic["OT5"] = this.OT5;*/
 
             return dic;
         }
