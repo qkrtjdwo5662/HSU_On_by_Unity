@@ -75,6 +75,12 @@ public class TPSCharacterController : MonoBehaviour
         animator.SetBool("isRun", isRun);
         if (isMove)
         {
+            animator.SetBool("conversation", false);
+            animator.SetBool("dance", false);
+            animator.SetBool("victory", false);
+            animator.SetBool("lose", false);
+            animator.SetBool("yes", false);
+            animator.SetBool("no", false);
             // 카메라가 바라보는 방향
             Vector3 lookForward = new Vector3(cameraArm.forward.x, 0f, cameraArm.forward.z).normalized;
             // 카메라의 오른쪽 방향
