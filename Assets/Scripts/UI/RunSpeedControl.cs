@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+//-------------------------------------안씀-----------------------------------------//
 public class RunSpeedControl : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 {
     [SerializeField]

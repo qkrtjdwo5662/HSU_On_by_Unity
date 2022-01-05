@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//---------------------윈도우 개발 종료로 안씀-----------------------------------------//  
 public class TPSforWindow : MonoBehaviour
 {
     // Start is called before the first frame update

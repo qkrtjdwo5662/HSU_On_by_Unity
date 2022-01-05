@@ -29,7 +29,7 @@ public class joystick : MonoBehaviourPunCallbacks, IBeginDragHandler, IDragHandl
     private Vector2 inputDirection;
     private Vector2 before;
     private bool isInput;
-    PhotonView PV;
+    
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
