@@ -30,6 +30,14 @@ public class TPSCharacterController : MonoBehaviour
 	{
         rb = characterBody.GetComponent<Rigidbody>();
         PV = GetComponent<PhotonView>();
+        if (PV.IsMine)
+        {
+            this.name = "Me";
+        }
+        else if (!PV.IsMine)
+        {
+            this.name = "OtherPlayer";
+        }
     }
 
     void Start()
@@ -37,6 +45,7 @@ public class TPSCharacterController : MonoBehaviour
         animator = characterBody.GetComponent<Animator>();
         escButton = GameObject.Find("위치리셋btn").GetComponent<Button>();
         escButton.onClick.AddListener(escAction);
+
 
     }
 
@@ -48,11 +57,7 @@ public class TPSCharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!PV.IsMine)
-        {
-            //character.SetActive(false);
-            return;
-        }
+        
             
 
     }

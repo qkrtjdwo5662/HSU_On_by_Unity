@@ -123,7 +123,7 @@ public class joystick : MonoBehaviourPunCallbacks, IBeginDragHandler, IDragHandl
     // Start is called before the first frame update
     void Start()
     {
-        
+        /*
         if (Character = GameObject.Find("Male1(Clone)"))
         {
             controller = Character.GetComponent<TPSCharacterController>();
@@ -180,8 +180,13 @@ public class joystick : MonoBehaviourPunCallbacks, IBeginDragHandler, IDragHandl
         {
             controller = Character.GetComponent<TPSCharacterController>();
         }
+        */
         //Character = GameObject.Find("Character(Clone)");
         //controller = Character.GetComponent<TPSCharacterController>();
+        if (Character = GameObject.Find("Me"))
+        {
+            controller = Character.GetComponent<TPSCharacterController>();
+        }
     }
 
     // Update is called once per frame

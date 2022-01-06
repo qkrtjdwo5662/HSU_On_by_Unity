@@ -18,8 +18,6 @@ public class EmotionControl : MonoBehaviour
     {
         GameObject Character;
 
-
-
         if (Character = GameObject.Find("base"))
         {
             animator = Character.GetComponent<Animator>();

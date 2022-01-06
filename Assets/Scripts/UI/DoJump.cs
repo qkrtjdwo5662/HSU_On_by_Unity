@@ -35,9 +35,13 @@ public class DoJump : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
                 break;
 
         }
+        if (CharacterObject = GameObject.Find("Me"))
+        {
+            CharacterTransform = CharacterObject.GetComponent<Transform>();
+            controller = CharacterObject.GetComponent<TPSCharacterController>();
+        }
 
-        
-        
+        /*
         if (CharacterObject = GameObject.Find("Male1(Clone)"))
         {
             CharacterTransform = CharacterObject.GetComponent<Transform>();
@@ -107,7 +111,7 @@ public class DoJump : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
         {
             CharacterTransform = CharacterObject.GetComponent<Transform>();
             controller = CharacterObject.GetComponent<TPSCharacterController>();
-        }
+        }/*
 
     }
 
