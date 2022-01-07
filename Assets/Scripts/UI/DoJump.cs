@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -23,13 +21,14 @@ public class DoJump : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 
     private void Awake()
     {
-        
+
     }
     // Start is called before the first frame update
     void Start()
     {
 
-        switch (movingButton) {
+        switch (movingButton)
+        {
             case MovingButton.Jump:
                 btn.onClick.AddListener(Jump);
                 break;
@@ -111,17 +110,19 @@ public class DoJump : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
         {
             CharacterTransform = CharacterObject.GetComponent<Transform>();
             controller = CharacterObject.GetComponent<TPSCharacterController>();
-        }/*
+        }*/
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch (movingButton) {
+        switch (movingButton)
+        {
             case MovingButton.Jump:
                 if (isJump == true)
                 {
+                    start += Time.deltaTime;
                     if (start >= finish)
                     {
                         isJump = false;
@@ -129,13 +130,13 @@ public class DoJump : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
                         start = 0.0f;
                     }
 
-                    start += Time.deltaTime;
+
                 }
                 break;
             case MovingButton.Run:
                 break;
         }
-        
+
 
         /*
         if (isJump == true) {
@@ -149,18 +150,19 @@ public class DoJump : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
         } */
     }
 
-    private void Jump() {
-       
+    private void Jump()
+    {
+
 
         if (isJump == false)
         {
             isJump = true;
             controller.animator.SetBool("isJump", true);
             CharacterTransform.GetComponent<Rigidbody>().AddForce(0, 0.03f, 0);
-            
+
         }
     }
-    
+
 
 
 
@@ -175,7 +177,8 @@ public class DoJump : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        switch (movingButton) {
+        switch (movingButton)
+        {
             case MovingButton.Run:
                 controller.movingSpeed = 6.0f;
                 Debug.Log("RunButtonDown" + controller.movingSpeed);
@@ -199,7 +202,7 @@ public class DoJump : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
                 break;
 
         }
-        
+
 
 
     }
