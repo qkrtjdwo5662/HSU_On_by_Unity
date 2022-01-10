@@ -12,7 +12,9 @@ public class QuestManager : MonoBehaviour
 {
     //Join.cs
     public Join join;
-
+    //OT_NPC1 Quiz
+    public InputField OT_NPC1_Quiz_Answer;
+    public Image OT_NPC1_Quiz_right, OT_NPC1_Quiz_Wrong;
     //NPC1 Quiz
     public InputField NPC1_Quiz_Answer;
     public Image NPC1_Quiz_right, NPC1_Quiz_Wrong;
@@ -422,7 +424,19 @@ public class QuestManager : MonoBehaviour
     {
         StartCoroutine(CoFade(1, 0));
     }
-
+    
+    public void OT_NPC1_Quiz()
+    {
+        if(OT_NPC1_Quiz_Answer.text == "창의열람실")
+        {
+            OT_NPC1_Quiz_right.gameObject.SetActive(true);
+        }
+        else
+        {
+            OT_NPC1_Quiz_Wrong.gameObject.SetActive(true);
+            OT_NPC1_Quiz_Answer.text = "";
+        }
+    }
     public void NPC1_Quiz()
     {
 
