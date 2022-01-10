@@ -7,6 +7,8 @@ using System;
 
 public class TPSCharacterController : MonoBehaviour
 {
+    private Join join;
+
     [SerializeField]
     private Transform characterBody;
     [SerializeField]
@@ -46,7 +48,8 @@ public class TPSCharacterController : MonoBehaviour
         escButton = GameObject.Find("위치리셋btn").GetComponent<Button>();
         escButton.onClick.AddListener(escAction);
 
-
+        join = GameObject.Find("Join").GetComponent<Join>();
+        join.PVID = PV.ViewID;
     }
 
     private void escAction()

@@ -24,7 +24,7 @@ public class Join : MonoBehaviourPunCallbacks
     Queue<string> queue = new Queue<string>();
 
 
-
+    [SerializeField] public int PVID;
     [SerializeField] string email;
     [SerializeField] string password;
     [SerializeField] string name;
