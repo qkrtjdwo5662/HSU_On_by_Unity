@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/firebase_database_url,@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id">
-  <string name="firebase_database_url" translatable="false">https://hsu-on-festival-default-rtdb.firebaseio.com</string>
-  <string name="gcm_defaultSenderId" translatable="false">847156824499</string>
-  <string name="google_storage_bucket" translatable="false">hsu-on-festival.appspot.com</string>
-  <string name="project_id" translatable="false">hsu-on-festival</string>
-  <string name="google_api_key" translatable="false">AIzaSyCge8uw26y-PO54bt9YzDupaLaYm-u8J1o</string>
-  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCge8uw26y-PO54bt9YzDupaLaYm-u8J1o</string>
-  <string name="google_app_id" translatable="false">1:847156824499:android:32580e7dfb5098210be3c6</string>
-  <string name="default_web_client_id" translatable="false">847156824499-5iklr7eguil7ninobsecu4dub6kd3rlk.apps.googleusercontent.com</string>
+  <string name="firebase_database_url" translatable="false">https://hsuon-4c8e4-default-rtdb.firebaseio.com</string>
+  <string name="gcm_defaultSenderId" translatable="false">436667224785</string>
+  <string name="google_storage_bucket" translatable="false">hsuon-4c8e4.appspot.com</string>
+  <string name="project_id" translatable="false">hsuon-4c8e4</string>
+  <string name="google_api_key" translatable="false">AIzaSyDo1cnTuwXPdUZvCykBBYWT90PPP99fT58</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDo1cnTuwXPdUZvCykBBYWT90PPP99fT58</string>
+  <string name="google_app_id" translatable="false">1:436667224785:android:3abe1dd7ea9c0840aeabf0</string>
+  <string name="default_web_client_id" translatable="false">436667224785-p7cep7gsl3k87ased10hau5d0f36v65m.apps.googleusercontent.com</string>
 </resources>
