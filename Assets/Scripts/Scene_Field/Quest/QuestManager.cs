@@ -15,6 +15,9 @@ public class QuestManager : MonoBehaviour
     //OT_NPC1 Quiz
     public InputField OT_NPC1_Quiz_Answer;
     public Image OT_NPC1_Quiz_right, OT_NPC1_Quiz_Wrong;
+    //OT_NPC2 Quiz
+    public InputField OT_NPC2_Quiz_Answer;
+    public Image OT_NPC2_Quiz_right, OT_NPC2_Quiz_Wrong;
     //NPC1 Quiz
     public InputField NPC1_Quiz_Answer;
     public Image NPC1_Quiz_right, NPC1_Quiz_Wrong;
@@ -435,6 +438,19 @@ public class QuestManager : MonoBehaviour
         {
             OT_NPC1_Quiz_Wrong.gameObject.SetActive(true);
             OT_NPC1_Quiz_Answer.text = "";
+        }
+    }
+
+    public void OT_NPC2_Quiz()
+    {
+        if(OT_NPC2_Quiz_Answer.text == "원스톱지원센터")
+        {
+            OT_NPC2_Quiz_right.gameObject.SetActive(true);
+        }
+        else
+        {
+            OT_NPC2_Quiz_Wrong.gameObject.SetActive(true);
+            OT_NPC2_Quiz_Answer.text = "";
         }
     }
     public void NPC1_Quiz()
