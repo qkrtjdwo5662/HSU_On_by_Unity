@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>436667224785-veomt7h7cqea10empg1chalnc9jtfq9k.apps.googleusercontent.com</string>
+	<string>436667224785-au1t0it0qc3nirm2qgp5uod1nju6cu85.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.436667224785-veomt7h7cqea10empg1chalnc9jtfq9k</string>
+	<string>com.googleusercontent.apps.436667224785-au1t0it0qc3nirm2qgp5uod1nju6cu85</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBfKCurHS-H-86HY9wVpj-Bx8vu1SvXsEI</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.company.Hsuon</string>
+	<string>com.codingquokka.hsuon</string>
 	<key>PROJECT_ID</key>
 	<string>hsuon-4c8e4</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:436667224785:ios:2d7ee5ec66f826e9aeabf0</string>
+	<string>1:436667224785:ios:75c428e548543c0caeabf0</string>
 	<key>DATABASE_URL</key>
 	<string>https://hsuon-4c8e4-default-rtdb.firebaseio.com</string>
 </dict>
