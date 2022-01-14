@@ -30,19 +30,33 @@ public class Join : MonoBehaviourPunCallbacks
     [SerializeField] string name;
     [SerializeField] string dept;
     [SerializeField] string stdID;
-    [SerializeField] bool M0 = false;
+
+    [SerializeField] bool OT0 = false;
+    [SerializeField] bool OT1 = false;
+    [SerializeField] bool OT2 = false;
+    [SerializeField] bool OT3 = false;
+    [SerializeField] bool OT4 = false;
+    [SerializeField] bool OT5 = false;
+
+    [SerializeField] bool D1 = false;
+    [SerializeField] bool D2 = false;
+    [SerializeField] bool D3 = false;
+    [SerializeField] bool D4 = false;
+    [SerializeField] bool D5 = false;
+
     [SerializeField] bool M1 = false;
     [SerializeField] bool M2 = false;
     [SerializeField] bool M3 = false;
     [SerializeField] bool M4 = false;
     [SerializeField] bool M5 = false;
+
     [SerializeField] bool H1 = false;
     [SerializeField] bool H2 = false;
     [SerializeField] bool H3 = false;
     [SerializeField] bool H4 = false;
     [SerializeField] bool H5 = false;
 
-    public string IdentityID;
+    public string UserID;
 
     public InputField inputTextEmail;
     public InputField inputTextPassword;
@@ -134,10 +148,10 @@ public class Join : MonoBehaviourPunCallbacks
             {
                 Firebase.Auth.FirebaseUser newUser = task.Result;
                 Debug.LogFormat("Firebase user created successfully: {0}({1})", newUser.DisplayName, newUser.UserId);
-                IdentityID = newUser.UserId;
+                UserID = newUser.UserId;
                 Debug.Log("회원가입 성공");
-                user = new JoinDB(IdentityID, email, password, name, dept, stdID, M0, M1, M2, M3, M4, M5, H1, H2, H3, H4, H5);
-                CreateUserWithJson(IdentityID, new JoinDB(IdentityID, email, password, name, dept, stdID, M0, M1, M2, M3, M4, M5, H1, H2, H3, H4, H5));
+                user = new JoinDB(UserID, email, password, name, dept, stdID,OT0,OT1,OT2, OT3, OT4, OT5, D1, D2, D3, D4, D5, M1, M2, M3, M4, M5, H1, H2, H3, H4, H5);
+                CreateUserWithJson(UserID, new JoinDB(UserID, email, password, name, dept, stdID,OT0, OT1, OT2, OT3, OT4, OT5, D1, D2, D3, D4, D5, M1, M2, M3, M4, M5, H1, H2, H3, H4, H5));
                 joinFlag = true;
                 queue.Enqueue("JoinNext");
                 return;
@@ -153,7 +167,7 @@ public class Join : MonoBehaviourPunCallbacks
 
         string data = JsonUtility.ToJson(_userInfo);
         Debug.Log(data);
-        reference.Child("users").Child(_userInfo.IdentityID).SetRawJsonValueAsync(data);
+        reference.Child("users").Child(_userInfo.UserID).SetRawJsonValueAsync(data);
 
     }
 
@@ -189,7 +203,7 @@ public class Join : MonoBehaviourPunCallbacks
                 Firebase.Auth.FirebaseUser newUser = task.Result;
                 Debug.LogFormat("Firebase user login successfully: {0}({1})", newUser.DisplayName, newUser.UserId);
                 loginFlag = true;
-                IdentityID = newUser.UserId;
+                UserID = newUser.UserId;
                 queue.Enqueue("LoginNext");
                 return;
             }
@@ -227,33 +241,59 @@ public class Join : MonoBehaviourPunCallbacks
 
     public class JoinDB
     {
-        public string IdentityID;
+        public string UserID;
         public string email;
         public string password;
         public string name;
         public string dept;
         public string stdID;
-        public bool M0;
+
+        public bool OT0;
+        public bool OT1;
+        public bool OT2;
+        public bool OT3;
+        public bool OT4;
+        public bool OT5;
+
+        public bool D1;
+        public bool D2;
+        public bool D3;
+        public bool D4;
+        public bool D5;
+
         public bool M1;
         public bool M2;
         public bool M3;
         public bool M4;
         public bool M5;
+
         public bool H1;
         public bool H2;
         public bool H3;
         public bool H4;
         public bool H5;
 
-        public JoinDB(string IdentityID, string email,  string password,string name,string dept,string stdID,bool M0,bool M1, bool M2, bool M3, bool M4, bool M5, bool H1, bool H2, bool H3, bool H4, bool H5)
+        public JoinDB(string UserID, string email, string password, string name, string dept, string stdID, 
+            bool OT0, bool OT1, bool OT2, bool OT3, bool OT4, bool OT5, bool D1, bool D2, bool D3, bool D4, bool D5, bool M1, bool M2, bool M3, bool M4, bool M5, bool H1, bool H2, bool H3, bool H4, bool H5)
         {
-            this.IdentityID = IdentityID;
+            this.UserID = UserID;
             this.email = email;
             this.password = password;
             this.name = name;
             this.dept = dept;
             this.stdID = stdID;
-            this.M0 = M0;
+
+            this.OT0 = OT0;
+            this.OT1 = OT1;
+            this.OT2 = OT2;
+            this.OT3 = OT3;
+            this.OT4 = OT4;
+            this.OT5 = OT5;
+            this.D1 = D1;
+            this.D2 = D2;
+            this.D3 = D3;
+            this.D4 = D4;
+            this.D5 = D5;
             this.M1 = M1;
             this.M2 = M2;
             this.M3 = M3;
@@ -269,13 +309,23 @@ public class Join : MonoBehaviourPunCallbacks
         public Dictionary<string,object> ToDictionary()
         {
             Dictionary<string, object> dic = new Dictionary<string, object>();
-            dic["IdentityID"] = this.IdentityID;
+            dic["UserID"] = this.UserID;
             dic["email"] = this.email;
             dic["password"] = this.password;
             dic["name"] = this.name;
             dic["dept"] = this.dept;
            dic["stdID"] = this.stdID;
-            dic["M0"] = this.M0;
+            dic["OT0"] = this.OT0;
+            dic["OT1"] = this.OT1;
+            dic["OT2"] = this.OT2;
+            dic["OT3"] = this.OT3;
+            dic["OT4"] = this.OT4;
+            dic["OT5"] = this.OT5;
+            dic["D1"] = this.D1;
+            dic["D2"] = this.D2;
+            dic["D3"] = this.D3;
+            dic["D4"] = this.D4;
+            dic["D5"] = this.D5;
             dic["M1"] = this.M1;
            dic["M2"] = this.M2;
             dic["M3"] = this.M3;

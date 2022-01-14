@@ -69,13 +69,19 @@ public class QuestManager : MonoBehaviour
     public Button M3;
     public Button M4;
     public Button M5;
-    /*
+    
     public Button OT1;
     public Button OT2;
     public Button OT3;
     public Button OT4;
     public Button OT5;
-    */
+
+    public Button D1;
+    public Button D2;
+    public Button D3;
+    public Button D4;
+    public Button D5;
+
     public Button H1;
     public Text H1Text;
     public Button H2;
@@ -108,14 +114,14 @@ public class QuestManager : MonoBehaviour
     public GameObject NPC4;
     public GameObject NPC5;
 
-    /* //NPC_OT Object
+     //NPC_OT Object
     public GameObject OTNPC0;
     public GameObject OTNPC1;
     public GameObject OTNPC2;
     public GameObject OTNPC3;
     public GameObject OTNPC4;
     public GameObject OTNPC5;
-    */
+    
     //Stamp Imgae
     public Image M1Stamp;
     public Image M2Stamp;
@@ -127,13 +133,13 @@ public class QuestManager : MonoBehaviour
     public Image H3Stamp;
     public Image H4Stamp;
     public Image H5Stamp;
-    /*
+    
     public Image OT1Stamp;
     public Image OT2Stamp;
     public Image OT3Stamp;
     public Image OT4Stamp;
     public Image OT5Stamp;
-    */
+    
     //Complete Image
     public Image M1Complete;
     public Image M2Complete;
@@ -146,27 +152,32 @@ public class QuestManager : MonoBehaviour
     public Image H4Complete;
     public Image H5Complete;
 
-    /*
+    
     public Image OT1Complete;
     public Image OT2Complete;
     public Image OT3Complete;
     public Image OT4Complete;
     public Image OT5Complete;
-    */
 
+    public Image D1Complete;
+    public Image D2Complete;
+    public Image D3Complete;
+    public Image D4Complete;
+    public Image D5Complete;
     //Quest
     public Image QuestList;
 
     public Image M_list;
     public Image H_list;
     public Image O_list;
-    //public Image OT_list;
+    public Image OT_list;
+    public Image D_list;
 
     public Image Basic_detail;
     public GameObject M_detail;
     public GameObject H_detail;
     public GameObject O_detail;
-    //public GameObject OT_detail;
+    public GameObject OT_detail;
 
 
     Dictionary<int, QuestData> questList;
@@ -176,7 +187,7 @@ public class QuestManager : MonoBehaviour
     public DatabaseReference reference = null;
     string myName = "0";
     string myStdId;
-    string m0cleared = "false";
+    
     string m1cleared = "false";
     string m2cleared = "false";
     string m3cleared = "false";
@@ -187,14 +198,20 @@ public class QuestManager : MonoBehaviour
     string h3cleared = "false";
     string h4cleared = "false";
     string h5cleared = "false";
-    /*
+    
     string ot0cleared = "false";
     string ot1cleared = "false";
     string ot2cleared = "false";
     string ot3cleared = "false";
     string ot4cleared = "false";
     string ot5cleared = "false";
-    */
+
+    string d1cleared = "false";
+    string d2cleared = "false";
+    string d3cleared = "false";
+    string d4cleared = "false";
+    string d5cleared = "false";
+
 
     DataSnapshot ds;
     FirebaseApp app;
@@ -242,15 +259,20 @@ public class QuestManager : MonoBehaviour
         H3.interactable = false;
         H4.interactable = false;
         H5.interactable = false;
-        /*
+        
         OT1.interactable = false;
         OT2.interactable = false;
         OT3.interactable = false;
         OT4.interactable = false;
-        OT5.interactable = false; 
-        */
+        OT5.interactable = false;
 
-        
+        D1.interactable = false;
+        D2.interactable = false;
+        D3.interactable = false;
+        D4.interactable = false;
+        D5.interactable = false;
+
+
 
         FirebaseApp.DefaultInstance.Options.DatabaseUrl =
                    new System.Uri("https://hsu-on-festival-default-rtdb.firebaseio.com/");
@@ -258,7 +280,7 @@ public class QuestManager : MonoBehaviour
 
         // 파이어베이스의 메인 참조 얻기
         //reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(join.email);
-        reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(join.IdentityID);
+        reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(join.UserID);
 
         reference.GetValueAsync().ContinueWithOnMainThread(task => {
             if (task.IsFaulted)
@@ -273,8 +295,7 @@ public class QuestManager : MonoBehaviour
                 Debug.Log(myName);
                 myStdId = dataSnapshot.Child("stdID").GetValue(true).ToString();
                 Debug.Log(myStdId);
-                m0cleared = dataSnapshot.Child("M0").GetValue(true).ToString();
-                Debug.Log(m0cleared);
+    
                 m1cleared = dataSnapshot.Child("M1").GetValue(true).ToString();
                 Debug.Log(m1cleared);
                 m2cleared = dataSnapshot.Child("M2").GetValue(true).ToString();
@@ -285,6 +306,7 @@ public class QuestManager : MonoBehaviour
                 Debug.Log(m4cleared);
                 m5cleared = dataSnapshot.Child("M5").GetValue(true).ToString();
                 Debug.Log(m5cleared);
+
                 h1cleared = dataSnapshot.Child("H1").GetValue(true).ToString();
                 Debug.Log(h1cleared);
                 h2cleared = dataSnapshot.Child("H2").GetValue(true).ToString();
@@ -295,7 +317,7 @@ public class QuestManager : MonoBehaviour
                 Debug.Log(h4cleared);
                 h5cleared = dataSnapshot.Child("H5").GetValue(true).ToString();
                 Debug.Log(h5cleared);
-                /*
+                
                 ot0cleared = dataSnapshot.Child("OT0").GetValue(true).ToString();
                 Debug.Log(ot0cleared);
                 ot1cleared = dataSnapshot.Child("OT1").GetValue(true).ToString();
@@ -308,42 +330,78 @@ public class QuestManager : MonoBehaviour
                 Debug.Log(ot4cleared);
                 ot5cleared = dataSnapshot.Child("OT5").GetValue(true).ToString();
                 Debug.Log(ot5cleared);
-                */
-                IdentityID_text.text = join.IdentityID.Substring(10);
+
+                d1cleared = dataSnapshot.Child("D1").GetValue(true).ToString();
+                Debug.Log(h1cleared);
+                d2cleared = dataSnapshot.Child("D2").GetValue(true).ToString();
+                Debug.Log(h2cleared);
+                d3cleared = dataSnapshot.Child("D3").GetValue(true).ToString();
+                Debug.Log(h3cleared);
+                d4cleared = dataSnapshot.Child("D4").GetValue(true).ToString();
+                Debug.Log(h4cleared);
+                d5cleared = dataSnapshot.Child("D5").GetValue(true).ToString();
+                Debug.Log(h5cleared);
+
+                IdentityID_text.text = join.UserID.Substring(10);
                 StuID_text.text = "학번 : " + myStdId + "\n" + "이름 : " + myName;
 
-                if (m0cleared.Equals("True"))
+               
+                if (ot0cleared.Equals("True"))
                 {
                     QuestOpen();
                 }
-                /*if (ot0cleared.Equals("True"))
+
+                if (ot1cleared.Equals("True"))
                 {
-                    QuestOpen();
-                }*/
-                if (m1cleared.Equals("True"))
+                    OT1QuestClear();
+                }
+
+                if (ot2cleared.Equals("True"))
+                {
+                    OT2QuestClear();
+                }
+
+                if (ot3cleared.Equals("True"))
+                {
+                    OT3QuestClear();
+                }
+
+                if (ot4cleared.Equals("True"))
+                {
+                    OT4QuestClear();
+                }
+
+                if (ot5cleared.Equals("True"))
+                {
+                    OT5QuestClear();
+                }
+
+                
+                if (d1cleared.Equals("True"))
                 {
                     Mission1QuestClear();
                 }
 
-                if (m2cleared.Equals("True"))
+                if (d2cleared.Equals("True"))
                 {
                     Mission2QuestClear();
                 }
 
-                if (m3cleared.Equals("True"))
+                if (d3cleared.Equals("True"))
                 {
                     Mission3QuestClear();
                 }
 
-                if (m4cleared.Equals("True"))
+                if (d4cleared.Equals("True"))
                 {
                     Mission4QuestClear();
                 }
 
-                if (m5cleared.Equals("True"))
+                if (d5cleared.Equals("True"))
                 {
                     Mission5QuestClear();
                 }
+
 
                 if (h1cleared.Equals("True"))
                 {
@@ -369,32 +427,7 @@ public class QuestManager : MonoBehaviour
                 {
                     Hidden5QuestClear();
                 }
-                /*
-                if (ot1cleared.Equals("True"))
-                {
-                    OT1QuestClear();
-                }
-                ///////
-                if (ot2cleared.Equals("True"))
-                {
-                    OT2QuestClear();
-                }
-
-                if (ot3cleared.Equals("True"))
-                {
-                    OT3QuestClear();
-                }
-
-                if (ot4cleared.Equals("True"))
-                {
-                    OT4QuestClear();
-                }
-
-                if (ot5cleared.Equals("True"))
-                {
-                    OT5QuestClear();
-                }
-                */
+               
                 else return;
             }
         });
@@ -725,12 +758,11 @@ public class QuestManager : MonoBehaviour
         //OTNPC0.gameObject.SetActive(false);
         //OTNPC1.gameObject.SetActive(true);
 
-        reference.Child("M0").SetValueAsync(true);
-        //reference.Child("OT0").SetValueAsync(true);
+        reference.Child("OT0").SetValueAsync(true);
         Debug.Log("Quest Open");
     }
 
-    /* //OT Mission
+     //OT Mission
     public void OT1QuestClear()
     {
         OT2.interactable = true;
@@ -808,7 +840,7 @@ public class QuestManager : MonoBehaviour
         Debug.Log("OT5 clear & save");
 
     }
-    // OT End */
+    // OT End 
 
     public void Mission1QuestClear()
     {
@@ -1030,7 +1062,7 @@ public class QuestManager : MonoBehaviour
 
     public void Questreset()
     {
-        reference.Child("M0").SetValueAsync(false);
+
         reference.Child("M1").SetValueAsync(false);
         reference.Child("M2").SetValueAsync(false);
         reference.Child("M3").SetValueAsync(false);
@@ -1111,7 +1143,7 @@ public class QuestManager : MonoBehaviour
         public string name;
         public string dept;
         public string stdID;
-        public bool M0;
+
         public bool M1;
         public bool M2;
         public bool M3;
@@ -1122,22 +1154,40 @@ public class QuestManager : MonoBehaviour
         public bool H3;
         public bool H4;
         public bool H5;
-        /*
+        
         public bool OT0;
         public bool OT1;
         public bool OT2;
         public bool OT3;
         public bool OT4;
         public bool OT5;
-        */
-        public JoinDB(string email, string password, string name, string dept, string stdID, bool M0, bool M1, bool M2, bool M3, bool M4, bool M5, bool H1, bool H2, bool H3, bool H4, bool H5 /*bool OT0, bool, OT1, bool OT2, bool OT3, bool OT4, bool OT5*/)
+
+        public bool D1;
+        public bool D2;
+        public bool D3;
+        public bool D4;
+        public bool D5;
+
+        public JoinDB(string email, string password, string name, string dept, string stdID, 
+            bool OT0, bool OT1, bool OT2, bool OT3, bool OT4, bool OT5, bool D1, bool D2, bool D3, bool D4, bool D5, bool M1, bool M2, bool M3, bool M4, bool M5, bool H1, bool H2, bool H3, bool H4, bool H5)
         {
             this.email = email;
             this.password = password;
             this.name = name;
             this.dept = dept;
             this.stdID = stdID;
-            this.M0 = M0;
+
+            this.OT0 = OT0;
+            this.OT1 = OT1;
+            this.OT2 = OT2;
+            this.OT3 = OT3;
+            this.OT4 = OT4;
+            this.OT5 = OT5;
+            this.D1 = D1;
+            this.D2 = D2;
+            this.D3 = D3;
+            this.D4 = D4;
+            this.D5 = D5;
             this.M1 = M1;
             this.M2 = M2;
             this.M3 = M3;
@@ -1148,14 +1198,7 @@ public class QuestManager : MonoBehaviour
             this.H3 = H3;
             this.H4 = H4;
             this.H5 = H5;
-            /*
-            this.OT0 = OT0;
-            this.OT1 = OT1;
-            this.OT2 = OT2;
-            this.OT3 = OT3;
-            this.OT4 = OT4;
-            this.OT5 = OT5;
-            */
+            
         }
 
         public Dictionary<string, object> ToDictionary()
@@ -1166,7 +1209,18 @@ public class QuestManager : MonoBehaviour
             dic["name"] = this.name;
             dic["dept"] = this.dept;
             dic["stdID"] = this.stdID;
-            dic["M0"] = this.M0;
+
+            dic["OT0"] = this.OT0;
+            dic["OT1"] = this.OT1;
+            dic["OT2"] = this.OT2;
+            dic["OT3"] = this.OT3;
+            dic["OT4"] = this.OT4;
+            dic["OT5"] = this.OT5;
+            dic["D1"] = this.D1;
+            dic["D2"] = this.D2;
+            dic["D3"] = this.D3;
+            dic["D4"] = this.D4;
+            dic["D5"] = this.D5;
             dic["M1"] = this.M1;
             dic["M2"] = this.M2;
             dic["M3"] = this.M3;
@@ -1177,13 +1231,7 @@ public class QuestManager : MonoBehaviour
             dic["H3"] = this.H3;
             dic["H4"] = this.H4;
             dic["H5"] = this.H5;
-            /*dic["OT0"] = this.OT0;
-            dic["OT1"] = this.OT1;
-            dic["OT2"] = this.OT2;
-            dic["OT3"] = this.OT3;
-            dic["OT4"] = this.OT4;
-            dic["OT5"] = this.OT5;*/
-
+            
             return dic;
         }
     }
