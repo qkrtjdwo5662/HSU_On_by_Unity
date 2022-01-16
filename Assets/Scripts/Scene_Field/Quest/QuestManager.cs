@@ -260,7 +260,7 @@ public class QuestManager : MonoBehaviour
         H4.interactable = false;
         H5.interactable = false;
         
-        OT1.interactable = false;
+      /*OT1.interactable = false;
         OT2.interactable = false;
         OT3.interactable = false;
         OT4.interactable = false;
@@ -270,7 +270,7 @@ public class QuestManager : MonoBehaviour
         D2.interactable = false;
         D3.interactable = false;
         D4.interactable = false;
-        D5.interactable = false;
+        D5.interactable = false;*/
 
 
 
@@ -854,7 +854,7 @@ public class QuestManager : MonoBehaviour
 
         M_ButtonClick();
 
-        reference.Child("M1").SetValueAsync(true);
+        reference.Child("D1").SetValueAsync(true);
         Debug.Log("Mission1 clear & save");
     }
 
@@ -870,7 +870,7 @@ public class QuestManager : MonoBehaviour
 
         M_ButtonClick();
 
-        reference.Child("M2").SetValueAsync(true);
+        reference.Child("D2").SetValueAsync(true);
         Debug.Log("Mission2 clear & save");
     }
 
@@ -886,7 +886,7 @@ public class QuestManager : MonoBehaviour
 
         M_ButtonClick();
 
-        reference.Child("M3").SetValueAsync(true);
+        reference.Child("D3").SetValueAsync(true);
         Debug.Log("Mission3 clear & save");
     }
 
@@ -902,7 +902,7 @@ public class QuestManager : MonoBehaviour
 
         M_ButtonClick();
 
-        reference.Child("M4").SetValueAsync(true);
+        reference.Child("D4").SetValueAsync(true);
         Debug.Log("Mission4 clear & save");
     }
 
@@ -915,7 +915,7 @@ public class QuestManager : MonoBehaviour
 
         M_ButtonClick();
 
-        reference.Child("M5").SetValueAsync(true);
+        reference.Child("D5").SetValueAsync(true);
         Debug.Log("Mission5 clear & save");
 
     }
