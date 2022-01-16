@@ -16,7 +16,7 @@ public class Next : MonoBehaviour
     public DatabaseReference reference = null;
     public Button NextButton;
 
-    public string CurrentVersion = "1.2";
+    string CurrentVersion = "1.2";
     public string ServerVersion;
     // Start is called before the first frame update
 
