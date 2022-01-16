@@ -1,17 +1,48 @@
-﻿using System.Collections;
+﻿using Firebase;
+using Firebase.Auth;
+using Firebase.Database;
+using Firebase.Extensions;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Next : MonoBehaviour
 {
-    
+    public Text text;
+    FirebaseAuth auth;
+    DataSnapshot ds;
+    FirebaseApp app;
+    public DatabaseReference reference = null;
+    public Button NextButton;
+
+    public string CurrentVersion = "1.2";
+    public string ServerVersion;
+    // Start is called before the first frame update
+
     
 
-    public Button NextButton;
-    // Start is called before the first frame update
     void Start()
     {
+        
+        FirebaseApp.DefaultInstance.Options.DatabaseUrl =
+                   new System.Uri("https://hsuon-4c8e4-default-rtdb.firebaseio.com/");
+        reference = FirebaseDatabase.DefaultInstance.GetReference("info");
+
+        reference.GetValueAsync().ContinueWithOnMainThread(task => {
+            if (task.IsFaulted)
+            {
+                // Handle the error...
+            }
+            else if (task.IsCompleted)
+            {
+                DataSnapshot dataSnapshot = task.Result;
+                ds = dataSnapshot;
+                ServerVersion = dataSnapshot.Child("ServerVersion").GetValue(true).ToString();
+                Debug.Log(ServerVersion);
+               
+            }
+        });
         
         NextButton.onClick.AddListener(ButtonClick);
     }
@@ -23,10 +54,16 @@ public class Next : MonoBehaviour
     }
 
     void ButtonClick() {
-        /*for (int i = 100; i <= 255; i++) {
-            NextButton.image.color += new Color(0,0,0,i);
-        }*/
+        if (ServerVersion == CurrentVersion)
+        {
+            LoadingSceneController.Instance.LoadScene("Scene2");
+        }
+        else {
+            text.text = "업데이트가 필요합니다. 스토어에서 업데이트를 해주세요.\n\n\n\n";
+        }
 
-        LoadingSceneController.Instance.LoadScene("Scene2");
+        
+        
+        
     }
 }

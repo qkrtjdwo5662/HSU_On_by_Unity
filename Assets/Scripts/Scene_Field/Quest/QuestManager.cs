@@ -275,7 +275,7 @@ public class QuestManager : MonoBehaviour
 
 
         FirebaseApp.DefaultInstance.Options.DatabaseUrl =
-                   new System.Uri("https://hsu-on-festival-default-rtdb.firebaseio.com/");
+                   new System.Uri("https://hsuon-4c8e4-default-rtdb.firebaseio.com/");
 
 
         // 파이어베이스의 메인 참조 얻기
