@@ -18,6 +18,11 @@ public class QuestManager : MonoBehaviour
     //OT_NPC2 Quiz
     public InputField OT_NPC2_Quiz_Answer;
     public Image OT_NPC2_Quiz_right, OT_NPC2_Quiz_Wrong;
+    //OT_NPC3 Quiz
+    public InputField OT_NPC3_Quiz_Answer;
+    public Image OT_NPC3_Quiz_right, OT_NPC3_Quiz_Wrong;
+    public InputField OT_NPC3_Quiz2_Answer;
+    public Image OT_NPC3_Quiz2_right, OT_NPC3_Quiz2_Wrong;
     //NPC1 Quiz
     public InputField NPC1_Quiz_Answer;
     public Image NPC1_Quiz_right, NPC1_Quiz_Wrong;
@@ -486,6 +491,30 @@ public class QuestManager : MonoBehaviour
             OT_NPC2_Quiz_Answer.text = "";
         }
     }
+    public void OT_NPC3_Quiz()
+    {
+        if(OT_NPC3_Quiz_Answer.text == "삶과꿈")
+        {
+            OT_NPC3_Quiz_right.gameObject.SetActive(true);
+        }
+        else
+        {
+            OT_NPC3_Quiz_Wrong.gameObject.SetActive(true);
+            OT_NPC3_Quiz_Answer.text = "";
+        }
+    }
+    public void OT_NPC3_Quiz2()
+    {
+        if (OT_NPC3_Quiz2_Answer.text == "새내기")
+        {
+            OT_NPC3_Quiz2_right.gameObject.SetActive(true);
+        }
+        else
+        {
+            OT_NPC3_Quiz2_Wrong.gameObject.SetActive(true);
+            OT_NPC3_Quiz2_Answer.text = "";
+        }
+    }
     public void NPC1_Quiz()
     {
 
@@ -560,7 +589,6 @@ public class QuestManager : MonoBehaviour
             NPC4_Quiz3_wrong.gameObject.SetActive(true);
             NPC4_Quiz3_Answer.text = "";
         }
-
     }
     public void NPC4_Quiz4()
     {
@@ -749,7 +777,7 @@ public class QuestManager : MonoBehaviour
     {
         QuestButton.gameObject.SetActive(true);
 
-        M1.interactable = true;
+        //M1.interactable = true;
         OT1.interactable = true;
 
         //NPC0.gameObject.SetActive(false);
@@ -770,7 +798,7 @@ public class QuestManager : MonoBehaviour
         OTNPC1.gameObject.SetActive(false);
         OTNPC2.gameObject.SetActive(true);
 
-        //OT1Stamp.gameObject.SetActive(true);
+        OT1Stamp.gameObject.SetActive(true);
         OT1Complete.gameObject.SetActive(true);
 
         OT_ButtonClick();
