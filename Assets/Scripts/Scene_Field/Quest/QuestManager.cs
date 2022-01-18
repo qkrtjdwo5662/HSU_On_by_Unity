@@ -23,6 +23,11 @@ public class QuestManager : MonoBehaviour
     public Image OT_NPC3_Quiz_right, OT_NPC3_Quiz_Wrong;
     public InputField OT_NPC3_Quiz2_Answer;
     public Image OT_NPC3_Quiz2_right, OT_NPC3_Quiz2_Wrong;
+    //OT_NPC5 Quiz
+    public InputField OT_NPC5_Quiz_Answer;
+    public Image OT_NPC5_Quiz_right, OT_NPC5_Quiz_Wrong;
+    public InputField OT_NPC5_Quiz2_Answer;
+    public Image OT_NPC5_Quiz2_right, OT_NPC5_Quiz2_Wrong;
     //NPC1 Quiz
     public InputField NPC1_Quiz_Answer;
     public Image NPC1_Quiz_right, NPC1_Quiz_Wrong;
@@ -515,6 +520,30 @@ public class QuestManager : MonoBehaviour
             OT_NPC3_Quiz2_Answer.text = "";
         }
     }
+    public void OT_NPC5_Quiz()
+    {
+        if (OT_NPC5_Quiz_Answer.text == "그라찌에")
+        {
+            OT_NPC5_Quiz_right.gameObject.SetActive(true);
+        }
+        else
+        {
+            OT_NPC5_Quiz_Wrong.gameObject.SetActive(true);
+            OT_NPC5_Quiz_Answer.text = "";
+        }
+    }
+    public void OT_NPC5_Quiz2()
+    {
+        if (OT_NPC5_Quiz2_Answer.text == "신입생오리엔테이션")
+        {
+            OT_NPC5_Quiz2_right.gameObject.SetActive(true);
+        }
+        else
+        {
+            OT_NPC5_Quiz2_Wrong.gameObject.SetActive(true);
+            OT_NPC5_Quiz2_Answer.text = "";
+        }
+    }
     public void NPC1_Quiz()
     {
 
@@ -780,8 +809,7 @@ public class QuestManager : MonoBehaviour
         //M1.interactable = true;
         OT1.interactable = true;
 
-        //NPC0.gameObject.SetActive(false);
-        //NPC1.gameObject.SetActive(true);
+        
 
         OTNPC0.gameObject.SetActive(false);
         OTNPC1.gameObject.SetActive(true);
@@ -789,8 +817,9 @@ public class QuestManager : MonoBehaviour
         reference.Child("OT0").SetValueAsync(true);
         Debug.Log("Quest Open");
     }
+    
 
-     //OT Mission
+    //OT Mission
     public void OT1QuestClear()
     {
         OT2.interactable = true;
@@ -866,7 +895,10 @@ public class QuestManager : MonoBehaviour
 
         reference.Child("OT5").SetValueAsync(true);
         Debug.Log("OT5 clear & save");
-
+        NPC1.gameObject.SetActive(true);
+        M1.interactable = true;
+        //NPC0.gameObject.SetActive(false);
+        //NPC1.gameObject.SetActive(true);
     }
     // OT End 
 
