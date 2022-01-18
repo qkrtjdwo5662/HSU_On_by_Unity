@@ -896,6 +896,7 @@ public class QuestManager : MonoBehaviour
         reference.Child("OT5").SetValueAsync(true);
         Debug.Log("OT5 clear & save");
         NPC1.gameObject.SetActive(true);
+        OTNPC5.gameObject.SetActive(false);
         M1.interactable = true;
         //NPC0.gameObject.SetActive(false);
         //NPC1.gameObject.SetActive(true);
