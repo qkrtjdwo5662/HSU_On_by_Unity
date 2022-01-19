@@ -8,21 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene_Awake.unity
     guid: 7062e0271907d084286ef690d25c8243
-  - enabled: 0
-    path: Assets/Scenes/(Not Use)Scene1.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Scene2.unity
+    path: Assets/Scenes/Scene_Login.unity
     guid: 5f5881e521a42724b9c7b723341398ea
   - enabled: 1
     path: Assets/Scenes/Scene_Festival.unity
     guid: d17fdc3cc32218746af98f8791f6ba92
   - enabled: 1
-    path: Assets/Scenes/Scene_newCharacter.unity
+    path: Assets/Scenes/Scene_Character.unity
     guid: 60e57f428de495543a16aceb975b467f
-  - enabled: 1
-    path: Assets/Scenes/Scene_selcAva.unity
-    guid: 56644e4e60899ee4f9fa494c709fe1d4
   - enabled: 1
     path: Assets/Scenes/Scene_Field.unity
     guid: b4dae9d60124b754aad8298dc5a1775e

@@ -56,7 +56,7 @@ public class Join : MonoBehaviourPunCallbacks
     [SerializeField] bool H4 = false;
     [SerializeField] bool H5 = false;
 
-    public string UserID;
+    [SerializeField ]string UserID;
 
     public InputField inputTextEmail;
     public InputField inputTextPassword;
@@ -70,7 +70,9 @@ public class Join : MonoBehaviourPunCallbacks
     public Text loginResult;
     public Text LogZone;
 
-
+    public string getUserID() {
+        return UserID;
+    }
     
 
     JoinDB user;

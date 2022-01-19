@@ -290,7 +290,7 @@ public class QuestManager : MonoBehaviour
 
         // 파이어베이스의 메인 참조 얻기
         //reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(join.email);
-        reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(join.UserID);
+        reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(join.getUserID());
 
         reference.GetValueAsync().ContinueWithOnMainThread(task => {
             if (task.IsFaulted)
@@ -352,7 +352,7 @@ public class QuestManager : MonoBehaviour
                 d5cleared = dataSnapshot.Child("D5").GetValue(true).ToString();
                 Debug.Log(h5cleared);
 
-                IdentityID_text.text = join.UserID.Substring(10);
+                IdentityID_text.text = join.getUserID().Substring(10);
                 StuID_text.text = "학번 : " + myStdId + "\n" + "이름 : " + myName;
 
                

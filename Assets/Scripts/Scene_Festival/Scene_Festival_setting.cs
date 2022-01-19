@@ -22,6 +22,6 @@ public class Scene_Festival_setting : MonoBehaviour
     {
         Text t = NickName.GetComponent<Text>();
         t.text = NicknameInput.text;
-        LoadingSceneController.Instance.LoadScene("Scene_newCharacter");
+        LoadingSceneController.Instance.LoadScene("Scene_Character");
     }
 }

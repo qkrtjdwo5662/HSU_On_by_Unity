@@ -56,10 +56,10 @@ public class Next : MonoBehaviour
     void ButtonClick() {
         if (ServerVersion == CurrentVersion)
         {
-            LoadingSceneController.Instance.LoadScene("Scene2");
+            LoadingSceneController.Instance.LoadScene("Scene_Login");
         }
         else {
-            text.text = "업데이트가 필요합니다. 스토어에서 업데이트를 해주세요.\n\n\n\n";
+            text.text = "업데이트가 필요합니다. 스토어에서 업데이트를 해주세요.\n 현재버전: " +CurrentVersion+"\n 최신버전 :"+ServerVersion+"\n\n";
         }
 
         
