@@ -100,11 +100,15 @@ public class TPSCharacterController : MonoBehaviour
             characterBody.forward = lookForward;
             // 이동할 때 이동 방향 바라보기
             characterBody.forward = moveDir;
-           
+
             // 이동
             transform.position += moveDir.normalized * Time.deltaTime * movingSpeed;
             //Debug.Log("char"+ characterBody.position.x + "," + characterBody.position.y + ","+characterBody.position.z);
             //Debug.Log("came" + cameraArm.position.x + "," + cameraArm.position.y + "," + cameraArm.position.z);
+        }
+        else if (!isMove) {
+            animator.SetBool("isRun", false);
+            animator.SetBool("isMove",false);
         }
     }
 

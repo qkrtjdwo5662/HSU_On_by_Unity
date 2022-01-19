@@ -73,7 +73,12 @@ public class Join : MonoBehaviourPunCallbacks
     public string getUserID() {
         return UserID;
     }
-    
+    public string getName() {
+        return name;
+    }
+    public string getStdId() {
+        return stdID;
+    }
 
     JoinDB user;
 

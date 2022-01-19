@@ -8,19 +8,21 @@ using Photon.Realtime;
 public class NickNameRot : MonoBehaviour
 {
     GameObject CameraArm;
-    Text NickName;
+    Join join;
+    [SerializeField] string NickName;
     public GameObject TMP;
     PhotonView PV;
     // Start is called before the first frame update
     void Start()
     {
+        join = GameObject.Find("Join").GetComponent<Join>();
         PV = GetComponent<PhotonView>();
         CameraArm = GameObject.Find("Camera Arm");
         if (PV.IsMine)
         {
-            NickName = GameObject.Find("NickName").GetComponent<Text>();
-            PV.RPC("set", RpcTarget.OthersBuffered, NickName.text);
-            set(NickName.text);
+            NickName = join.getStdId().Substring(0,2)+" "+join.getName();
+            PV.RPC("set", RpcTarget.OthersBuffered, NickName);
+            set(NickName);
         }
     }
 
