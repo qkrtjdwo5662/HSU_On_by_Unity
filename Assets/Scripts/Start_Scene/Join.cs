@@ -11,7 +11,7 @@ using System;
 
 using Photon.Pun;
 using Photon.Realtime;
-
+using Firebase.Extensions;
 
 public class Join : MonoBehaviourPunCallbacks
 {
@@ -214,12 +214,12 @@ public class Join : MonoBehaviourPunCallbacks
                 queue.Enqueue("LoginNext");
                 return;
             }
-            //Invoke("LoginNext", 0.1f);
-        });
-        
+
+
+        });//
     }
 
-    public  void LoginNext()
+        public  void LoginNext()
     {
         
         if (loginFlag)
