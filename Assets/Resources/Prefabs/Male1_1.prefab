@@ -1198,6 +1198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22568d93ca552a49b2079420437d94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NickName: 
   TMP: {fileID: 7433313200463943770}
 --- !u!114 &8438499235546477291
 MonoBehaviour:

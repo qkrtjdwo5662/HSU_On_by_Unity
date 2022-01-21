@@ -182,13 +182,14 @@ public class QuestManager : MonoBehaviour
     public Image O_list;
     public Image OT_list;
     public Image D_list;
+    public Image Main;
 
     public Image Basic_detail;
     public GameObject M_detail;
     public GameObject H_detail;
     public GameObject O_detail;
     public GameObject OT_detail;
-
+    public GameObject Main_detail;
 
     Dictionary<int, QuestData> questList;
     JoinDB user;
@@ -1072,12 +1073,14 @@ public class QuestManager : MonoBehaviour
         H_list.gameObject.SetActive(false);
         O_list.gameObject.SetActive(false);
         OT_list.gameObject.SetActive(false);
+        Main.gameObject.SetActive(false);
 
         Basic_detail.gameObject.SetActive(true);
         M_detail.gameObject.SetActive(false);
         H_detail.gameObject.SetActive(false);
         O_detail.gameObject.SetActive(false);
         OT_detail.gameObject.SetActive(false);
+        Main_detail.gameObject.SetActive(false);
     }
 
     public void H_ButtonClick()
@@ -1086,24 +1089,28 @@ public class QuestManager : MonoBehaviour
         H_list.gameObject.SetActive(true);
         O_list.gameObject.SetActive(false);
         OT_list.gameObject.SetActive(false);
+        Main.gameObject.SetActive(false);
 
         Basic_detail.gameObject.SetActive(true);
         M_detail.gameObject.SetActive(false);
         H_detail.gameObject.SetActive(false);
         O_detail.gameObject.SetActive(false);
         OT_detail.gameObject.SetActive(false);
+        Main_detail.gameObject.SetActive(false);
     }
 
-    public void O_ButtonClick()
+    public void Main_ButtonClick()
     {
         M_list.gameObject.SetActive(false);
         H_list.gameObject.SetActive(false);
-        O_list.gameObject.SetActive(true);
+        O_list.gameObject.SetActive(false);
+        Main.gameObject.SetActive(true);
 
         Basic_detail.gameObject.SetActive(true);
         M_detail.gameObject.SetActive(false);
         H_detail.gameObject.SetActive(false);
         O_detail.gameObject.SetActive(false);
+        //Main_detail.gameObject.SetActive(true);
     }
 
     public void OT_ButtonClick()
@@ -1112,12 +1119,14 @@ public class QuestManager : MonoBehaviour
         H_list.gameObject.SetActive(false);
         O_list.gameObject.SetActive(false);
         OT_list.gameObject.SetActive(true);
+        Main.gameObject.SetActive(false);
 
         Basic_detail.gameObject.SetActive(true);
         M_detail.gameObject.SetActive(false);
         H_detail.gameObject.SetActive(false);
         O_detail.gameObject.SetActive(false);
         OT_detail.gameObject.SetActive(true);
+        Main_detail.gameObject.SetActive(false);
     }
     //QuestList
 
