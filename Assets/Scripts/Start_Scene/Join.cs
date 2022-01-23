@@ -73,6 +73,7 @@ public class Join : MonoBehaviourPunCallbacks
     public string getUserID() {
         return UserID;
     }
+    
     public string getName() {
         return name;
     }
@@ -165,9 +166,35 @@ public class Join : MonoBehaviourPunCallbacks
             }
           
         });
-
     }
+    void GetUserInformationFromFireBase() {
+        reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(UserID);
 
+        reference.GetValueAsync().ContinueWithOnMainThread(task => {
+            if (task.IsFaulted)
+            {
+                // Handle the error...
+                return;
+            }
+            else if (task.IsCompleted)
+            {
+                DataSnapshot dataSnapshot = task.Result;
+
+                name = dataSnapshot.Child("name").GetValue(true).ToString();
+
+                Debug.Log(name);
+                stdID = dataSnapshot.Child("stdID").GetValue(true).ToString();
+
+                Debug.Log(stdID);
+
+
+
+
+
+                return;
+            }
+        });
+    }
 
     public void  CreateUserWithJson(string _userID, JoinDB _userInfo)
     {
@@ -185,8 +212,9 @@ public class Join : MonoBehaviourPunCallbacks
 
         Debug.Log("email:" + email + ",password:" + password);
 
-        LoginUser();
        
+        LoginUser();
+        
     }
 
     void LoginUser()
@@ -217,6 +245,7 @@ public class Join : MonoBehaviourPunCallbacks
 
 
         });//
+
     }
 
         public  void LoginNext()
@@ -225,7 +254,8 @@ public class Join : MonoBehaviourPunCallbacks
         if (loginFlag)
         {
             loginResult.text = "로그인 성공";
-            LoadingSceneController.Instance.LoadScene("Scene_Festival");
+            GetUserInformationFromFireBase();
+            LoadingSceneController.Instance.LoadScene("Scene_Character");
         }
         else
         {

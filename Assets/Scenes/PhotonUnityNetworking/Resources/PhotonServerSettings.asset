@@ -44,6 +44,7 @@ MonoBehaviour:
   - set
   - gotoTM
   - CreateControllerBoy1
+  - StartOtEvent
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

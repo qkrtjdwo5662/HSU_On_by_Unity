@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class SceneLoad : MonoBehaviour
 {
+    /*
 
     // Start is called before the first frame update
     void Start()
@@ -36,5 +37,5 @@ public class SceneLoad : MonoBehaviour
         }
 
         LoadingSceneController.Instance.LoadScene("Scene2");
-    }
+    }*/
 }

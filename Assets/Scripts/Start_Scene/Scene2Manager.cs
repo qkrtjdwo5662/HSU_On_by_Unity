@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Scene2Manager : MonoBehaviour
 {
-    GameManager gm;
+    //GameManager gm;
 
     void Start()
     {

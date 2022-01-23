@@ -196,8 +196,8 @@ public class QuestManager : MonoBehaviour
     FirebaseAuth auth;
     [SerializeField]
     public DatabaseReference reference = null;
-    string myName = "0";
-    string myStdId;
+    public string myName = "0";
+    public string myStdId;
     
     string m1cleared = "false";
     string m2cleared = "false";
@@ -303,8 +303,10 @@ public class QuestManager : MonoBehaviour
                 DataSnapshot dataSnapshot = task.Result;
                 ds = dataSnapshot;
                 myName = dataSnapshot.Child("name").GetValue(true).ToString();
+                
                 Debug.Log(myName);
                 myStdId = dataSnapshot.Child("stdID").GetValue(true).ToString();
+                
                 Debug.Log(myStdId);
     
                 m1cleared = dataSnapshot.Child("M1").GetValue(true).ToString();
