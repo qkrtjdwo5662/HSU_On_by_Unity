@@ -1,18 +1,26 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameInstance : MonoBehaviour
 {
-    public string userType;
-    public string nickName;
+    GameObject Me;
+
+
+    [PunRPC]
+    void StartOtEvent() { 
+        
+        
+    }
 
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        
     }
     void Start()
     {
-        
+        Me = GameObject.Find("Me");
+
     }
 }
