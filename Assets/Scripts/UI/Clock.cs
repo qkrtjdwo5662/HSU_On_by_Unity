@@ -18,6 +18,6 @@ public class Clock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        clock.text = DateTime.Now.ToString("yyyy.MM.dd\nHH:mm:ss tt");
+        clock.text = DateTime.Now.ToString("HH:mm");
     }
 }
