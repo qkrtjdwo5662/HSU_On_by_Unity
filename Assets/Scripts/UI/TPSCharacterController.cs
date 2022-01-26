@@ -45,7 +45,7 @@ public class TPSCharacterController : MonoBehaviour
     void Start()
     {
         animator = characterBody.GetComponent<Animator>();
-        escButton = GameObject.Find("위치리셋btn").GetComponent<Button>();
+        escButton = GameObject.Find("Reset_Button").GetComponent<Button>();
         escButton.onClick.AddListener(escAction);
 
         join = GameObject.Find("Join").GetComponent<Join>();

@@ -16,19 +16,14 @@ public class EmotionControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject Character;
+        animator = GameObject.Find("Me").transform.Find("base").gameObject.GetComponent<Animator>();
 
-        if (Character = GameObject.Find("base"))
-        {
-            animator = Character.GetComponent<Animator>();
-
-            conversation.onClick.AddListener(DoConversation);
-            dance.onClick.AddListener(DoDance);
-            yes.onClick.AddListener(DoYes);
-            no.onClick.AddListener(DoNo);
-            victory.onClick.AddListener(DoVictoy);
-            lose.onClick.AddListener(DoLose);
-        }
+        conversation.onClick.AddListener(DoConversation);
+        dance.onClick.AddListener(DoDance);
+        yes.onClick.AddListener(DoYes);
+        no.onClick.AddListener(DoNo);
+        victory.onClick.AddListener(DoVictoy);
+        lose.onClick.AddListener(DoLose);
     }
     // Update is called once per frame
     void Update()

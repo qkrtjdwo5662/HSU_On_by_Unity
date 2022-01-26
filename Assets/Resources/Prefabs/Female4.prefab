@@ -1598,9 +1598,46 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 2
     Name: isRun
+  - Type: 1
+    SynchronizeType: 2
+    Name: Blend
+  - Type: 4
+    SynchronizeType: 2
+    Name: conversation
+  - Type: 4
+    SynchronizeType: 2
+    Name: dance
+  - Type: 4
+    SynchronizeType: 2
+    Name: lose
+  - Type: 4
+    SynchronizeType: 2
+    Name: victory
+  - Type: 4
+    SynchronizeType: 2
+    Name: yes
+  - Type: 4
+    SynchronizeType: 2
+    Name: no
   m_SynchronizeLayers:
   - SynchronizeType: 2
     LayerIndex: 0
+  - SynchronizeType: 0
+    LayerIndex: 1
+  - SynchronizeType: 0
+    LayerIndex: 2
+  - SynchronizeType: 0
+    LayerIndex: 3
+  - SynchronizeType: 0
+    LayerIndex: 4
+  - SynchronizeType: 0
+    LayerIndex: 5
+  - SynchronizeType: 0
+    LayerIndex: 6
+  - SynchronizeType: 0
+    LayerIndex: 7
+  - SynchronizeType: 0
+    LayerIndex: 8
 --- !u!114 &2508394090600010677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2221,6 +2258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22568d93ca552a49b2079420437d94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NickName: 
   TMP: {fileID: 7433313200463943770}
 --- !u!114 &8438499235546477291
 MonoBehaviour:
