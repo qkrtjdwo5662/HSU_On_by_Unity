@@ -192,36 +192,13 @@ public class QuestManager : MonoBehaviour
     public GameObject Main_detail;
 
     Dictionary<int, QuestData> questList;
-    JoinDB user;
     FirebaseAuth auth;
-    [SerializeField]
-    public DatabaseReference reference = null;
+    
+    DatabaseReference reference = null;
     public string myName = "0";
     public string myStdId;
 
-    string m1cleared = "false";
-    string m2cleared = "false";
-    string m3cleared = "false";
-    string m4cleared = "false";
-    string m5cleared = "false";
-    string h1cleared = "false";
-    string h2cleared = "false";
-    string h3cleared = "false";
-    string h4cleared = "false";
-    string h5cleared = "false";
-
-    string ot0cleared = "false";
-    string ot1cleared = "false";
-    string ot2cleared = "false";
-    string ot3cleared = "false";
-    string ot4cleared = "false";
-    string ot5cleared = "false";
-
-    string d1cleared = "false";
-    string d2cleared = "false";
-    string d3cleared = "false";
-    string d4cleared = "false";
-    string d5cleared = "false";
+   
 
 
     DataSnapshot ds;
@@ -1140,107 +1117,4 @@ public class QuestManager : MonoBehaviour
     }
 
 
-
-
-
-
-    public class JoinDB
-    {
-        public string email;
-        public string password;
-        public string name;
-        public string dept;
-        public string stdID;
-
-        public bool M1;
-        public bool M2;
-        public bool M3;
-        public bool M4;
-        public bool M5;
-        public bool H1;
-        public bool H2;
-        public bool H3;
-        public bool H4;
-        public bool H5;
-        
-        public bool OT0;
-        public bool OT1;
-        public bool OT2;
-        public bool OT3;
-        public bool OT4;
-        public bool OT5;
-
-        public bool D1;
-        public bool D2;
-        public bool D3;
-        public bool D4;
-        public bool D5;
-
-        public JoinDB(string email, string password, string name, string dept, string stdID, 
-            bool OT0, bool OT1, bool OT2, bool OT3, bool OT4, bool OT5, bool D1, bool D2, bool D3, bool D4, bool D5, bool M1, bool M2, bool M3, bool M4, bool M5, bool H1, bool H2, bool H3, bool H4, bool H5)
-        {
-            this.email = email;
-            this.password = password;
-            this.name = name;
-            this.dept = dept;
-            this.stdID = stdID;
-
-            this.OT0 = OT0;
-            this.OT1 = OT1;
-            this.OT2 = OT2;
-            this.OT3 = OT3;
-            this.OT4 = OT4;
-            this.OT5 = OT5;
-            this.D1 = D1;
-            this.D2 = D2;
-            this.D3 = D3;
-            this.D4 = D4;
-            this.D5 = D5;
-            this.M1 = M1;
-            this.M2 = M2;
-            this.M3 = M3;
-            this.M4 = M4;
-            this.M5 = M5;
-            this.H1 = H1;
-            this.H2 = H2;
-            this.H3 = H3;
-            this.H4 = H4;
-            this.H5 = H5;
-            
-        }
-
-        public Dictionary<string, object> ToDictionary()
-        {
-            Dictionary<string, object> dic = new Dictionary<string, object>();
-            dic["email"] = this.email;
-            dic["password"] = this.password;
-            dic["name"] = this.name;
-            dic["dept"] = this.dept;
-            dic["stdID"] = this.stdID;
-
-            dic["OT0"] = this.OT0;
-            dic["OT1"] = this.OT1;
-            dic["OT2"] = this.OT2;
-            dic["OT3"] = this.OT3;
-            dic["OT4"] = this.OT4;
-            dic["OT5"] = this.OT5;
-            dic["D1"] = this.D1;
-            dic["D2"] = this.D2;
-            dic["D3"] = this.D3;
-            dic["D4"] = this.D4;
-            dic["D5"] = this.D5;
-            dic["M1"] = this.M1;
-            dic["M2"] = this.M2;
-            dic["M3"] = this.M3;
-            dic["M4"] = this.M4;
-            dic["M5"] = this.M5;
-            dic["H1"] = this.H1;
-            dic["H2"] = this.H2;
-            dic["H3"] = this.H3;
-            dic["H4"] = this.H4;
-            dic["H5"] = this.H5;
-            
-            return dic;
-        }
-    }
 }

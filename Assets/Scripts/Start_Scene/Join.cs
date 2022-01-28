@@ -110,7 +110,7 @@ public class Join : MonoBehaviourPunCallbacks
     }
 
     JoinDB user;
-
+    DatabaseReference reference;
     FirebaseAuth auth;
 
     bool loginFlag = false;
@@ -246,15 +246,15 @@ public class Join : MonoBehaviourPunCallbacks
                 Debug.Log(ot5cleared);
 
                 d1cleared = dataSnapshot.Child("D1").GetValue(true).ToString();
-                Debug.Log(h1cleared);
+                Debug.Log(d1cleared);
                 d2cleared = dataSnapshot.Child("D2").GetValue(true).ToString();
-                Debug.Log(h2cleared);
+                Debug.Log(d2cleared);
                 d3cleared = dataSnapshot.Child("D3").GetValue(true).ToString();
-                Debug.Log(h3cleared);
+                Debug.Log(d3cleared);
                 d4cleared = dataSnapshot.Child("D4").GetValue(true).ToString();
-                Debug.Log(h4cleared);
+                Debug.Log(d4cleared);
                 d5cleared = dataSnapshot.Child("D5").GetValue(true).ToString();
-                Debug.Log(h5cleared);
+                Debug.Log(d5cleared);
 
                 isQueryEnd = true;
 
@@ -446,7 +446,7 @@ public class Join : MonoBehaviourPunCallbacks
         }
     }
 
-    public DatabaseReference reference = null;
+    
 
  
 
