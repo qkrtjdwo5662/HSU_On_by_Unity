@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using Photon.Pun;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class EmotionControl : MonoBehaviour
 {
+    public Button DoEmotion;
     public Button conversation;
     public Button dance;
     public Button yes;
@@ -11,26 +13,45 @@ public class EmotionControl : MonoBehaviour
     public Button lose;
     public GameObject EmotionPanel;
 
-    private Animator animator;
-
+    public Animator animator;
+    public PhotonView PV;
     // Start is called before the first frame update
     void Start()
     {
-        animator = GameObject.Find("Me").transform.Find("base").gameObject.GetComponent<Animator>();
+        PV = gameObject.GetComponent<PhotonView>();
+        if (PV.IsMine)
+        {
+            DoEmotion = GameObject.Find("EmotionButton").GetComponent<Button>();
+            conversation = GameObject.Find("UI").transform.Find("EmotionPanel").transform.Find("conversation").GetComponent<Button>();
+            dance = GameObject.Find("UI").transform.Find("EmotionPanel").transform.Find("dance").GetComponent<Button>();
+            yes = GameObject.Find("UI").transform.Find("EmotionPanel").transform.Find("yes").GetComponent<Button>();
+            no = GameObject.Find("UI").transform.Find("EmotionPanel").transform.Find("no").GetComponent<Button>();
+            victory = GameObject.Find("UI").transform.Find("EmotionPanel").transform.Find("victory").GetComponent<Button>();
+            lose = GameObject.Find("UI").transform.Find("EmotionPanel").transform.Find("lose").GetComponent<Button>();
+            EmotionPanel = GameObject.Find("UI").transform.Find("EmotionPanel").gameObject;
 
-        conversation.onClick.AddListener(DoConversation);
-        dance.onClick.AddListener(DoDance);
-        yes.onClick.AddListener(DoYes);
-        no.onClick.AddListener(DoNo);
-        victory.onClick.AddListener(DoVictoy);
-        lose.onClick.AddListener(DoLose);
+            DoEmotion.onClick.AddListener(EmotionOn);
+            conversation.onClick.AddListener(DoConversation);
+            dance.onClick.AddListener(DoDance);
+            yes.onClick.AddListener(DoYes);
+            no.onClick.AddListener(DoNo);
+            victory.onClick.AddListener(DoVictoy);
+            lose.onClick.AddListener(DoLose);
+        }
+        else if (!PV.IsMine) {
+            Destroy(this);
+            
+        }
     }
     // Update is called once per frame
     void Update()
     {
 
     }
-
+    void EmotionOn() 
+    {
+        EmotionPanel.SetActive(true);
+    }
     void DoConversation()
     {
         animator.SetBool("conversation", true);

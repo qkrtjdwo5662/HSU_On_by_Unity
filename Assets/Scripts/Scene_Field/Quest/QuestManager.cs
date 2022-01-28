@@ -79,7 +79,7 @@ public class QuestManager : MonoBehaviour
     public Button M3;
     public Button M4;
     public Button M5;
-    
+
     public Button OT1;
     public Button OT2;
     public Button OT3;
@@ -124,14 +124,14 @@ public class QuestManager : MonoBehaviour
     public GameObject NPC4;
     public GameObject NPC5;
 
-     //NPC_OT Object
+    //NPC_OT Object
     public GameObject OTNPC0;
     public GameObject OTNPC1;
     public GameObject OTNPC2;
     public GameObject OTNPC3;
     public GameObject OTNPC4;
     public GameObject OTNPC5;
-    
+
     //Stamp Imgae
     public Image M1Stamp;
     public Image M2Stamp;
@@ -143,13 +143,13 @@ public class QuestManager : MonoBehaviour
     public Image H3Stamp;
     public Image H4Stamp;
     public Image H5Stamp;
-    
+
     public Image OT1Stamp;
     public Image OT2Stamp;
     public Image OT3Stamp;
     public Image OT4Stamp;
     public Image OT5Stamp;
-    
+
     //Complete Image
     public Image M1Complete;
     public Image M2Complete;
@@ -162,7 +162,7 @@ public class QuestManager : MonoBehaviour
     public Image H4Complete;
     public Image H5Complete;
 
-    
+
     public Image OT1Complete;
     public Image OT2Complete;
     public Image OT3Complete;
@@ -198,7 +198,7 @@ public class QuestManager : MonoBehaviour
     public DatabaseReference reference = null;
     public string myName = "0";
     public string myStdId;
-    
+
     string m1cleared = "false";
     string m2cleared = "false";
     string m3cleared = "false";
@@ -209,7 +209,7 @@ public class QuestManager : MonoBehaviour
     string h3cleared = "false";
     string h4cleared = "false";
     string h5cleared = "false";
-    
+
     string ot0cleared = "false";
     string ot1cleared = "false";
     string ot2cleared = "false";
@@ -252,7 +252,7 @@ public class QuestManager : MonoBehaviour
         auth = FirebaseAuth.DefaultInstance;
         questList = new Dictionary<int, QuestData>();
 
-        
+
         join = GameObject.Find("Join").GetComponent<Join>();
 
         M1.interactable = false;
@@ -280,7 +280,7 @@ public class QuestManager : MonoBehaviour
           D5.interactable = false;*/
 
 
-        
+
         FirebaseApp.DefaultInstance.Options.DatabaseUrl =
                    new System.Uri("https://hsuon-4c8e4-default-rtdb.firebaseio.com/");
 
@@ -289,350 +289,100 @@ public class QuestManager : MonoBehaviour
         //reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(join.email);
         reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(join.getUserID());
 
-        reference.GetValueAsync().ContinueWithOnMainThread(task => {
-            if (task.IsFaulted)
-            {
-                // Handle the error...
-            }
-            else if (task.IsCompleted)
-            {
-                DataSnapshot dataSnapshot = task.Result;
-                ds = dataSnapshot;
-                myName = dataSnapshot.Child("name").GetValue(true).ToString();
-
-                Debug.Log(myName);
-                myStdId = dataSnapshot.Child("stdID").GetValue(true).ToString();
-
-                Debug.Log(myStdId);
-
-                m1cleared = dataSnapshot.Child("M1").GetValue(true).ToString();
-                Debug.Log(m1cleared);
-                m2cleared = dataSnapshot.Child("M2").GetValue(true).ToString();
-                Debug.Log(m2cleared);
-                m3cleared = dataSnapshot.Child("M3").GetValue(true).ToString();
-                Debug.Log(m3cleared);
-                m4cleared = dataSnapshot.Child("M4").GetValue(true).ToString();
-                Debug.Log(m4cleared);
-                m5cleared = dataSnapshot.Child("M5").GetValue(true).ToString();
-                Debug.Log(m5cleared);
-
-                h1cleared = dataSnapshot.Child("H1").GetValue(true).ToString();
-                Debug.Log(h1cleared);
-                h2cleared = dataSnapshot.Child("H2").GetValue(true).ToString();
-                Debug.Log(h2cleared);
-                h3cleared = dataSnapshot.Child("H3").GetValue(true).ToString();
-                Debug.Log(h3cleared);
-                h4cleared = dataSnapshot.Child("H4").GetValue(true).ToString();
-                Debug.Log(h4cleared);
-                h5cleared = dataSnapshot.Child("H5").GetValue(true).ToString();
-                Debug.Log(h5cleared);
-
-                ot0cleared = dataSnapshot.Child("OT0").GetValue(true).ToString();
-                Debug.Log(ot0cleared);
-                ot1cleared = dataSnapshot.Child("OT1").GetValue(true).ToString();
-                Debug.Log(ot1cleared);
-                ot2cleared = dataSnapshot.Child("OT2").GetValue(true).ToString();
-                Debug.Log(ot2cleared);
-                ot3cleared = dataSnapshot.Child("OT3").GetValue(true).ToString();
-                Debug.Log(ot3cleared);
-                ot4cleared = dataSnapshot.Child("OT4").GetValue(true).ToString();
-                Debug.Log(ot4cleared);
-                ot5cleared = dataSnapshot.Child("OT5").GetValue(true).ToString();
-                Debug.Log(ot5cleared);
-
-                d1cleared = dataSnapshot.Child("D1").GetValue(true).ToString();
-                Debug.Log(h1cleared);
-                d2cleared = dataSnapshot.Child("D2").GetValue(true).ToString();
-                Debug.Log(h2cleared);
-                d3cleared = dataSnapshot.Child("D3").GetValue(true).ToString();
-                Debug.Log(h3cleared);
-                d4cleared = dataSnapshot.Child("D4").GetValue(true).ToString();
-                Debug.Log(h4cleared);
-                d5cleared = dataSnapshot.Child("D5").GetValue(true).ToString();
-                Debug.Log(h5cleared);
-
-                IdentityID_text.text = join.getUserID().Substring(10);
-                StuID_text.text = "학번 : " + myStdId + "\n" + "이름 : " + myName;
 
 
-                if (ot0cleared.Equals("True"))
-                {
-                    QuestOpen();
-                }
-
-                if (ot1cleared.Equals("True"))
-                {
-                    OT1QuestClear();
-                }
-
-                if (ot2cleared.Equals("True"))
-                {
-                    OT2QuestClear();
-                }
-
-                if (ot3cleared.Equals("True"))
-                {
-                    OT3QuestClear();
-                }
-
-                if (ot4cleared.Equals("True"))
-                {
-                    OT4QuestClear();
-                }
-
-                if (ot5cleared.Equals("True"))
-                {
-                    OT5QuestClear();
-                }
 
 
-                if (d1cleared.Equals("True"))
-                {
-                    Mission1QuestClear();
-                }
-
-                if (d2cleared.Equals("True"))
-                {
-                    Mission2QuestClear();
-                }
-
-                if (d3cleared.Equals("True"))
-                {
-                    Mission3QuestClear();
-                }
-
-                if (d4cleared.Equals("True"))
-                {
-                    Mission4QuestClear();
-                }
-
-                if (d5cleared.Equals("True"))
-                {
-                    Mission5QuestClear();
-                }
+        IdentityID_text.text = join.getUserID().Substring(10);
+        StuID_text.text = "학번 : " + myStdId + "\n" + "이름 : " + myName;
 
 
-                if (h1cleared.Equals("True"))
-                {
-                    Hidden1QuestClear();
-                }
+        if (join.ot0cleared.Equals("True"))
+        {
+            QuestOpen();
+        }
 
-                if (h2cleared.Equals("True"))
-                {
-                    Hidden2QuestClear();
-                }
+        if (join.ot1cleared.Equals("True"))
+        {
+            OT1QuestClear();
+        }
 
-                if (h3cleared.Equals("True"))
-                {
-                    Hidden3QuestClear();
-                }
+        if (join.ot2cleared.Equals("True"))
+        {
+            OT2QuestClear();
+        }
 
-                if (h4cleared.Equals("True"))
-                {
-                    Hidden4QuestClear();
-                }
+        if (join.ot3cleared.Equals("True"))
+        {
+            OT3QuestClear();
+        }
 
-                if (h5cleared.Equals("True"))
-                {
-                    Hidden5QuestClear();
-                }
+        if (join.ot4cleared.Equals("True"))
+        {
+            OT4QuestClear();
+        }
 
-                else return;
-            }
-        });
+        if (join.ot5cleared.Equals("True"))
+        {
+            OT5QuestClear();
+        }
 
+
+        if (join.d1cleared.Equals("True"))
+        {
+            Mission1QuestClear();
+        }
+
+        if (join.d2cleared.Equals("True"))
+        {
+            Mission2QuestClear();
+        }
+
+        if (join.d3cleared.Equals("True"))
+        {
+            Mission3QuestClear();
+        }
+
+        if (join.d4cleared.Equals("True"))
+        {
+            Mission4QuestClear();
+        }
+
+        if (join.d5cleared.Equals("True"))
+        {
+            Mission5QuestClear();
+        }
+
+
+        if (join.h1cleared.Equals("True"))
+        {
+            Hidden1QuestClear();
+        }
+
+        if (join.h2cleared.Equals("True"))
+        {
+            Hidden2QuestClear();
+        }
+
+        if (join.h3cleared.Equals("True"))
+        {
+            Hidden3QuestClear();
+        }
+
+        if (join.h4cleared.Equals("True"))
+        {
+            Hidden4QuestClear();
+        }
+
+        if (join.h5cleared.Equals("True"))
+        {
+            Hidden5QuestClear();
+        }
     }
 
     void Start()
     {
-        /*
-        join = GameObject.Find("Join").GetComponent<Join>();
-
-        M1.interactable = false;
-        M2.interactable = false;
-        M3.interactable = false;
-        M4.interactable = false;
-        M5.interactable = false;
-
-        H1.interactable = false;
-        H2.interactable = false;
-        H3.interactable = false;
-        H4.interactable = false;
-        H5.interactable = false;
-        /*
-        OT1.interactable = false;
-        OT2.interactable = false;
-        OT3.interactable = false;
-        OT4.interactable = false;
-        OT5.interactable = false;
-
-        D1.interactable = false;
-        D2.interactable = false;
-        D3.interactable = false;
-        D4.interactable = false;
-        D5.interactable = false;*/
         
-
-        /*
-        FirebaseApp.DefaultInstance.Options.DatabaseUrl =
-                   new System.Uri("https://hsuon-4c8e4-default-rtdb.firebaseio.com/");
-
-
-        // 파이어베이스의 메인 참조 얻기
-        //reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(join.email);
-        reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(join.getUserID());
-
-        reference.GetValueAsync().ContinueWithOnMainThread(task => {
-            if (task.IsFaulted)
-            {
-                // Handle the error...
-            }
-            else if (task.IsCompleted)
-            {
-                DataSnapshot dataSnapshot = task.Result;
-                ds = dataSnapshot;
-                myName = dataSnapshot.Child("name").GetValue(true).ToString();
-                
-                Debug.Log(myName);
-                myStdId = dataSnapshot.Child("stdID").GetValue(true).ToString();
-                
-                Debug.Log(myStdId);
-    
-                m1cleared = dataSnapshot.Child("M1").GetValue(true).ToString();
-                Debug.Log(m1cleared);
-                m2cleared = dataSnapshot.Child("M2").GetValue(true).ToString();
-                Debug.Log(m2cleared);
-                m3cleared = dataSnapshot.Child("M3").GetValue(true).ToString();
-                Debug.Log(m3cleared);
-                m4cleared = dataSnapshot.Child("M4").GetValue(true).ToString();
-                Debug.Log(m4cleared);
-                m5cleared = dataSnapshot.Child("M5").GetValue(true).ToString();
-                Debug.Log(m5cleared);
-
-                h1cleared = dataSnapshot.Child("H1").GetValue(true).ToString();
-                Debug.Log(h1cleared);
-                h2cleared = dataSnapshot.Child("H2").GetValue(true).ToString();
-                Debug.Log(h2cleared);
-                h3cleared = dataSnapshot.Child("H3").GetValue(true).ToString();
-                Debug.Log(h3cleared);
-                h4cleared = dataSnapshot.Child("H4").GetValue(true).ToString();
-                Debug.Log(h4cleared);
-                h5cleared = dataSnapshot.Child("H5").GetValue(true).ToString();
-                Debug.Log(h5cleared);
-                
-                ot0cleared = dataSnapshot.Child("OT0").GetValue(true).ToString();
-                Debug.Log(ot0cleared);
-                ot1cleared = dataSnapshot.Child("OT1").GetValue(true).ToString();
-                Debug.Log(ot1cleared);
-                ot2cleared = dataSnapshot.Child("OT2").GetValue(true).ToString();
-                Debug.Log(ot2cleared);
-                ot3cleared = dataSnapshot.Child("OT3").GetValue(true).ToString();
-                Debug.Log(ot3cleared);
-                ot4cleared = dataSnapshot.Child("OT4").GetValue(true).ToString();
-                Debug.Log(ot4cleared);
-                ot5cleared = dataSnapshot.Child("OT5").GetValue(true).ToString();
-                Debug.Log(ot5cleared);
-
-                d1cleared = dataSnapshot.Child("D1").GetValue(true).ToString();
-                Debug.Log(h1cleared);
-                d2cleared = dataSnapshot.Child("D2").GetValue(true).ToString();
-                Debug.Log(h2cleared);
-                d3cleared = dataSnapshot.Child("D3").GetValue(true).ToString();
-                Debug.Log(h3cleared);
-                d4cleared = dataSnapshot.Child("D4").GetValue(true).ToString();
-                Debug.Log(h4cleared);
-                d5cleared = dataSnapshot.Child("D5").GetValue(true).ToString();
-                Debug.Log(h5cleared);
-
-                IdentityID_text.text = join.getUserID().Substring(10);
-                StuID_text.text = "학번 : " + myStdId + "\n" + "이름 : " + myName;
-
-               
-                if (ot0cleared.Equals("True"))
-                {
-                    QuestOpen();
-                }
-
-                if (ot1cleared.Equals("True"))
-                {
-                    OT1QuestClear();
-                }
-
-                if (ot2cleared.Equals("True"))
-                {
-                    OT2QuestClear();
-                }
-
-                if (ot3cleared.Equals("True"))
-                {
-                    OT3QuestClear();
-                }
-
-                if (ot4cleared.Equals("True"))
-                {
-                    OT4QuestClear();
-                }
-
-                if (ot5cleared.Equals("True"))
-                {
-                    OT5QuestClear();
-                }
-
-                
-                if (d1cleared.Equals("True"))
-                {
-                    Mission1QuestClear();
-                }
-
-                if (d2cleared.Equals("True"))
-                {
-                    Mission2QuestClear();
-                }
-
-                if (d3cleared.Equals("True"))
-                {
-                    Mission3QuestClear();
-                }
-
-                if (d4cleared.Equals("True"))
-                {
-                    Mission4QuestClear();
-                }
-
-                if (d5cleared.Equals("True"))
-                {
-                    Mission5QuestClear();
-                }
-
-
-                if (h1cleared.Equals("True"))
-                {
-                    Hidden1QuestClear();
-                }
-
-                if (h2cleared.Equals("True"))
-                {
-                    Hidden2QuestClear();
-                }
-
-                if (h3cleared.Equals("True"))
-                {
-                    Hidden3QuestClear();
-                }
-
-                if (h4cleared.Equals("True"))
-                {
-                    Hidden4QuestClear();
-                }
-
-                if (h5cleared.Equals("True"))
-                {
-                    Hidden5QuestClear();
-                }
-               
-                else return;
-            }
-        });*/
     }
 
     IEnumerator CoFade(float start, float end)

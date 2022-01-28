@@ -39,6 +39,7 @@ public class TPSCharacterController : MonoBehaviour
         else if (!PV.IsMine)
         {
             this.name = "OtherPlayer";
+            Destroy(this);
         }
     }
 

@@ -755,6 +755,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3413891556477492026}
   - component: {fileID: 3413891556477492025}
+  - component: {fileID: -7261849690979863021}
   - component: {fileID: 3413891556477492029}
   - component: {fileID: 8072549638314843391}
   - component: {fileID: 3413891556477492027}
@@ -806,6 +807,28 @@ MonoBehaviour:
   character: {fileID: 3413891556477492024}
   animator: {fileID: 0}
   escButton: {fileID: 0}
+--- !u!114 &-7261849690979863021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3413891556477492024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a6cb347a0f2cb40ade1aa6b1145915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DoEmotion: {fileID: 0}
+  conversation: {fileID: 0}
+  dance: {fileID: 0}
+  yes: {fileID: 0}
+  no: {fileID: 0}
+  victory: {fileID: 0}
+  lose: {fileID: 0}
+  EmotionPanel: {fileID: 0}
+  animator: {fileID: 996192944339764067}
+  PV: {fileID: 0}
 --- !u!33 &3413891556477492029
 MeshFilter:
   m_ObjectHideFlags: 0
