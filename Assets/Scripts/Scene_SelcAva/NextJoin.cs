@@ -27,10 +27,16 @@ public class NextJoin : MonoBehaviourPunCallbacks
 
        connectionInfoText.text = "서버에 접속중..";
     }
+    private void Update()
+    {
+        if (PhotonNetwork.IsConnected && join.isQueryEnd) {
+            NextBtn.interactable = true;
+        }
+    }
 
     public override void OnConnectedToMaster()
     {
-        NextBtn.interactable = true;
+        
         connectionInfoText.text = "온라인 : 환영합니다! " + join.getStdId().Substring(0, 2) + " " + join.getName() + "님!";
         PhotonNetwork.JoinLobby();//마스터 서버 연결시 로비로 연결
     }
@@ -45,6 +51,7 @@ public class NextJoin : MonoBehaviourPunCallbacks
         //마스터 서버로의 재접속 시도
         PhotonNetwork.ConnectUsingSettings();
     }
+    
 
     public override void OnJoinedLobby()//로비에 연결시 작동
     {

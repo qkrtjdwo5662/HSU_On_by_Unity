@@ -227,7 +227,7 @@ public class QuestManager : MonoBehaviour
     DataSnapshot ds;
     FirebaseApp app;
 
-    void Awake()
+    void Start()
     {
         Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
             var dependencyStatus = task.Result;
@@ -380,10 +380,7 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        
-    }
+    
 
     IEnumerator CoFade(float start, float end)
     {

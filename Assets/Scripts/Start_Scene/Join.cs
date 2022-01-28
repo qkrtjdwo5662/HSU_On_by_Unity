@@ -95,6 +95,9 @@ public class Join : MonoBehaviourPunCallbacks
     public Text loginResult;
     public Text LogZone;
 
+
+    public bool isQueryEnd = false;
+
     public string getUserID() {
         return UserID;
     }
@@ -196,12 +199,8 @@ public class Join : MonoBehaviourPunCallbacks
         reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(UserID);
 
         reference.GetValueAsync().ContinueWithOnMainThread(task => {
-            if (task.IsFaulted)
-            {
-                // Handle the error...
-                return;
-            }
-            else if (task.IsCompleted)
+            
+            if (task.IsCompleted)
             {
                 DataSnapshot dataSnapshot = task.Result;
 
@@ -257,7 +256,7 @@ public class Join : MonoBehaviourPunCallbacks
                 d5cleared = dataSnapshot.Child("D5").GetValue(true).ToString();
                 Debug.Log(h5cleared);
 
-
+                isQueryEnd = true;
 
 
                 return;
