@@ -194,44 +194,15 @@ public class QuestManager : MonoBehaviour
     Dictionary<int, QuestData> questList;
     FirebaseAuth auth;
     
-    DatabaseReference reference = null;
     public string myName = "0";
     public string myStdId;
 
    
 
 
-    DataSnapshot ds;
-    FirebaseApp app;
 
     void Start()
     {
-        Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
-            var dependencyStatus = task.Result;
-            if (dependencyStatus == Firebase.DependencyStatus.Available)
-            {
-                // Create and hold a reference to your FirebaseApp,
-                // where app is a Firebase.FirebaseApp property of your application class.
-                app = Firebase.FirebaseApp.DefaultInstance;
-
-                // Set a flag here to indicate whether Firebase is ready to use by your app.
-            }
-            else
-            {
-                UnityEngine.Debug.LogError(System.String.Format(
-                  "Could not resolve all Firebase dependencies: {0}", dependencyStatus));
-                // Firebase Unity SDK is not safe to use here.
-            }
-        });
-
-
-
-        auth = FirebaseAuth.DefaultInstance;
-        questList = new Dictionary<int, QuestData>();
-
-
-        join = GameObject.Find("Join").GetComponent<Join>();
-
         M1.interactable = false;
         M2.interactable = false;
         M3.interactable = false;
@@ -246,32 +217,20 @@ public class QuestManager : MonoBehaviour
 
         /*OT1.interactable = false;
           OT2.interactable = false;
-          OT3.interactable = false;
-          OT4.interactable = false;
-          OT5.interactable = false;
+        OT3.interactable = false;
+        OT4.interactable = false;
+        OT5.interactable = false;
 
-          D1.interactable = false;
-          D2.interactable = false;
-          D3.interactable = false;
-          D4.interactable = false;
-          D5.interactable = false;*/
+        D1.interactable = false;
+        D2.interactable = false;
+        D3.interactable = false;
+        D4.interactable = false;
+        D5.interactable = false; */
 
-
-
-        FirebaseApp.DefaultInstance.Options.DatabaseUrl =
-                   new System.Uri("https://hsuon-4c8e4-default-rtdb.firebaseio.com/");
-
-
-        // 파이어베이스의 메인 참조 얻기
-        //reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(join.email);
-        reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(join.getUserID());
-
-
-
-
+       join = GameObject.Find("Join").GetComponent<Join>();
 
         IdentityID_text.text = join.getUserID().Substring(10);
-        StuID_text.text = "학번 : " + myStdId + "\n" + "이름 : " + myName;
+        StuID_text.text = "학번 : " + join.getStdId() + "\n" + "이름 : " + join.getName();
 
 
         if (join.ot0cleared.Equals("True"))
@@ -716,7 +675,7 @@ public class QuestManager : MonoBehaviour
         }
     }
     //QuestDialog 
-
+    //--------------------------------------------------퀘스트완료처리---------------------------------------//
 
     public void QuestOpen()
     {
@@ -730,7 +689,7 @@ public class QuestManager : MonoBehaviour
         OTNPC0.gameObject.SetActive(false);
         OTNPC1.gameObject.SetActive(true);
 
-        reference.Child("OT0").SetValueAsync(true);
+        join.SetValueFireBase("OT0");
         Debug.Log("Quest Open");
     }
     
@@ -748,7 +707,7 @@ public class QuestManager : MonoBehaviour
 
         OT_ButtonClick();
 
-        reference.Child("OT1").SetValueAsync(true);
+        join.SetValueFireBase("OT1");
         Debug.Log("OT1 clear & save");
     }
 
@@ -764,7 +723,7 @@ public class QuestManager : MonoBehaviour
 
         OT_ButtonClick();
 
-        reference.Child("OT2").SetValueAsync(true);
+        join.SetValueFireBase("OT2");
         Debug.Log("OT2 clear & save");
     }
 
@@ -780,7 +739,7 @@ public class QuestManager : MonoBehaviour
 
         OT_ButtonClick();
 
-        reference.Child("OT3").SetValueAsync(true);
+        join.SetValueFireBase("OT3");
         Debug.Log("OT3 clear & save");
     }
 
@@ -796,7 +755,7 @@ public class QuestManager : MonoBehaviour
 
         OT_ButtonClick();
 
-        reference.Child("OT4").SetValueAsync(true);
+        join.SetValueFireBase("OT4");
         Debug.Log("OT4 clear & save");
     }
 
@@ -809,7 +768,7 @@ public class QuestManager : MonoBehaviour
 
         OT_ButtonClick();
 
-        reference.Child("OT5").SetValueAsync(true);
+        join.SetValueFireBase("OT5");
         Debug.Log("OT5 clear & save");
         NPC1.gameObject.SetActive(true);
         OTNPC5.gameObject.SetActive(false);
@@ -831,7 +790,7 @@ public class QuestManager : MonoBehaviour
 
         M_ButtonClick();
 
-        reference.Child("D1").SetValueAsync(true);
+        join.SetValueFireBase("D1");
         Debug.Log("Mission1 clear & save");
     }
 
@@ -847,7 +806,7 @@ public class QuestManager : MonoBehaviour
 
         M_ButtonClick();
 
-        reference.Child("D2").SetValueAsync(true);
+        join.SetValueFireBase("D2");
         Debug.Log("Mission2 clear & save");
     }
 
@@ -863,7 +822,7 @@ public class QuestManager : MonoBehaviour
 
         M_ButtonClick();
 
-        reference.Child("D3").SetValueAsync(true);
+        join.SetValueFireBase("D3");
         Debug.Log("Mission3 clear & save");
     }
 
@@ -879,7 +838,7 @@ public class QuestManager : MonoBehaviour
 
         M_ButtonClick();
 
-        reference.Child("D4").SetValueAsync(true);
+        join.SetValueFireBase("D4");
         Debug.Log("Mission4 clear & save");
     }
 
@@ -892,7 +851,7 @@ public class QuestManager : MonoBehaviour
 
         M_ButtonClick();
 
-        reference.Child("D5").SetValueAsync(true);
+        join.SetValueFireBase("D5");
         Debug.Log("Mission5 clear & save");
 
     }
@@ -907,7 +866,7 @@ public class QuestManager : MonoBehaviour
 
         H_ButtonClick();
 
-        reference.Child("H1").SetValueAsync(true);
+        join.SetValueFireBase("H1");
         Debug.Log("HiddenMission1 clear & save");
     }
 
@@ -922,7 +881,7 @@ public class QuestManager : MonoBehaviour
 
         H_ButtonClick();
 
-        reference.Child("H2").SetValueAsync(true);
+        join.SetValueFireBase("H2");
         Debug.Log("HiddenMission2 clear & save");
     }
 
@@ -936,7 +895,7 @@ public class QuestManager : MonoBehaviour
 
         H_ButtonClick();
 
-        reference.Child("H3").SetValueAsync(true);
+        join.SetValueFireBase("H3");
         Debug.Log("HiddenMission3 clear & save");
     }
     public void Hidden4QuestClear()
@@ -949,7 +908,7 @@ public class QuestManager : MonoBehaviour
 
         H_ButtonClick();
 
-        reference.Child("H4").SetValueAsync(true);
+        join.SetValueFireBase("H4");
         Debug.Log("HiddenMission4 clear & save");
     }
     public void Hidden5QuestClear()
@@ -962,7 +921,7 @@ public class QuestManager : MonoBehaviour
 
         H_ButtonClick();
 
-        reference.Child("H5").SetValueAsync(true);
+        join.SetValueFireBase("H5");
         Debug.Log("HiddenMission5 clear & save");
     }
     //Clear
@@ -1048,7 +1007,7 @@ public class QuestManager : MonoBehaviour
     public void Questreset()
     {
 
-        reference.Child("M1").SetValueAsync(false);
+        /*reference.Child("M1").SetValueAsync(false);
         reference.Child("M2").SetValueAsync(false);
         reference.Child("M3").SetValueAsync(false);
         reference.Child("M4").SetValueAsync(false);
@@ -1113,7 +1072,7 @@ public class QuestManager : MonoBehaviour
         //Quest List Button reset
 
 
-        Debug.Log("Quest Reset");
+        Debug.Log("Quest Reset");*/
     }
 
 

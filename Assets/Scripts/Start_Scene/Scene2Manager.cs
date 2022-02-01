@@ -5,7 +5,7 @@ using UnityEngine;
 public class Scene2Manager : MonoBehaviour
 {
     //GameManager gm;
-
+    //--------------------------------------------------------------안씀---------------------------------------//
     void Start()
     {
         /*
