@@ -13,7 +13,6 @@ public class Speech : MonoBehaviour
     public GameObject tm;
     public GameObject dialog;
     public float start = 0.0f;
-    private float finish = 2.0f;
     public int cheak = 0;
 
     PhotonView PV;
