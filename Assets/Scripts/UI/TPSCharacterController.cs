@@ -24,9 +24,10 @@ public class TPSCharacterController : MonoBehaviour
     PhotonView PV;
 
     public Animator animator;
-
-
     public Button escButton;
+    public Button attackButton;
+
+    float time = 0.0f;
     // Start is called before the first frame update
     void Awake()
 	{
@@ -48,6 +49,8 @@ public class TPSCharacterController : MonoBehaviour
         animator = characterBody.GetComponent<Animator>();
         escButton = GameObject.Find("Reset_Button").GetComponent<Button>();
         escButton.onClick.AddListener(escAction);
+        attackButton = GameObject.Find("Canvas").transform.Find("AttackButton").GetComponent<Button>();
+        attackButton.onClick.AddListener(AttackAction);
 
         join = GameObject.Find("Join").GetComponent<Join>();
         join.PVID = PV.ViewID;
@@ -61,9 +64,17 @@ public class TPSCharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-            
-
+        if (animator.GetBool("attack1") || animator.GetBool("attack2"))
+        {
+            time += Time.deltaTime;
+            if (time >= 1.0f)
+            {
+                //attack(); 넣기
+                animator.SetBool("attack1", false);
+                animator.SetBool("attack2", false);
+                time = 0.0f;
+            }
+        }
     }
 
     public void Move(Vector2 inputDirection)
@@ -90,6 +101,8 @@ public class TPSCharacterController : MonoBehaviour
             animator.SetBool("lose", false);
             animator.SetBool("yes", false);
             animator.SetBool("no", false);
+            animator.SetBool("attack1", false);
+            animator.SetBool("attack2", false);
             // 카메라가 바라보는 방향
             Vector3 lookForward = new Vector3(cameraArm.forward.x, 0f, cameraArm.forward.z).normalized;
             // 카메라의 오른쪽 방향
@@ -135,5 +148,20 @@ public class TPSCharacterController : MonoBehaviour
         // 카메라 암 회전 시키기
         cameraArm.rotation = Quaternion.Euler(x, camAngle.y + mouseDelta.x, camAngle.z);
     }
+    private void AttackAction() {
+        System.Random random = new System.Random();
+
+        int next = random.Next(0, 2);
+
+        if (next == 0)
+        {
+            animator.SetBool("attack1", true);
+        }
+        else 
+        {
+            animator.SetBool("attack2", true);
+        }
+        
     
+    }
 }
