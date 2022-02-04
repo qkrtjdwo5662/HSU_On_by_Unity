@@ -1,11 +1,14 @@
 fileFormatVersion: 2
-guid: 95bcf9149f3ed4e4b999a7a21f2a7ba9
+guid: 5bcbbf1807381874f94349ac7e405e28
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
-      74: 1827226128182048838
-    second: Take 001
+      74: 7577268293248364879
+    second: basic_rig|basic_rig.001|basic_rig|basic_rig|Take 001|BaseLayer|basic_rig|
+  - first:
+      74: 9190969331937356864
+    second: basic_rig|basic_rig|Take 001|BaseLayer
   externalObjects: {}
   materials:
     materialImportMode: 1
