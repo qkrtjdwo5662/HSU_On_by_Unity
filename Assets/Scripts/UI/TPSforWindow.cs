@@ -6,7 +6,7 @@ using UnityEngine.UI;
 //---------------------윈도우 개발 종료로 안씀-----------------------------------------//  
 public class TPSforWindow : MonoBehaviour
 {
-    // Start is called before the first frame update
+    /*// Start is called before the first frame update
     [SerializeField]
     private Transform characterBody;
     [SerializeField]
@@ -132,7 +132,7 @@ public class TPSforWindow : MonoBehaviour
             Vision();
         }
 
-        /*
+        *//*
         if (Input.GetKeyDown(KeyCode.LeftAlt))
         {
             //_ = (SetMouseMod == true) ? SetMouseMod = false : SetMouseMod = true;
@@ -147,7 +147,7 @@ public class TPSforWindow : MonoBehaviour
             SetMouseMod = true;
             Cursor.visible = false;
 
-        }*/
+        }*//*
         if (Input.GetKey(KeyCode.Escape) && escCool)
         {
             if (SetMouseMod == true)
@@ -196,7 +196,7 @@ public class TPSforWindow : MonoBehaviour
         xRotate = Mathf.Clamp(xRotate + xRotateSize, -15, 80);
         cameraArm.transform.eulerAngles = new Vector3(xRotate, yRotate, 0);
         
-    }
+    }*/
 
     
 }

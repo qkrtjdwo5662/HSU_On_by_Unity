@@ -19,6 +19,7 @@ public class EventInstance : MonoBehaviour
     public GameObject chatBtn_off;
     public GameObject chatBtn_on;
 
+    public GameObject AttackButton;
     public Clock Clock;
     private Hashtable hashtable = new Hashtable();
     private bool isEventStart= false;
@@ -46,6 +47,7 @@ public class EventInstance : MonoBehaviour
         chatBtn_off.SetActive(false);
         chatBtn_on.SetActive(true);
 
+        AttackButton.SetActive(true);
         ScorePanel.SetActive(true);
         isEventStart = true;
         
@@ -54,6 +56,7 @@ public class EventInstance : MonoBehaviour
     private void EventEnd() {
         ScorePanel.SetActive(false);
         isEventStart = false;
+        AttackButton.SetActive(false);
 
         string winner="";
         int winnerScore=0;
@@ -64,7 +67,7 @@ public class EventInstance : MonoBehaviour
             }
         }
         winnerPanel.SetActive(true);
-        winnerBanner.text = string.Format("우승! {0} {1}점", winner,  winnerScore);
+        winnerBanner.text = string.Format("우승!     {0} {1}점", winner,  winnerScore);
 
     }
     private string HashToString(Hashtable hashtable) {
@@ -93,7 +96,7 @@ public class EventInstance : MonoBehaviour
         if (isEventStart) {
             TimeBoard.text = (timer - Time.deltaTime).ToString();
             ScoreBoard.text = HashToString(hashtable);
-            if (timer < 0)
+            if (timer <= 0)
                 EventEnd();
         }
     }
