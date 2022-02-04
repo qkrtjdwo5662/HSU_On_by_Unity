@@ -21,12 +21,12 @@ public class ChickenTrigger : MonoBehaviour
             chickenAI.getAnimator().SetBool("Walk", false);
             chickenAI.getAnimator().SetBool("TurnHead", false);
             chickenAI.getAnimator().SetBool("Eat", false);
-            //chickenAI.getAnimator().SetBool("Run", true);
+            chickenAI.getAnimator().SetBool("Run", true);
             chickenAI.getTransform().LookAt(2 * chickenAI.getTransform().position - other.gameObject.transform.position);
             chickenAI.setTime(0.0f);
         }
         else if (other.tag == "hammer") {
-            //e.hitchicken(other.GetComponent<PhotonView>().Owner.NickName,10);
+            e.hitchicken(other.GetComponent<PhotonView>().Owner.NickName,1);
             //Debug.Log(other.GetComponent<PhotonView>().Owner.NickName);
             var set = chickenAI.getTransform().gameObject.GetComponent<ParticleSystem>().emission;
             set.enabled = true;

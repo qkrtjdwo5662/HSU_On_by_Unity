@@ -21,7 +21,7 @@ public class cameraPix : MonoBehaviour
     void Update()
     {
         if (!PV.IsMine) {
-            cam.SetActive(false);
+            Destroy(cam);
         }
     }
 }

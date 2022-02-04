@@ -23,6 +23,9 @@ public class TPSCharacterController : MonoBehaviour
     [SerializeField]
     private CapsuleCollider hammer_head;
 
+    [SerializeField]
+    private GameObject hammer;
+
     Rigidbody rb;
     PhotonView PV;
 
@@ -159,21 +162,8 @@ public class TPSCharacterController : MonoBehaviour
         // 카메라 암 회전 시키기
         cameraArm.rotation = Quaternion.Euler(x, camAngle.y + mouseDelta.x, camAngle.z);
     }
-    private void AttackAction() {
-        /*
-        System.Random random = new System.Random();
-
-        int next = random.Next(0, 2);
-
-        if (next == 0)
-        {
-            animator.SetBool("attack1", true);
-        }
-        else 
-        {
-            animator.SetBool("attack2", true);
-        }
-        */
+    private void AttackAction() 
+    {
         animator.SetBool("attack1", true);
     }
 }

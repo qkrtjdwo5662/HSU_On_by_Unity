@@ -104,8 +104,7 @@ public class ChickenAI : MonoBehaviour
 
     private void DoSomething() 
     {
-        //nextBehaviour = r.Next(0,10);
-        nextBehaviour = 5;
+        nextBehaviour = r.Next(0,10);
         switch (nextBehaviour) 
         {
             case 0:
