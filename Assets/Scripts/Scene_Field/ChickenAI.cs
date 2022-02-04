@@ -9,10 +9,11 @@ public class ChickenAI : MonoBehaviour
 
     public System.Random r = new System.Random();
 
+    public bool dead;
     private int nextBehaviour;
     private float time;
 
-    public Transform getTranskform() {
+    public Transform getTransform() {
         return chickenTransform;
     }
     public Animator getAnimator() 
@@ -38,9 +39,15 @@ public class ChickenAI : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (ani.GetBool("Walk"))
+        if (dead) {
+            transform.Find("Toon Chicken").gameObject.SetActive(false);
+            if (time > 1.0f) {
+                Destroy(chickenTransform.gameObject);
+            } 
+        }
+        else if (ani.GetBool("Walk"))
         {
-            if (time >= 2.0f)
+            if (time >= 3.0f)
             {
                 time = 0.0f;
                 ani.SetBool("Walk", false);
@@ -48,13 +55,13 @@ public class ChickenAI : MonoBehaviour
             }
             else
             {
-                chickenTransform.Translate(Vector3.forward * Time.deltaTime * 1);
+                chickenTransform.Translate(Vector3.forward * Time.deltaTime * 1.5f);
             }
 
         }
         else if (ani.GetBool("Run"))
         {
-            if (time >= 3.0f)
+            if (time >= 4.0f)
             {
                 time = 0.0f;
                 ani.SetBool("Run", false);
@@ -62,7 +69,7 @@ public class ChickenAI : MonoBehaviour
             }
             else
             {
-                chickenTransform.Translate(Vector3.forward * Time.deltaTime * 2);
+                chickenTransform.Translate(Vector3.forward * Time.deltaTime * 4);
             }
         }
         else if (ani.GetBool("Eat"))
@@ -83,7 +90,7 @@ public class ChickenAI : MonoBehaviour
                 DoSomething();
             }
         }
-        else 
+        else
         {
             if (time >= 3.0f)
             {
@@ -97,19 +104,18 @@ public class ChickenAI : MonoBehaviour
 
     private void DoSomething() 
     {
-        nextBehaviour = r.Next(0,10);
+        //nextBehaviour = r.Next(0,10);
+        nextBehaviour = 5;
         switch (nextBehaviour) 
         {
             case 0:
             case 1:
             case 2:
+            case 3:
                 ani.SetBool("Walk", true);
                 chickenTransform.Rotate(0, r.Next(0, 360), 0);
                 break;
-            case 3:
-                ani.SetBool("Run", true);
-                chickenTransform.Rotate(0, r.Next(0, 360), 0);
-                break;
+            
             case 4:
             case 5:
                 ani.SetBool("Eat", true);

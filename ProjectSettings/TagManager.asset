@@ -8,6 +8,7 @@ TagManager:
   - ground
   - Clone
   - Chicken
+  - hammer
   layers:
   - Default
   - TransparentFX

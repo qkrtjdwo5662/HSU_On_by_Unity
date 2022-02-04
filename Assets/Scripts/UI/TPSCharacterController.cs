@@ -20,6 +20,9 @@ public class TPSCharacterController : MonoBehaviour
     [SerializeField]
     private GameObject character;
 
+    [SerializeField]
+    private CapsuleCollider hammer_head;
+
     Rigidbody rb;
     PhotonView PV;
 
@@ -67,9 +70,17 @@ public class TPSCharacterController : MonoBehaviour
         if (animator.GetBool("attack1") || animator.GetBool("attack2"))
         {
             time += Time.deltaTime;
-            if (time >= 1.0f)
+            if(time >= 0.5f && time <=0.6f)
             {
-                //attack(); 넣기
+                hammer_head.enabled = true;
+            }
+            else if (time >= 0.6f && time <= 0.7f)
+            {
+                hammer_head.enabled = false;
+            }
+            else if (time >= 1.0f)
+            {
+                
                 animator.SetBool("attack1", false);
                 animator.SetBool("attack2", false);
                 time = 0.0f;
@@ -149,6 +160,7 @@ public class TPSCharacterController : MonoBehaviour
         cameraArm.rotation = Quaternion.Euler(x, camAngle.y + mouseDelta.x, camAngle.z);
     }
     private void AttackAction() {
+        /*
         System.Random random = new System.Random();
 
         int next = random.Next(0, 2);
@@ -161,7 +173,7 @@ public class TPSCharacterController : MonoBehaviour
         {
             animator.SetBool("attack2", true);
         }
-        
-    
+        */
+        animator.SetBool("attack1", true);
     }
 }
