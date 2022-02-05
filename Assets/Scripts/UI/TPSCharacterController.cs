@@ -67,7 +67,7 @@ public class TPSCharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (animator.GetBool("attack1") || animator.GetBool("attack2"))
+        if (animator.GetBool("attack1"))
         {
             time += Time.deltaTime;
             if (time >= 0.5f && time <= 0.6f)
@@ -82,7 +82,7 @@ public class TPSCharacterController : MonoBehaviour
             {
 
                 animator.SetBool("attack1", false);
-                animator.SetBool("attack2", false);
+                
                 time = 0.0f;
             }
         }
@@ -104,8 +104,9 @@ public class TPSCharacterController : MonoBehaviour
         // 입력이 발생하는 중이라면 이동 애니메이션 재생
         animator.SetBool("isMove", isMove);
         animator.SetBool("isRun", isRun);
-        if (isMove)
+        if (isMove && !animator.GetBool("isJump"))
         {
+            
             animator.SetBool("conversation", false);
             animator.SetBool("dance", false);
             animator.SetBool("victory", false);

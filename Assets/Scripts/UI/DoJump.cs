@@ -9,7 +9,7 @@ public class DoJump : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
     [SerializeField]
     private Button btn;
     private bool isJump;
-    float start = 0.0f, finish = 0.8f;
+    float start = 0.0f;
 
 
     private GameObject CharacterObject;
@@ -40,114 +40,29 @@ public class DoJump : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
             controller = CharacterObject.GetComponent<TPSCharacterController>();
         }
 
-        /*
-        if (CharacterObject = GameObject.Find("Male1(Clone)"))
-        {
-            CharacterTransform = CharacterObject.GetComponent<Transform>();
-            controller = CharacterObject.GetComponent<TPSCharacterController>();
-        }
-        else if (CharacterObject = GameObject.Find("Male1_1(Clone)"))
-        {
-            CharacterTransform = CharacterObject.GetComponent<Transform>();
-            controller = CharacterObject.GetComponent<TPSCharacterController>();
-        }
-        else if (CharacterObject = GameObject.Find("Male2(Clone)"))
-        {
-            CharacterTransform = CharacterObject.GetComponent<Transform>();
-            controller = CharacterObject.GetComponent<TPSCharacterController>();
-        }
-        else if (CharacterObject = GameObject.Find("Male2_1(Clone)"))
-        {
-            CharacterTransform = CharacterObject.GetComponent<Transform>();
-            controller = CharacterObject.GetComponent<TPSCharacterController>();
-        }
-        else if (CharacterObject = GameObject.Find("Male3(Clone)"))
-        {
-            CharacterTransform = CharacterObject.GetComponent<Transform>();
-            controller = CharacterObject.GetComponent<TPSCharacterController>();
-        }
-        else if (CharacterObject = GameObject.Find("Male3_1(Clone)"))
-        {
-            CharacterTransform = CharacterObject.GetComponent<Transform>();
-            controller = CharacterObject.GetComponent<TPSCharacterController>();
-        }
-        else if (CharacterObject = GameObject.Find("Male4(Clone)"))
-        {
-            CharacterTransform = CharacterObject.GetComponent<Transform>();
-            controller = CharacterObject.GetComponent<TPSCharacterController>();
-        }
-        else if (CharacterObject = GameObject.Find("Male4_1(Clone)"))
-        {
-            CharacterTransform = CharacterObject.GetComponent<Transform>();
-            controller = CharacterObject.GetComponent<TPSCharacterController>();
-        }
-        else if (CharacterObject = GameObject.Find("Female1(Clone)"))
-        {
-            CharacterTransform = CharacterObject.GetComponent<Transform>();
-            controller = CharacterObject.GetComponent<TPSCharacterController>();
-        }
-        else if (CharacterObject = GameObject.Find("Female1_1(Clone)"))
-        {
-            CharacterTransform = CharacterObject.GetComponent<Transform>();
-            controller = CharacterObject.GetComponent<TPSCharacterController>();
-        }
-        else if (CharacterObject = GameObject.Find("Female3(Clone)"))
-        {
-            CharacterTransform = CharacterObject.GetComponent<Transform>();
-            controller = CharacterObject.GetComponent<TPSCharacterController>();
-        }
-        else if (CharacterObject = GameObject.Find("Female3_1(Clone)"))
-        {
-            CharacterTransform = CharacterObject.GetComponent<Transform>();
-            controller = CharacterObject.GetComponent<TPSCharacterController>();
-        }
-        else if (CharacterObject = GameObject.Find("Female4(Clone)"))
-        {
-            CharacterTransform = CharacterObject.GetComponent<Transform>();
-            controller = CharacterObject.GetComponent<TPSCharacterController>();
-        }
-        else if (CharacterObject = GameObject.Find("Female4_1(Clone)"))
-        {
-            CharacterTransform = CharacterObject.GetComponent<Transform>();
-            controller = CharacterObject.GetComponent<TPSCharacterController>();
-        }*/
-
     }
 
     // Update is called once per frame
     void Update()
     {
+
         switch (movingButton)
         {
             case MovingButton.Jump:
                 if (isJump == true)
                 {
                     start += Time.deltaTime;
-                    if (start >= finish)
+                    if (start >= 1.0f)
                     {
                         isJump = false;
                         controller.animator.SetBool("isJump", false);
                         start = 0.0f;
                     }
-
-
                 }
                 break;
             case MovingButton.Run:
                 break;
         }
-
-
-        /*
-        if (isJump == true) {
-            if (start >= finish) {
-                isJump = false;
-                controller.animator.SetBool("isJump", false);
-                start = 0.0f;
-            }
-
-            start += Time.deltaTime;
-        } */
     }
 
     private void Jump()
@@ -165,16 +80,17 @@ public class DoJump : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 
 
 
-
+/*
     private void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "ground")
-        {
-            isJump = false;    //Ground에 닿으면 isGround는 true
-        }
-
+        
+                if (col.gameObject.tag == "ground")
+                {
+                    isJump = false;    //Ground에 닿으면 isGround는 true
+                }
+        
     }
-
+*/
     public void OnPointerDown(PointerEventData eventData)
     {
         switch (movingButton)

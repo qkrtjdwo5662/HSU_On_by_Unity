@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 //-------------------------------------안씀-----------------------------------------//
-public class RunSpeedControl : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
+/*public class RunSpeedControl : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 {
     [SerializeField]
     private TPSCharacterController controller;
@@ -100,4 +100,4 @@ public class RunSpeedControl : MonoBehaviour, IPointerUpHandler, IPointerDownHan
     {
         
     }
-}
+}*/
