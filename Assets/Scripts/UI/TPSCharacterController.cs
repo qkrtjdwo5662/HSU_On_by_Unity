@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Photon.Pun;
 using UnityEngine;
-using Photon.Pun;
 using UnityEngine.UI;
-using System;
 
 public class TPSCharacterController : MonoBehaviour
 {
@@ -13,7 +10,7 @@ public class TPSCharacterController : MonoBehaviour
     private Transform characterBody;
     [SerializeField]
     private Transform cameraArm;
-    
+
     [SerializeField]
     public float movingSpeed = 3.0f;
 
@@ -36,7 +33,7 @@ public class TPSCharacterController : MonoBehaviour
     float time = 0.0f;
     // Start is called before the first frame update
     void Awake()
-	{
+    {
         rb = characterBody.GetComponent<Rigidbody>();
         PV = GetComponent<PhotonView>();
         if (PV.IsMine)
@@ -73,7 +70,7 @@ public class TPSCharacterController : MonoBehaviour
         if (animator.GetBool("attack1") || animator.GetBool("attack2"))
         {
             time += Time.deltaTime;
-            if(time >= 0.5f && time <=0.6f)
+            if (time >= 0.5f && time <= 0.6f)
             {
                 hammer_head.enabled = true;
             }
@@ -83,7 +80,7 @@ public class TPSCharacterController : MonoBehaviour
             }
             else if (time >= 1.0f)
             {
-                
+
                 animator.SetBool("attack1", false);
                 animator.SetBool("attack2", false);
                 time = 0.0f;
@@ -134,9 +131,10 @@ public class TPSCharacterController : MonoBehaviour
             //Debug.Log("char"+ characterBody.position.x + "," + characterBody.position.y + ","+characterBody.position.z);
             //Debug.Log("came" + cameraArm.position.x + "," + cameraArm.position.y + "," + cameraArm.position.z);
         }
-        else if (!isMove) {
+        else if (!isMove)
+        {
             animator.SetBool("isRun", false);
-            animator.SetBool("isMove",false);
+            animator.SetBool("isMove", false);
         }
     }
 
@@ -162,8 +160,28 @@ public class TPSCharacterController : MonoBehaviour
         // 카메라 암 회전 시키기
         cameraArm.rotation = Quaternion.Euler(x, camAngle.y + mouseDelta.x, camAngle.z);
     }
-    private void AttackAction() 
+    private void AttackAction()
     {
         animator.SetBool("attack1", true);
+    }
+
+    public void ActivateHammerRPC()
+    {
+        PV.RPC("ActivateHammer", RpcTarget.AllBuffered);
+    }
+    public void DeactivateHammerRPC()
+    {
+        PV.RPC("DeactivateHammer", RpcTarget.AllBuffered);
+
+    }
+    [PunRPC]
+    public void ActivateHammer()
+    {
+        hammer.SetActive(true);
+    }
+    [PunRPC]
+    public void DeactivateHammer()
+    {
+        hammer.SetActive(false);
     }
 }

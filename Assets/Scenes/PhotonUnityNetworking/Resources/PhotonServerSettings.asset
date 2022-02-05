@@ -46,6 +46,8 @@ MonoBehaviour:
   - CreateControllerBoy1
   - StartOtEvent
   - addRanker
+  - ActivateHammer
+  - DeactivateHammer
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
