@@ -38,7 +38,11 @@ public class Optimazer : MonoBehaviour
 
         AntiAliasingSet.ClearOptions();
         AntiAliasingSet.options.Add(new Dropdown.OptionData("Off"));
-        AntiAliasingSet.options.Add(new Dropdown.OptionData("On"));
+        AntiAliasingSet.options.Add(new Dropdown.OptionData("2x"));
+        AntiAliasingSet.options.Add(new Dropdown.OptionData("4x"));
+        AntiAliasingSet.options.Add(new Dropdown.OptionData("8x"));
+
+
         AntiAliasingSet.value = 0;
         AntiAliasingSet.onValueChanged.AddListener(delegate {
             SetAntiAliasing();
@@ -71,8 +75,16 @@ public class Optimazer : MonoBehaviour
         }
         else if (AntiAliasingSet.value == 1)
         {
-            QualitySettings.antiAliasing = 1;
+            QualitySettings.antiAliasing = 2;
         }
-        
+        else if (AntiAliasingSet.value == 2)
+        {
+            QualitySettings.antiAliasing = 4;
+        }
+        else if (AntiAliasingSet.value == 3)
+        {
+            QualitySettings.antiAliasing = 8;
+        }
+
     }
 }
