@@ -31,6 +31,8 @@ public class TPSCharacterController : MonoBehaviour
     public Button attackButton;
 
     float time = 0.0f;
+
+    public bool moveSwitch = true;
     // Start is called before the first frame update
     void Awake()
     {
@@ -104,7 +106,7 @@ public class TPSCharacterController : MonoBehaviour
         // 입력이 발생하는 중이라면 이동 애니메이션 재생
         animator.SetBool("isMove", isMove);
         animator.SetBool("isRun", isRun);
-        if (isMove && !animator.GetBool("isJump"))
+        if (isMove && !animator.GetBool("isJump")&& moveSwitch)
         {
             
             animator.SetBool("conversation", false);
@@ -132,7 +134,7 @@ public class TPSCharacterController : MonoBehaviour
             //Debug.Log("char"+ characterBody.position.x + "," + characterBody.position.y + ","+characterBody.position.z);
             //Debug.Log("came" + cameraArm.position.x + "," + cameraArm.position.y + "," + cameraArm.position.z);
         }
-        else if (!isMove)
+        else if (!isMove || !moveSwitch)
         {
             animator.SetBool("isRun", false);
             animator.SetBool("isMove", false);

@@ -10,19 +10,26 @@ public class NPC_Trigger : MonoBehaviour
     public GameObject MainNpcTalk;
     public GameObject TalkStart;
 
-   /* private Button btn; //대화하기 버튼
-    private GameObject CameraArm;
-    private GameObject Me;*/
+    private Button startBtn; //대화하기 버튼
     
 
 
-/*    private void Start()
+    private GameObject CameraArm;
+    private GameObject Me;
+    private TPSCharacterController tps;
+
+
+
+    private void Start()
     {
         Me = GameObject.Find("Me");
+       
+        tps = Me.GetComponent<TPSCharacterController>();
         CameraArm = Me.transform.Find("Camera Arm").gameObject;
-        btn = MainNpcTalk.transform.Find("Talk0").GetComponentInChildren<Button>();
-        btn.onClick.AddListener(CameraWork);
-    }*/
+        startBtn = MainNpcTalk.transform.Find("Talk0").GetComponentInChildren<Button>();
+        startBtn.onClick.AddListener(CameraWork);
+        
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -47,30 +54,40 @@ public class NPC_Trigger : MonoBehaviour
         MainNpcTalk.SetActive(false);
         if (!TalkStart.Equals(null))
             TalkStart.SetActive(false);
-        //StartCoroutine(MoveTo(CameraArm, Me.transform.position));
+        
     }
 
-/*    private void CameraWork() {
-        StartCoroutine(MoveTo(CameraArm, this.transform.position + new Vector3(1f,0.9f,-2.4f)));
-    }
-
-    IEnumerator MoveTo(GameObject obj, Vector3 destination) 
+    private void CameraWork()
     {
+        
+        StartCoroutine(MoveTo(CameraArm, this.transform.position + Vector3.down*2));
+    }
+    public void CameraReturn() 
+    {
+        StartCoroutine(MoveTo(CameraArm, Me.transform.position));
+    }
+
+    IEnumerator MoveTo(GameObject obj, Vector3 destination)
+    {
+        tps.moveSwitch = false;
         float count = 0;
         Vector3 wasPos = obj.transform.position;
 
-        while (true) 
+        while (true)
         {
-            count += Time.deltaTime;
+            count += Time.deltaTime*2;
             obj.transform.position = Vector3.Lerp(wasPos, destination, count);
+            
 
             if (count >= 1)
             {
+                tps.moveSwitch = true;
                 obj.transform.position = destination;
                 break;
             }
             yield return null;
         }
-    }*/
+    }
+
 }
 
