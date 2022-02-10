@@ -5,15 +5,21 @@ using UnityEngine;
 public class PetAI : MonoBehaviour
 {
 
-  //  private Collider me;
+    //  private Collider me;
     private Transform me;
+    private Animator ani;
     float distance = 0.0f;
+
+    public Animator getAnimator()
+    {
+        return ani;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         me = GameObject.Find("Me").GetComponent<Transform>();
-
+        ani = GetComponent<Animator>();
         
         //x z 거리계산
      }
@@ -27,11 +33,16 @@ public class PetAI : MonoBehaviour
         {
             this.transform.LookAt(me.position);//날 바라보고
             this.transform.Translate(Vector3.forward * Time.deltaTime * 2f);//날 따라와
+           
             
         }
         else if (distance >= 10f)
         {
-            this.transform.position = me.position + new Vector3(1,0,0);
+            this.transform.position = me.position + new Vector3(1,0,0);// 너무 멀어지면 내옆으로 순간이동 펫이 사물에 걸리면 순간이동 못하는 버그있
+        }
+        else if (distance < 2)
+        {
+            //ani.SetBool("Walk", false);//움직이지 않아도 될때 걷는 에니메이션 안하기
         }
         //Update는 실시간 퍼포먼스에 큰 영향을 주기 때문에 Update()안에서는 불필요한 연산을 최대한 피하자 
     }
