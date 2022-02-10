@@ -810,6 +810,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   escButton: {fileID: 0}
   attackButton: {fileID: 0}
+  moveSwitch: 1
 --- !u!114 &-7261849690979863021
 MonoBehaviour:
   m_ObjectHideFlags: 0

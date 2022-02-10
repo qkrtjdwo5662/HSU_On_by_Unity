@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Photon.Pun;
-using Photon.Realtime;
+﻿using Photon.Pun;
 using System.IO;//path사용위해
+using UnityEngine;
 
 public class PlayerManager : MonoBehaviour, IPunObservable
 {
@@ -12,7 +9,7 @@ public class PlayerManager : MonoBehaviour, IPunObservable
     GameObject character;
 
 
-    
+
     Scene_newCharacter_Setting ui;
     void Awake()
     {
@@ -20,106 +17,98 @@ public class PlayerManager : MonoBehaviour, IPunObservable
     }
 
     void Start()
-	{
+    {
         GameObject avatar;
         if (avatar = GameObject.Find("Setting"))
         {
             ui = avatar.GetComponent<Scene_newCharacter_Setting>();
         }
-        else
-            Debug.Log("avatar is Null");
+
+
         
-        if (ui == null)
-		{
-			PhotonNetwork.Instantiate(Path.Combine("Prefabs", "character"), Vector3.zero, Quaternion.identity, 0);
-            Debug.Log("UI is Null");
-            
-		}
-		else
-		{
-            if (ui.WhatSelected == 0)
-            {
-                CreateControllerBoy1();
-            }
-            if (ui.WhatSelected == 1)
-			{
-                CreateControllerBoy1();
-            }
-			else if (ui.WhatSelected == 2)
-			{
-                CreateControllerBoy1_1();
-            }
-            else if (ui.WhatSelected == 3)
-            {
-                CreateControllerBoy2();
-            }      
+        if (ui.WhatSelected == 0)
+        {
+            CreateControllerBoy1();
+        }
+        else if (ui.WhatSelected == 1)
+        {
+            CreateControllerBoy1();
+        }
+        else if (ui.WhatSelected == 2)
+        {
+            CreateControllerBoy1_1();
+        }
+        else if (ui.WhatSelected == 3)
+        {
+            CreateControllerBoy2();
+        }
 
-            else if (ui.WhatSelected == 4)
-            {
-                CreateControllerBoy2_1();
-            }
+        else if (ui.WhatSelected == 4)
+        {
+            CreateControllerBoy2_1();
+        }
 
-            else if (ui.WhatSelected == 5)
-            {
-                CreateControllerBoy3();
-            }
+        else if (ui.WhatSelected == 5)
+        {
+            CreateControllerBoy3();
+        }
 
-            else if (ui.WhatSelected == 6)
-            {
-                CreateControllerBoy3_1();
-            }
+        else if (ui.WhatSelected == 6)
+        {
+            CreateControllerBoy3_1();
+        }
 
-            else if (ui.WhatSelected == 7)
-            {
-                CreateControllerBoy4();
-            }
+        else if (ui.WhatSelected == 7)
+        {
+            CreateControllerBoy4();
+        }
 
-            else if (ui.WhatSelected == 8)
-            {
-                CreateControllerBoy4_1();
-            }
-            else if (ui.WhatSelected == 9)
-            {
-                CreateControllergirl1();
-            }
+        else if (ui.WhatSelected == 8)
+        {
+            CreateControllerBoy4_1();
+        }
+        else if (ui.WhatSelected == 9)
+        {
+            CreateControllergirl1();
+        }
 
-            else if (ui.WhatSelected == 10)
-            {
-                CreateControllergirl1_1();
-            }
+        else if (ui.WhatSelected == 10)
+        {
+            CreateControllergirl1_1();
+        }
 
-            else if (ui.WhatSelected == 11)
-            {
-                CreateControllergirl3();
-            }
+        else if (ui.WhatSelected == 11)
+        {
+            CreateControllergirl3();
+        }
 
-            else if (ui.WhatSelected == 12)
-            {
-                CreateControllergirl3_1();
-            }
+        else if (ui.WhatSelected == 12)
+        {
+            CreateControllergirl3_1();
+        }
 
-            else if (ui.WhatSelected == 13)
-            {
-                CreateControllergirl4();
-            }
-            else if (ui.WhatSelected == 14)
-            {
-                CreateControllergirl4_1();
-            }
-            Destroy(avatar);
-		}
+        else if (ui.WhatSelected == 13)
+        {
+            CreateControllergirl4();
+        }
+        else if (ui.WhatSelected == 14)
+        {
+            CreateControllergirl4_1();
+        }
+        Destroy(avatar);
 
 
 
-	}
-	[PunRPC]
+
+    }
+    [PunRPC]
     static void CreateControllerBoy1()//플레이어 컨트롤러 만들기
     {
 
         Debug.Log("Instantiated Controller");
         //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Character"), Vector3.zero, Quaternion.identity,0, new object[] { PV.ViewID });
-        GameObject me = PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Male1"), new Vector3 (83f,3f,18f), Quaternion.identity, 0);
-        
+        GameObject me = PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Male1"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+
     }
 
     static void CreateControllerBoy1_1()//플레이어 컨트롤러 만들기
@@ -218,17 +207,17 @@ public class PlayerManager : MonoBehaviour, IPunObservable
     }
     void Update()
     {
-        
+
     }
 
     void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-        
-        
+
+
         throw new System.NotImplementedException();
     }
 
-    
-  
+
+
 
 }
