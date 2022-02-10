@@ -7,7 +7,7 @@ using Photon.Pun;
 
 public class  ChatManager : MonoBehaviourPunCallbacks
 {
-    public List<string> chatList = new List<string>( );
+    //public List<string> chatList = new List<string>( );
     public List<string> playerNicknameList = new List<string>();
     public Button sendBtn;
     public Text chatLog;
@@ -18,10 +18,21 @@ public class  ChatManager : MonoBehaviourPunCallbacks
 
     public Text NickName_input;
 
+    private Join join;
+
     PhotonView PV;
     bool cool = true;
     public float time;
     bool focuseFlag = false;
+
+
+    public GameObject AllButton;
+    public GameObject PrivateButton;
+
+    public GameObject target;
+    public Button targetSearch;
+    public Text chatList;
+
 
 
     [SerializeField]
@@ -31,49 +42,57 @@ public class  ChatManager : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
+        join = GameObject.Find("Join").GetComponent<Join>();
+
+        PV = GetComponent<PhotonView>();
         PhotonNetwork.IsMessageQueueRunning = true;
         scroll_rect = GameObject.FindObjectOfType<ScrollRect>();
         sp = GameObject.Find("speechObject").GetComponent<Speech>();
 
+        targetSearch.onClick.AddListener(GetPlayerList);
         sendBtn.onClick.AddListener(SendButtonOnclicked);
     }
-    private void Awake()
-    {
-        PV = GetComponent<PhotonView>();
-        //sendBtn = GameObject.Find("ChatLog");
-        /*PV.ViewID = 0;
-        if (PV.IsMine)
-        {
-            PV.ViewID = 9;
-        }*/
-        
 
+    void GetPlayerList() 
+    {
+        chatList.text = "";
+        Player[] players = PhotonNetwork.PlayerList;
+        for (int i=0; i<players.Length; i++) 
+        {
+            chatList.text += players[i].NickName+ "\n";
+        }
+    
     }
 
     
     public void SendButtonOnclicked()
 	{
-        if(input.text.Equals("")) { Debug.Log("Empty"); return; }
-        string all_msg = string.Format("[일반] {0} : {1}", PhotonNetwork.NickName, input.text);
-        PV.RPC("ReceiveMsg", RpcTarget.OthersBuffered, all_msg) ;
-        sp.speechRun(input.text);
-        ReceiveMsg(all_msg);
-        //input.ActivateInputField();
-        input.text = "";
+        if (AllButton.activeInHierarchy)
+        {
+            if (input.text.Equals("")) { Debug.Log("Empty"); return; }
+            string all_msg = string.Format("[일반] {0} : {1}", PhotonNetwork.NickName, input.text);
+            PV.RPC("ReceiveMsg", RpcTarget.OthersBuffered, all_msg, "All");
+            sp.speechRun(input.text);
+            ReceiveMsg(all_msg, "All");
+            //input.ActivateInputField();
+            input.text = "";
+        }
+        else if (PrivateButton.activeInHierarchy) 
+        {
+            string targetName = target.GetComponent<Text>().text;
+            if (input.text.Equals("")) { Debug.Log("Empty"); return; }
+            string private_msg_send = string.Format("[귓속말] {0}님이 : {1}", PhotonNetwork.NickName, input.text);
+            PV.RPC("ReceiveMsg", RpcTarget.OthersBuffered, private_msg_send, targetName); // 지정 유저에게 귓속말
+            string private_msg_receive = string.Format("[귓속말] {0}님에게 : {1}", PhotonNetwork.NickName, input.text);
+            //sp.speechRun(input.text);
+            ReceiveMsg(private_msg_receive, targetName);//자신이 보낸 귓속말
+            input.text = "";
+        }
 	}
 
-    public void SendPrivate()
-    {
-        if (input.text.Equals("")) { Debug.Log("Empty"); return; }
-        string private_msg_send = string.Format("[귓속말] {0}님이 : {1}", PhotonNetwork.NickName, input.text);
-        PV.RPC("ReceiveMsg", RpcTarget.OthersBuffered, private_msg_send); // 지정 유저에게 귓속말
-        string private_msg_receive = string.Format("[귓속말] {0}님에게 : {1}", PhotonNetwork.NickName, input.text);
-        sp.speechRun(input.text);
-        ReceiveMsg(private_msg_receive);//자신이 보낸 귓속말
-        input.text = ""; //input.text 빈칸
-    }
+  
 
-    public void FindNickName()
+    /*public void FindNickName()
 	{
         if(playerNicknameList.Exists(x=> x.Equals(NickName_input)))
 		{
@@ -81,9 +100,9 @@ public class  ChatManager : MonoBehaviourPunCallbacks
             var a = playerNicknameList.Find(x => x.Equals(NickName_input));
 		}
         else { Debug.Log("귓속말 상대 설정 실패"); }
-    }
+    }*/
 
-    void Update()
+    /*void Update()
 	{
         //chatterUpdate();
         if (Input.GetKey(KeyCode.Return)) {
@@ -119,23 +138,18 @@ public class  ChatManager : MonoBehaviourPunCallbacks
             time += Time.deltaTime;
         }
         
-    }
+    }*/
 
-    void chatterUpdate()
-    {
-        chatters = "Player List\n";
-        foreach (Player p in PhotonNetwork.PlayerList)
-        {
-            playerNicknameList.Add(p.NickName);
-        }
-        chattingList.text = chatters;
-    }
 
 
     [PunRPC]
-    public void ReceiveMsg(string msg)
+    public void ReceiveMsg(string msg, string target)
 	{
-        chatLog.text += "\n" + msg;
+        if (target.Equals("All") || target.Equals(join.getStdId().Substring(0, 2) + " " + join.getName())) 
+        {
+            chatLog.text += "\n" + msg;
+        }
+        
         //scroll_rect.verticalNormalizedPosition = 0.0f;
 	}
 }

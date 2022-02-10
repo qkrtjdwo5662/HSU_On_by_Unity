@@ -29,12 +29,12 @@ public class NextJoin : MonoBehaviourPunCallbacks
     }
     private void Update()
     {
-        if (PhotonNetwork.IsConnected && join.getName() != null)
+        if (PhotonNetwork.IsConnected && join.isQueryEnd)
         {
-            connectionInfoText.text = "온라인 : 환영합니다! " + join.getStdId().Substring(0, 2) + " " + join.getName() + "님!";
+
             NextBtn.interactable = true;
         }
-        else if (join.getName() == null) 
+        else
         {
             join.GetUserInformationFromFireBase();
             
@@ -45,8 +45,8 @@ public class NextJoin : MonoBehaviourPunCallbacks
 
     public override void OnConnectedToMaster()
     {
-        
-        connectionInfoText.text = "온라인 : 마스터 서버에 연결됨";
+        connectionInfoText.text = connectionInfoText.text = "온라인 : 환영합니다! " + join.getStdId().Substring(0, 2) + " " + join.getName() + "님!";
+
         PhotonNetwork.JoinLobby();//마스터 서버 연결시 로비로 연결
     }
 

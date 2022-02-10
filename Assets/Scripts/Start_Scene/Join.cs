@@ -174,7 +174,7 @@ public class Join : MonoBehaviourPunCallbacks
         
         reference.GetValueAsync().ContinueWithOnMainThread(task =>
         {
-            
+
             if (task.IsCompleted)
             {
                 DataSnapshot dataSnapshot = task.Result;
@@ -216,7 +216,11 @@ public class Join : MonoBehaviourPunCallbacks
                 Debug.Log("퀘스트 클리어 여부: " + ot0cleared);
 
                 isQueryEnd = true;
- 
+
+            }
+            else if (task.IsFaulted) 
+            {
+                Debug.Log("테스트 생성 오류");
             }
         });
     }
