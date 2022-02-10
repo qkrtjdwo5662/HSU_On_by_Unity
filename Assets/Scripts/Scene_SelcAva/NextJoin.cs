@@ -20,7 +20,16 @@ public class NextJoin : MonoBehaviourPunCallbacks
 
         PhotonNetwork.GameVersion = gameVersion;
 
-        PhotonNetwork.ConnectUsingSettings();
+        if (!PhotonNetwork.IsConnected)
+        {
+            PhotonNetwork.ConnectUsingSettings();
+            Debug.Log("First Login");
+
+        }
+        else if (!PhotonNetwork.IsConnected) {
+            PhotonNetwork.JoinLobby();
+            Debug.Log("Already Login");
+        }
 
         NextBtn.interactable = false;
         NextBtn.onClick.AddListener(Connect);

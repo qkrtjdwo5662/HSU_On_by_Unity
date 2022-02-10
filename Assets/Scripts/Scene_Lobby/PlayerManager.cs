@@ -210,6 +210,12 @@ public class PlayerManager : MonoBehaviour, IPunObservable
 
     }
 
+    public void ReturnSceneCharacter() 
+    {
+        PhotonNetwork.Disconnect();
+        LoadingSceneController.Instance.LoadScene("Scene_Character");
+    }
+
     void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
 
