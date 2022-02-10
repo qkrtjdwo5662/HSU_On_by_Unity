@@ -22,6 +22,11 @@ public class EventInstance : MonoBehaviour
     private Hashtable hashtable = new Hashtable();
     private bool isEventStart = false;
 
+    [SerializeField]
+    private GameObject chicken;
+    private GameObject[] chickens = new GameObject[10];
+    private System.Random r = new System.Random();
+
     private GameObject Me;
     PhotonView PV;
 
@@ -100,7 +105,7 @@ public class EventInstance : MonoBehaviour
     void Update()
     {
 
-        if (Clock.clock.text.Equals("17:11"))
+        if (Clock.clock.text.Equals("09:16"))
         {
             if (!isEventStart) {
                 EventStart();
@@ -109,10 +114,29 @@ public class EventInstance : MonoBehaviour
 
         if (isEventStart)
         {
-            TimeBoard.text = "남은시간 : "+ int.Parse((timer -= Time.deltaTime).ToString()).ToString();
+            TimeBoard.text = "남은시간 : " + (int)((timer -= Time.deltaTime))+"초";
             ScoreBoard.text = HashToString(hashtable);
             if (timer <= 0)
+            {
                 EventEnd();
+                for (int i = 0; i < chickens.Length; i++)
+                {
+                    chickens[i] = null;
+                }
+            }
+
+            for (int i = 0; i < chickens.Length; i++)
+            {
+                if (chickens[i] == (null))
+                {
+                    int x = r.Next(-105, -64);
+                    int z = r.Next(60, 81);
+                    chickens[i] = PhotonNetwork.Instantiate("Prefabs/Chicken", new Vector3(x, 1, z), Quaternion.identity, 0);
+                }
+            }
         }
+
+        
+
     }
 }

@@ -75,7 +75,7 @@ public class NPC_Trigger : MonoBehaviour
 
         while (true)
         {
-            count += Time.deltaTime*2;
+            count += Time.deltaTime*4;
             obj.transform.position = Vector3.Lerp(wasPos, destination, count);
             
 
