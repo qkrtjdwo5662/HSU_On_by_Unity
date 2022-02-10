@@ -65,7 +65,7 @@ public class Join : MonoBehaviourPunCallbacks
     public Text loginResult;
     public Text LogZone;
 
-    DataSnapshot dataSnapshot;
+    
     public bool isQueryEnd = false;
 
     public string getUserID()
@@ -177,7 +177,43 @@ public class Join : MonoBehaviourPunCallbacks
             
             if (task.IsCompleted)
             {
-                dataSnapshot = task.Result;
+                DataSnapshot dataSnapshot = task.Result;
+                userName = dataSnapshot.Child("name").GetValue(true).ToString();
+                stdID = dataSnapshot.Child("stdID").GetValue(true).ToString();
+                Debug.Log(userName + " " + stdID);
+
+                m1cleared = dataSnapshot.Child("M1").GetValue(true).ToString();
+                m2cleared = dataSnapshot.Child("M2").GetValue(true).ToString();
+                m3cleared = dataSnapshot.Child("M3").GetValue(true).ToString();
+                m4cleared = dataSnapshot.Child("M4").GetValue(true).ToString();
+                m5cleared = dataSnapshot.Child("M5").GetValue(true).ToString();
+                Debug.Log("M " + m1cleared + " " + m2cleared + " " + m3cleared + " " + m4cleared + " " + m5cleared);
+
+
+                h1cleared = dataSnapshot.Child("H1").GetValue(true).ToString();
+                h2cleared = dataSnapshot.Child("H2").GetValue(true).ToString();
+                h3cleared = dataSnapshot.Child("H3").GetValue(true).ToString();
+                h4cleared = dataSnapshot.Child("H4").GetValue(true).ToString();
+                h5cleared = dataSnapshot.Child("H5").GetValue(true).ToString();
+                Debug.Log("H " + h1cleared + " " + h2cleared + " " + h3cleared + " " + h4cleared + " " + h5cleared);
+
+
+                ot0cleared = dataSnapshot.Child("OT0").GetValue(true).ToString();
+                ot1cleared = dataSnapshot.Child("OT1").GetValue(true).ToString();
+                ot2cleared = dataSnapshot.Child("OT2").GetValue(true).ToString();
+                ot3cleared = dataSnapshot.Child("OT3").GetValue(true).ToString();
+                ot4cleared = dataSnapshot.Child("OT4").GetValue(true).ToString();
+                ot5cleared = dataSnapshot.Child("OT5").GetValue(true).ToString();
+                Debug.Log("OT " + ot1cleared + " " + ot2cleared + " " + ot3cleared + " " + ot4cleared + " " + ot5cleared);
+
+
+                d1cleared = dataSnapshot.Child("D1").GetValue(true).ToString();
+                d2cleared = dataSnapshot.Child("D2").GetValue(true).ToString();
+                d3cleared = dataSnapshot.Child("D3").GetValue(true).ToString();
+                d4cleared = dataSnapshot.Child("D4").GetValue(true).ToString();
+                d5cleared = dataSnapshot.Child("D5").GetValue(true).ToString();
+                Debug.Log("D " + d1cleared + " " + d2cleared + " " + d3cleared + " " + d4cleared + " " + d5cleared);
+                Debug.Log("퀘스트 클리어 여부: " + ot0cleared);
 
                 isQueryEnd = true;
  
@@ -185,7 +221,7 @@ public class Join : MonoBehaviourPunCallbacks
         });
     }
 
-    public void MappingData() {
+/*    public void MappingData() {
         userName = dataSnapshot.Child("name").GetValue(true).ToString();
         stdID = dataSnapshot.Child("stdID").GetValue(true).ToString();
         Debug.Log(userName + " " + stdID);
@@ -223,7 +259,7 @@ public class Join : MonoBehaviourPunCallbacks
         Debug.Log("D " + d1cleared + " " + d2cleared + " " + d3cleared + " " + d4cleared + " " + d5cleared);
         Debug.Log("퀘스트 클리어 여부: " + ot0cleared);
     }
-
+*/
     public void CreateUserWithJson(string _userID, JoinDB _userInfo)
     {
 

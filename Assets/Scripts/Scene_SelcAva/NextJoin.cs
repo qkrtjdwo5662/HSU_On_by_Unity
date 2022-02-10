@@ -37,7 +37,7 @@ public class NextJoin : MonoBehaviourPunCallbacks
         else if (join.getName() == null) 
         {
             join.GetUserInformationFromFireBase();
-            join.MappingData();
+            
             connectionInfoText.text = "온라인 : 데이터베이스와 통신 중...";
 
         }
