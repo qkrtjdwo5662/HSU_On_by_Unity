@@ -7,7 +7,8 @@ public class ChickenAI : MonoBehaviour
     private Animator ani;
     public Transform chickenTransform;
 
-    public System.Random r = new System.Random();
+    
+    
 
     public bool dead;
     private int nextBehaviour;
@@ -104,7 +105,7 @@ public class ChickenAI : MonoBehaviour
 
     private void DoSomething() 
     {
-        nextBehaviour = r.Next(0,10);
+        nextBehaviour = Random.Range(0,10);
         switch (nextBehaviour) 
         {
             case 0:
@@ -112,7 +113,7 @@ public class ChickenAI : MonoBehaviour
             case 2:
             case 3:
                 ani.SetBool("Walk", true);
-                chickenTransform.Rotate(0, r.Next(0, 360), 0);
+                chickenTransform.Rotate(0, Random.Range(0, 360), 0);
                 break;
             
             case 4:
