@@ -83,9 +83,9 @@ public class  ChatManager : MonoBehaviourPunCallbacks
             if (input.text.Equals("")) { Debug.Log("Empty"); return; }
             string private_msg_send = string.Format("[귓속말] {0}님이 : {1}", PhotonNetwork.NickName, input.text);
             PV.RPC("ReceiveMsg", RpcTarget.OthersBuffered, private_msg_send, targetName); // 지정 유저에게 귓속말
-            string private_msg_receive = string.Format("[귓속말] {0}님에게 : {1}", PhotonNetwork.NickName, input.text);
+            string private_msg_receive = string.Format("[귓속말] {0}님에게 : {1}", targetName, input.text);
             //sp.speechRun(input.text);
-            ReceiveMsg(private_msg_receive, targetName);//자신이 보낸 귓속말
+            ReceiveMsg(private_msg_receive, "Me");//자신이 보낸 귓속말
             input.text = "";
         }
 	}
@@ -145,7 +145,7 @@ public class  ChatManager : MonoBehaviourPunCallbacks
     [PunRPC]
     public void ReceiveMsg(string msg, string target)
 	{
-        if (target.Equals("All") || target.Equals(join.getStdId().Substring(0, 2) + " " + join.getName())) 
+        if (target.Equals("All") || target.Equals(join.getStdId().Substring(0, 2) + " " + join.getName()) || target.Equals("Me")) 
         {
             chatLog.text += "\n" + msg;
         }

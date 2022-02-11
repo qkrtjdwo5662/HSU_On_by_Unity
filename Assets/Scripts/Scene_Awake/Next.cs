@@ -16,7 +16,7 @@ public class Next : MonoBehaviour
     public DatabaseReference reference = null;
     public Button NextButton;
 
-    string CurrentVersion = "1.3"; // OT Version
+    string CurrentVersion = "1.4"; // OT Version
     string ServerVersion;
     // Start is called before the first frame update
 
@@ -55,7 +55,7 @@ public class Next : MonoBehaviour
     void Update()
     {
         
-        if (ServerVersion == null || ServerVersion =="1.2")
+        if (ServerVersion == null || ServerVersion =="1.2" || ServerVersion == "1.3")
         {
             text.text = "서버 정보를 불러오는 중입니다\n\n\n\n";
             GetServerVersionFromFireBase();

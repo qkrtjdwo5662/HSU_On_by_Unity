@@ -22,12 +22,7 @@ public class NPC_Trigger : MonoBehaviour
 
     private void Start()
     {
-        Me = GameObject.Find("Me");
-       
-        tps = Me.GetComponent<TPSCharacterController>();
-        CameraArm = Me.transform.Find("Camera Arm").gameObject;
-        startBtn = MainNpcTalk.transform.Find("Talk0").GetComponentInChildren<Button>();
-        startBtn.onClick.AddListener(CameraWork);
+        StartCoroutine(FindMe());
         
     }
 
@@ -44,7 +39,7 @@ public class NPC_Trigger : MonoBehaviour
         }
 			
 	}
-	
+
 
    
     // Update is called once per frame
@@ -87,7 +82,26 @@ public class NPC_Trigger : MonoBehaviour
             }
             yield return null;
         }
+        
     }
+    IEnumerator FindMe()
+    {
+        
 
+        while (true)
+        {
+            Me = GameObject.Find("Me");
+
+            if (Me != null)
+            {
+                tps = Me.GetComponent<TPSCharacterController>();
+                CameraArm = Me.transform.Find("Camera Arm").gameObject;
+                startBtn = MainNpcTalk.transform.Find("Talk0").GetComponentInChildren<Button>();
+                startBtn.onClick.AddListener(CameraWork);
+                break;
+            }
+            yield return null;
+        }
+    }
 }
 
