@@ -53,7 +53,7 @@ public class CameraControl : MonoBehaviour
                 cam3.SetActive(false);
                 cam4.SetActive(false);
                 cam5.SetActive(false);
-                cam2.transform.position += new Vector3(0.001f, 0, 0);
+                cam2.transform.position += new Vector3(-0.001f, 0, 0);
                 break;
             case 3: cam1.SetActive(false);
                 cam2.SetActive(false);
@@ -67,7 +67,7 @@ public class CameraControl : MonoBehaviour
                 cam3.SetActive(false);
                 cam4.SetActive(true);
                 cam5.SetActive(false);
-                cam4.transform.position += new Vector3(0, 0, 0.01f);
+                cam4.transform.position += new Vector3(0.001f, 0, 0);
                 break;
             case 5: cam1.SetActive(false);
                 cam2.SetActive(false);

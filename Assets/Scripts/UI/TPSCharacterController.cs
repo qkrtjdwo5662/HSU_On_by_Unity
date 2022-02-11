@@ -52,7 +52,7 @@ public class TPSCharacterController : MonoBehaviour
     void Start()
     {
         animator = characterBody.GetComponent<Animator>();
-        escButton = GameObject.Find("Reset_Button").GetComponent<Button>();
+        escButton = GameObject.Find("UI").transform.Find("Menu_Set").gameObject.transform.Find("Image").gameObject.transform.Find("Reset_Button").gameObject.GetComponent<Button>();
         escButton.onClick.AddListener(escAction);
         attackButton = GameObject.Find("Canvas").transform.Find("AttackButton").GetComponent<Button>();
         attackButton.onClick.AddListener(AttackAction);
