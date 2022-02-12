@@ -9,7 +9,22 @@ ModelImporter:
   - first:
       74: 9190969331937356864
     second: basic_rig|basic_rig|Take 001|BaseLayer
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: 6ad076fc708aeca42ab3e3a15ce6fdbe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Face.001
+    second: {fileID: 2100000, guid: 5c50a218a15cbc04983696df9a58ff0b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bottom
+    second: {fileID: 2100000, guid: bd33e508ca306dd4a8316f4ae540e58a, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
