@@ -32,7 +32,12 @@ public class QuestManager : MonoBehaviour
     public InputField NPC1_Quiz_Answer;
     public Image NPC1_Quiz_right, NPC1_Quiz_Wrong;
     //NPC1 Quiz
-
+    //Hidden NPC
+    public GameObject Hidden1;
+    public GameObject Hidden2;
+    public GameObject Hidden3;
+    public GameObject Hidden4;
+    public GameObject Hidden5;
     //NPC4 Quiz
     public int count_1 = 0;
     public int count_2 = 0;
@@ -684,7 +689,11 @@ public class QuestManager : MonoBehaviour
         //M1.interactable = true;
         OT1.interactable = true;
 
-        
+        Hidden1.gameObject.SetActive(true);
+        Hidden2.gameObject.SetActive(true);
+        Hidden3.gameObject.SetActive(true);
+        Hidden4.gameObject.SetActive(true);
+        Hidden5.gameObject.SetActive(true);
 
         OTNPC0.gameObject.SetActive(false);
         OTNPC1.gameObject.SetActive(true);
