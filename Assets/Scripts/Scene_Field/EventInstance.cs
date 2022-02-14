@@ -24,7 +24,7 @@ public class EventInstance : MonoBehaviour
 
     [SerializeField]
     private GameObject chicken;
-    private GameObject[] chickens = new GameObject[10];
+    private GameObject[] chickens = new GameObject[20];
     private System.Random r = new System.Random();
 
     private GameObject Me;
@@ -105,7 +105,7 @@ public class EventInstance : MonoBehaviour
     void Update()
     {
 
-        if (Clock.clock.text.Equals("09:16"))
+        if (Clock.clock.text.Equals("16:00"))
         {
             if (!isEventStart) {
                 EventStart();
@@ -121,7 +121,7 @@ public class EventInstance : MonoBehaviour
                 EventEnd();
                 for (int i = 0; i < chickens.Length; i++)
                 {
-                    chickens[i] = null;
+                    Destroy(chickens[i]);
                 }
             }
 
