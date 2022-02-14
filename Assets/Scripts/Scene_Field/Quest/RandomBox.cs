@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class RandomBox : MonoBehaviour
 {
+    public Item item;
+    public Slot slot;
     public GameObject DrawShop;
     public GameObject DrawWindow;
     public GameObject S;
@@ -42,19 +44,26 @@ public class RandomBox : MonoBehaviour
         {
             DrawImage.sprite = Image1; //슈퍼레어
             S.SetActive(true);
+            GotButton();
         }
         else if (RandomInt > 10 && RandomInt <= 50)
         {
             DrawImage.sprite = Image2; //레어
             A.SetActive(true);
+            GotButton();
         }
         else if (RandomInt > 50 && RandomInt <= 100)
         {
             DrawImage.sprite = Image3; //노멀
             B.SetActive(true);
+            GotButton();
         }
     }
-
+    public void GotButton()
+    {
+        //item.AcquireItem(item, 1);
+        slot.AddItem(item, 1);
+    }
     public void ReButton()
     {
         DrawShop.SetActive(true);
