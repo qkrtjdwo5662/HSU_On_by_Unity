@@ -33,6 +33,7 @@ public class PetAI : MonoBehaviour
         {
             this.transform.LookAt(me.position);//날 바라보고
             this.transform.Translate(Vector3.forward * Time.deltaTime * 2f);//날 따라와
+            ani.SetBool("IsMove", true);
            
             
         }
@@ -42,7 +43,7 @@ public class PetAI : MonoBehaviour
         }
         else if (distance < 2)
         {
-            //ani.SetBool("Walk", false);//움직이지 않아도 될때 걷는 에니메이션 안하기
+            ani.SetBool("IsMove", false); //가까워지면 움직임 x 
         }
         //Update는 실시간 퍼포먼스에 큰 영향을 주기 때문에 Update()안에서는 불필요한 연산을 최대한 피하자 
     }
