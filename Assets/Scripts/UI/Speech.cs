@@ -60,8 +60,12 @@ public class Speech : MonoBehaviour
     [PunRPC]
     void gotoTM(string text) 
     {
+        int t = text.Length > 14 ? 14 : text.Length;
+        
         Debug.Log(text);
         dialog.SetActive(true);
+        dialog.transform.Find("speech_Dialog").transform.localScale = new Vector3(0.08f + (t * 0.03f), ((t / 14) + 1) * 0.2f, 1f);
+        
         tm.GetComponent<TextMeshPro>().text = text;
         cheak = 1;
     }
