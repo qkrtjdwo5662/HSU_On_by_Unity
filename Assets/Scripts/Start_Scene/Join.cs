@@ -198,7 +198,7 @@ public class Join : MonoBehaviourPunCallbacks
                 Debug.Log("H " + h1cleared + " " + h2cleared + " " + h3cleared + " " + h4cleared + " " + h5cleared);
 
 
-                ot0cleared = dataSnapshot.Child("OT0").GetValue(true).ToString();
+                ot0cleared = dataSnapshot.Child("OT0").GetValue(true).ToString(); // 퀘스트 Open 여부
                 ot1cleared = dataSnapshot.Child("OT1").GetValue(true).ToString();
                 ot2cleared = dataSnapshot.Child("OT2").GetValue(true).ToString();
                 ot3cleared = dataSnapshot.Child("OT3").GetValue(true).ToString();
