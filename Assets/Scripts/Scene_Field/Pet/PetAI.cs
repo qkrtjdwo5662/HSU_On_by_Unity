@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PetAI : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PetAI : MonoBehaviour
     //  private Collider me;
     private Transform me;
     private Animator ani;
+    private int action;
+    private Animator meAni;
     float distance = 0.0f;
 
     public Animator getAnimator()
@@ -20,6 +23,7 @@ public class PetAI : MonoBehaviour
     {
         me = GameObject.Find("Me").GetComponent<Transform>();
         ani = GetComponent<Animator>();
+        meAni = GameObject.Find("Me").GetComponent<Animator>();
         
         //x z 거리계산
      }
@@ -43,10 +47,38 @@ public class PetAI : MonoBehaviour
         }
         else if (distance < 2)
         {
-            ani.SetBool("IsMove", false); //가까워지면 움직임 x 
+            ani.SetBool("IsMove", false); //가까워지면 움직임 x
+            DoSomething();
+            
         }
+        else if (meAni.GetBool("IsJump"))
+        {
+            ani.SetBool("IsJump", true);
+        }
+        
         //Update는 실시간 퍼포먼스에 큰 영향을 주기 때문에 Update()안에서는 불필요한 연산을 최대한 피하자 
     }
 
+
+   private void DoSomething()
+    {
+        action = Random.Range(0, 2);
+
+        switch (action)
+        {
+
+            case 0:
+                ani.SetBool("IsEat",true);
+                break;
+            case 1:
+                ani.SetBool("IsEat", false);
+                break;
+
+                
+
+        }
+   
+
+    }
     
 }
