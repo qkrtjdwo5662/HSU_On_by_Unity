@@ -30,6 +30,8 @@ public class EventInstance : MonoBehaviour
     private GameObject Me;
     PhotonView PV;
 
+    public Button developButton;
+
     [PunRPC]
     private void addRanker(string msg, int score)
     {
@@ -97,10 +99,23 @@ public class EventInstance : MonoBehaviour
 
     void Start()
     {
+        developButton.onClick.AddListener( ()=> {
+            EventStart();
+        });
         PV = GetComponent<PhotonView>();
-        Me = GameObject.Find("Me");
+        StartCoroutine(FindMe());
     }
 
+
+    IEnumerator FindMe() {
+        while (true) {
+            Me = GameObject.Find("Me");
+            if (Me != null) {
+                break;
+            }
+            yield return null;
+        }
+    }
     // Update is called once per frame
     void Update()
     {

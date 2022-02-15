@@ -52,7 +52,7 @@ public class DoJump : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
                 if (isJump == true)
                 {
                     start += Time.deltaTime;
-                    if (start >= 1.0f)
+                    if (start >= 1.2f)
                     {
                         isJump = false;
                         controller.animator.SetBool("isJump", false);
