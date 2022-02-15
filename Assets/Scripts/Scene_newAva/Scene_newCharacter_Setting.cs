@@ -12,6 +12,7 @@ public class Scene_newCharacter_Setting : MonoBehaviour
     public string hair = "";
     public string clothes = "";
     public string pants = "";
+    public string pet = null;
     public GameObject CurrentModel;
 
     public GameObject F1;
@@ -22,15 +23,21 @@ public class Scene_newCharacter_Setting : MonoBehaviour
     public GameObject M3;
     public GameObject M4;
 
-    public Button head_f1; 
-    public Button head_f3;
-    public Button head_f4;
-    public Button head_m1;
-    public Button head_m2;
-    public Button head_m3;
-    public Button head_m4;
 
-    public Button hair_f1_01;
+    public Texture C01;
+    public Texture C02;
+
+
+
+    //----------------------------------------Button in Canvas---------------------------------------
+
+    public Button btnF1;
+    public Button btnF3;
+    public Button btnF4;
+    public Button btnM1;
+    public Button btnM2;
+    public Button btnM3;
+    public Button btnM4;
 
     public Button btnC01;
     public Button btnC02;
@@ -43,11 +50,9 @@ public class Scene_newCharacter_Setting : MonoBehaviour
     public Button btnC09;
     public Button btnC10;
 
+    public Button hair_f1_01;
 
-
-    public Texture C01;
-    public Texture C02;
-
+   
 
 
     /*
@@ -75,18 +80,13 @@ public class Scene_newCharacter_Setting : MonoBehaviour
         DontDestroyOnLoad(this);
 
         CurrentModel = F1;
-        head_f1.onClick.AddListener(()=>{
+        btnF1.onClick.AddListener(()=>{
+            CurrentModel.SetActive(false);
             F1.SetActive(true);
-            F3.SetActive(false);
-            F4.SetActive(false);
-            M1.SetActive(false);
-            M2.SetActive(false);
-            M3.SetActive(false);
-            M4.SetActive(false);
             CurrentModel = F1;
             model = "F1";
         });
-        head_f3.onClick.AddListener(() => {
+        btnF3.onClick.AddListener(() => {
             F1.SetActive(false);
             F3.SetActive(true);
             F4.SetActive(false);
@@ -97,7 +97,7 @@ public class Scene_newCharacter_Setting : MonoBehaviour
             CurrentModel = F3;
             model = "F3";
         });
-        head_f4.onClick.AddListener(() => {
+        btnF4.onClick.AddListener(() => {
             F1.SetActive(false);
             F3.SetActive(false);
             F4.SetActive(true);
@@ -108,7 +108,7 @@ public class Scene_newCharacter_Setting : MonoBehaviour
             CurrentModel = F4;
             model = "F4";
         });
-        head_m1.onClick.AddListener(() => {
+        btnM1.onClick.AddListener(() => {
             F1.SetActive(false);
             F3.SetActive(false);
             F4.SetActive(false);
@@ -119,7 +119,7 @@ public class Scene_newCharacter_Setting : MonoBehaviour
             CurrentModel = M1;
             model = "M1";
         });
-        head_m2.onClick.AddListener(() => {
+        btnM2.onClick.AddListener(() => {
             F1.SetActive(false);
             F3.SetActive(false);
             F4.SetActive(false);
@@ -130,7 +130,7 @@ public class Scene_newCharacter_Setting : MonoBehaviour
             CurrentModel = M2;
             model = "M2";
         });
-        head_m3.onClick.AddListener(() => {
+        btnM3.onClick.AddListener(() => {
             F1.SetActive(false);
             F3.SetActive(false);
             F4.SetActive(false);
@@ -141,7 +141,7 @@ public class Scene_newCharacter_Setting : MonoBehaviour
             CurrentModel = M3;
             model = "M3";
         });
-        head_m4.onClick.AddListener(() => {
+        btnM4.onClick.AddListener(() => {
             F1.SetActive(false);
             F3.SetActive(false);
             F4.SetActive(false);
