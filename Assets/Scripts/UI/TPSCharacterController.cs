@@ -26,6 +26,8 @@ public class TPSCharacterController : MonoBehaviour
     Rigidbody rb;
     PhotonView PV;
 
+    public Vector3 movingDirection;
+
     public Animator animator;
     public Button escButton;
     public Button attackButton;
@@ -123,12 +125,12 @@ public class TPSCharacterController : MonoBehaviour
             Vector3 lookRight = new Vector3(cameraArm.right.x, 0f, cameraArm.right.z).normalized;
             // 이동 방향
             Vector3 moveDir = lookForward * moveInput.y + lookRight * moveInput.x;
-
+            movingDirection = moveDir.normalized;
             // 이동할 때 카메라가 보는 방향 바라보기
             characterBody.forward = lookForward;
             // 이동할 때 이동 방향 바라보기
             characterBody.forward = moveDir;
-
+            
             // 이동
             transform.position += moveDir.normalized * Time.deltaTime * movingSpeed;
             //Debug.Log("char"+ characterBody.position.x + "," + characterBody.position.y + ","+characterBody.position.z);
@@ -138,7 +140,9 @@ public class TPSCharacterController : MonoBehaviour
         {
             animator.SetBool("isRun", false);
             animator.SetBool("isMove", false);
+            movingDirection = Vector3.zero;
         }
+        
     }
 
     public void LookAround(Vector3 inputDirection)

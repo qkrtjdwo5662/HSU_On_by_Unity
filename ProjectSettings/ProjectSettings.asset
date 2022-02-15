@@ -128,7 +128,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.4.1
+  bundleVersion: 1.4.2
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -175,7 +175,7 @@ PlayerSettings:
     Android: com.codingquokka.hsuon
     iPhone: com.codingquokka.hsuon
   buildNumber: {}
-  AndroidBundleVersionCode: 2022021201
+  AndroidBundleVersionCode: 2022021502
   AndroidMinSdkVersion: 30
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1

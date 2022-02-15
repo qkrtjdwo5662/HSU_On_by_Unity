@@ -73,7 +73,7 @@ public class DoJump : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
         {
             isJump = true;
             controller.animator.SetBool("isJump", true);
-            CharacterTransform.GetComponent<Rigidbody>().AddForce(0, 0.03f, 0);
+            CharacterTransform.GetComponent<Rigidbody>().AddForce((controller.movingDirection.x) * 0.02f, 0.03f, (controller.movingDirection.z)*0.02f);
 
         }
     }
