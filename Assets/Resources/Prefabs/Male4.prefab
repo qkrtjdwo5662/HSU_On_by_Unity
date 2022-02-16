@@ -1428,7 +1428,7 @@ MonoBehaviour:
     SynchronizeType: 2
     Name: no
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: attack1
   - Type: 4
     SynchronizeType: 0

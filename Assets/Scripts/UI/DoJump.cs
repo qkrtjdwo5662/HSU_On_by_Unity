@@ -52,11 +52,17 @@ public class DoJump : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
                 if (isJump == true)
                 {
                     start += Time.deltaTime;
-                    if (start >= 1.2f)
+                    if (start >= 1.0f && start < 1.1f)
                     {
-                        isJump = false;
+                        
+                        
                         controller.animator.SetBool("isJump", false);
+
+                    }
+                    else if (start >= 1.15f) {
+                        controller.moveSwitch = true;
                         start = 0.0f;
+                        isJump = false;
                     }
                 }
                 break;
@@ -74,7 +80,7 @@ public class DoJump : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
             isJump = true;
             controller.animator.SetBool("isJump", true);
             CharacterTransform.GetComponent<Rigidbody>().AddForce((controller.movingDirection.x) * 0.02f, 0.03f, (controller.movingDirection.z)*0.02f);
-
+            controller.moveSwitch = false;
         }
     }
 

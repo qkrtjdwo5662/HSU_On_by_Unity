@@ -1514,6 +1514,12 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 2
     Name: no
+  - Type: 4
+    SynchronizeType: 2
+    Name: attack1
+  - Type: 4
+    SynchronizeType: 0
+    Name: attack2
   m_SynchronizeLayers:
   - SynchronizeType: 2
     LayerIndex: 0

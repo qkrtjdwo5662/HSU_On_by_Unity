@@ -74,11 +74,11 @@ public class TPSCharacterController : MonoBehaviour
         if (animator.GetBool("attack1"))
         {
             time += Time.deltaTime;
-            if (time >= 0.5f && time <= 0.6f)
+            if (time >= 0.3f && time <= 0.4f)
             {
                 hammer_head.enabled = true;
             }
-            else if (time >= 0.6f && time <= 0.7f)
+            else if (time >= 0.8f && time <= 0.9f)
             {
                 hammer_head.enabled = false;
             }
@@ -108,9 +108,9 @@ public class TPSCharacterController : MonoBehaviour
         // 입력이 발생하는 중이라면 이동 애니메이션 재생
         animator.SetBool("isMove", isMove);
         animator.SetBool("isRun", isRun);
-        if (isMove && !animator.GetBool("isJump")&& moveSwitch)
+        if (isMove && moveSwitch)
         {
-            
+            time = 0.0f;
             animator.SetBool("conversation", false);
             animator.SetBool("dance", false);
             animator.SetBool("victory", false);
@@ -169,7 +169,11 @@ public class TPSCharacterController : MonoBehaviour
     }
     private void AttackAction()
     {
-        animator.SetBool("attack1", true);
+        if (!animator.GetBool("attack1")) 
+        {
+            animator.SetBool("attack1", true);
+
+        }
     }
 
     public void ActivateHammerRPC()

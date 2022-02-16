@@ -20,7 +20,7 @@ public class Optimazer : MonoBehaviour
     void Start()
     {
 
-        ExitButton.onClick.AddListener(() => { Application.Quit(); });
+        ExitButton.onClick.AddListener(DoQuit);
         AS = GameObject.Find("Main Camera").GetComponent<AudioSource>();
 
         VolumeSlider.onValueChanged.AddListener(delegate {
@@ -31,7 +31,7 @@ public class Optimazer : MonoBehaviour
         ShadowSet.options.Add(new Dropdown.OptionData("None"));
         ShadowSet.options.Add(new Dropdown.OptionData("Hard"));
         ShadowSet.options.Add(new Dropdown.OptionData("Soft"));
-        ShadowSet.value = 1;
+        ShadowSet.value = 2;
         ShadowSet.onValueChanged.AddListener(delegate {
             DropFunc();
         });
@@ -47,6 +47,10 @@ public class Optimazer : MonoBehaviour
         AntiAliasingSet.onValueChanged.AddListener(delegate {
             SetAntiAliasing();
         });
+    }
+    private void DoQuit()
+    {
+        Application.Quit();
     }
     void DropFunc() 
     {

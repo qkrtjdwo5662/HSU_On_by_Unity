@@ -21,9 +21,7 @@ public class EventInstance : MonoBehaviour
     public Clock Clock;
     private Hashtable hashtable = new Hashtable();
     private bool isEventStart = false;
-
-    [SerializeField]
-    private GameObject chicken;
+    
     private GameObject[] chickens = new GameObject[20];
     private System.Random r = new System.Random();
 
@@ -49,8 +47,8 @@ public class EventInstance : MonoBehaviour
     {
         PV.RPC("addRanker", RpcTarget.AllBuffered, playerName, score);
     }
-
-    private void EventStart()
+    [PunRPC]
+     void EventStart()
     {
         Me.GetComponent<TPSCharacterController>().ActivateHammerRPC();
         chatBox.SetActive(false);
@@ -100,7 +98,7 @@ public class EventInstance : MonoBehaviour
     void Start()
     {
         developButton.onClick.AddListener( ()=> {
-            EventStart();
+            PV.RPC("EventStart", RpcTarget.AllBuffered);
         });
         PV = GetComponent<PhotonView>();
         StartCoroutine(FindMe());
@@ -124,6 +122,7 @@ public class EventInstance : MonoBehaviour
         {
             if (!isEventStart) {
                 EventStart();
+                //PV.RPC("EventStart",RpcTarget.AllBuffered);
             }
         }
 
@@ -131,15 +130,7 @@ public class EventInstance : MonoBehaviour
         {
             TimeBoard.text = "남은시간 : " + (int)((timer -= Time.deltaTime))+"초";
             ScoreBoard.text = HashToString(hashtable);
-            if (timer <= 0)
-            {
-                EventEnd();
-                for (int i = 0; i < chickens.Length; i++)
-                {
-                    Destroy(chickens[i]);
-                }
-            }
-
+            
             for (int i = 0; i < chickens.Length; i++)
             {
                 if (chickens[i] == (null))
@@ -147,6 +138,14 @@ public class EventInstance : MonoBehaviour
                     int x = r.Next(-105, -64);
                     int z = r.Next(60, 81);
                     chickens[i] = PhotonNetwork.Instantiate("Prefabs/Chicken", new Vector3(x, 1, z), Quaternion.identity, 0);
+                }
+            }
+            if (timer <= 0)
+            {
+                EventEnd();
+                for (int i = 0; i < chickens.Length; i++)
+                {
+                    Destroy(chickens[i]);
                 }
             }
         }
