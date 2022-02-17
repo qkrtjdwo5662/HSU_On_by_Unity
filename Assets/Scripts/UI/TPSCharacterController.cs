@@ -47,7 +47,7 @@ public class TPSCharacterController : MonoBehaviour
         else if (!PV.IsMine)
         {
             this.name = "OtherPlayer";
-            Destroy(this);
+            
         }
     }
 
@@ -94,6 +94,8 @@ public class TPSCharacterController : MonoBehaviour
 
     public void Move(Vector2 inputDirection)
     {
+        if (!PV.IsMine)
+            return;
         // 이동 방향 구하기 1
         //Debug.DrawRay(cameraArm.position, cameraArm.forward, Color.red);
 
@@ -118,7 +120,7 @@ public class TPSCharacterController : MonoBehaviour
             animator.SetBool("yes", false);
             animator.SetBool("no", false);
             animator.SetBool("attack1", false);
-            animator.SetBool("attack2", false);
+            
             // 카메라가 바라보는 방향
             Vector3 lookForward = new Vector3(cameraArm.forward.x, 0f, cameraArm.forward.z).normalized;
             // 카메라의 오른쪽 방향
@@ -154,10 +156,10 @@ public class TPSCharacterController : MonoBehaviour
         // 카메라의 피치 값 계산
         float x = camAngle.x - mouseDelta.y;
 
-        // 카메라 피치 값을 위쪽으로 70도 아래쪽으로 25도 이상 움직이지 못하게 제한
+        // 카메라 피치 값을 위쪽으로 60도 아래쪽으로 25도 이상 움직이지 못하게 제한
         if (x < 180f)
         {
-            x = Mathf.Clamp(x, -1f, 70f);
+            x = Mathf.Clamp(x, -1f, 60f);
         }
         else
         {

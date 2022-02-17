@@ -130,14 +130,17 @@ public class EventInstance : MonoBehaviour
         {
             TimeBoard.text = "남은시간 : " + (int)((timer -= Time.deltaTime))+"초";
             ScoreBoard.text = HashToString(hashtable);
-            
-            for (int i = 0; i < chickens.Length; i++)
+
+            if (PhotonNetwork.IsMasterClient) 
             {
-                if (chickens[i] == (null))
+                for (int i = 0; i < chickens.Length; i++)
                 {
-                    int x = r.Next(-105, -64);
-                    int z = r.Next(60, 81);
-                    chickens[i] = PhotonNetwork.Instantiate("Prefabs/Chicken", new Vector3(x, 1, z), Quaternion.identity, 0);
+                    if (chickens[i] == (null))
+                    {
+                        int x = r.Next(-105, -64);
+                        int z = r.Next(60, 81);
+                        chickens[i] = PhotonNetwork.Instantiate("Prefabs/Chicken", new Vector3(x, 1, z), Quaternion.identity, 0);
+                    }
                 }
             }
             if (timer <= 0)
@@ -145,7 +148,7 @@ public class EventInstance : MonoBehaviour
                 EventEnd();
                 for (int i = 0; i < chickens.Length; i++)
                 {
-                    Destroy(chickens[i]);
+                    PhotonNetwork.Destroy(chickens[i]);
                 }
             }
         }

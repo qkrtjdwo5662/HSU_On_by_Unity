@@ -10,11 +10,11 @@ using UnityEngine.UI;
 public class Next : MonoBehaviour
 {
     public Text text;
-    FirebaseAuth auth;
-    DataSnapshot ds;
-    FirebaseApp app;
+    public Text verText;
+    
     public DatabaseReference reference = null;
     public Button NextButton;
+
 
     string CurrentVersion = "1.4"; // OT Version
     string ServerVersion;
@@ -28,7 +28,8 @@ public class Next : MonoBehaviour
                    new System.Uri("https://hsuon-4c8e4-default-rtdb.firebaseio.com/");
         reference = FirebaseDatabase.DefaultInstance.GetReference("info");
 
-        
+        verText.text = "ver " + Application.version;
+
         
         NextButton.onClick.AddListener(ButtonClick);
     }
@@ -44,7 +45,6 @@ public class Next : MonoBehaviour
             else if (task.IsCompleted)
             {
                 DataSnapshot dataSnapshot = task.Result;
-                ds = dataSnapshot;
                 ServerVersion = dataSnapshot.Child("ServerVersion").GetValue(true).ToString();
                 Debug.Log(ServerVersion);
 
