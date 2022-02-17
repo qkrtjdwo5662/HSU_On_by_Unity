@@ -175,7 +175,7 @@ PlayerSettings:
     Android: com.codingquokka.hsuon
     iPhone: com.codingquokka.hsuon
   buildNumber: {}
-  AndroidBundleVersionCode: 2022021701
+  AndroidBundleVersionCode: 2022021702
   AndroidMinSdkVersion: 30
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1

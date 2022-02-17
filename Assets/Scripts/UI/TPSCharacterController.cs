@@ -73,6 +73,7 @@ public class TPSCharacterController : MonoBehaviour
     {
         if (animator.GetBool("attack1"))
         {
+            moveSwitch = false;
             time += Time.deltaTime;
             if (time >= 0.3f && time <= 0.4f)
             {
@@ -86,7 +87,7 @@ public class TPSCharacterController : MonoBehaviour
             {
 
                 animator.SetBool("attack1", false);
-                
+                moveSwitch = true;
                 time = 0.0f;
             }
         }
