@@ -10,7 +10,7 @@ public class PlayerManager : MonoBehaviour, IPunObservable
 
 
 
-    Scene_newCharacter_Setting ui;
+    Scene_Character_Setting ui;
     void Awake()
     {
         PV = GetComponent<PhotonView>();
@@ -21,7 +21,7 @@ public class PlayerManager : MonoBehaviour, IPunObservable
         GameObject avatar;
         if (avatar = GameObject.Find("Setting"))
         {
-            ui = avatar.GetComponent<Scene_newCharacter_Setting>();
+            ui = avatar.GetComponent<Scene_Character_Setting>();
         }
 
 

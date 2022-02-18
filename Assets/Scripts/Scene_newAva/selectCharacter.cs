@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class selectCharacter : MonoBehaviour
 {
-    public Scene_newCharacter_Setting scene_NewCharacter_Setting;
+    public Scene_Character_Setting scene_NewCharacter_Setting;
 
     public Button button1;
     public Button button2;
