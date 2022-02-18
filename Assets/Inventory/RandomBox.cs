@@ -6,12 +6,10 @@ using UnityEngine.UI;
 public class RandomBox : MonoBehaviour
 {
     //돈
-    public int money = 1800;
+    public int money = 6000;
     //돈
     public Text MyMoney;
     public int itemCount;
-    public Item item;
-    public Slot slot;
     public GameObject NomoneyPanel;
     public GameObject DrawShop;
     public GameObject DrawWindow;
@@ -20,41 +18,158 @@ public class RandomBox : MonoBehaviour
     public GameObject B;
     public Image DrawImage;
     //인벤 채울 이미지
-    //public List<Slot> InvenList = new List<Slot>() { Slot1, Slot2, Slot3, Slot4, Slot5, Slot6, Slot7, Slot8, Slot9, Slot10 };
-    public Image ItemImage1;
-    public Image ItemImage2;
-    public Image ItemImage3;
-    public Image ItemImage4;
-    public Image ItemImage5;
-    public Image ItemImage6;
-    public Image ItemImage7;
-    public Image ItemImage8;
-    public Image ItemImage9;
-    public Image ItemImage10;
     //머리 색
-    public Sprite Image1;
-    public Sprite Image2;
-    public Sprite Image3;
-    public Sprite Image4;
-    public Sprite Image5;
-    public Sprite Image6;
-    public Sprite Image7;
-    public Sprite Image8;
-    public Sprite Image9;
-    public Sprite Image10;
+    public Image HCS1; //HCS1
+    public Image HCS2; //HCS2
+    public Image HCA1; //HCA1
+    public Image HCA2;
+    public Image HCA3;
+    public Image HCB1;
+    public Image HCB2;
+    public Image HCB3;
+    public Image HCB4;
+    public Image HCB5;
+    
+    public Sprite HCImage1;
+    public Sprite HCImage2;
+    public Sprite HCImage3;
+    public Sprite HCImage4;
+    public Sprite HCImage5;
+    public Sprite HCImage6;
+    public Sprite HCImage7;
+    public Sprite HCImage8;
+    public Sprite HCImage9;
+    public Sprite HCImage10;
+
+    public Button HCSlot1;
+    public Button HCSlot2;
+    public Button HCSlot3;
+    public Button HCSlot4;
+    public Button HCSlot5;
+    public Button HCSlot6;
+    public Button HCSlot7;
+    public Button HCSlot8;
+    public Button HCSlot9;
+    public Button HCSlot10;
     //머리색 끝
+
+    //펫
+    public Image PS1;
+    public Image PS2;
+    public Image PA1;
+    public Image PA2;
+    public Image PA3;
+    public Image PB1;
+    public Image PB2;
+    public Image PB3;
+    public Image PB4;
+    public Image PB5;
+
+    public Sprite PImage1;
+    public Sprite PImage2;
+    public Sprite PImage3;
+    public Sprite PImage4;
+    public Sprite PImage5;
+    public Sprite PImage6;
+    public Sprite PImage7;
+    public Sprite PImage8;
+    public Sprite PImage9;
+    public Sprite PImage10;
+
+    public Button PSlot1;
+    public Button PSlot2;
+    public Button PSlot3;
+    public Button PSlot4;
+    public Button PSlot5;
+    public Button PSlot6;
+    public Button PSlot7;
+    public Button PSlot8;
+    public Button PSlot9;
+    public Button PSlot10;
+    //펫 끝
+
+    //상의
+    public Image CS1;
+    public Image CS2;
+    public Image CA1;
+    public Image CA2;
+    public Image CA3;
+    public Image CB1;
+    public Image CB2;
+    public Image CB3;
+    public Image CB4;
+    public Image CB5;
+
+    public Sprite CImage1;
+    public Sprite CImage2;
+    public Sprite CImage3;
+    public Sprite CImage4;
+    public Sprite CImage5;
+    public Sprite CImage6;
+    public Sprite CImage7;
+    public Sprite CImage8;
+    public Sprite CImage9;
+    public Sprite CImage10;
+
+    public Button CSlot1;
+    public Button CSlot2;
+    public Button CSlot3;
+    public Button CSlot4;
+    public Button CSlot5;
+    public Button CSlot6;
+    public Button CSlot7;
+    public Button CSlot8;
+    public Button CSlot9;
+    public Button CSlot10;
+    //상의 끝
+
+    //하의
+    public Image BS1;
+    public Image BS2;
+    public Image BA1;
+    public Image BA2;
+    public Image BA3;
+    public Image BB1;
+    public Image BB2;
+    public Image BB3;
+    public Image BB4;
+    public Image BB5;
+
+    public Sprite BImage1;
+    public Sprite BImage2;
+    public Sprite BImage3;
+    public Sprite BImage4;
+    public Sprite BImage5;
+    public Sprite BImage6;
+    public Sprite BImage7;
+    public Sprite BImage8;
+    public Sprite BImage9;
+    public Sprite BImage10;
+
+    public Button BSlot1;
+    public Button BSlot2;
+    public Button BSlot3;
+    public Button BSlot4;
+    public Button BSlot5;
+    public Button BSlot6;
+    public Button BSlot7;
+    public Button BSlot8;
+    public Button BSlot9;
+    public Button BSlot10;
+    //하의 끝
+
     public int RandomInt;
     // Start is called before the first frame update
     void Start()
     {
-        //MyMoney = GameObject.Find("Money").GetComponent<Text>();
         MyMoney.text = ""+ money;
     }
-    public List<string> GachaList = new List<string>() { "S1", "S2", "A1", "A2", "A3", "B1", "B2", "B3", "B4", "B5" };
+    public List<string> GachaList = new List<string>() { "HCS1", "HCS2", "HCA1", "HCA2", "HCA3", "HCB1", "HCB2", "HCB3", "HCB4", "HCB5", "PS1","PS2", "PA1", "PA2", "PA3", "PB1", "PB2", "PB3", "PB4", "PB5",
+        "CS1", "CS2", "CA1", "CA2", "CA3", "CB1", "CB2", "CB3", "CB4", "CB5", "BS1", "BS2", "BA1", "BA2","BA3","BB1", "BB2", "BB3", "BB4", "BB5"};
     // Update is called once per frame
     void Update()
     {
-        //RandomInt = Random.Range(0, 100);
+        
         
     }
     public void Draw()
@@ -63,107 +178,326 @@ public class RandomBox : MonoBehaviour
         DrawWindow.SetActive(true);
 
         int rand = Random.Range(0, GachaList.Count);
-        if (GachaList[rand] == "S1")
+        if (GachaList[rand] == "HCS1")
         {
-            DrawImage.sprite = Image1; //슈퍼레어
+            DrawImage.sprite = HCImage1; //슈퍼레어
             S.SetActive(true);
-            //ItemImage.sprite = Image1;
-            //GotButton();
-            //AddItem(item);
-            ItemImage1.sprite = Image1;
+            HCS1.sprite = HCImage1;
+            HCSlot1.interactable = true;
             GachaList.RemoveAt(rand);
         }
-        else if (GachaList[rand] == "S2")
+        else if (GachaList[rand] == "HCS2")
         {
-            DrawImage.sprite = Image2; //슈퍼레어
+            DrawImage.sprite = HCImage2; //슈퍼레어
             A.SetActive(true);
-            //GotButton();
-            ItemImage2.sprite = Image2;
-            //AddItem(item);
+            HCS2.sprite = HCImage2;
+            HCSlot2.interactable = true;
             GachaList.RemoveAt(rand);
         }
-        else if (GachaList[rand] == "A1")
+        else if (GachaList[rand] == "HCA1")
         {
-            DrawImage.sprite = Image3; //레어
+            DrawImage.sprite = HCImage3; //레어
             A.SetActive(true);
-            //GotButton();
-            //ItemImage.sprite = Image2;
-            //AddItem(item);
-            ItemImage3.sprite = Image3;
+            HCSlot3.interactable = true;
+            HCA1.sprite = HCImage3;
             GachaList.RemoveAt(rand);
         }
-        else if (GachaList[rand] == "A2")
+        else if (GachaList[rand] == "HCA2")
         {
-            DrawImage.sprite = Image4; //레어
+            DrawImage.sprite = HCImage4; //레어
             A.SetActive(true);
-            //GotButton();
-            //ItemImage.sprite = Image2;
-            //AddItem(item);
-            ItemImage4.sprite = Image4;
+            HCSlot4.interactable = true;
+            HCA2.sprite = HCImage4;
             GachaList.RemoveAt(rand);
         }
-        else if (GachaList[rand] == "A3")
+        else if (GachaList[rand] == "HCA3")
         {
-            DrawImage.sprite = Image5; //레어
+            DrawImage.sprite = HCImage5; //레어
             A.SetActive(true);
-            //GotButton();
-            //ItemImage.sprite = Image2;
-            //AddItem(item);
-            ItemImage5.sprite = Image5;
+            HCSlot5.interactable = true;
+            HCA3.sprite = HCImage5;
             GachaList.RemoveAt(rand);
         }
-        else if (GachaList[rand] == "B1")
+        else if (GachaList[rand] == "HCB1")
         {
-            DrawImage.sprite = Image6; //노멀
+            DrawImage.sprite = HCImage6; //노멀
             B.SetActive(true);
-            //GotButton();
-            //ItemImage.sprite = Image3;
-            //AddItem(item);
-            ItemImage6.sprite = Image6;
+            HCSlot6.interactable = true;
+            HCB1.sprite = HCImage6;
             GachaList.RemoveAt(rand);
         }
-        else if (GachaList[rand] == "B2")
+        else if (GachaList[rand] == "HCB2")
         {
-            DrawImage.sprite = Image7; //노멀
+            DrawImage.sprite = HCImage7; //노멀
             B.SetActive(true);
-            //GotButton();
-            //ItemImage.sprite = Image3;
-            //AddItem(item);
-            ItemImage7.sprite = Image7;
+            HCSlot7.interactable = true;
+            HCB2.sprite = HCImage7;
             GachaList.RemoveAt(rand);
         }
-        else if (GachaList[rand] == "B3")
+        else if (GachaList[rand] == "HCB3")
         {
-            DrawImage.sprite = Image8; //노멀
+            DrawImage.sprite = HCImage8; //노멀
             B.SetActive(true);
-            //GotButton();
-            //ItemImage.sprite = Image3;
-            //AddItem(item);
-            ItemImage8.sprite = Image8;
+            HCSlot8.interactable = true;
+            HCB3.sprite = HCImage8;
             GachaList.RemoveAt(rand);
         }
-        else if (GachaList[rand] == "B4")
+        else if (GachaList[rand] == "HCB4")
         {
-            DrawImage.sprite = Image9; //노멀
+            DrawImage.sprite = HCImage9; //노멀
             B.SetActive(true);
-            //GotButton();
-            //ItemImage.sprite = Image3;
-            //AddItem(item);
-            ItemImage9.sprite = Image9;
+            HCSlot9.interactable = true;
+            HCB4.sprite = HCImage9;
             GachaList.RemoveAt(rand);
         }
-        else if (GachaList[rand] == "B5")
+        else if (GachaList[rand] == "HCB5")
         {
-            DrawImage.sprite = Image10; //노멀
+            DrawImage.sprite = HCImage10; //노멀
             B.SetActive(true);
-            //GotButton();
-            //ItemImage.sprite = Image3;
-            //AddItem(item);
-            ItemImage10.sprite = Image10;
+            HCSlot10.interactable = true;
+            HCB5.sprite = HCImage10;
             GachaList.RemoveAt(rand);
         }
-        
-
+        else if (GachaList[rand] == "PS1")
+        {
+            DrawImage.sprite = PImage1; // 슈퍼레어
+            S.SetActive(true);
+            PS1.sprite = PImage1;
+            PSlot1.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "PS2")
+        {
+            DrawImage.sprite = PImage2; // 슈퍼레어
+            S.SetActive(true);
+            PS2.sprite = PImage2;
+            PSlot2.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "PA1")
+        {
+            DrawImage.sprite = PImage3; // 레어
+            A.SetActive(true);
+            PA1.sprite = PImage3;
+            PSlot3.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "PA2")
+        {
+            DrawImage.sprite = PImage4; // 레어
+            A.SetActive(true);
+            PA2.sprite = PImage4;
+            PSlot4.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "PA3")
+        {
+            DrawImage.sprite = PImage5; // 노멀
+            A.SetActive(true);
+            PA3.sprite = PImage5;
+            PSlot5.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "PB1")
+        {
+            DrawImage.sprite = PImage6; // 노멀
+            B.SetActive(true);
+            PB1.sprite = PImage6;
+            PSlot6.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "PB2")
+        {
+            DrawImage.sprite = PImage7; // 노멀
+            B.SetActive(true);
+            PB2.sprite = PImage7;
+            PSlot7.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "PB3")
+        {
+            DrawImage.sprite = PImage8; // 노멀
+            B.SetActive(true);
+            PB3.sprite = PImage8;
+            PSlot8.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "PB4")
+        {
+            DrawImage.sprite = PImage9; // 노멀
+            B.SetActive(true);
+            PB4.sprite = PImage9;
+            PSlot9.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "PB5")
+        {
+            DrawImage.sprite = PImage10; // 노멀
+            B.SetActive(true);
+            PB5.sprite = PImage10;
+            PSlot10.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "CS1")
+        {
+            DrawImage.sprite = CImage1; // 슈퍼레어
+            S.SetActive(true);
+            CS1.sprite = CImage1;
+            CSlot1.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "CS2")
+        {
+            DrawImage.sprite = CImage1; // 슈퍼레어
+            S.SetActive(true);
+            CS2.sprite = CImage2;
+            CSlot2.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "CA1")
+        {
+            DrawImage.sprite = CImage3; // 레어
+            A.SetActive(true);
+            CA1.sprite = CImage3;
+            CSlot3.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "CA2")
+        {
+            DrawImage.sprite = CImage4; // 레어
+            A.SetActive(true);
+            CA2.sprite = CImage4;
+            CSlot4.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "CA3")
+        {
+            DrawImage.sprite = CImage5; // 레어
+            A.SetActive(true);
+            CA3.sprite = CImage5;
+            CSlot5.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "CB1")
+        {
+            DrawImage.sprite = CImage6; // 노멀
+            B.SetActive(true);
+            CB1.sprite = CImage6;
+            CSlot6.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "CB2")
+        {
+            DrawImage.sprite = CImage7; // 노멀
+            B.SetActive(true);
+            CB2.sprite = CImage7;
+            CSlot7.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "CB3")
+        {
+            DrawImage.sprite = CImage8; // 노멀
+            B.SetActive(true);
+            CB3.sprite = CImage8;
+            CSlot8.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "CB4")
+        {
+            DrawImage.sprite = CImage1; // 노멀
+            B.SetActive(true);
+            CB4.sprite = CImage9;
+            CSlot9.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "CB5")
+        {
+            DrawImage.sprite = CImage10; // 노멀
+            B.SetActive(true);
+            CB5.sprite = CImage10;
+            CSlot10.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "BS1")
+        {
+            DrawImage.sprite = BImage1; // 슈퍼레어
+            S.SetActive(true);
+            BS1.sprite = BImage1;
+            BSlot1.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "BS2")
+        {
+            DrawImage.sprite = BImage2; // 슈퍼레어
+            S.SetActive(true);
+            BS2.sprite = BImage2;
+            BSlot2.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "BA1")
+        {
+            DrawImage.sprite = BImage3; // 슈퍼레어
+            A.SetActive(true);
+            BA1.sprite = BImage3;
+            BSlot3.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "BA2")
+        {
+            DrawImage.sprite = BImage4; // 슈퍼레어
+            A.SetActive(true);
+            BA2.sprite = BImage4;
+            BSlot4.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "BA3")
+        {
+            DrawImage.sprite = BImage5; // 슈퍼레어
+            A.SetActive(true);
+            BA3.sprite = BImage5;
+            BSlot5.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "BB1")
+        {
+            DrawImage.sprite = BImage6; // 슈퍼레어
+            B.SetActive(true);
+            BB1.sprite = BImage6;
+            BSlot6.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "BB2")
+        {
+            DrawImage.sprite = BImage7; // 슈퍼레어
+            B.SetActive(true);
+            BB2.sprite = BImage7;
+            BSlot7.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "BB3")
+        {
+            DrawImage.sprite = BImage8; // 슈퍼레어
+            B.SetActive(true);
+            BB3.sprite = BImage8;
+            BSlot8.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "BB4")
+        {
+            DrawImage.sprite = BImage9; // 슈퍼레어
+            B.SetActive(true);
+            BB4.sprite = BImage9;
+            BSlot9.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
+        else if (GachaList[rand] == "BB5")
+        {
+            DrawImage.sprite = BImage10; // 슈퍼레어
+            B.SetActive(true);
+            BB5.sprite = BImage10;
+            BSlot10.interactable = true;
+            GachaList.RemoveAt(rand);
+        }
     }
     public void DrawButton()
     {
@@ -186,7 +520,6 @@ public class RandomBox : MonoBehaviour
         S.SetActive(false);
         A.SetActive(false);
         B.SetActive(false);
-        slot.AddItem(item);
     }
 
 }
