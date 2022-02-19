@@ -52,6 +52,18 @@ public class Join : MonoBehaviourPunCallbacks
     public string d4cleared = "false";
     public string d5cleared = "false";
 
+    /*
+    public string hcs1got = "false";
+    public string hcs2got = "false";
+    public string hca1got = "false";
+    public string hca2got = "false";
+    public string hca3got = "false";
+    public string hcb1got = "false";
+    public string hcb2got = "false";
+    public string hcb3got = "false";
+    public string hcb4got = "false";
+    public string hcb5got = "false";
+    */
 
     public InputField inputTextEmail;
     public InputField inputTextPassword;
@@ -215,6 +227,19 @@ public class Join : MonoBehaviourPunCallbacks
                 Debug.Log("D " + d1cleared + " " + d2cleared + " " + d3cleared + " " + d4cleared + " " + d5cleared);
                 Debug.Log("퀘스트 클리어 여부: " + ot0cleared);
 
+                /*
+                hcs1got = dataSnapshot.Child("HCS1").GetValue(true).ToString();
+                hcs2got = dataSnapshot.Child("HCS2").GetValue(true).ToString();
+                hca1got = dataSnapshot.Child("HCA1").GetValue(true).ToString();
+                hca2got = dataSnapshot.Child("HCA2").GetValue(true).ToString();
+                hca3got = dataSnapshot.Child("HCA3").GetValue(true).ToString();
+                hcb1got = dataSnapshot.Child("HCB1").GetValue(true).ToString();
+                hcb2got = dataSnapshot.Child("HCB2").GetValue(true).ToString();
+                hcb3got = dataSnapshot.Child("HCB3").GetValue(true).ToString();
+                hcb4got = dataSnapshot.Child("HCB4").GetValue(true).ToString();
+                hcb5got = dataSnapshot.Child("HCB5").GetValue(true).ToString();
+                Debug.Log("HC " + hcs1got + " " + hcs2got + " " + hca1got + " " + hca2got + " " + hca3got + " " + hcb1got + " " + hcb2got + " " + hcb3got + " " + hcb4got + " " + hcb5got);
+                */
                 isQueryEnd = true;
 
             }
@@ -383,8 +408,20 @@ public class Join : MonoBehaviourPunCallbacks
         public bool H4;
         public bool H5;
 
+        /*public bool HCS1;
+        public bool HCS2;
+        public bool HCA1;
+        public bool HCA2;
+        public bool HCA3;
+        public bool HCB1;
+        public bool HCB2;
+        public bool HCB3;
+        public bool HCB4;
+        public bool HCB5;
+        */
         public JoinDB(string UserID, string email, string password, string name, string dept, string stdID,
-            bool OT0, bool OT1, bool OT2, bool OT3, bool OT4, bool OT5, bool D1, bool D2, bool D3, bool D4, bool D5, bool M1, bool M2, bool M3, bool M4, bool M5, bool H1, bool H2, bool H3, bool H4, bool H5)
+            bool OT0, bool OT1, bool OT2, bool OT3, bool OT4, bool OT5, bool D1, bool D2, bool D3, bool D4, bool D5, bool M1, bool M2, bool M3, bool M4, bool M5, bool H1, bool H2, bool H3, bool H4, bool H5 /*bool HCS1, bool HCS2, bool HCA1, bool HCA2,
+            bool HCA3, bool HCB1, bool HCB2, bool HCB3, bool HCB4, bool HCB5*/)
         {
             this.UserID = UserID;
             this.email = email;
@@ -414,6 +451,18 @@ public class Join : MonoBehaviourPunCallbacks
             this.H3 = H3;
             this.H4 = H4;
             this.H5 = H5;
+            /*
+            this.HCS1 = HCS1;
+            this.HCS2 = HCS2;
+            this.HCA1 = HCA1;
+            this.HCA2 = HCA2;
+            this.HCA3 = HCA3;
+            this.HCB1 = HCB1;
+            this.HCB2 = HCB2;
+            this.HCB3 = HCB3;
+            this.HCB4 = HCB4;
+            this.HCB5 = HCB5;
+            */
         }
 
 
@@ -448,7 +497,18 @@ public class Join : MonoBehaviourPunCallbacks
             dic["H3"] = this.H3;
             dic["H4"] = this.H4;
             dic["H5"] = this.H5;
-
+            /*
+            dic["HCS1"] = this.HCS1;
+            dic["HCS2"] = this.HCS2;
+            dic["HCA1"] = this.HCA1;
+            dic["HCA2"] = this.HCA2;
+            dic["HCA3"] = this.HCA3;
+            dic["HCB1"] = this.HCB1;
+            dic["HCB2"] = this.HCB2;
+            dic["HCB3"] = this.HCB3;
+            dic["HCB4"] = this.HCB4;
+            dic["HCB5"] = this.HCB5;
+            */
             return dic;
         }
     }

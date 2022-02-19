@@ -2,9 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*using Firebase.Auth;
+using Firebase;
+using Firebase.Database;
+using System.Threading.Tasks;
+using Firebase.Extensions;
+*/
 public class RandomBox : MonoBehaviour
 {
+    //Join.cs
+    //public Join join;
+    //FirebaseAuth auth;
     //돈
     public int money = 6000;
     //돈
@@ -185,6 +193,8 @@ public class RandomBox : MonoBehaviour
             HCS1.sprite = HCImage1;
             HCSlot1.interactable = true;
             GachaList.RemoveAt(rand);
+            //join.SetValueFireBase("HCS1");
+            //Debug.Log("HCS1 get & save");
         }
         else if (GachaList[rand] == "HCS2")
         {
@@ -193,6 +203,8 @@ public class RandomBox : MonoBehaviour
             HCS2.sprite = HCImage2;
             HCSlot2.interactable = true;
             GachaList.RemoveAt(rand);
+            //join.SetValueFireBase("HCS2");
+            //Debug.Log("HCS2 get & save");
         }
         else if (GachaList[rand] == "HCA1")
         {
@@ -201,6 +213,8 @@ public class RandomBox : MonoBehaviour
             HCSlot3.interactable = true;
             HCA1.sprite = HCImage3;
             GachaList.RemoveAt(rand);
+            //join.SetValueFireBase("HCA1");
+            //Debug.Log("HCA1 get & save");
         }
         else if (GachaList[rand] == "HCA2")
         {
@@ -209,6 +223,8 @@ public class RandomBox : MonoBehaviour
             HCSlot4.interactable = true;
             HCA2.sprite = HCImage4;
             GachaList.RemoveAt(rand);
+            //join.SetValueFireBase("HCA2");
+            //Debug.Log("HCA2 get & save");
         }
         else if (GachaList[rand] == "HCA3")
         {
@@ -217,6 +233,8 @@ public class RandomBox : MonoBehaviour
             HCSlot5.interactable = true;
             HCA3.sprite = HCImage5;
             GachaList.RemoveAt(rand);
+            //join.SetValueFireBase("HCA3");
+            //Debug.Log("HCA3 get & save");
         }
         else if (GachaList[rand] == "HCB1")
         {
@@ -225,6 +243,8 @@ public class RandomBox : MonoBehaviour
             HCSlot6.interactable = true;
             HCB1.sprite = HCImage6;
             GachaList.RemoveAt(rand);
+            //join.SetValueFireBase("HCB1");
+            //Debug.Log("HCB1 get & save");
         }
         else if (GachaList[rand] == "HCB2")
         {
@@ -233,6 +253,8 @@ public class RandomBox : MonoBehaviour
             HCSlot7.interactable = true;
             HCB2.sprite = HCImage7;
             GachaList.RemoveAt(rand);
+            //join.SetValueFireBase("HCB2");
+            //Debug.Log("HCB2 get & save");
         }
         else if (GachaList[rand] == "HCB3")
         {
@@ -241,6 +263,8 @@ public class RandomBox : MonoBehaviour
             HCSlot8.interactable = true;
             HCB3.sprite = HCImage8;
             GachaList.RemoveAt(rand);
+            //join.SetValueFireBase("HCB3");
+            //Debug.Log("HCB3 get & save");
         }
         else if (GachaList[rand] == "HCB4")
         {
@@ -249,6 +273,8 @@ public class RandomBox : MonoBehaviour
             HCSlot9.interactable = true;
             HCB4.sprite = HCImage9;
             GachaList.RemoveAt(rand);
+            //join.SetValueFireBase("HCB4");
+            //Debug.Log("HCB4 get & save");
         }
         else if (GachaList[rand] == "HCB5")
         {
@@ -257,6 +283,8 @@ public class RandomBox : MonoBehaviour
             HCSlot10.interactable = true;
             HCB5.sprite = HCImage10;
             GachaList.RemoveAt(rand);
+            //join.SetValueFireBase("HCB5");
+            //Debug.Log("HCB5 get & save");
         }
         else if (GachaList[rand] == "PS1")
         {
