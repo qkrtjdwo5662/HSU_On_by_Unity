@@ -17,6 +17,7 @@ public class RandomBox : MonoBehaviour
     public int money = 6000;
     //돈
     public Text MyMoney;
+    public Text MyMoneyP;
     public int itemCount;
     public GameObject NomoneyPanel;
     public GameObject DrawShop;
@@ -171,6 +172,7 @@ public class RandomBox : MonoBehaviour
     void Start()
     {
         MyMoney.text = ""+ money;
+        MyMoneyP.text = "" + money;
     }
     public List<string> GachaList = new List<string>() { "HCS1", "HCS2", "HCA1", "HCA2", "HCA3", "HCB1", "HCB2", "HCB3", "HCB4", "HCB5", "PS1","PS2", "PA1", "PA2", "PA3", "PB1", "PB2", "PB3", "PB4", "PB5",
         "CS1", "CS2", "CA1", "CA2", "CA3", "CB1", "CB2", "CB3", "CB4", "CB5", "BS1", "BS2", "BA1", "BA2","BA3","BB1", "BB2", "BB3", "BB4", "BB5"};
@@ -534,6 +536,7 @@ public class RandomBox : MonoBehaviour
             Draw();
             money -= 200;
             MyMoney.text = money.ToString();
+            MyMoneyP.text = money.ToString();
         }
         else if (money <= 0)
         {
