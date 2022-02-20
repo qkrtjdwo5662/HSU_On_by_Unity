@@ -27,7 +27,7 @@ public class PetAI : MonoBehaviour
         
         //x z 거리계산
      }
-
+ 
     // Update is called once per frame
     void Update()
     {
@@ -37,7 +37,9 @@ public class PetAI : MonoBehaviour
         {
             this.transform.LookAt(me.position);//날 바라보고
             this.transform.Translate(Vector3.forward * Time.deltaTime * 2f);//날 따라와
+            ani.SetBool("IsEat", false);
             ani.SetBool("IsMove", true);
+            
            
             
         }
@@ -51,11 +53,12 @@ public class PetAI : MonoBehaviour
             DoSomething();
             
         }
+        /*
         else if (meAni.GetBool("IsJump"))
         {
             ani.SetBool("IsJump", true);
         }
-        
+        */
         //Update는 실시간 퍼포먼스에 큰 영향을 주기 때문에 Update()안에서는 불필요한 연산을 최대한 피하자 
     }
 
