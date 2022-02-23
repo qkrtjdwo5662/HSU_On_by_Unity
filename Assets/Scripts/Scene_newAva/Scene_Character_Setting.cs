@@ -8,12 +8,30 @@ public class Scene_Character_Setting : MonoBehaviour
 {
     public int WhatSelected = 0;
     
-    public string model = "";
-    public string hair = "";
-    public string clothes = "";
-    public string pants = "";
-    public string pet = null;
+    [SerializeField]
+    private string model = "";
+    [SerializeField]
+    private string hair = "";
+    [SerializeField]
+    private string clothes = "";
+    [SerializeField]
+    private string pants = "";
+    [SerializeField]
+    private string pet = null;
+
+    public string getModel() {
+        return this.model;
+    }
+    
+    
+    
+    
+    
+    
     public GameObject CurrentModel;
+
+
+
 
     public GameObject F1;
     public GameObject F3;
@@ -134,7 +152,7 @@ public class Scene_Character_Setting : MonoBehaviour
     {
         DontDestroyOnLoad(this);
 
-        CurrentModel = F1;
+        CurrentModel = null;
     }
 
     public void HCbtn()

@@ -1379,13 +1379,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 747929968811628205}
-  F1: {fileID: 0}
-  F3: {fileID: 0}
-  F4: {fileID: 0}
-  M1: {fileID: 0}
-  M2: {fileID: 0}
-  M3: {fileID: 0}
-  M4: {fileID: 0}
   HC01: {fileID: 0}
   HC02: {fileID: 0}
   HC03: {fileID: 0}
