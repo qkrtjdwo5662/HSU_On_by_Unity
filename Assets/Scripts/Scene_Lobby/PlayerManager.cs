@@ -95,6 +95,8 @@ public class PlayerManager : MonoBehaviour, IPunObservable
         {
             CreateControllergirl4_1();
         }
+        else
+            CreateControllerBoy1();
         Destroy(avatar);
 
 

@@ -290,7 +290,7 @@ public class Join : MonoBehaviourPunCallbacks
                 Debug.Log("퀘스트 클리어 여부: " + ot0cleared);
 
                 
-                character01 = dataSnapshot.Child("Charater01").GetValue(true).ToString();
+                /*character01 = dataSnapshot.Child("Charater01").GetValue(true).ToString();
                 character02 = dataSnapshot.Child("Charater02").GetValue(true).ToString();
                 character03 = dataSnapshot.Child("Charater03").GetValue(true).ToString();
                 character04 = dataSnapshot.Child("Charater04").GetValue(true).ToString();
@@ -343,7 +343,7 @@ public class Join : MonoBehaviourPunCallbacks
                 pet07 = dataSnapshot.Child("Pet07").GetValue(true).ToString();
                 pet08 = dataSnapshot.Child("Pet08").GetValue(true).ToString();
                 pet09 = dataSnapshot.Child("Pet09").GetValue(true).ToString();
-                pet10 = dataSnapshot.Child("Pet10").GetValue(true).ToString();
+                pet10 = dataSnapshot.Child("Pet10").GetValue(true).ToString();*/
 
                 isQueryEnd = true;
 
