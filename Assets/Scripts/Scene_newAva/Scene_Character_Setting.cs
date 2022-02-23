@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Scene_Character_Setting : MonoBehaviour
 {
     public int WhatSelected = 0;
-    
+
     [SerializeField]
     private string model = "";
     [SerializeField]
@@ -19,15 +19,16 @@ public class Scene_Character_Setting : MonoBehaviour
     [SerializeField]
     private string pet = null;
 
-    public string getModel() {
+    public string getModel()
+    {
         return this.model;
     }
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
     public GameObject CurrentModel;
 
 
@@ -53,7 +54,7 @@ public class Scene_Character_Setting : MonoBehaviour
     public Texture HC09, HC19, HC29, HC39, HC49, HC59, HC69;
     public Texture HC10, HC20, HC30, HC40, HC50, HC60, HC70;
     // 머리색 끝
-    
+
     // 상의 
     public Texture C01, C11, C21, C31, C41, C51, C61;
     public Texture C02, C12, C22, C32, C42, C52, C62;
@@ -151,13 +152,14 @@ public class Scene_Character_Setting : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(this);
-
+        selectAvatar();
         CurrentModel = null;
     }
 
     public void HCbtn()
     {
-        btnHC01.onClick.AddListener(() => {
+        btnHC01.onClick.AddListener(() =>
+        {
             switch (model)
             {
                 case "F1":
@@ -188,7 +190,7 @@ public class Scene_Character_Setting : MonoBehaviour
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC61);
                     hair = "HC61";
                     break;
-            }         
+            }
         });
         btnHC02.onClick.AddListener(() =>
         {
@@ -224,7 +226,8 @@ public class Scene_Character_Setting : MonoBehaviour
                     break;
             }
         });
-        btnHC03.onClick.AddListener(() => {
+        btnHC03.onClick.AddListener(() =>
+        {
             switch (model)
             {
                 case "F1":
@@ -325,7 +328,8 @@ public class Scene_Character_Setting : MonoBehaviour
                     break;
             }
         });
-        btnHC06.onClick.AddListener(() => {
+        btnHC06.onClick.AddListener(() =>
+        {
             switch (model)
             {
                 case "F1":
@@ -392,7 +396,8 @@ public class Scene_Character_Setting : MonoBehaviour
                     break;
             }
         });
-        btnHC08.onClick.AddListener(() => {
+        btnHC08.onClick.AddListener(() =>
+        {
             switch (model)
             {
                 case "F1":
@@ -494,10 +499,11 @@ public class Scene_Character_Setting : MonoBehaviour
             }
         });
     }
-    
+
     public void CBtn()
     {
-        btnC01.onClick.AddListener(() => {
+        btnC01.onClick.AddListener(() =>
+        {
             switch (model)
             {
                 case "F1":
@@ -530,7 +536,8 @@ public class Scene_Character_Setting : MonoBehaviour
                     break;
             }
         });
-        btnC02.onClick.AddListener(() => {
+        btnC02.onClick.AddListener(() =>
+        {
             switch (model)
             {
                 case "F1":
@@ -563,7 +570,8 @@ public class Scene_Character_Setting : MonoBehaviour
                     break;
             }
         });
-        btnC03.onClick.AddListener(() => {
+        btnC03.onClick.AddListener(() =>
+        {
             switch (model)
             {
                 case "F1":
@@ -596,7 +604,8 @@ public class Scene_Character_Setting : MonoBehaviour
                     break;
             }
         });
-        btnC04.onClick.AddListener(() => {
+        btnC04.onClick.AddListener(() =>
+        {
             switch (model)
             {
                 case "F1":
@@ -629,7 +638,8 @@ public class Scene_Character_Setting : MonoBehaviour
                     break;
             }
         });
-        btnC05.onClick.AddListener(() => {
+        btnC05.onClick.AddListener(() =>
+        {
             switch (model)
             {
                 case "F1":
@@ -662,7 +672,8 @@ public class Scene_Character_Setting : MonoBehaviour
                     break;
             }
         });
-        btnC06.onClick.AddListener(() => {
+        btnC06.onClick.AddListener(() =>
+        {
             switch (model)
             {
                 case "F1":
@@ -695,7 +706,8 @@ public class Scene_Character_Setting : MonoBehaviour
                     break;
             }
         });
-        btnC07.onClick.AddListener(() => {
+        btnC07.onClick.AddListener(() =>
+        {
             switch (model)
             {
                 case "F1":
@@ -728,7 +740,8 @@ public class Scene_Character_Setting : MonoBehaviour
                     break;
             }
         });
-        btnC08.onClick.AddListener(() => {
+        btnC08.onClick.AddListener(() =>
+        {
             switch (model)
             {
                 case "F1":
@@ -761,7 +774,8 @@ public class Scene_Character_Setting : MonoBehaviour
                     break;
             }
         });
-        btnC01.onClick.AddListener(() => {
+        btnC01.onClick.AddListener(() =>
+        {
             switch (model)
             {
                 case "F1":
@@ -794,7 +808,8 @@ public class Scene_Character_Setting : MonoBehaviour
                     break;
             }
         });
-        btnC10.onClick.AddListener(() => {
+        btnC10.onClick.AddListener(() =>
+        {
             switch (model)
             {
                 case "F1":
@@ -830,7 +845,8 @@ public class Scene_Character_Setting : MonoBehaviour
     }
     public void BBtn()
     {
-        btnP01.onClick.AddListener(() => {
+        btnP01.onClick.AddListener(() =>
+        {
             switch (model)
             {
                 case "F1":
@@ -863,7 +879,8 @@ public class Scene_Character_Setting : MonoBehaviour
                     break;
             }
         });
-        btnP02.onClick.AddListener(() => {
+        btnP02.onClick.AddListener(() =>
+        {
             switch (model)
             {
                 case "F1":
@@ -896,7 +913,8 @@ public class Scene_Character_Setting : MonoBehaviour
                     break;
             }
         });
-        btnP03.onClick.AddListener(() => {
+        btnP03.onClick.AddListener(() =>
+        {
             switch (model)
             {
                 case "F1":
@@ -929,7 +947,8 @@ public class Scene_Character_Setting : MonoBehaviour
                     break;
             }
         });
-        btnP04.onClick.AddListener(() => {
+        btnP04.onClick.AddListener(() =>
+        {
             switch (model)
             {
                 case "F1":
@@ -961,8 +980,9 @@ public class Scene_Character_Setting : MonoBehaviour
                     pants = "P64";
                     break;
             }
-        }); 
-        btnP05.onClick.AddListener(() => {
+        });
+        btnP05.onClick.AddListener(() =>
+        {
             switch (model)
             {
                 case "F1":
@@ -995,7 +1015,8 @@ public class Scene_Character_Setting : MonoBehaviour
                     break;
             }
         });
-        btnP06.onClick.AddListener(() => {
+        btnP06.onClick.AddListener(() =>
+        {
             switch (model)
             {
                 case "F1":
@@ -1027,8 +1048,9 @@ public class Scene_Character_Setting : MonoBehaviour
                     pants = "P66";
                     break;
             }
-        }); 
-        btnP07.onClick.AddListener(() => {
+        });
+        btnP07.onClick.AddListener(() =>
+        {
             switch (model)
             {
                 case "F1":
@@ -1061,7 +1083,8 @@ public class Scene_Character_Setting : MonoBehaviour
                     break;
             }
         });
-        btnP08.onClick.AddListener(() => {
+        btnP08.onClick.AddListener(() =>
+        {
             switch (model)
             {
                 case "F1":
@@ -1093,8 +1116,9 @@ public class Scene_Character_Setting : MonoBehaviour
                     pants = "P68";
                     break;
             }
-        }); 
-        btnP09.onClick.AddListener(() => {
+        });
+        btnP09.onClick.AddListener(() =>
+        {
             switch (model)
             {
                 case "F1":
@@ -1127,7 +1151,8 @@ public class Scene_Character_Setting : MonoBehaviour
                     break;
             }
         });
-        btnP10.onClick.AddListener(() => {
+        btnP10.onClick.AddListener(() =>
+        {
             switch (model)
             {
                 case "F1":
@@ -1163,13 +1188,20 @@ public class Scene_Character_Setting : MonoBehaviour
     }
     public void selectAvatar()
     {
-        btnF1.onClick.AddListener(() => {
-            CurrentModel.SetActive(false);
+        btnF1.onClick.AddListener(() =>
+        {
             F1.SetActive(true);
+            F3.SetActive(false);
+            F4.SetActive(false);
+            M1.SetActive(false);
+            M2.SetActive(false);
+            M3.SetActive(false);
+            M4.SetActive(false);
             CurrentModel = F1;
             model = "F1";
         });
-        btnF3.onClick.AddListener(() => {
+        btnF3.onClick.AddListener(() =>
+        {
             F1.SetActive(false);
             F3.SetActive(true);
             F4.SetActive(false);
@@ -1180,7 +1212,8 @@ public class Scene_Character_Setting : MonoBehaviour
             CurrentModel = F3;
             model = "F3";
         });
-        btnF4.onClick.AddListener(() => {
+        btnF4.onClick.AddListener(() =>
+        {
             F1.SetActive(false);
             F3.SetActive(false);
             F4.SetActive(true);
@@ -1191,7 +1224,8 @@ public class Scene_Character_Setting : MonoBehaviour
             CurrentModel = F4;
             model = "F4";
         });
-        btnM1.onClick.AddListener(() => {
+        btnM1.onClick.AddListener(() =>
+        {
             F1.SetActive(false);
             F3.SetActive(false);
             F4.SetActive(false);
@@ -1202,7 +1236,8 @@ public class Scene_Character_Setting : MonoBehaviour
             CurrentModel = M1;
             model = "M1";
         });
-        btnM2.onClick.AddListener(() => {
+        btnM2.onClick.AddListener(() =>
+        {
             F1.SetActive(false);
             F3.SetActive(false);
             F4.SetActive(false);
@@ -1213,7 +1248,8 @@ public class Scene_Character_Setting : MonoBehaviour
             CurrentModel = M2;
             model = "M2";
         });
-        btnM3.onClick.AddListener(() => {
+        btnM3.onClick.AddListener(() =>
+        {
             F1.SetActive(false);
             F3.SetActive(false);
             F4.SetActive(false);
@@ -1224,7 +1260,8 @@ public class Scene_Character_Setting : MonoBehaviour
             CurrentModel = M3;
             model = "M3";
         });
-        btnM4.onClick.AddListener(() => {
+        btnM4.onClick.AddListener(() =>
+        {
             F1.SetActive(false);
             F3.SetActive(false);
             F4.SetActive(false);
@@ -1237,8 +1274,4 @@ public class Scene_Character_Setting : MonoBehaviour
         });
     }
     // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

@@ -15,7 +15,8 @@ public class Next : MonoBehaviour
     public DatabaseReference reference = null;
     public Button NextButton;
 
-
+    public DataSnapshot ds;
+    public noticeSaver ns;
     string CurrentVersion = "1.4"; // OT Version
     string ServerVersion;
     // Start is called before the first frame update
@@ -46,6 +47,7 @@ public class Next : MonoBehaviour
             {
                 DataSnapshot dataSnapshot = task.Result;
                 ServerVersion = dataSnapshot.Child("ServerVersion").GetValue(true).ToString();
+                ds = dataSnapshot;
                 Debug.Log(ServerVersion);
 
             }
@@ -62,6 +64,7 @@ public class Next : MonoBehaviour
         }
         else 
         {
+            
             text.text = "터치하여 시작하세요\n\n\n\n";
         }
     }

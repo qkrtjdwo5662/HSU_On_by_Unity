@@ -11,7 +11,7 @@ public class PlayerManager : MonoBehaviour, IPunObservable
     void Start() 
     {
         PV = GetComponent<PhotonView>();
-        scs = GameObject.Find("Setting").GetComponent<Scene_Character_Setting>();
+        scs = GameObject.Find("ItemManager").GetComponent<Scene_Character_Setting>();
 
         string model = scs.getModel();
 
