@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using Firebase.Extensions;
 
 public class RandomBox : MonoBehaviour
-{
+{    
     //Join.cs
     public Join join;
     //FirebaseAuth auth;
@@ -165,8 +165,7 @@ public class RandomBox : MonoBehaviour
     public Button BSlot8;
     public Button BSlot9;
     public Button BSlot10;
-    //하의 끝
-
+    //하의 끝    
     public int RandomInt;
     // Start is called before the first frame update
 
@@ -668,5 +667,4 @@ public class RandomBox : MonoBehaviour
         A.SetActive(false);
         B.SetActive(false);
     }
-
 }
