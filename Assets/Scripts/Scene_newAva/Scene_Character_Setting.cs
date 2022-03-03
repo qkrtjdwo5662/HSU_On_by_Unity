@@ -56,29 +56,13 @@ public class Scene_Character_Setting : MonoBehaviour
     // 머리색 끝
 
     // 상의 
-    public Texture C01, C11, C21, C31, C41, C51, C61;
-    public Texture C02, C12, C22, C32, C42, C52, C62;
-    public Texture C03, C13, C23, C33, C43, C53, C63;
-    public Texture C04, C14, C24, C34, C44, C54, C64;
-    public Texture C05, C15, C25, C35, C45, C55, C65;
-    public Texture C06, C16, C26, C36, C46, C56, C66;
-    public Texture C07, C17, C27, C37, C47, C57, C67;
-    public Texture C08, C18, C28, C38, C48, C58, C68;
-    public Texture C09, C19, C29, C39, C49, C59, C69;
-    public Texture C10, C20, C30, C40, C50, C60, C70;
+    public Texture C01, C02, C03, C04, C05, C06, C07, C08, C09, C10;
+    
     // 상의 끝
 
     // 하의
-    public Texture P01, P11, P21, P31, P41, P51, P61;
-    public Texture P02, P12, P22, P32, P42, P52, P62;
-    public Texture P03, P13, P23, P33, P43, P53, P63;
-    public Texture P04, P14, P24, P34, P44, P54, P64;
-    public Texture P05, P15, P25, P35, P45, P55, P65;
-    public Texture P06, P16, P26, P36, P46, P56, P66;
-    public Texture P07, P17, P27, P37, P47, P57, P67;
-    public Texture P08, P18, P28, P38, P48, P58, P68;
-    public Texture P09, P19, P29, P39, P49, P59, P69;
-    public Texture P10, P20, P30, P40, P50, P60, P70;
+    public Texture P01, P02, P03, P04, P05, P06, P07, P08, P09, P10;
+    
     // 하의 끝
 
     //----------------------------------------Button in Canvas---------------------------------------
@@ -511,28 +495,28 @@ public class Scene_Character_Setting : MonoBehaviour
                     clothes = "C01";
                     break;
                 case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C11);
-                    clothes = "C11";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C01);
+                    clothes = "C01";
                     break;
                 case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C21);
-                    clothes = "C21";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C01);
+                    clothes = "C01";
                     break;
                 case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C31);
-                    clothes = "C31";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C01);
+                    clothes = "C01";
                     break;
                 case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C41);
-                    clothes = "C41";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C01);
+                    clothes = "C01";
                     break;
                 case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C51);
-                    clothes = "C51";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C01);
+                    clothes = "C01";
                     break;
                 case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C61);
-                    clothes = "C61";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C01);
+                    clothes = "C01";
                     break;
             }
         });
@@ -545,28 +529,28 @@ public class Scene_Character_Setting : MonoBehaviour
                     clothes = "C02";
                     break;
                 case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C12);
-                    clothes = "C12";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
+                    clothes = "C02";
                     break;
                 case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C22);
-                    clothes = "C22";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
+                    clothes = "C02";
                     break;
                 case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C32);
-                    clothes = "C32";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
+                    clothes = "C02";
                     break;
                 case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C42);
-                    clothes = "C42";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
+                    clothes = "C02";
                     break;
                 case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C52);
-                    clothes = "C52";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
+                    clothes = "C02";
                     break;
                 case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C62);
-                    clothes = "C62";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
+                    clothes = "C02";
                     break;
             }
         });
@@ -579,28 +563,28 @@ public class Scene_Character_Setting : MonoBehaviour
                     clothes = "C03";
                     break;
                 case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C13);
-                    clothes = "C13";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C03);
+                    clothes = "C03";
                     break;
                 case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C23);
-                    clothes = "C23";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C03);
+                    clothes = "C03";
                     break;
                 case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C33);
-                    clothes = "C33";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C03);
+                    clothes = "C03";
                     break;
                 case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C43);
-                    clothes = "C43";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C03);
+                    clothes = "C03";
                     break;
                 case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C53);
-                    clothes = "C53";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C03);
+                    clothes = "C03";
                     break;
                 case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C63);
-                    clothes = "C63";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C03);
+                    clothes = "C03";
                     break;
             }
         });
@@ -613,28 +597,28 @@ public class Scene_Character_Setting : MonoBehaviour
                     clothes = "C04";
                     break;
                 case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C14);
-                    clothes = "C14";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C04);
+                    clothes = "C04";
                     break;
                 case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C24);
-                    clothes = "C24";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C04);
+                    clothes = "C04";
                     break;
                 case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C34);
-                    clothes = "C34";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C04);
+                    clothes = "C04";
                     break;
                 case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C44);
-                    clothes = "C44";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C04);
+                    clothes = "C04";
                     break;
                 case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C54);
-                    clothes = "C54";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C04);
+                    clothes = "C04";
                     break;
                 case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C64);
-                    clothes = "C64";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C04);
+                    clothes = "C04";
                     break;
             }
         });
@@ -647,28 +631,28 @@ public class Scene_Character_Setting : MonoBehaviour
                     clothes = "C05";
                     break;
                 case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C15);
-                    clothes = "C15";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C05);
+                    clothes = "C05";
                     break;
                 case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C25);
-                    clothes = "C25";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C05);
+                    clothes = "C05";
                     break;
                 case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C35);
-                    clothes = "C35";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C05);
+                    clothes = "C05";
                     break;
                 case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C45);
-                    clothes = "C45";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C05);
+                    clothes = "C05";
                     break;
                 case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C55);
-                    clothes = "C55";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C05);
+                    clothes = "C05";
                     break;
                 case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C65);
-                    clothes = "C65";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C05);
+                    clothes = "C05";
                     break;
             }
         });
@@ -681,28 +665,28 @@ public class Scene_Character_Setting : MonoBehaviour
                     clothes = "C06";
                     break;
                 case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C16);
-                    clothes = "C16";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C06);
+                    clothes = "C06";
                     break;
                 case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C26);
-                    clothes = "C26";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C06);
+                    clothes = "C06";
                     break;
                 case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C36);
-                    clothes = "C36";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C06);
+                    clothes = "C06";
                     break;
                 case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C46);
-                    clothes = "C46";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C06);
+                    clothes = "C06";
                     break;
                 case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C56);
-                    clothes = "C56";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C06);
+                    clothes = "C06";
                     break;
                 case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C66);
-                    clothes = "C66";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C06);
+                    clothes = "C06";
                     break;
             }
         });
@@ -715,28 +699,28 @@ public class Scene_Character_Setting : MonoBehaviour
                     clothes = "C07";
                     break;
                 case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C17);
-                    clothes = "C17";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C07);
+                    clothes = "C07";
                     break;
                 case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C27);
-                    clothes = "C27";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C07);
+                    clothes = "C07";
                     break;
                 case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C37);
-                    clothes = "C37";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C07);
+                    clothes = "C07";
                     break;
                 case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C47);
-                    clothes = "C47";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C07);
+                    clothes = "C07";
                     break;
                 case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C57);
-                    clothes = "C57";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C07);
+                    clothes = "C07";
                     break;
                 case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C67);
-                    clothes = "C67";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C07);
+                    clothes = "C07";
                     break;
             }
         });
@@ -749,28 +733,28 @@ public class Scene_Character_Setting : MonoBehaviour
                     clothes = "C08";
                     break;
                 case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C18);
-                    clothes = "C18";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C08);
+                    clothes = "C08";
                     break;
                 case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C28);
-                    clothes = "C28";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C08);
+                    clothes = "C08";
                     break;
                 case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C38);
-                    clothes = "C38";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C08);
+                    clothes = "C08";
                     break;
                 case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C48);
-                    clothes = "C48";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C08);
+                    clothes = "C08";
                     break;
                 case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C58);
-                    clothes = "C58";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C08);
+                    clothes = "C08";
                     break;
                 case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C68);
-                    clothes = "C68";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C08);
+                    clothes = "C08";
                     break;
             }
         });
@@ -783,28 +767,28 @@ public class Scene_Character_Setting : MonoBehaviour
                     clothes = "C09";
                     break;
                 case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C19);
-                    clothes = "C19";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C09);
+                    clothes = "C09";
                     break;
                 case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C29);
-                    clothes = "C29";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C09);
+                    clothes = "C09";
                     break;
                 case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C39);
-                    clothes = "C39";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C09);
+                    clothes = "C09";
                     break;
                 case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C49);
-                    clothes = "C49";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C09);
+                    clothes = "C09";
                     break;
                 case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C59);
-                    clothes = "C59";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C09);
+                    clothes = "C09";
                     break;
                 case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C69);
-                    clothes = "C69";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C09);
+                    clothes = "C09";
                     break;
             }
         });
@@ -817,28 +801,28 @@ public class Scene_Character_Setting : MonoBehaviour
                     clothes = "C10";
                     break;
                 case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C20);
-                    clothes = "C20";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C10);
+                    clothes = "C10";
                     break;
                 case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C30);
-                    clothes = "C30";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C10);
+                    clothes = "C10";
                     break;
                 case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C40);
-                    clothes = "C40";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C10);
+                    clothes = "C10";
                     break;
                 case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C50);
-                    clothes = "C50";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C10);
+                    clothes = "C10";
                     break;
                 case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C60);
-                    clothes = "C60";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C10);
+                    clothes = "C10";
                     break;
                 case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C70);
-                    clothes = "C70";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C10);
+                    clothes = "C10";
                     break;
             }
         });
@@ -854,28 +838,28 @@ public class Scene_Character_Setting : MonoBehaviour
                     pants = "P01";
                     break;
                 case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P11);
-                    pants = "P11";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P01);
+                    pants = "P01";
                     break;
                 case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P21);
-                    pants = "P21";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P01);
+                    pants = "P01";
                     break;
                 case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P31);
-                    pants = "P31";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P01);
+                    pants = "P01";
                     break;
                 case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P41);
-                    pants = "P41";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P01);
+                    pants = "P01";
                     break;
                 case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P51);
-                    pants = "P51";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P01);
+                    pants = "P01";
                     break;
                 case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P61);
-                    pants = "P61";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P01);
+                    pants = "P01";
                     break;
             }
         });
@@ -888,28 +872,28 @@ public class Scene_Character_Setting : MonoBehaviour
                     pants = "P02";
                     break;
                 case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P12);
-                    pants = "P12";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P02);
+                    pants = "P02";
                     break;
                 case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P22);
-                    pants = "P22";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P02);
+                    pants = "P02";
                     break;
                 case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P32);
-                    pants = "P32";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P02);
+                    pants = "P02";
                     break;
                 case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P42);
-                    pants = "P42";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P02);
+                    pants = "P02";
                     break;
                 case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P52);
-                    pants = "P52";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P02);
+                    pants = "P02";
                     break;
                 case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P62);
-                    pants = "P62";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P02);
+                    pants = "P02";
                     break;
             }
         });
@@ -922,28 +906,28 @@ public class Scene_Character_Setting : MonoBehaviour
                     pants = "P03";
                     break;
                 case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P13);
-                    pants = "P13";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P03);
+                    pants = "P03";
                     break;
                 case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P23);
-                    pants = "P23";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P03);
+                    pants = "P03";
                     break;
                 case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P33);
-                    pants = "P33";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P03);
+                    pants = "P03";
                     break;
                 case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P43);
-                    pants = "P43";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P03);
+                    pants = "P03";
                     break;
                 case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P53);
-                    pants = "P53";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P03);
+                    pants = "P03";
                     break;
                 case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P63);
-                    pants = "P63";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P03);
+                    pants = "P03";
                     break;
             }
         });
@@ -956,28 +940,28 @@ public class Scene_Character_Setting : MonoBehaviour
                     pants = "P04";
                     break;
                 case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P14);
-                    pants = "P14";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P04);
+                    pants = "P04";
                     break;
                 case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P24);
-                    pants = "P24";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P04);
+                    pants = "P04";
                     break;
                 case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P34);
-                    pants = "P34";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P04);
+                    pants = "P04";
                     break;
                 case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P44);
-                    pants = "P44";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P04);
+                    pants = "P04";
                     break;
                 case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P54);
-                    pants = "P54";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P04);
+                    pants = "P04";
                     break;
                 case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P64);
-                    pants = "P64";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P04);
+                    pants = "P04";
                     break;
             }
         });
@@ -990,28 +974,28 @@ public class Scene_Character_Setting : MonoBehaviour
                     pants = "P05";
                     break;
                 case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P15);
-                    pants = "P15";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P05);
+                    pants = "P05";
                     break;
                 case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P25);
-                    pants = "P25";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P05);
+                    pants = "P05";
                     break;
                 case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P35);
-                    pants = "P35";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P05);
+                    pants = "P05";
                     break;
                 case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P45);
-                    pants = "P45";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P05);
+                    pants = "P05";
                     break;
                 case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P55);
-                    pants = "P55";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P05);
+                    pants = "P05";
                     break;
                 case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P65);
-                    pants = "P65";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P05);
+                    pants = "P05";
                     break;
             }
         });
@@ -1024,28 +1008,28 @@ public class Scene_Character_Setting : MonoBehaviour
                     pants = "P06";
                     break;
                 case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P16);
-                    pants = "P16";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P06);
+                    pants = "P06";
                     break;
                 case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P26);
-                    pants = "P26";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P06);
+                    pants = "P06";
                     break;
                 case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P36);
-                    pants = "P36";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P06);
+                    pants = "P06";
                     break;
                 case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P46);
-                    pants = "P46";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P06);
+                    pants = "P06";
                     break;
                 case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P56);
-                    pants = "P56";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P06);
+                    pants = "P06";
                     break;
                 case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P66);
-                    pants = "P66";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P06);
+                    pants = "P06";
                     break;
             }
         });
@@ -1058,28 +1042,28 @@ public class Scene_Character_Setting : MonoBehaviour
                     pants = "P07";
                     break;
                 case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P17);
-                    pants = "P17";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P07);
+                    pants = "P07";
                     break;
                 case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P27);
-                    pants = "P27";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P07);
+                    pants = "P07";
                     break;
                 case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P37);
-                    pants = "P37";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P07);
+                    pants = "P07";
                     break;
                 case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P47);
-                    pants = "P47";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P07);
+                    pants = "P07";
                     break;
                 case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P57);
-                    pants = "P57";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P07);
+                    pants = "P07";
                     break;
                 case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P67);
-                    pants = "P67";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P07);
+                    pants = "P07";
                     break;
             }
         });
@@ -1092,28 +1076,28 @@ public class Scene_Character_Setting : MonoBehaviour
                     pants = "P08";
                     break;
                 case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P18);
-                    pants = "P18";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P08);
+                    pants = "P08";
                     break;
                 case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P28);
-                    pants = "P28";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P08);
+                    pants = "P08";
                     break;
                 case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P38);
-                    pants = "P38";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P08);
+                    pants = "P08";
                     break;
                 case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P48);
-                    pants = "P48";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P08);
+                    pants = "P08";
                     break;
                 case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P58);
-                    pants = "P58";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P08);
+                    pants = "P08";
                     break;
                 case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P68);
-                    pants = "P68";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P08);
+                    pants = "P08";
                     break;
             }
         });
@@ -1126,28 +1110,28 @@ public class Scene_Character_Setting : MonoBehaviour
                     pants = "P09";
                     break;
                 case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P19);
-                    pants = "P19";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P09);
+                    pants = "P09";
                     break;
                 case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P29);
-                    pants = "P29";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P09);
+                    pants = "P09";
                     break;
                 case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P39);
-                    pants = "P39";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P09);
+                    pants = "P09";
                     break;
                 case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P49);
-                    pants = "P49";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P09);
+                    pants = "P09";
                     break;
                 case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P59);
-                    pants = "P59";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P09);
+                    pants = "P09";
                     break;
                 case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P69);
-                    pants = "P69";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P09);
+                    pants = "P09";
                     break;
             }
         });
@@ -1160,28 +1144,28 @@ public class Scene_Character_Setting : MonoBehaviour
                     pants = "P10";
                     break;
                 case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P20);
-                    pants = "P20";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P10);
+                    pants = "P10";
                     break;
                 case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P30);
-                    pants = "P30";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P10);
+                    pants = "P10";
                     break;
                 case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P40);
-                    pants = "P40";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P10);
+                    pants = "P10";
                     break;
                 case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P50);
-                    pants = "P50";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P10);
+                    pants = "P10";
                     break;
                 case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P60);
-                    pants = "P60";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P10);
+                    pants = "P10";
                     break;
                 case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P70);
-                    pants = "P70";
+                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P10);
+                    pants = "P10";
                     break;
             }
         });
