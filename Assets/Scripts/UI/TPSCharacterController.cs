@@ -39,8 +39,8 @@ public class TPSCharacterController : MonoBehaviour
 
     [SerializeField]
     AudioSource audioSourceRun;
-    bool audioFlag = false;
-
+    bool audioFlagWalk = false;
+    bool audioFlagRun = false;
     public bool moveSwitch = true;
     // Start is called before the first frame update
     void Awake()
@@ -71,7 +71,7 @@ public class TPSCharacterController : MonoBehaviour
         audioSourceWalk.mute = false;
         audioSourceWalk.loop = true;
         audioSourceRun.mute = false;
-        audioSourceRun.loop = false;
+        audioSourceRun.loop = true;
 
     }
 
@@ -105,17 +105,26 @@ public class TPSCharacterController : MonoBehaviour
         }
     }
 
-    void PlayAudio() {
+    void PlayAudioWalk() {
 
-        if (!audioFlag && !animator.GetBool("isRun") && !animator.GetBool("isJump"))
+        audioFlagRun = false;
+        if (!audioFlagWalk && !animator.GetBool("isRun") && !animator.GetBool("isJump"))
         {
+            audioSourceRun.Stop();
             audioSourceWalk.Play();
         }
-        else if (!audioFlag && animator.GetBool("isRun") && !animator.GetBool("isJump"))
-        { 
+        
+        audioFlagWalk = true;
+    }
+    void PlayAudioRun()
+    {
+        audioFlagWalk = false;
+        if (!audioFlagRun && animator.GetBool("isRun") && !animator.GetBool("isJump"))
+        {
+            audioSourceWalk.Stop();
             audioSourceRun.Play();
         }
-        audioFlag = true;
+        audioFlagRun = true;
     }
     public void Move(Vector2 inputDirection)
     {
@@ -157,7 +166,8 @@ public class TPSCharacterController : MonoBehaviour
             characterBody.forward = lookForward;
             // 이동할 때 이동 방향 바라보기
             characterBody.forward = moveDir;
-            PlayAudio();
+            if (!isRun) PlayAudioWalk();
+            else PlayAudioRun();
             // 이동
             transform.position += moveDir.normalized * Time.deltaTime * movingSpeed;
             
@@ -169,7 +179,8 @@ public class TPSCharacterController : MonoBehaviour
             animator.SetBool("isRun", false);
             animator.SetBool("isMove", false);
             movingDirection = Vector3.zero;
-            audioFlag = false;
+            audioFlagRun = false;
+            audioFlagWalk = false;
             audioSourceWalk.Stop();
             audioSourceRun.Stop();
         }

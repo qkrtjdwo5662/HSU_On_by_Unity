@@ -69,6 +69,21 @@ public class DoJump : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
             case MovingButton.Run:
                 break;
         }
+/*        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            Jump();
+
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            controller.movingSpeed = 6.0f;
+
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            controller.movingSpeed = 3.0f;
+
+        }*/
     }
 
     private void Jump()
