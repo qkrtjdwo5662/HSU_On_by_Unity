@@ -69,7 +69,7 @@ public class DoJump : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
             case MovingButton.Run:
                 break;
         }
-/*        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             Jump();
 
@@ -83,7 +83,7 @@ public class DoJump : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
         {
             controller.movingSpeed = 3.0f;
 
-        }*/
+        }
     }
 
     private void Jump()
