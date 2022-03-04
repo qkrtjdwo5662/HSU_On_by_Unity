@@ -69,7 +69,7 @@ public class TPSCharacterController : MonoBehaviour
         join = GameObject.Find("Join").GetComponent<Join>();
         join.PVID = PV.ViewID;
         audioSourceWalk.mute = false;
-        audioSourceWalk.loop = false;
+        audioSourceWalk.loop = true;
         audioSourceRun.mute = false;
         audioSourceRun.loop = false;
 
