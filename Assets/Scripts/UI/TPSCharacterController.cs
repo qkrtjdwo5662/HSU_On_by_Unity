@@ -203,7 +203,7 @@ public class TPSCharacterController : MonoBehaviour
         }
         else
         {
-            x = Mathf.Clamp(x, 335f, 361f);
+            x = Mathf.Clamp(x, 345f, 361f);
         }
 
         // 카메라 암 회전 시키기
