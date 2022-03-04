@@ -45,12 +45,15 @@ public class NPC_Trigger : MonoBehaviour
     // Update is called once per frame
     void OnTriggerExit(Collider other)
     {
-        /*Dialog.SetActive(false);
-        MainNpcTalk.SetActive(false);
-        if (!TalkStart.Equals(null))
-            TalkStart.SetActive(false);
-        */
-        CameraReturn();
+        if (other.tag == "Player" && other.GetComponent<PhotonView>().IsMine)
+        {
+
+            Dialog.SetActive(false);
+            MainNpcTalk.SetActive(false);
+            if (!TalkStart.Equals(null))
+                TalkStart.SetActive(false);
+            CameraReturn();
+        }  
     }
 
     private void CameraWork()

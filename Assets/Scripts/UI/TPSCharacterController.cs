@@ -34,6 +34,13 @@ public class TPSCharacterController : MonoBehaviour
 
     float time = 0.0f;
 
+    [SerializeField]
+    AudioSource audioSourceWalk;
+
+    [SerializeField]
+    AudioSource audioSourceRun;
+    bool audioFlag = false;
+
     public bool moveSwitch = true;
     // Start is called before the first frame update
     void Awake()
@@ -61,6 +68,11 @@ public class TPSCharacterController : MonoBehaviour
 
         join = GameObject.Find("Join").GetComponent<Join>();
         join.PVID = PV.ViewID;
+        audioSourceWalk.mute = false;
+        audioSourceWalk.loop = false;
+        audioSourceRun.mute = false;
+        audioSourceRun.loop = false;
+
     }
 
     private void escAction()
@@ -93,6 +105,18 @@ public class TPSCharacterController : MonoBehaviour
         }
     }
 
+    void PlayAudio() {
+
+        if (!audioFlag && !animator.GetBool("isRun") && !animator.GetBool("isJump"))
+        {
+            audioSourceWalk.Play();
+        }
+        else if (!audioFlag && animator.GetBool("isRun") && !animator.GetBool("isJump"))
+        { 
+            audioSourceRun.Play();
+        }
+        audioFlag = true;
+    }
     public void Move(Vector2 inputDirection)
     {
         if (!PV.IsMine)
@@ -133,17 +157,21 @@ public class TPSCharacterController : MonoBehaviour
             characterBody.forward = lookForward;
             // 이동할 때 이동 방향 바라보기
             characterBody.forward = moveDir;
-            
+            PlayAudio();
             // 이동
             transform.position += moveDir.normalized * Time.deltaTime * movingSpeed;
-            //Debug.Log("char"+ characterBody.position.x + "," + characterBody.position.y + ","+characterBody.position.z);
-            //Debug.Log("came" + cameraArm.position.x + "," + cameraArm.position.y + "," + cameraArm.position.z);
+            
+
+
         }
         else if (!isMove || !moveSwitch)
         {
             animator.SetBool("isRun", false);
             animator.SetBool("isMove", false);
             movingDirection = Vector3.zero;
+            audioFlag = false;
+            audioSourceWalk.Stop();
+            audioSourceRun.Stop();
         }
         
     }

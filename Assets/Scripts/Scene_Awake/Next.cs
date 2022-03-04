@@ -57,7 +57,7 @@ public class Next : MonoBehaviour
     void Update()
     {
         
-        if (ServerVersion == null || ServerVersion =="1.2" || ServerVersion == "1.3")
+        if (ServerVersion == null)
         {
             text.text = "서버 정보를 불러오는 중입니다\n\n\n\n";
             GetServerVersionFromFireBase();
@@ -77,13 +77,18 @@ public class Next : MonoBehaviour
         {
             LoadingSceneController.Instance.LoadScene("Scene_Login");
         }
+        else if (ServerVersion == "점검중")
+        {
+            text.text = "서버 점검중입니다. \n\n\n";
+            GetServerVersionFromFireBase();
+        }
         else
         {
             text.text = "업데이트가 필요합니다. 스토어에서 업데이트를 해주세요\n 현재버전: " + CurrentVersion + "\n 최신버전 :" + ServerVersion + "\n\n";
         }
 
-        
-        
-        
+
+
+
     }
 }
