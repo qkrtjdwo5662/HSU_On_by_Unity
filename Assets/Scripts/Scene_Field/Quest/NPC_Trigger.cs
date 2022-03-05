@@ -52,7 +52,8 @@ public class NPC_Trigger : MonoBehaviour
             MainNpcTalk.SetActive(false);
             if (!TalkStart.Equals(null))
                 TalkStart.SetActive(false);
-            CameraReturn();
+            if (Dialog.activeInHierarchy)
+                CameraReturn();
         }  
     }
 
