@@ -17,7 +17,7 @@ public class Clock : MonoBehaviour
     void Start()
     {
         NightSwitch = DateTime.Now.ToString("HH");
-        if (int.Parse(NightSwitch) >= 18) {
+        if (int.Parse(NightSwitch) >= 18 || int.Parse(NightSwitch) <= 6) {
             dictionalLight.SetActive(false);
             RenderSettings.skybox = nightSkyBox;
             onlyNight.SetActive(true);
