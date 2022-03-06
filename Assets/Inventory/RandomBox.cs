@@ -25,6 +25,7 @@ public class RandomBox : MonoBehaviour
     public GameObject S;
     public GameObject A;
     public GameObject B;
+    public GameObject GatchaPanel;
     public Image DrawImage;
     //인벤 채울 이미지
     //머리 색
@@ -652,6 +653,7 @@ public class RandomBox : MonoBehaviour
             money -= 200;
             MyMoney.text = money.ToString();
             MyMoneyP.text = money.ToString();
+            GatchaPanel.SetActive(true);
         }
         else if (money <= 0)
         {
@@ -666,5 +668,6 @@ public class RandomBox : MonoBehaviour
         S.SetActive(false);
         A.SetActive(false);
         B.SetActive(false);
+        GatchaPanel.SetActive(false);
     }
 }
