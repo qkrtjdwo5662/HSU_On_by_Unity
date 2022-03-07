@@ -523,7 +523,7 @@ public class RandomBox : MonoBehaviour
         }
         else if (GachaList[rand] == "CS2")
         {
-            DrawImage.sprite = CImage1; // 슈퍼레어
+            DrawImage.sprite = CImage2; // 슈퍼레어
             S.SetActive(true);
             CS2.sprite = CImage2;
             CSlot2.interactable = true;
@@ -593,7 +593,7 @@ public class RandomBox : MonoBehaviour
         }
         else if (GachaList[rand] == "CB4")
         {
-            DrawImage.sprite = CImage1; // 노멀
+            DrawImage.sprite = CImage9; // 노멀
             B.SetActive(true);
             CB4.sprite = CImage9;
             CSlot9.interactable = true;

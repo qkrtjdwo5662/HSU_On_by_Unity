@@ -758,7 +758,7 @@ public class Scene_Character_Setting : MonoBehaviour
                     break;
             }
         });
-        btnC01.onClick.AddListener(() =>
+        btnC09.onClick.AddListener(() =>
         {
             switch (model)
             {
