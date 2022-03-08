@@ -32,6 +32,8 @@ public class TPSCharacterController : MonoBehaviour
     public Button escButton;
     public Button attackButton;
 
+    public SkinnedMeshRenderer characterModel;
+
     float time = 0.0f;
 
     [SerializeField]
@@ -236,5 +238,19 @@ public class TPSCharacterController : MonoBehaviour
     public void DeactivateHammer()
     {
         hammer.SetActive(false);
+    }
+
+
+    public void CallChangeMyAvatar(Texture hair, Texture top, Texture bottom) 
+    {
+        PV.RPC("ChangeMyAvatar",RpcTarget.AllBuffered, hair, top, bottom);
+    }
+
+    [PunRPC]
+    public void ChangeMyAvatar(Texture hair, Texture top, Texture bottom)
+    {
+        characterModel.materials[2].SetTexture("_MainTex",hair);
+        characterModel.materials[0].SetTexture("_MainTex", top);
+        characterModel.materials[1].SetTexture("_MainTex", bottom);
     }
 }

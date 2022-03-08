@@ -53,6 +53,7 @@ MonoBehaviour:
   - ChangeClothes
   - ChangeHairColor
   - ChangePants
+  - ChangeMyAvatar
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
