@@ -284,50 +284,50 @@ public class Join : MonoBehaviourPunCallbacks
 
                 money = dataSnapshot.Child("Money").GetValue(true).ToString();
 
-                hair01 = dataSnapshot.Child("HC01").GetValue(true).ToString();
-                hair02 = dataSnapshot.Child("HC02").GetValue(true).ToString();
-                hair03 = dataSnapshot.Child("HC03").GetValue(true).ToString();
-                hair04 = dataSnapshot.Child("HC04").GetValue(true).ToString();
-                hair05 = dataSnapshot.Child("HC05").GetValue(true).ToString();
-                hair06 = dataSnapshot.Child("HC06").GetValue(true).ToString();
-                hair07 = dataSnapshot.Child("HC07").GetValue(true).ToString();
-                hair08 = dataSnapshot.Child("HC08").GetValue(true).ToString();
-                hair09 = dataSnapshot.Child("HC09").GetValue(true).ToString();
-                hair10 = dataSnapshot.Child("HC10").GetValue(true).ToString();
-                Debug.Log("HC " + hair01 + " " + hair02 + " " + hair03 + " " + hair04 + " " + hair05 + " " + hair06 + " " + hair07 + " " + hair08 + " " + hair09 + " " + hair10);
+                hair01 = dataSnapshot.Child("Hair01").GetValue(true).ToString();
+                hair02 = dataSnapshot.Child("Hair02").GetValue(true).ToString();
+                hair03 = dataSnapshot.Child("Hair03").GetValue(true).ToString();
+                hair04 = dataSnapshot.Child("Hair04").GetValue(true).ToString();
+                hair05 = dataSnapshot.Child("Hair05").GetValue(true).ToString();
+                hair06 = dataSnapshot.Child("Hair06").GetValue(true).ToString();
+                hair07 = dataSnapshot.Child("Hair07").GetValue(true).ToString();
+                hair08 = dataSnapshot.Child("Hair08").GetValue(true).ToString();
+                hair09 = dataSnapshot.Child("Hair09").GetValue(true).ToString();
+                hair10 = dataSnapshot.Child("Hair10").GetValue(true).ToString();
+                Debug.Log("Hair " + hair01 + " " + hair02 + " " + hair03 + " " + hair04 + " " + hair05 + " " + hair06 + " " + hair07 + " " + hair08 + " " + hair09 + " " + hair10);
                 
-                shirts01 = dataSnapshot.Child("C01").GetValue(true).ToString();
-                shirts02 = dataSnapshot.Child("C02").GetValue(true).ToString();
-                shirts03 = dataSnapshot.Child("C03").GetValue(true).ToString();
-                shirts04 = dataSnapshot.Child("C04").GetValue(true).ToString();
-                shirts05 = dataSnapshot.Child("C05").GetValue(true).ToString();
-                shirts06 = dataSnapshot.Child("C06").GetValue(true).ToString();
-                shirts07 = dataSnapshot.Child("C07").GetValue(true).ToString();
-                shirts08 = dataSnapshot.Child("C08").GetValue(true).ToString();
-                shirts09 = dataSnapshot.Child("C09").GetValue(true).ToString();
-                shirts10 = dataSnapshot.Child("C10").GetValue(true).ToString();
+                shirts01 = dataSnapshot.Child("Shirts01").GetValue(true).ToString();
+                shirts02 = dataSnapshot.Child("Shirts02").GetValue(true).ToString();
+                shirts03 = dataSnapshot.Child("Shirts03").GetValue(true).ToString();
+                shirts04 = dataSnapshot.Child("Shirts04").GetValue(true).ToString();
+                shirts05 = dataSnapshot.Child("Shirts05").GetValue(true).ToString();
+                shirts06 = dataSnapshot.Child("Shirts06").GetValue(true).ToString();
+                shirts07 = dataSnapshot.Child("Shirts07").GetValue(true).ToString();
+                shirts08 = dataSnapshot.Child("Shirts08").GetValue(true).ToString();
+                shirts09 = dataSnapshot.Child("Shirts09").GetValue(true).ToString();
+                shirts10 = dataSnapshot.Child("Shirts10").GetValue(true).ToString();
 
-                pants01 = dataSnapshot.Child("P01").GetValue(true).ToString();
-                pants02 = dataSnapshot.Child("P02").GetValue(true).ToString();
-                pants03 = dataSnapshot.Child("P03").GetValue(true).ToString();
-                pants04 = dataSnapshot.Child("P04").GetValue(true).ToString();
-                pants05 = dataSnapshot.Child("P05").GetValue(true).ToString();
-                pants06 = dataSnapshot.Child("P06").GetValue(true).ToString();
-                pants07 = dataSnapshot.Child("P07").GetValue(true).ToString();
-                pants08 = dataSnapshot.Child("P08").GetValue(true).ToString();
-                pants09 = dataSnapshot.Child("P09").GetValue(true).ToString();
-                pants10 = dataSnapshot.Child("P10").GetValue(true).ToString();
+                pants01 = dataSnapshot.Child("Pants01").GetValue(true).ToString();
+                pants02 = dataSnapshot.Child("Pants02").GetValue(true).ToString();
+                pants03 = dataSnapshot.Child("Pants03").GetValue(true).ToString();
+                pants04 = dataSnapshot.Child("Pants04").GetValue(true).ToString();
+                pants05 = dataSnapshot.Child("Pants05").GetValue(true).ToString();
+                pants06 = dataSnapshot.Child("Pants06").GetValue(true).ToString();
+                pants07 = dataSnapshot.Child("Pants07").GetValue(true).ToString();
+                pants08 = dataSnapshot.Child("Pants08").GetValue(true).ToString();
+                pants09 = dataSnapshot.Child("Pants09").GetValue(true).ToString();
+                pants10 = dataSnapshot.Child("Pants10").GetValue(true).ToString();
 
-                pet01 = dataSnapshot.Child("PET01").GetValue(true).ToString();
-                pet02 = dataSnapshot.Child("PET02").GetValue(true).ToString();
-                pet03 = dataSnapshot.Child("PET03").GetValue(true).ToString();
-                pet04 = dataSnapshot.Child("PET04").GetValue(true).ToString();
-                pet05 = dataSnapshot.Child("PET05").GetValue(true).ToString();
-                pet06 = dataSnapshot.Child("PET06").GetValue(true).ToString();
-                pet07 = dataSnapshot.Child("PET07").GetValue(true).ToString();
-                pet08 = dataSnapshot.Child("PET08").GetValue(true).ToString();
-                pet09 = dataSnapshot.Child("PET09").GetValue(true).ToString();
-                pet10 = dataSnapshot.Child("PET10").GetValue(true).ToString();
+                pet01 = dataSnapshot.Child("Pet01").GetValue(true).ToString();
+                pet02 = dataSnapshot.Child("Pet02").GetValue(true).ToString();
+                pet03 = dataSnapshot.Child("Pet03").GetValue(true).ToString();
+                pet04 = dataSnapshot.Child("Pet04").GetValue(true).ToString();
+                pet05 = dataSnapshot.Child("Pet05").GetValue(true).ToString();
+                pet06 = dataSnapshot.Child("Pet06").GetValue(true).ToString();
+                pet07 = dataSnapshot.Child("Pet07").GetValue(true).ToString();
+                pet08 = dataSnapshot.Child("Pet08").GetValue(true).ToString();
+                pet09 = dataSnapshot.Child("Pet09").GetValue(true).ToString();
+                pet10 = dataSnapshot.Child("Pet10").GetValue(true).ToString();
 
                 isQueryEnd = true;
 
@@ -526,17 +526,7 @@ public class Join : MonoBehaviourPunCallbacks
         public string money;
 
 
-        /*public bool HCS1;
-        public bool HCS2;
-        public bool HCA1;
-        public bool HCA2;
-        public bool HCA3;
-        public bool HCB1;
-        public bool HCB2;
-        public bool HCB3;
-        public bool HCB4;
-        public bool HCB5;
-        */
+        
         public JoinDB(string UserID, string email, string password, string name, string dept, string stdID,
             bool OT0, bool OT1, bool OT2, bool OT3, bool OT4, bool OT5, 
             bool D1, bool D2, bool D3, bool D4, bool D5,
