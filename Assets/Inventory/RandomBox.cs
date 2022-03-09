@@ -202,7 +202,7 @@ public class RandomBox : MonoBehaviour
         if (join.hc01.Equals("True"))
 		{
             DrawImage.sprite = HCImage1; //슈퍼레어
-            S.SetActive(true);
+           // S.SetActive(true);
             HCS1.sprite = HCImage1;
             HCSlot1.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -213,7 +213,7 @@ public class RandomBox : MonoBehaviour
         if(join.hc02.Equals("True"))
 		{
             DrawImage.sprite = HCImage2; //슈퍼레어
-            A.SetActive(true);
+          //  A.SetActive(true);
             HCS2.sprite = HCImage2;
             HCSlot2.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -224,7 +224,7 @@ public class RandomBox : MonoBehaviour
         if (join.hc03.Equals("True"))
 		{
             DrawImage.sprite = HCImage3; //레어
-            A.SetActive(true);
+          //  A.SetActive(true);
             HCSlot3.interactable = true;
             //GachaList.RemoveAt(rand);
             HCA1.sprite = HCImage3;
@@ -236,7 +236,7 @@ public class RandomBox : MonoBehaviour
 		{
 
             DrawImage.sprite = HCImage4; //레어
-            A.SetActive(true);
+          //  A.SetActive(true);
             HCSlot4.interactable = true;
             //GachaList.RemoveAt(rand);
             HCA2.sprite = HCImage4;
@@ -247,7 +247,7 @@ public class RandomBox : MonoBehaviour
         if (join.hc05.Equals("True"))
 		{
             DrawImage.sprite = HCImage5; //레어
-            A.SetActive(true);
+       //     A.SetActive(true);
             HCSlot5.interactable = true;
             //GachaList.RemoveAt(rand);
             HCA3.sprite = HCImage5;
@@ -258,7 +258,7 @@ public class RandomBox : MonoBehaviour
         if (join.hc06.Equals("True"))
 		{
             DrawImage.sprite = HCImage6; //노멀
-            B.SetActive(true);
+          //  B.SetActive(true);
             HCSlot6.interactable = true;
             //GachaList.RemoveAt(rand);
             HCB1.sprite = HCImage6;
@@ -269,7 +269,7 @@ public class RandomBox : MonoBehaviour
         if (join.hc07.Equals("True"))
 		{
             DrawImage.sprite = HCImage7; //노멀
-            B.SetActive(true);
+          //  B.SetActive(true);
             HCSlot7.interactable = true;
             //GachaList.RemoveAt(rand);
             HCB2.sprite = HCImage7;
@@ -280,7 +280,7 @@ public class RandomBox : MonoBehaviour
         if (join.hc08.Equals("True"))
 		{
             DrawImage.sprite = HCImage8; //노멀
-            B.SetActive(true);
+         //   B.SetActive(true);
             HCSlot8.interactable = true;
             //GachaList.RemoveAt(rand);
             HCB3.sprite = HCImage8;
@@ -291,7 +291,7 @@ public class RandomBox : MonoBehaviour
         if (join.hc09.Equals("True"))
 		{
             DrawImage.sprite = HCImage9; //노멀
-            B.SetActive(true);
+           // B.SetActive(true);
             HCSlot9.interactable = true;
             //GachaList.RemoveAt(rand);
             HCB4.sprite = HCImage9;
@@ -302,7 +302,7 @@ public class RandomBox : MonoBehaviour
         if (join.hc10.Equals("True"))
 		{
             DrawImage.sprite = HCImage10; //노멀
-            B.SetActive(true);
+          //  B.SetActive(true);
             HCSlot10.interactable = true;
             //GachaList.RemoveAt(rand);
             HCB5.sprite = HCImage10;
@@ -315,7 +315,7 @@ public class RandomBox : MonoBehaviour
         if (join.pet01.Equals("True"))
         {
             DrawImage.sprite = PImage1; // 슈퍼레어
-            S.SetActive(true);
+           // S.SetActive(true);
             PS1.sprite = PImage1;
             PSlot1.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -326,7 +326,7 @@ public class RandomBox : MonoBehaviour
         if (join.pet02.Equals("True"))
         {
             DrawImage.sprite = PImage2; // 슈퍼레어
-            S.SetActive(true);
+           // S.SetActive(true);
             PS2.sprite = PImage2;
             PSlot2.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -337,7 +337,7 @@ public class RandomBox : MonoBehaviour
         if (join.pet03.Equals("True")) 
         { 
             DrawImage.sprite = PImage3; // 레어
-            A.SetActive(true);
+          //  A.SetActive(true);
             PA1.sprite = PImage3;
             PSlot3.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -348,7 +348,7 @@ public class RandomBox : MonoBehaviour
         if (join.pet04.Equals("True"))
         {
             DrawImage.sprite = PImage4; // 레어
-            A.SetActive(true);
+          //  A.SetActive(true);
             PA2.sprite = PImage4;
             PSlot4.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -360,7 +360,7 @@ public class RandomBox : MonoBehaviour
         if (join.pet05.Equals("True"))
         {
             DrawImage.sprite = PImage5; // 노멀
-            A.SetActive(true);
+          //  A.SetActive(true);
             PA3.sprite = PImage5;
             PSlot5.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -371,7 +371,7 @@ public class RandomBox : MonoBehaviour
         if (join.pet06.Equals("True"))
         {
             DrawImage.sprite = PImage6; // 노멀
-            B.SetActive(true);
+           // B.SetActive(true);
             PB1.sprite = PImage6;
             PSlot6.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -382,7 +382,7 @@ public class RandomBox : MonoBehaviour
         if (join.pet07.Equals("True"))
         {
             DrawImage.sprite = PImage7; // 노멀
-            B.SetActive(true);
+            //B.SetActive(true);
             PB2.sprite = PImage7;
             PSlot7.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -393,7 +393,7 @@ public class RandomBox : MonoBehaviour
         if (join.pet08.Equals("True"))
         {
             DrawImage.sprite = PImage8; // 노멀
-            B.SetActive(true);
+           // B.SetActive(true);
             PB3.sprite = PImage8;
             PSlot8.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -404,7 +404,7 @@ public class RandomBox : MonoBehaviour
         if (join.pet09.Equals("True"))
         {
             DrawImage.sprite = PImage9; // 노멀
-            B.SetActive(true);
+            //B.SetActive(true);
             PB4.sprite = PImage9;
             PSlot9.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -415,7 +415,7 @@ public class RandomBox : MonoBehaviour
         if (join.pet10.Equals("True"))
         {
             DrawImage.sprite = PImage10; // 노멀
-            B.SetActive(true);
+            //B.SetActive(true);
             PB5.sprite = PImage10;
             PSlot10.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -429,7 +429,7 @@ public class RandomBox : MonoBehaviour
         if (join.c01.Equals("True"))
         {
             DrawImage.sprite = CImage1; // 슈퍼레어
-            S.SetActive(true);
+            //S.SetActive(true);
             CS1.sprite = CImage1;
             CSlot1.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -440,7 +440,7 @@ public class RandomBox : MonoBehaviour
         if (join.c02.Equals("True"))
         {
             DrawImage.sprite = CImage2; // 슈퍼레어
-            S.SetActive(true);
+            //S.SetActive(true);
             CS2.sprite = CImage2;
             CSlot2.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -451,7 +451,7 @@ public class RandomBox : MonoBehaviour
         if (join.c03.Equals("True"))
         {
             DrawImage.sprite = CImage3; // 레어
-            A.SetActive(true);
+            //A.SetActive(true);
             CA1.sprite = CImage3;
             CSlot3.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -462,7 +462,7 @@ public class RandomBox : MonoBehaviour
         if (join.c04.Equals("True"))
         {
             DrawImage.sprite = CImage4; // 레어
-            A.SetActive(true);
+            //A.SetActive(true);
             CA2.sprite = CImage4;
             CSlot4.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -473,7 +473,7 @@ public class RandomBox : MonoBehaviour
         if (join.c05.Equals("True"))
         {
             DrawImage.sprite = CImage5; // 레어
-            A.SetActive(true);
+            //A.SetActive(true);
             CA3.sprite = CImage5;
             CSlot5.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -484,7 +484,7 @@ public class RandomBox : MonoBehaviour
         if (join.c06.Equals("True"))
         {
             DrawImage.sprite = CImage6; // 노멀
-            B.SetActive(true);
+            //B.SetActive(true);
             CB1.sprite = CImage6;
             CSlot6.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -495,7 +495,7 @@ public class RandomBox : MonoBehaviour
         if (join.c07.Equals("True"))
         {
             DrawImage.sprite = CImage7; // 노멀
-            B.SetActive(true);
+            //B.SetActive(true);
             CB2.sprite = CImage7;
             CSlot7.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -506,7 +506,7 @@ public class RandomBox : MonoBehaviour
         if (join.c08.Equals("True"))
         {
             DrawImage.sprite = CImage8; // 노멀
-            B.SetActive(true);
+            //B.SetActive(true);
             CB3.sprite = CImage8;
             CSlot8.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -517,7 +517,7 @@ public class RandomBox : MonoBehaviour
         if (join.c09.Equals("True"))
         {
             DrawImage.sprite = CImage9; // 노멀
-            B.SetActive(true);
+            //B.SetActive(true);
             CB4.sprite = CImage9;
             CSlot9.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -528,7 +528,7 @@ public class RandomBox : MonoBehaviour
         if (join.c10.Equals("True"))
         {
             DrawImage.sprite = CImage10; // 노멀
-            B.SetActive(true);
+            //B.SetActive(true);
             CB5.sprite = CImage10;
             CSlot10.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -543,7 +543,7 @@ public class RandomBox : MonoBehaviour
         if (join.p01.Equals("True"))
         {
             DrawImage.sprite = BImage1; // 슈퍼레어
-            S.SetActive(true);
+            //S.SetActive(true);
             BS1.sprite = BImage1;
             BSlot1.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -554,7 +554,7 @@ public class RandomBox : MonoBehaviour
         if (join.p02.Equals("True"))
         {
             DrawImage.sprite = BImage2; // 슈퍼레어
-            S.SetActive(true);
+            //S.SetActive(true);
             BS2.sprite = BImage2;
             BSlot2.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -576,7 +576,7 @@ public class RandomBox : MonoBehaviour
         if (join.p04.Equals("True"))
         {
             DrawImage.sprite = BImage4; // 슈퍼레어
-            A.SetActive(true);
+            //A.SetActive(true);
             BA2.sprite = BImage4;
             BSlot4.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -587,7 +587,7 @@ public class RandomBox : MonoBehaviour
         if (join.p05.Equals("True"))
         {
             DrawImage.sprite = BImage5; // 슈퍼레어
-            A.SetActive(true);
+            //A.SetActive(true);
             BA3.sprite = BImage5;
             BSlot5.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -598,7 +598,7 @@ public class RandomBox : MonoBehaviour
         if (join.p06.Equals("True"))
         {
             DrawImage.sprite = BImage6; // 슈퍼레어
-            B.SetActive(true);
+           // B.SetActive(true);
             BB1.sprite = BImage6;
             BSlot6.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -609,7 +609,7 @@ public class RandomBox : MonoBehaviour
         if (join.p07.Equals("True"))
         {
             DrawImage.sprite = BImage7; // 슈퍼레어
-            B.SetActive(true);
+            //B.SetActive(true);
             BB2.sprite = BImage7;
             BSlot7.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -620,7 +620,7 @@ public class RandomBox : MonoBehaviour
         if (join.p08.Equals("True"))
         {
             DrawImage.sprite = BImage8; // 슈퍼레어
-            B.SetActive(true);
+           // B.SetActive(true);
             BB3.sprite = BImage8;
             BSlot8.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -631,7 +631,7 @@ public class RandomBox : MonoBehaviour
         if (join.p09.Equals("True"))
         {
             DrawImage.sprite = BImage9; // 슈퍼레어
-            B.SetActive(true);
+            //B.SetActive(true);
             BB4.sprite = BImage9;
             BSlot9.interactable = true;
             //GachaList.RemoveAt(rand);
@@ -642,7 +642,7 @@ public class RandomBox : MonoBehaviour
         if (join.p10.Equals("True"))
         {
             DrawImage.sprite = BImage10; // 슈퍼레어
-            B.SetActive(true);
+            //B.SetActive(true);
             BB5.sprite = BImage10;
             BSlot10.interactable = true;
             //GachaList.RemoveAt(rand);

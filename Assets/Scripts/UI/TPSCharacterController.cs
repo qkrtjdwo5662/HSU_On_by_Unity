@@ -82,7 +82,7 @@ public class TPSCharacterController : MonoBehaviour
 
         
 
-        PhotonNetwork.Instantiate(Path.Combine("Prefabs",scs.pet),(this.gameObject.GetComponent<Transform>().position+ new Vector3(2,0,2)),Quaternion.identity,0);
+        //PhotonNetwork.Instantiate(Path.Combine("Prefabs",scs.pet),(this.gameObject.GetComponent<Transform>().position+ new Vector3(2,0,2)),Quaternion.identity,0);
 
     }
 
