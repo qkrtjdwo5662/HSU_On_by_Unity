@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class PetAI : MonoBehaviour
 {
@@ -24,6 +25,10 @@ public class PetAI : MonoBehaviour
         me = GameObject.Find("Me").GetComponent<Transform>();
         ani = GetComponent<Animator>();
         meAni = GameObject.Find("Me").GetComponent<Animator>();
+        if (!GetComponent<PhotonView>().IsMine)
+        {
+            Destroy(this);
+        }
         
         //x z 거리계산
      }
@@ -85,3 +90,4 @@ public class PetAI : MonoBehaviour
     }
     
 }
+

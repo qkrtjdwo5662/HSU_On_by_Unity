@@ -1,6 +1,7 @@
 ﻿using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO; //path사용을위해
 
 public class TPSCharacterController : MonoBehaviour
 {
@@ -44,6 +45,10 @@ public class TPSCharacterController : MonoBehaviour
     bool audioFlagWalk = false;
     bool audioFlagRun = false;
     public bool moveSwitch = true;
+
+
+    private Scene_Character_Setting scs;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -74,6 +79,10 @@ public class TPSCharacterController : MonoBehaviour
         audioSourceWalk.loop = true;
         audioSourceRun.mute = false;
         audioSourceRun.loop = true;
+
+        
+
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs",scs.pet),(this.gameObject.GetComponent<Transform>().position+ new Vector3(2,0,2)),Quaternion.identity,0);
 
     }
 
@@ -173,7 +182,7 @@ public class TPSCharacterController : MonoBehaviour
             // 이동
             transform.position += moveDir.normalized * Time.deltaTime * movingSpeed;
             
-
+            
 
         }
         else if (!isMove || !moveSwitch)
