@@ -195,8 +195,10 @@ public class RandomBox : MonoBehaviour
                     Debug.Log("Money get & save");
 
         //MyMoneyP.text = money.ToString();
-
+        
         int rand = Random.Range(0, GachaList.Count);
+        
+        //머리색 시작
         if (join.hair01.Equals("True"))
 		{
             DrawImage.sprite = HCImage1; //슈퍼레어
@@ -307,6 +309,352 @@ public class RandomBox : MonoBehaviour
             join.SetValueFireBase("HC10");
             Debug.Log("HC10 get & save");
         }
+        //머리색 끝
+
+        //펫 시작
+        if (GachaList[rand] == "PS1")
+        {
+            DrawImage.sprite = PImage1; // 슈퍼레어
+            S.SetActive(true);
+            PS1.sprite = PImage1;
+            PSlot1.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("PET01");
+            Debug.Log("PET01 get & save");
+
+        }
+        if (GachaList[rand] == "PS2")
+        {
+            DrawImage.sprite = PImage2; // 슈퍼레어
+            S.SetActive(true);
+            PS2.sprite = PImage2;
+            PSlot2.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("PET02");
+            Debug.Log("PET02 get & save");
+
+        }
+        if (GachaList[rand] == "PA1")
+        {
+            DrawImage.sprite = PImage3; // 레어
+            A.SetActive(true);
+            PA1.sprite = PImage3;
+            PSlot3.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("PET03");
+            Debug.Log("PET03 get & save");
+
+        }
+        if (GachaList[rand] == "PA2")
+        {
+            DrawImage.sprite = PImage4; // 레어
+            A.SetActive(true);
+            PA2.sprite = PImage4;
+            PSlot4.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("PET04");
+            Debug.Log("PET04 get & save");
+
+        }
+        if (GachaList[rand] == "PA3")
+        {
+            DrawImage.sprite = PImage5; // 노멀
+            A.SetActive(true);
+            PA3.sprite = PImage5;
+            PSlot5.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("PET05");
+            Debug.Log("PET05 get & save");
+
+        }
+        if (GachaList[rand] == "PB1")
+        {
+            DrawImage.sprite = PImage6; // 노멀
+            B.SetActive(true);
+            PB1.sprite = PImage6;
+            PSlot6.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("PET06");
+            Debug.Log("PET06 get & save");
+
+        }
+        if (GachaList[rand] == "PB2")
+        {
+            DrawImage.sprite = PImage7; // 노멀
+            B.SetActive(true);
+            PB2.sprite = PImage7;
+            PSlot7.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("PET07");
+            Debug.Log("PET07 get & save");
+
+        }
+        if (GachaList[rand] == "PB3")
+        {
+            DrawImage.sprite = PImage8; // 노멀
+            B.SetActive(true);
+            PB3.sprite = PImage8;
+            PSlot8.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("PET08");
+            Debug.Log("PET08 get & save");
+
+        }
+        if (GachaList[rand] == "PB4")
+        {
+            DrawImage.sprite = PImage9; // 노멀
+            B.SetActive(true);
+            PB4.sprite = PImage9;
+            PSlot9.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("PET09");
+            Debug.Log("PET09 get & save");
+
+        }
+        if (GachaList[rand] == "PB5")
+        {
+            DrawImage.sprite = PImage10; // 노멀
+            B.SetActive(true);
+            PB5.sprite = PImage10;
+            PSlot10.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("PET10");
+            Debug.Log("PET10 get & save");
+
+        }
+        //펫 끝
+
+        //상의
+        else if (GachaList[rand] == "CS1")
+        {
+            DrawImage.sprite = CImage1; // 슈퍼레어
+            S.SetActive(true);
+            CS1.sprite = CImage1;
+            CSlot1.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("C01");
+            Debug.Log("C01 get & save");
+
+        }
+        else if (GachaList[rand] == "CS2")
+        {
+            DrawImage.sprite = CImage2; // 슈퍼레어
+            S.SetActive(true);
+            CS2.sprite = CImage2;
+            CSlot2.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("C02");
+            Debug.Log("C02 get & save");
+
+        }
+        else if (GachaList[rand] == "CA1")
+        {
+            DrawImage.sprite = CImage3; // 레어
+            A.SetActive(true);
+            CA1.sprite = CImage3;
+            CSlot3.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("C03");
+            Debug.Log("C03 get & save");
+
+        }
+        else if (GachaList[rand] == "CA2")
+        {
+            DrawImage.sprite = CImage4; // 레어
+            A.SetActive(true);
+            CA2.sprite = CImage4;
+            CSlot4.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("C04");
+            Debug.Log("C04 get & save");
+
+        }
+        else if (GachaList[rand] == "CA3")
+        {
+            DrawImage.sprite = CImage5; // 레어
+            A.SetActive(true);
+            CA3.sprite = CImage5;
+            CSlot5.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("C05");
+            Debug.Log("C05 get & save");
+
+        }
+        else if (GachaList[rand] == "CB1")
+        {
+            DrawImage.sprite = CImage6; // 노멀
+            B.SetActive(true);
+            CB1.sprite = CImage6;
+            CSlot6.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("C06");
+            Debug.Log("C06 get & save");
+
+        }
+        else if (GachaList[rand] == "CB2")
+        {
+            DrawImage.sprite = CImage7; // 노멀
+            B.SetActive(true);
+            CB2.sprite = CImage7;
+            CSlot7.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("C07");
+            Debug.Log("C07 get & save");
+
+        }
+        else if (GachaList[rand] == "CB3")
+        {
+            DrawImage.sprite = CImage8; // 노멀
+            B.SetActive(true);
+            CB3.sprite = CImage8;
+            CSlot8.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("C08");
+            Debug.Log("C08 get & save");
+
+        }
+        else if (GachaList[rand] == "CB4")
+        {
+            DrawImage.sprite = CImage9; // 노멀
+            B.SetActive(true);
+            CB4.sprite = CImage9;
+            CSlot9.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("C09");
+            Debug.Log("C09 get & save");
+
+        }
+        else if (GachaList[rand] == "CB5")
+        {
+            DrawImage.sprite = CImage10; // 노멀
+            B.SetActive(true);
+            CB5.sprite = CImage10;
+            CSlot10.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("C10");
+            Debug.Log("C10 get & save");
+
+        }
+        //상의 끝
+
+
+        //하의 시작
+        if (GachaList[rand] == "BS1")
+        {
+            DrawImage.sprite = BImage1; // 슈퍼레어
+            S.SetActive(true);
+            BS1.sprite = BImage1;
+            BSlot1.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("P01");
+            Debug.Log("P01 get & save");
+
+        }
+        if (GachaList[rand] == "BS2")
+        {
+            DrawImage.sprite = BImage2; // 슈퍼레어
+            S.SetActive(true);
+            BS2.sprite = BImage2;
+            BSlot2.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("P02");
+            Debug.Log("P02 get & save");
+
+        }
+        if (GachaList[rand] == "BA1")
+        {
+            DrawImage.sprite = BImage3; // 슈퍼레어
+            A.SetActive(true);
+            BA1.sprite = BImage3;
+            BSlot3.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("P03");
+            Debug.Log("P03 get & save");
+
+        }
+        if (GachaList[rand] == "BA2")
+        {
+            DrawImage.sprite = BImage4; // 슈퍼레어
+            A.SetActive(true);
+            BA2.sprite = BImage4;
+            BSlot4.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("P04");
+            Debug.Log("P04 get & save");
+
+        }
+        if (GachaList[rand] == "BA3")
+        {
+            DrawImage.sprite = BImage5; // 슈퍼레어
+            A.SetActive(true);
+            BA3.sprite = BImage5;
+            BSlot5.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("P05");
+            Debug.Log("P05 get & save");
+
+        }
+        if (GachaList[rand] == "BB1")
+        {
+            DrawImage.sprite = BImage6; // 슈퍼레어
+            B.SetActive(true);
+            BB1.sprite = BImage6;
+            BSlot6.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("P06");
+            Debug.Log("P06 get & save");
+
+        }
+        if (GachaList[rand] == "BB2")
+        {
+            DrawImage.sprite = BImage7; // 슈퍼레어
+            B.SetActive(true);
+            BB2.sprite = BImage7;
+            BSlot7.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("P07");
+            Debug.Log("P07 get & save");
+
+        }
+        if (GachaList[rand] == "BB3")
+        {
+            DrawImage.sprite = BImage8; // 슈퍼레어
+            B.SetActive(true);
+            BB3.sprite = BImage8;
+            BSlot8.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("P08");
+            Debug.Log("P08 get & save");
+
+        }
+        if (GachaList[rand] == "BB4")
+        {
+            DrawImage.sprite = BImage9; // 슈퍼레어
+            B.SetActive(true);
+            BB4.sprite = BImage9;
+            BSlot9.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("P09");
+            Debug.Log("P09 get & save");
+
+        }
+        if (GachaList[rand] == "BB5")
+        {
+            DrawImage.sprite = BImage10; // 슈퍼레어
+            B.SetActive(true);
+            BB5.sprite = BImage10;
+            BSlot10.interactable = true;
+            GachaList.RemoveAt(rand);
+            join.SetValueFireBase("P10");
+            Debug.Log("P10 get & save");
+
+        }
+        //하의 끝
+
+
+
+
+
     }
     public List<string> GachaList = new List<string>() { "HCS1", "HCS2", "HCA1", "HCA2", "HCA3", "HCB1", "HCB2", "HCB3", "HCB4", "HCB5", "PS1","PS2", "PA1", "PA2", "PA3", "PB1", "PB2", "PB3", "PB4", "PB5",
         "CS1", "CS2", "CA1", "CA2", "CA3", "CB1", "CB2", "CB3", "CB4", "CB5", "BS1", "BS2", "BA1", "BA2","BA3","BB1", "BB2", "BB3", "BB4", "BB5"};
