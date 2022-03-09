@@ -1083,8 +1083,6 @@ public class RandomBox : MonoBehaviour
             GatchaPanel.SetActive(true);
             join.SetValueFireBase("Money",money);
             MyMoney.text = money.ToString();
-            MyMoneyP.text = money.ToString();
-
         }
         else if (money <= 0)
         {
