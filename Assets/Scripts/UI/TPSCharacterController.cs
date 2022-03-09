@@ -80,10 +80,13 @@ public class TPSCharacterController : MonoBehaviour
         audioSourceRun.mute = false;
         audioSourceRun.loop = true;
 
-        
+        scs = GameObject.Find("Scene_Character_Setting").GetComponent<Scene_Character_Setting>();
 
-        //PhotonNetwork.Instantiate(Path.Combine("Prefabs",scs.pet),(this.gameObject.GetComponent<Transform>().position+ new Vector3(2,0,2)),Quaternion.identity,0);
 
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", ""), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+
+        //CallChangeMyAvatar(scs.hairColor, scs.top, scs.bottom);
+        ChangeMyAvatar(scs.hairColor, scs.top, scs.bottom);
     }
 
     private void escAction()

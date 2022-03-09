@@ -237,7 +237,7 @@ public class Join : MonoBehaviourPunCallbacks
     {
         reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(UserID);
         //item = FirebaseDatabase.DefaultInstance.GetReference("users").Child(UserID).Child("item");
-
+        
 
         reference.GetValueAsync().ContinueWithOnMainThread(task =>
         {
