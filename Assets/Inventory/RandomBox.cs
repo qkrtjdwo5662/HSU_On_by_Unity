@@ -425,7 +425,7 @@ public class RandomBox : MonoBehaviour
         //펫 끝
 
         //상의
-        else if (GachaList[rand] == "CS1")
+        if (GachaList[rand] == "CS1")
         {
             DrawImage.sprite = CImage1; // 슈퍼레어
             S.SetActive(true);
@@ -436,7 +436,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("C01 get & save");
 
         }
-        else if (GachaList[rand] == "CS2")
+        if (GachaList[rand] == "CS2")
         {
             DrawImage.sprite = CImage2; // 슈퍼레어
             S.SetActive(true);
@@ -447,7 +447,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("C02 get & save");
 
         }
-        else if (GachaList[rand] == "CA1")
+        if (GachaList[rand] == "CA1")
         {
             DrawImage.sprite = CImage3; // 레어
             A.SetActive(true);
@@ -458,7 +458,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("C03 get & save");
 
         }
-        else if (GachaList[rand] == "CA2")
+        if (GachaList[rand] == "CA2")
         {
             DrawImage.sprite = CImage4; // 레어
             A.SetActive(true);
@@ -469,7 +469,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("C04 get & save");
 
         }
-        else if (GachaList[rand] == "CA3")
+        if (GachaList[rand] == "CA3")
         {
             DrawImage.sprite = CImage5; // 레어
             A.SetActive(true);
@@ -480,7 +480,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("C05 get & save");
 
         }
-        else if (GachaList[rand] == "CB1")
+        if (GachaList[rand] == "CB1")
         {
             DrawImage.sprite = CImage6; // 노멀
             B.SetActive(true);
@@ -491,7 +491,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("C06 get & save");
 
         }
-        else if (GachaList[rand] == "CB2")
+        if (GachaList[rand] == "CB2")
         {
             DrawImage.sprite = CImage7; // 노멀
             B.SetActive(true);
@@ -502,7 +502,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("C07 get & save");
 
         }
-        else if (GachaList[rand] == "CB3")
+        if (GachaList[rand] == "CB3")
         {
             DrawImage.sprite = CImage8; // 노멀
             B.SetActive(true);
@@ -513,7 +513,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("C08 get & save");
 
         }
-        else if (GachaList[rand] == "CB4")
+        if (GachaList[rand] == "CB4")
         {
             DrawImage.sprite = CImage9; // 노멀
             B.SetActive(true);
@@ -524,7 +524,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("C09 get & save");
 
         }
-        else if (GachaList[rand] == "CB5")
+        if (GachaList[rand] == "CB5")
         {
             DrawImage.sprite = CImage10; // 노멀
             B.SetActive(true);
