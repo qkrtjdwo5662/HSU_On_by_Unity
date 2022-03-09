@@ -199,7 +199,7 @@ public class RandomBox : MonoBehaviour
         int rand = Random.Range(0, GachaList.Count);
         
         //머리색 시작
-        if (join.hair01.Equals("True"))
+        if (join.hc01.Equals("True"))
 		{
             DrawImage.sprite = HCImage1; //슈퍼레어
             S.SetActive(true);
@@ -210,7 +210,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("HC01 get & save");
         }
 
-        if(join.hair02.Equals("True"))
+        if(join.hc02.Equals("True"))
 		{
             DrawImage.sprite = HCImage2; //슈퍼레어
             A.SetActive(true);
@@ -221,7 +221,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("HC02 get & save");
         }
 
-        if (join.hair03.Equals("True"))
+        if (join.hc03.Equals("True"))
 		{
             DrawImage.sprite = HCImage3; //레어
             A.SetActive(true);
@@ -232,7 +232,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("HC03 get & save");
         }
 
-        if (join.hair04.Equals("True"))
+        if (join.hc04.Equals("True"))
 		{
 
             DrawImage.sprite = HCImage4; //레어
@@ -244,7 +244,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("HC04 get & save");
         }
 
-        if (join.hair05.Equals("True"))
+        if (join.hc05.Equals("True"))
 		{
             DrawImage.sprite = HCImage5; //레어
             A.SetActive(true);
@@ -255,7 +255,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("HC05 get & save");
         }
 
-        if (join.hair06.Equals("True"))
+        if (join.hc06.Equals("True"))
 		{
             DrawImage.sprite = HCImage6; //노멀
             B.SetActive(true);
@@ -266,7 +266,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("HC06 get & save");
         }
 
-        if (join.hair07.Equals("True"))
+        if (join.hc07.Equals("True"))
 		{
             DrawImage.sprite = HCImage7; //노멀
             B.SetActive(true);
@@ -277,7 +277,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("HC07 get & save");
 
         }
-        if (join.hair08.Equals("True"))
+        if (join.hc08.Equals("True"))
 		{
             DrawImage.sprite = HCImage8; //노멀
             B.SetActive(true);
@@ -288,7 +288,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("HC08 get & save");
         }
 
-        if (join.hair09.Equals("True"))
+        if (join.hc09.Equals("True"))
 		{
             DrawImage.sprite = HCImage9; //노멀
             B.SetActive(true);
@@ -299,7 +299,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("HC09 get & save");
         }
 
-        if (join.hair10.Equals("True"))
+        if (join.hc10.Equals("True"))
 		{
             DrawImage.sprite = HCImage10; //노멀
             B.SetActive(true);
@@ -426,7 +426,7 @@ public class RandomBox : MonoBehaviour
         //펫 끝
 
         //상의
-        if (join.shirts01.Equals("True"))
+        if (join.c01.Equals("True"))
         {
             DrawImage.sprite = CImage1; // 슈퍼레어
             S.SetActive(true);
@@ -437,7 +437,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("C01 get & save");
 
         }
-        if (join.shirts02.Equals("True"))
+        if (join.c02.Equals("True"))
         {
             DrawImage.sprite = CImage2; // 슈퍼레어
             S.SetActive(true);
@@ -448,7 +448,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("C02 get & save");
 
         }
-        if (join.shirts03.Equals("True"))
+        if (join.c03.Equals("True"))
         {
             DrawImage.sprite = CImage3; // 레어
             A.SetActive(true);
@@ -459,7 +459,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("C03 get & save");
 
         }
-        if (join.shirts04.Equals("True"))
+        if (join.c04.Equals("True"))
         {
             DrawImage.sprite = CImage4; // 레어
             A.SetActive(true);
@@ -470,7 +470,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("C04 get & save");
 
         }
-        if (join.shirts05.Equals("True"))
+        if (join.c05.Equals("True"))
         {
             DrawImage.sprite = CImage5; // 레어
             A.SetActive(true);
@@ -481,7 +481,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("C05 get & save");
 
         }
-        if (join.shirts06.Equals("True"))
+        if (join.c06.Equals("True"))
         {
             DrawImage.sprite = CImage6; // 노멀
             B.SetActive(true);
@@ -492,7 +492,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("C06 get & save");
 
         }
-        if (join.shirts07.Equals("True"))
+        if (join.c07.Equals("True"))
         {
             DrawImage.sprite = CImage7; // 노멀
             B.SetActive(true);
@@ -503,7 +503,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("C07 get & save");
 
         }
-        if (join.shirts08.Equals("True"))
+        if (join.c08.Equals("True"))
         {
             DrawImage.sprite = CImage8; // 노멀
             B.SetActive(true);
@@ -514,7 +514,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("C08 get & save");
 
         }
-        if (join.shirts09.Equals("True"))
+        if (join.c09.Equals("True"))
         {
             DrawImage.sprite = CImage9; // 노멀
             B.SetActive(true);
@@ -525,7 +525,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("C09 get & save");
 
         }
-        if (join.shirts10.Equals("True"))
+        if (join.c10.Equals("True"))
         {
             DrawImage.sprite = CImage10; // 노멀
             B.SetActive(true);
@@ -540,7 +540,7 @@ public class RandomBox : MonoBehaviour
 
 
         //하의 시작
-        if (join.pants01.Equals("True"))
+        if (join.p01.Equals("True"))
         {
             DrawImage.sprite = BImage1; // 슈퍼레어
             S.SetActive(true);
@@ -551,7 +551,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("P01 get & save");
 
         }
-        if (join.pants02.Equals("True"))
+        if (join.p02.Equals("True"))
         {
             DrawImage.sprite = BImage2; // 슈퍼레어
             S.SetActive(true);
@@ -562,7 +562,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("P02 get & save");
 
         }
-        if (join.pants03.Equals("True"))
+        if (join.p03.Equals("True"))
         {
             DrawImage.sprite = BImage3; // 슈퍼레어
             A.SetActive(true);
@@ -573,7 +573,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("P03 get & save");
 
         }
-        if (join.pants04.Equals("True"))
+        if (join.p04.Equals("True"))
         {
             DrawImage.sprite = BImage4; // 슈퍼레어
             A.SetActive(true);
@@ -584,7 +584,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("P04 get & save");
 
         }
-        if (join.pants05.Equals("True"))
+        if (join.p05.Equals("True"))
         {
             DrawImage.sprite = BImage5; // 슈퍼레어
             A.SetActive(true);
@@ -595,7 +595,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("P05 get & save");
 
         }
-        if (join.pants06.Equals("True"))
+        if (join.p06.Equals("True"))
         {
             DrawImage.sprite = BImage6; // 슈퍼레어
             B.SetActive(true);
@@ -606,7 +606,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("P06 get & save");
 
         }
-        if (join.pants07.Equals("True"))
+        if (join.p07.Equals("True"))
         {
             DrawImage.sprite = BImage7; // 슈퍼레어
             B.SetActive(true);
@@ -617,7 +617,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("P07 get & save");
 
         }
-        if (join.pants08.Equals("True"))
+        if (join.p08.Equals("True"))
         {
             DrawImage.sprite = BImage8; // 슈퍼레어
             B.SetActive(true);
@@ -628,7 +628,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("P08 get & save");
 
         }
-        if (join.pants09.Equals("True"))
+        if (join.p09.Equals("True"))
         {
             DrawImage.sprite = BImage9; // 슈퍼레어
             B.SetActive(true);
@@ -639,7 +639,7 @@ public class RandomBox : MonoBehaviour
             Debug.Log("P09 get & save");
 
         }
-        if (join.pants10.Equals("True"))
+        if (join.p10.Equals("True"))
         {
             DrawImage.sprite = BImage10; // 슈퍼레어
             B.SetActive(true);

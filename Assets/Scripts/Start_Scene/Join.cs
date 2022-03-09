@@ -54,41 +54,41 @@ public class Join : MonoBehaviourPunCallbacks
 
     //--------------inventory-------------
 
-    //hair
-    public string hair01 = "false";
-    public string hair02 = "false";
-    public string hair03 = "false";
-    public string hair04 = "false";
-    public string hair05 = "false";
-    public string hair06 = "false";
-    public string hair07 = "false";
-    public string hair08 = "false";
-    public string hair09 = "false";
-    public string hair10 = "false";
+    //hair color
+    public string hc01 = "false";
+    public string hc02 = "false";
+    public string hc03 = "false";
+    public string hc04 = "false";
+    public string hc05 = "false";
+    public string hc06 = "false";
+    public string hc07 = "false";
+    public string hc08 = "false";
+    public string hc09 = "false";
+    public string hc10 = "false";
 
-    //shirts
-    public string shirts01 = "false";
-    public string shirts02 = "false";
-    public string shirts03 = "false";
-    public string shirts04 = "false";
-    public string shirts05 = "false";
-    public string shirts06 = "false";
-    public string shirts07 = "false";
-    public string shirts08 = "false";
-    public string shirts09 = "false";
-    public string shirts10 = "false";
+    //clothes
+    public string c01 = "false";
+    public string c02 = "false";
+    public string c03 = "false";
+    public string c04 = "false";
+    public string c05 = "false";
+    public string c06 = "false";
+    public string c07 = "false";
+    public string c08 = "false";
+    public string c09 = "false";
+    public string c10 = "false";
 
     //pants
-    public string pants01 = "false";
-    public string pants02 = "false";
-    public string pants03 = "false";
-    public string pants04 = "false";
-    public string pants05 = "false";
-    public string pants06 = "false";
-    public string pants07 = "false";
-    public string pants08 = "false";
-    public string pants09 = "false";
-    public string pants10 = "false";
+    public string p01 = "false";
+    public string p02 = "false";
+    public string p03 = "false";
+    public string p04 = "false";
+    public string p05 = "false";
+    public string p06 = "false";
+    public string p07 = "false";
+    public string p08 = "false";
+    public string p09 = "false";
+    public string p10 = "false";
 
     //pet
     public string pet01 = "false";
@@ -284,39 +284,39 @@ public class Join : MonoBehaviourPunCallbacks
 
                 money = dataSnapshot.Child("Money").GetValue(true).ToString();
 
-                hair01 = dataSnapshot.Child("HC01").GetValue(true).ToString();
-                hair02 = dataSnapshot.Child("HC02").GetValue(true).ToString();
-                hair03 = dataSnapshot.Child("HC03").GetValue(true).ToString();
-                hair04 = dataSnapshot.Child("HC04").GetValue(true).ToString();
-                hair05 = dataSnapshot.Child("HC05").GetValue(true).ToString();
-                hair06 = dataSnapshot.Child("HC06").GetValue(true).ToString();
-                hair07 = dataSnapshot.Child("HC07").GetValue(true).ToString();
-                hair08 = dataSnapshot.Child("HC08").GetValue(true).ToString();
-                hair09 = dataSnapshot.Child("HC09").GetValue(true).ToString();
-                hair10 = dataSnapshot.Child("HC10").GetValue(true).ToString();
-                Debug.Log("Hair " + hair01 + " " + hair02 + " " + hair03 + " " + hair04 + " " + hair05 + " " + hair06 + " " + hair07 + " " + hair08 + " " + hair09 + " " + hair10);
+                hc01 = dataSnapshot.Child("HC01").GetValue(true).ToString();
+                hc02 = dataSnapshot.Child("HC02").GetValue(true).ToString();
+                hc03 = dataSnapshot.Child("HC03").GetValue(true).ToString();
+                hc04 = dataSnapshot.Child("HC04").GetValue(true).ToString();
+                hc05 = dataSnapshot.Child("HC05").GetValue(true).ToString();
+                hc06 = dataSnapshot.Child("HC06").GetValue(true).ToString();
+                hc07 = dataSnapshot.Child("HC07").GetValue(true).ToString();
+                hc08 = dataSnapshot.Child("HC08").GetValue(true).ToString();
+                hc09 = dataSnapshot.Child("HC09").GetValue(true).ToString();
+                hc10 = dataSnapshot.Child("HC10").GetValue(true).ToString();
+                Debug.Log("hc " + hc01 + " " + hc02 + " " + hc03 + " " + hc04 + " " + hc05 + " " + hc06 + " " + hc07 + " " + hc08 + " " + hc09 + " " + hc10);
                 
-                shirts01 = dataSnapshot.Child("C01").GetValue(true).ToString();
-                shirts02 = dataSnapshot.Child("C02").GetValue(true).ToString();
-                shirts03 = dataSnapshot.Child("C03").GetValue(true).ToString();
-                shirts04 = dataSnapshot.Child("C04").GetValue(true).ToString();
-                shirts05 = dataSnapshot.Child("C05").GetValue(true).ToString();
-                shirts06 = dataSnapshot.Child("C06").GetValue(true).ToString();
-                shirts07 = dataSnapshot.Child("C07").GetValue(true).ToString();
-                shirts08 = dataSnapshot.Child("C08").GetValue(true).ToString();
-                shirts09 = dataSnapshot.Child("C09").GetValue(true).ToString();
-                shirts10 = dataSnapshot.Child("C10").GetValue(true).ToString();
+                c01 = dataSnapshot.Child("C01").GetValue(true).ToString();
+                c02 = dataSnapshot.Child("C02").GetValue(true).ToString();
+                c03 = dataSnapshot.Child("C03").GetValue(true).ToString();
+                c04 = dataSnapshot.Child("C04").GetValue(true).ToString();
+                c05 = dataSnapshot.Child("C05").GetValue(true).ToString();
+                c06 = dataSnapshot.Child("C06").GetValue(true).ToString();
+                c07 = dataSnapshot.Child("C07").GetValue(true).ToString();
+                c08 = dataSnapshot.Child("C08").GetValue(true).ToString();
+                c09 = dataSnapshot.Child("C09").GetValue(true).ToString();
+                c10 = dataSnapshot.Child("C10").GetValue(true).ToString();
 
-                pants01 = dataSnapshot.Child("P01").GetValue(true).ToString();
-                pants02 = dataSnapshot.Child("P02").GetValue(true).ToString();
-                pants03 = dataSnapshot.Child("P03").GetValue(true).ToString();
-                pants04 = dataSnapshot.Child("P04").GetValue(true).ToString();
-                pants05 = dataSnapshot.Child("P05").GetValue(true).ToString();
-                pants06 = dataSnapshot.Child("P06").GetValue(true).ToString();
-                pants07 = dataSnapshot.Child("P07").GetValue(true).ToString();
-                pants08 = dataSnapshot.Child("P08").GetValue(true).ToString();
-                pants09 = dataSnapshot.Child("P09").GetValue(true).ToString();
-                pants10 = dataSnapshot.Child("P10").GetValue(true).ToString();
+                p01 = dataSnapshot.Child("P01").GetValue(true).ToString();
+                p02 = dataSnapshot.Child("P02").GetValue(true).ToString();
+                p03 = dataSnapshot.Child("P03").GetValue(true).ToString();
+                p04 = dataSnapshot.Child("P04").GetValue(true).ToString();
+                p05 = dataSnapshot.Child("P05").GetValue(true).ToString();
+                p06 = dataSnapshot.Child("P06").GetValue(true).ToString();
+                p07 = dataSnapshot.Child("P07").GetValue(true).ToString();
+                p08 = dataSnapshot.Child("P08").GetValue(true).ToString();
+                p09 = dataSnapshot.Child("P09").GetValue(true).ToString();
+                p10 = dataSnapshot.Child("P10").GetValue(true).ToString();
 
                 pet01 = dataSnapshot.Child("PET01").GetValue(true).ToString();
                 pet02 = dataSnapshot.Child("PET02").GetValue(true).ToString();
@@ -475,52 +475,52 @@ public class Join : MonoBehaviourPunCallbacks
         //*----------------inventory----------------*//
 
 
-        public bool Hair01;
-        public bool Hair02;
-        public bool Hair03;
-        public bool Hair04;
-        public bool Hair05;
-        public bool Hair06;
-        public bool Hair07;
-        public bool Hair08;
-        public bool Hair09;
-        public bool Hair10;
+        public bool HC01;
+        public bool HC02;
+        public bool HC03;
+        public bool HC04;
+        public bool HC05;
+        public bool HC06;
+        public bool HC07;
+        public bool HC08;
+        public bool HC09;
+        public bool HC10;
         //머리색
 
-        public bool Shirts01;
-        public bool Shirts02;
-        public bool Shirts03;
-        public bool Shirts04;
-        public bool Shirts05;
-        public bool Shirts06;
-        public bool Shirts07;
-        public bool Shirts08;
-        public bool Shirts09;
-        public bool Shirts10;
+        public bool C01;
+        public bool C02;
+        public bool C03;
+        public bool C04;
+        public bool C05;
+        public bool C06;
+        public bool C07;
+        public bool C08;
+        public bool C09;
+        public bool C10;
         //상의
 
-        public bool Pants01;
-        public bool Pants02;
-        public bool Pants03;
-        public bool Pants04;
-        public bool Pants05;
-        public bool Pants06;
-        public bool Pants07;
-        public bool Pants08;
-        public bool Pants09;
-        public bool Pants10;
+        public bool P01;
+        public bool P02;
+        public bool P03;
+        public bool P04;
+        public bool P05;
+        public bool P06;
+        public bool P07;
+        public bool P08;
+        public bool P09;
+        public bool P10;
         //하의
 
-        public bool Pet01;
-        public bool Pet02;
-        public bool Pet03;
-        public bool Pet04;
-        public bool Pet05;
-        public bool Pet06;
-        public bool Pet07;
-        public bool Pet08;
-        public bool Pet09;
-        public bool Pet10;
+        public bool PET01;
+        public bool PET02;
+        public bool PET03;
+        public bool PET04;
+        public bool PET05;
+        public bool PET06;
+        public bool PET07;
+        public bool PET08;
+        public bool PET09;
+        public bool PET10;
         //펫
 
         public string money;
@@ -532,10 +532,10 @@ public class Join : MonoBehaviourPunCallbacks
             bool D1, bool D2, bool D3, bool D4, bool D5,
             bool M1, bool M2, bool M3, bool M4, bool M5,
             bool H1, bool H2, bool H3, bool H4, bool H5, 
-            bool Hair01, bool Hair02, bool Hair03, bool Hair04, bool Hair05, bool Hair06, bool Hair07, bool Hair08, bool Hair09, bool Hair10,
-            bool Shirts01, bool Shirts02, bool Shirts03, bool Shirts04, bool Shirts05, bool Shirts06, bool Shirts07, bool Shirts08, bool Shirts09, bool Shirts10,
-            bool Pants01, bool Pants02, bool Pants03, bool Pants04, bool Pants05, bool Pants06, bool Pants07, bool Pants08, bool Pants09, bool Pants10,
-            bool Pet01, bool Pet02, bool Pet03, bool Pet04, bool Pet05, bool Pet06, bool Pet07, bool Pet08, bool Pet09, bool Pet10, string money) 
+            bool HC01, bool HC02, bool HC03, bool HC04, bool HC05, bool HC06, bool HC07, bool HC08, bool HC09, bool HC10,
+            bool C01, bool C02, bool C03, bool C04, bool C05, bool C06, bool C07, bool C08, bool C09, bool C10,
+            bool P01, bool P02, bool P03, bool P04, bool P05, bool P06, bool P07, bool P08, bool P09, bool P10,
+            bool PET01, bool PET02, bool PET03, bool PET04, bool PET05, bool PET06, bool PET07, bool PET08, bool PET09, bool PET10, string money) 
         {
             this.UserID = UserID;
             this.email = email;
@@ -567,49 +567,49 @@ public class Join : MonoBehaviourPunCallbacks
             this.H5 = H5;
 
 
-            this.Hair01 = Hair01;
-            this.Hair02 = Hair02;
-            this.Hair03 = Hair03;
-            this.Hair04 = Hair04;
-            this.Hair05 = Hair05;
-            this.Hair06 = Hair06;
-            this.Hair07 = Hair07;
-            this.Hair08 = Hair08;
-            this.Hair09 = Hair09;
-            this.Hair10 = Hair10;
+            this.HC01 = HC01;
+            this.HC02 = HC02;
+            this.HC03 = HC03;
+            this.HC04 = HC04;
+            this.HC05 = HC05;
+            this.HC06 = HC06;
+            this.HC07 = HC07;
+            this.HC08 = HC08;
+            this.HC09 = HC09;
+            this.HC10 = HC10;
 
-            this.Shirts01 = Shirts01;
-            this.Shirts02 = Shirts02;
-            this.Shirts03 = Shirts03;
-            this.Shirts04 = Shirts04;
-            this.Shirts05 = Shirts05;
-            this.Shirts06 = Shirts06;
-            this.Shirts07 = Shirts07;
-            this.Shirts08 = Shirts08;
-            this.Shirts09 = Shirts09;
-            this.Shirts10 = Shirts10;
+            this.C01 = C01;
+            this.C02 = C02;
+            this.C03 = C03;
+            this.C04 = C04;
+            this.C05 = C05;
+            this.C06 = C06;
+            this.C07 = C07;
+            this.C08 = C08;
+            this.C09 = C09;
+            this.C10 = C10;
 
-            this.Pants01 = Pants01;
-            this.Pants02 = Pants02;
-            this.Pants03 = Pants03;
-            this.Pants04 = Pants04;
-            this.Pants05 = Pants05;
-            this.Pants06 = Pants06;
-            this.Pants07 = Pants07;
-            this.Pants08 = Pants08;
-            this.Pants09 = Pants09;
-            this.Pants10 = Pants10;
+            this.P01 = P01;
+            this.P02 = P02;
+            this.P03 = P03;
+            this.P04 = P04;
+            this.P05 = P05;
+            this.P06 = P06;
+            this.P07 = P07;
+            this.P08 = P08;
+            this.P09 = P09;
+            this.P10 = P10;
 
-            this.Pet01 = Pet01;
-            this.Pet02 = Pet02;
-            this.Pet03 = Pet03;
-            this.Pet04 = Pet04;
-            this.Pet05 = Pet05;
-            this.Pet06 = Pet06;
-            this.Pet07 = Pet07;
-            this.Pet08 = Pet08;
-            this.Pet09 = Pet09;
-            this.Pet10 = Pet10;
+            this.PET01 = PET01;
+            this.PET02 = PET02;
+            this.PET03 = PET03;
+            this.PET04 = PET04;
+            this.PET05 = PET05;
+            this.PET06 = PET06;
+            this.PET07 = PET07;
+            this.PET08 = PET08;
+            this.PET09 = PET09;
+            this.PET10 = PET10;
 
             this.money = money;
         }
@@ -647,46 +647,46 @@ public class Join : MonoBehaviourPunCallbacks
             dic["H3"] = this.H3;
             dic["H4"] = this.H4;
             dic["H5"] = this.H5;
-            dic["Hair01"] = this.Hair01;
-            dic["Hair02"] = this.Hair02;
-            dic["Hair03"] = this.Hair03;
-            dic["Hair04"] = this.Hair04;
-            dic["Hair05"] = this.Hair05;
-            dic["Hair06"] = this.Hair06;
-            dic["Hair07"] = this.Hair07;
-            dic["Hair08"] = this.Hair08;
-            dic["Hair09"] = this.Hair09;
-            dic["Hair10"] = this.Hair10;
-            dic["Shirts01"] = this.Shirts01;
-            dic["Shirts02"] = this.Shirts02;
-            dic["Shirts03"] = this.Shirts03;
-            dic["Shirts04"] = this.Shirts04;
-            dic["Shirts05"] = this.Shirts05;
-            dic["Shirts06"] = this.Shirts06;
-            dic["Shirts07"] = this.Shirts07;
-            dic["Shirts08"] = this.Shirts08;
-            dic["Shirts09"] = this.Shirts09;
-            dic["Shirts10"] = this.Shirts10;
-            dic["Pants01"] = this.Pants01;
-            dic["Pants02"] = this.Pants02;
-            dic["Pants03"] = this.Pants03;
-            dic["Pants04"] = this.Pants04;
-            dic["Pants05"] = this.Pants05;
-            dic["Pants06"] = this.Pants06;
-            dic["Pants07"] = this.Pants07;
-            dic["Pants08"] = this.Pants08;
-            dic["Pants09"] = this.Pants09;
-            dic["Pants10"] = this.Pants10;
-            dic["Pet01"] = this.Pet01;
-            dic["Pet02"] = this.Pet02;
-            dic["Pet03"] = this.Pet03;
-            dic["Pet04"] = this.Pet04;
-            dic["Pet05"] = this.Pet05;
-            dic["Pet06"] = this.Pet06;
-            dic["Pet07"] = this.Pet07;
-            dic["Pet08"] = this.Pet08;
-            dic["Pet09"] = this.Pet09;
-            dic["Pet10"] = this.Pet10;
+            dic["HC01"] = this.HC01;
+            dic["HC02"] = this.HC02;
+            dic["HC03"] = this.HC03;
+            dic["HC04"] = this.HC04;
+            dic["HC05"] = this.HC05;
+            dic["HC06"] = this.HC06;
+            dic["HC07"] = this.HC07;
+            dic["HC08"] = this.HC08;
+            dic["HC09"] = this.HC09;
+            dic["HC10"] = this.HC10;
+            dic["C01"] = this.C01;
+            dic["C02"] = this.C02;
+            dic["C03"] = this.C03;
+            dic["C04"] = this.C04;
+            dic["C05"] = this.C05;
+            dic["C06"] = this.C06;
+            dic["C07"] = this.C07;
+            dic["C08"] = this.C08;
+            dic["C09"] = this.C09;
+            dic["C10"] = this.C10;
+            dic["P01"] = this.P01;
+            dic["P02"] = this.P02;
+            dic["P03"] = this.P03;
+            dic["P04"] = this.P04;
+            dic["P05"] = this.P05;
+            dic["P06"] = this.P06;
+            dic["P07"] = this.P07;
+            dic["P08"] = this.P08;
+            dic["P09"] = this.P09;
+            dic["P10"] = this.P10;
+            dic["PET01"] = this.PET01;
+            dic["PET02"] = this.PET02;
+            dic["PET03"] = this.PET03;
+            dic["PET04"] = this.PET04;
+            dic["PET05"] = this.PET05;
+            dic["PET06"] = this.PET06;
+            dic["PET07"] = this.PET07;
+            dic["PET08"] = this.PET08;
+            dic["PET09"] = this.PET09;
+            dic["PET10"] = this.PET10;
             dic["money"] = this.money;
         
             return dic;
