@@ -57,12 +57,12 @@ public class Scene_Character_Setting : MonoBehaviour
 
     // 상의 
     public Texture C01, C02, C03, C04, C05, C06, C07, C08, C09, C10;
-    
+
     // 상의 끝
 
     // 하의
     public Texture P01, P02, P03, P04, P05, P06, P07, P08, P09, P10;
-    
+
     // 하의 끝
 
     //----------------------------------------Button in Canvas---------------------------------------
@@ -488,686 +488,86 @@ public class Scene_Character_Setting : MonoBehaviour
     {
         btnC01.onClick.AddListener(() =>
         {
-            switch (model)
-            {
-                case "F1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C01);
-                    clothes = "C01";
-                    break;
-                case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C01);
-                    clothes = "C01";
-                    break;
-                case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C01);
-                    clothes = "C01";
-                    break;
-                case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C01);
-                    clothes = "C01";
-                    break;
-                case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C01);
-                    clothes = "C01";
-                    break;
-                case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C01);
-                    clothes = "C01";
-                    break;
-                case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C01);
-                    clothes = "C01";
-                    break;
-            }
+            CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
         });
         btnC02.onClick.AddListener(() =>
         {
-            switch (model)
-            {
-                case "F1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
-                    clothes = "C02";
-                    break;
-                case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
-                    clothes = "C02";
-                    break;
-                case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
-                    clothes = "C02";
-                    break;
-                case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
-                    clothes = "C02";
-                    break;
-                case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
-                    clothes = "C02";
-                    break;
-                case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
-                    clothes = "C02";
-                    break;
-                case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
-                    clothes = "C02";
-                    break;
-            }
+            CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
         });
         btnC03.onClick.AddListener(() =>
         {
-            switch (model)
-            {
-                case "F1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C03);
-                    clothes = "C03";
-                    break;
-                case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C03);
-                    clothes = "C03";
-                    break;
-                case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C03);
-                    clothes = "C03";
-                    break;
-                case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C03);
-                    clothes = "C03";
-                    break;
-                case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C03);
-                    clothes = "C03";
-                    break;
-                case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C03);
-                    clothes = "C03";
-                    break;
-                case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C03);
-                    clothes = "C03";
-                    break;
-            }
+            CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
         });
         btnC04.onClick.AddListener(() =>
         {
-            switch (model)
-            {
-                case "F1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C04);
-                    clothes = "C04";
-                    break;
-                case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C04);
-                    clothes = "C04";
-                    break;
-                case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C04);
-                    clothes = "C04";
-                    break;
-                case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C04);
-                    clothes = "C04";
-                    break;
-                case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C04);
-                    clothes = "C04";
-                    break;
-                case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C04);
-                    clothes = "C04";
-                    break;
-                case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C04);
-                    clothes = "C04";
-                    break;
-            }
+            CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
         });
         btnC05.onClick.AddListener(() =>
         {
-            switch (model)
-            {
-                case "F1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C05);
-                    clothes = "C05";
-                    break;
-                case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C05);
-                    clothes = "C05";
-                    break;
-                case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C05);
-                    clothes = "C05";
-                    break;
-                case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C05);
-                    clothes = "C05";
-                    break;
-                case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C05);
-                    clothes = "C05";
-                    break;
-                case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C05);
-                    clothes = "C05";
-                    break;
-                case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C05);
-                    clothes = "C05";
-                    break;
-            }
+            CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
         });
         btnC06.onClick.AddListener(() =>
         {
-            switch (model)
-            {
-                case "F1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C06);
-                    clothes = "C06";
-                    break;
-                case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C06);
-                    clothes = "C06";
-                    break;
-                case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C06);
-                    clothes = "C06";
-                    break;
-                case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C06);
-                    clothes = "C06";
-                    break;
-                case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C06);
-                    clothes = "C06";
-                    break;
-                case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C06);
-                    clothes = "C06";
-                    break;
-                case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C06);
-                    clothes = "C06";
-                    break;
-            }
+            CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
         });
         btnC07.onClick.AddListener(() =>
         {
-            switch (model)
-            {
-                case "F1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C07);
-                    clothes = "C07";
-                    break;
-                case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C07);
-                    clothes = "C07";
-                    break;
-                case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C07);
-                    clothes = "C07";
-                    break;
-                case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C07);
-                    clothes = "C07";
-                    break;
-                case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C07);
-                    clothes = "C07";
-                    break;
-                case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C07);
-                    clothes = "C07";
-                    break;
-                case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C07);
-                    clothes = "C07";
-                    break;
-            }
+            CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
         });
         btnC08.onClick.AddListener(() =>
         {
-            switch (model)
-            {
-                case "F1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C08);
-                    clothes = "C08";
-                    break;
-                case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C08);
-                    clothes = "C08";
-                    break;
-                case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C08);
-                    clothes = "C08";
-                    break;
-                case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C08);
-                    clothes = "C08";
-                    break;
-                case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C08);
-                    clothes = "C08";
-                    break;
-                case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C08);
-                    clothes = "C08";
-                    break;
-                case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C08);
-                    clothes = "C08";
-                    break;
-            }
+            CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
         });
         btnC09.onClick.AddListener(() =>
         {
-            switch (model)
-            {
-                case "F1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C09);
-                    clothes = "C09";
-                    break;
-                case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C09);
-                    clothes = "C09";
-                    break;
-                case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C09);
-                    clothes = "C09";
-                    break;
-                case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C09);
-                    clothes = "C09";
-                    break;
-                case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C09);
-                    clothes = "C09";
-                    break;
-                case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C09);
-                    clothes = "C09";
-                    break;
-                case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C09);
-                    clothes = "C09";
-                    break;
-            }
+            CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
         });
         btnC10.onClick.AddListener(() =>
         {
-            switch (model)
-            {
-                case "F1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C10);
-                    clothes = "C10";
-                    break;
-                case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C10);
-                    clothes = "C10";
-                    break;
-                case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C10);
-                    clothes = "C10";
-                    break;
-                case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C10);
-                    clothes = "C10";
-                    break;
-                case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C10);
-                    clothes = "C10";
-                    break;
-                case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C10);
-                    clothes = "C10";
-                    break;
-                case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C10);
-                    clothes = "C10";
-                    break;
-            }
+            CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
         });
     }
     public void BBtn()
     {
         btnP01.onClick.AddListener(() =>
         {
-            switch (model)
-            {
-                case "F1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P01);
-                    pants = "P01";
-                    break;
-                case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P01);
-                    pants = "P01";
-                    break;
-                case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P01);
-                    pants = "P01";
-                    break;
-                case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P01);
-                    pants = "P01";
-                    break;
-                case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P01);
-                    pants = "P01";
-                    break;
-                case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P01);
-                    pants = "P01";
-                    break;
-                case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P01);
-                    pants = "P01";
-                    break;
-            }
+            CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
         });
         btnP02.onClick.AddListener(() =>
         {
-            switch (model)
-            {
-                case "F1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P02);
-                    pants = "P02";
-                    break;
-                case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P02);
-                    pants = "P02";
-                    break;
-                case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P02);
-                    pants = "P02";
-                    break;
-                case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P02);
-                    pants = "P02";
-                    break;
-                case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P02);
-                    pants = "P02";
-                    break;
-                case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P02);
-                    pants = "P02";
-                    break;
-                case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P02);
-                    pants = "P02";
-                    break;
-            }
+            CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
         });
         btnP03.onClick.AddListener(() =>
         {
-            switch (model)
-            {
-                case "F1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P03);
-                    pants = "P03";
-                    break;
-                case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P03);
-                    pants = "P03";
-                    break;
-                case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P03);
-                    pants = "P03";
-                    break;
-                case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P03);
-                    pants = "P03";
-                    break;
-                case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P03);
-                    pants = "P03";
-                    break;
-                case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P03);
-                    pants = "P03";
-                    break;
-                case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P03);
-                    pants = "P03";
-                    break;
-            }
+            CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
         });
         btnP04.onClick.AddListener(() =>
         {
-            switch (model)
-            {
-                case "F1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P04);
-                    pants = "P04";
-                    break;
-                case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P04);
-                    pants = "P04";
-                    break;
-                case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P04);
-                    pants = "P04";
-                    break;
-                case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P04);
-                    pants = "P04";
-                    break;
-                case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P04);
-                    pants = "P04";
-                    break;
-                case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P04);
-                    pants = "P04";
-                    break;
-                case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P04);
-                    pants = "P04";
-                    break;
-            }
+            CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
         });
         btnP05.onClick.AddListener(() =>
         {
-            switch (model)
-            {
-                case "F1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P05);
-                    pants = "P05";
-                    break;
-                case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P05);
-                    pants = "P05";
-                    break;
-                case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P05);
-                    pants = "P05";
-                    break;
-                case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P05);
-                    pants = "P05";
-                    break;
-                case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P05);
-                    pants = "P05";
-                    break;
-                case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P05);
-                    pants = "P05";
-                    break;
-                case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P05);
-                    pants = "P05";
-                    break;
-            }
+            CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
         });
         btnP06.onClick.AddListener(() =>
         {
-            switch (model)
-            {
-                case "F1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P06);
-                    pants = "P06";
-                    break;
-                case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P06);
-                    pants = "P06";
-                    break;
-                case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P06);
-                    pants = "P06";
-                    break;
-                case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P06);
-                    pants = "P06";
-                    break;
-                case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P06);
-                    pants = "P06";
-                    break;
-                case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P06);
-                    pants = "P06";
-                    break;
-                case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P06);
-                    pants = "P06";
-                    break;
-            }
+            CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
         });
         btnP07.onClick.AddListener(() =>
         {
-            switch (model)
-            {
-                case "F1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P07);
-                    pants = "P07";
-                    break;
-                case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P07);
-                    pants = "P07";
-                    break;
-                case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P07);
-                    pants = "P07";
-                    break;
-                case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P07);
-                    pants = "P07";
-                    break;
-                case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P07);
-                    pants = "P07";
-                    break;
-                case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P07);
-                    pants = "P07";
-                    break;
-                case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P07);
-                    pants = "P07";
-                    break;
-            }
+            CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
         });
         btnP08.onClick.AddListener(() =>
         {
-            switch (model)
-            {
-                case "F1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P08);
-                    pants = "P08";
-                    break;
-                case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P08);
-                    pants = "P08";
-                    break;
-                case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P08);
-                    pants = "P08";
-                    break;
-                case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P08);
-                    pants = "P08";
-                    break;
-                case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P08);
-                    pants = "P08";
-                    break;
-                case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P08);
-                    pants = "P08";
-                    break;
-                case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P08);
-                    pants = "P08";
-                    break;
-            }
+            CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
         });
         btnP09.onClick.AddListener(() =>
         {
-            switch (model)
-            {
-                case "F1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P09);
-                    pants = "P09";
-                    break;
-                case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P09);
-                    pants = "P09";
-                    break;
-                case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P09);
-                    pants = "P09";
-                    break;
-                case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P09);
-                    pants = "P09";
-                    break;
-                case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P09);
-                    pants = "P09";
-                    break;
-                case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P09);
-                    pants = "P09";
-                    break;
-                case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P09);
-                    pants = "P09";
-                    break;
-            }
+            CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
         });
         btnP10.onClick.AddListener(() =>
         {
-            switch (model)
-            {
-                case "F1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P10);
-                    pants = "P10";
-                    break;
-                case "F3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P10);
-                    pants = "P10";
-                    break;
-                case "F4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P10);
-                    pants = "P10";
-                    break;
-                case "M1":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P10);
-                    pants = "P10";
-                    break;
-                case "M2":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P10);
-                    pants = "P10";
-                    break;
-                case "M3":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P10);
-                    pants = "P10";
-                    break;
-                case "M4":
-                    CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P10);
-                    pants = "P10";
-                    break;
-            }
+            CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
         });
     }
     public void selectAvatar()
