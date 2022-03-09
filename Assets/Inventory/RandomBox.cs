@@ -204,8 +204,8 @@ public class RandomBox : MonoBehaviour
             HCS1.sprite = HCImage1;
             HCSlot1.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Hair01");
-            Debug.Log("Hair01 get & save");
+            join.SetValueFireBase("HC01");
+            Debug.Log("HC01 get & save");
         }
 
         if(join.hair02.Equals("True"))
@@ -215,8 +215,8 @@ public class RandomBox : MonoBehaviour
             HCS2.sprite = HCImage2;
             HCSlot2.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Hair02");
-            Debug.Log("Hair02 get & save");
+            join.SetValueFireBase("HC02");
+            Debug.Log("HC02 get & save");
         }
 
         if (join.hair03.Equals("True"))
@@ -226,8 +226,8 @@ public class RandomBox : MonoBehaviour
             HCSlot3.interactable = true;
             GachaList.RemoveAt(rand);
             HCA1.sprite = HCImage3;
-            join.SetValueFireBase("Hair03");
-            Debug.Log("Hair03 get & save");
+            join.SetValueFireBase("HC03");
+            Debug.Log("HC03 get & save");
         }
 
         if (join.hair04.Equals("True"))
@@ -238,8 +238,8 @@ public class RandomBox : MonoBehaviour
             HCSlot4.interactable = true;
             GachaList.RemoveAt(rand);
             HCA2.sprite = HCImage4;
-            join.SetValueFireBase("Hair04");
-            Debug.Log("Hair04 get & save");
+            join.SetValueFireBase("HC04");
+            Debug.Log("HC04 get & save");
         }
 
         if (join.hair05.Equals("True"))
@@ -249,8 +249,8 @@ public class RandomBox : MonoBehaviour
             HCSlot5.interactable = true;
             GachaList.RemoveAt(rand);
             HCA3.sprite = HCImage5;
-            join.SetValueFireBase("Hair05");
-            Debug.Log("Hair05 get & save");
+            join.SetValueFireBase("HC05");
+            Debug.Log("HC05 get & save");
         }
 
         if (join.hair06.Equals("True"))
@@ -260,8 +260,8 @@ public class RandomBox : MonoBehaviour
             HCSlot6.interactable = true;
             GachaList.RemoveAt(rand);
             HCB1.sprite = HCImage6;
-            join.SetValueFireBase("Hair06");
-            Debug.Log("Hair06 get & save");
+            join.SetValueFireBase("HC06");
+            Debug.Log("HC06 get & save");
         }
 
         if (join.hair07.Equals("True"))
@@ -271,8 +271,8 @@ public class RandomBox : MonoBehaviour
             HCSlot7.interactable = true;
             GachaList.RemoveAt(rand);
             HCB2.sprite = HCImage7;
-            join.SetValueFireBase("Hair07");
-            Debug.Log("Hair07 get & save");
+            join.SetValueFireBase("HC07");
+            Debug.Log("HC07 get & save");
 
         }
         if (join.hair08.Equals("True"))
@@ -282,8 +282,8 @@ public class RandomBox : MonoBehaviour
             HCSlot8.interactable = true;
             GachaList.RemoveAt(rand);
             HCB3.sprite = HCImage8;
-            join.SetValueFireBase("Hair08");
-            Debug.Log("Hair08 get & save");
+            join.SetValueFireBase("HC08");
+            Debug.Log("HC08 get & save");
         }
 
         if (join.hair09.Equals("True"))
@@ -293,8 +293,8 @@ public class RandomBox : MonoBehaviour
             HCSlot9.interactable = true;
             GachaList.RemoveAt(rand);
             HCB4.sprite = HCImage9;
-            join.SetValueFireBase("Hair09");
-            Debug.Log("Hair09 get & save");
+            join.SetValueFireBase("HC09");
+            Debug.Log("HC09 get & save");
         }
 
         if (join.hair10.Equals("True"))
@@ -304,8 +304,8 @@ public class RandomBox : MonoBehaviour
             HCSlot10.interactable = true;
             GachaList.RemoveAt(rand);
             HCB5.sprite = HCImage10;
-            join.SetValueFireBase("Hair10");
-            Debug.Log("Hair10 get & save");
+            join.SetValueFireBase("HC10");
+            Debug.Log("HC10 get & save");
         }
     }
     public List<string> GachaList = new List<string>() { "HCS1", "HCS2", "HCA1", "HCA2", "HCA3", "HCB1", "HCB2", "HCB3", "HCB4", "HCB5", "PS1","PS2", "PA1", "PA2", "PA3", "PB1", "PB2", "PB3", "PB4", "PB5",
@@ -331,7 +331,7 @@ public class RandomBox : MonoBehaviour
             HCS1.sprite = HCImage1;
             HCSlot1.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Hair01");
+            join.SetValueFireBase("HC01");
         }
         else if (GachaList[rand] == "HCS2")
         {
@@ -340,7 +340,7 @@ public class RandomBox : MonoBehaviour
             HCS2.sprite = HCImage2;
             HCSlot2.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Hair02");
+            join.SetValueFireBase("HC02");
         }
         else if (GachaList[rand] == "HCA1")
         {
@@ -349,7 +349,7 @@ public class RandomBox : MonoBehaviour
             HCSlot3.interactable = true;
             HCA1.sprite = HCImage3;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Hair03");
+            join.SetValueFireBase("HC03");
         }
         else if (GachaList[rand] == "HCA2")
         {
@@ -358,7 +358,7 @@ public class RandomBox : MonoBehaviour
             HCSlot4.interactable = true;
             HCA2.sprite = HCImage4;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Hair04");
+            join.SetValueFireBase("HC04");
         }
         else if (GachaList[rand] == "HCA3")
         {
@@ -367,7 +367,7 @@ public class RandomBox : MonoBehaviour
             HCSlot5.interactable = true;
             HCA3.sprite = HCImage5;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Hair05");
+            join.SetValueFireBase("HC05");
         }
         else if (GachaList[rand] == "HCB1")
         {
@@ -376,7 +376,7 @@ public class RandomBox : MonoBehaviour
             HCSlot6.interactable = true;
             HCB1.sprite = HCImage6;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Hair06");
+            join.SetValueFireBase("HC06");
         }
         else if (GachaList[rand] == "HCB2")
         {
@@ -385,7 +385,7 @@ public class RandomBox : MonoBehaviour
             HCSlot7.interactable = true;
             HCB2.sprite = HCImage7;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Hair07");
+            join.SetValueFireBase("HC07");
         }
         else if (GachaList[rand] == "HCB3")
         {
@@ -394,7 +394,7 @@ public class RandomBox : MonoBehaviour
             HCSlot8.interactable = true;
             HCB3.sprite = HCImage8;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Hair08");
+            join.SetValueFireBase("HC08");
         }
         else if (GachaList[rand] == "HCB4")
         {
@@ -403,7 +403,7 @@ public class RandomBox : MonoBehaviour
             HCSlot9.interactable = true;
             HCB4.sprite = HCImage9;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Hair09");
+            join.SetValueFireBase("HC09");
         }
         else if (GachaList[rand] == "HCB5")
         {
@@ -412,7 +412,7 @@ public class RandomBox : MonoBehaviour
             HCSlot10.interactable = true;
             HCB5.sprite = HCImage10;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Hair10");
+            join.SetValueFireBase("HC10");
         }
         //대가리 색 끝
 
@@ -424,7 +424,7 @@ public class RandomBox : MonoBehaviour
             PS1.sprite = PImage1;
             PSlot1.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Pet01");
+            join.SetValueFireBase("PET01");
 
         }
         else if (GachaList[rand] == "PS2")
@@ -434,7 +434,7 @@ public class RandomBox : MonoBehaviour
             PS2.sprite = PImage2;
             PSlot2.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Pet02");
+            join.SetValueFireBase("PET02");
 
         }
         else if (GachaList[rand] == "PA1")
@@ -444,7 +444,7 @@ public class RandomBox : MonoBehaviour
             PA1.sprite = PImage3;
             PSlot3.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Pet03");
+            join.SetValueFireBase("PET03");
 
         }
         else if (GachaList[rand] == "PA2")
@@ -454,7 +454,7 @@ public class RandomBox : MonoBehaviour
             PA2.sprite = PImage4;
             PSlot4.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Pet04");
+            join.SetValueFireBase("PET04");
 
         }
         else if (GachaList[rand] == "PA3")
@@ -464,7 +464,7 @@ public class RandomBox : MonoBehaviour
             PA3.sprite = PImage5;
             PSlot5.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Pet05");
+            join.SetValueFireBase("PET05");
 
         }
         else if (GachaList[rand] == "PB1")
@@ -474,7 +474,7 @@ public class RandomBox : MonoBehaviour
             PB1.sprite = PImage6;
             PSlot6.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Pet06");
+            join.SetValueFireBase("PET06");
 
         }
         else if (GachaList[rand] == "PB2")
@@ -484,7 +484,7 @@ public class RandomBox : MonoBehaviour
             PB2.sprite = PImage7;
             PSlot7.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Pet07");
+            join.SetValueFireBase("PET07");
 
         }
         else if (GachaList[rand] == "PB3")
@@ -494,7 +494,7 @@ public class RandomBox : MonoBehaviour
             PB3.sprite = PImage8;
             PSlot8.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Pet08");
+            join.SetValueFireBase("PET08");
 
         }
         else if (GachaList[rand] == "PB4")
@@ -504,7 +504,7 @@ public class RandomBox : MonoBehaviour
             PB4.sprite = PImage9;
             PSlot9.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Pet09");
+            join.SetValueFireBase("PET09");
 
         }
         else if (GachaList[rand] == "PB5")
@@ -514,7 +514,7 @@ public class RandomBox : MonoBehaviour
             PB5.sprite = PImage10;
             PSlot10.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Pet10");
+            join.SetValueFireBase("PET10");
 
         }
 
@@ -526,7 +526,7 @@ public class RandomBox : MonoBehaviour
             CS1.sprite = CImage1;
             CSlot1.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Shirts01");
+            join.SetValueFireBase("C01");
 
         }
         else if (GachaList[rand] == "CS2")
@@ -536,7 +536,7 @@ public class RandomBox : MonoBehaviour
             CS2.sprite = CImage2;
             CSlot2.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Shirts02");
+            join.SetValueFireBase("C02");
 
         }
         else if (GachaList[rand] == "CA1")
@@ -546,7 +546,7 @@ public class RandomBox : MonoBehaviour
             CA1.sprite = CImage3;
             CSlot3.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Shirts03");
+            join.SetValueFireBase("C03");
 
         }
         else if (GachaList[rand] == "CA2")
@@ -556,7 +556,7 @@ public class RandomBox : MonoBehaviour
             CA2.sprite = CImage4;
             CSlot4.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Shirts04");
+            join.SetValueFireBase("C04");
 
         }
         else if (GachaList[rand] == "CA3")
@@ -566,7 +566,7 @@ public class RandomBox : MonoBehaviour
             CA3.sprite = CImage5;
             CSlot5.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Shirts05");
+            join.SetValueFireBase("C05");
 
         }
         else if (GachaList[rand] == "CB1")
@@ -576,7 +576,7 @@ public class RandomBox : MonoBehaviour
             CB1.sprite = CImage6;
             CSlot6.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Shirts06");
+            join.SetValueFireBase("C06");
 
         }
         else if (GachaList[rand] == "CB2")
@@ -586,7 +586,7 @@ public class RandomBox : MonoBehaviour
             CB2.sprite = CImage7;
             CSlot7.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Shirts07");
+            join.SetValueFireBase("C07");
 
         }
         else if (GachaList[rand] == "CB3")
@@ -596,7 +596,7 @@ public class RandomBox : MonoBehaviour
             CB3.sprite = CImage8;
             CSlot8.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Shirts08");
+            join.SetValueFireBase("C08");
 
         }
         else if (GachaList[rand] == "CB4")
@@ -606,7 +606,7 @@ public class RandomBox : MonoBehaviour
             CB4.sprite = CImage9;
             CSlot9.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Shirts09");
+            join.SetValueFireBase("C09");
 
         }
         else if (GachaList[rand] == "CB5")
@@ -616,7 +616,7 @@ public class RandomBox : MonoBehaviour
             CB5.sprite = CImage10;
             CSlot10.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Shirts10");
+            join.SetValueFireBase("C10");
 
         }
         //상의 끝
@@ -630,7 +630,7 @@ public class RandomBox : MonoBehaviour
             BS1.sprite = BImage1;
             BSlot1.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Pants01");
+            join.SetValueFireBase("P01");
 
         }
         else if (GachaList[rand] == "BS2")
@@ -640,7 +640,7 @@ public class RandomBox : MonoBehaviour
             BS2.sprite = BImage2;
             BSlot2.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Pants02");
+            join.SetValueFireBase("P02");
 
         }
         else if (GachaList[rand] == "BA1")
@@ -650,7 +650,7 @@ public class RandomBox : MonoBehaviour
             BA1.sprite = BImage3;
             BSlot3.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Pants03");
+            join.SetValueFireBase("P03");
 
         }
         else if (GachaList[rand] == "BA2")
@@ -660,7 +660,7 @@ public class RandomBox : MonoBehaviour
             BA2.sprite = BImage4;
             BSlot4.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Pants04");
+            join.SetValueFireBase("P04");
 
         }
         else if (GachaList[rand] == "BA3")
@@ -670,7 +670,7 @@ public class RandomBox : MonoBehaviour
             BA3.sprite = BImage5;
             BSlot5.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Pants05");
+            join.SetValueFireBase("P05");
 
         }
         else if (GachaList[rand] == "BB1")
@@ -680,7 +680,7 @@ public class RandomBox : MonoBehaviour
             BB1.sprite = BImage6;
             BSlot6.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Pants06");
+            join.SetValueFireBase("P06");
 
         }
         else if (GachaList[rand] == "BB2")
@@ -690,7 +690,7 @@ public class RandomBox : MonoBehaviour
             BB2.sprite = BImage7;
             BSlot7.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Pants07");
+            join.SetValueFireBase("P07");
 
         }
         else if (GachaList[rand] == "BB3")
@@ -700,7 +700,7 @@ public class RandomBox : MonoBehaviour
             BB3.sprite = BImage8;
             BSlot8.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Pants08");
+            join.SetValueFireBase("P08");
 
         }
         else if (GachaList[rand] == "BB4")
@@ -710,7 +710,7 @@ public class RandomBox : MonoBehaviour
             BB4.sprite = BImage9;
             BSlot9.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Pants09");
+            join.SetValueFireBase("P09");
 
         }
         else if (GachaList[rand] == "BB5")
@@ -720,7 +720,7 @@ public class RandomBox : MonoBehaviour
             BB5.sprite = BImage10;
             BSlot10.interactable = true;
             GachaList.RemoveAt(rand);
-            join.SetValueFireBase("Pants10");
+            join.SetValueFireBase("P10");
 
         }
         //하의 끝
