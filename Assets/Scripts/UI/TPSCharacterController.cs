@@ -82,9 +82,10 @@ public class TPSCharacterController : MonoBehaviour
 
         scs = GameObject.Find("ItemManager").GetComponent<Scene_Character_Setting>();
 
-
-        CallChangeMyAvatar(scs.hairColor, scs.top, scs.bottom);
-        //ChangeMyAvatar(scs.hairColor, scs.top, scs.bottom);
+        if (PV.IsMine)
+        {
+            CallChangeMyAvatar(scs.hairColor, scs.top, scs.bottom);
+        }//ChangeMyAvatar(scs.hairColor, scs.top, scs.bottom);
     }
 
     private void escAction()
@@ -117,8 +118,8 @@ public class TPSCharacterController : MonoBehaviour
         }
     }
 
-    void PlayAudioWalk() {
-
+    void PlayAudioWalk() 
+    {
         audioFlagRun = false;
         if (!audioFlagWalk && !animator.GetBool("isRun") && !animator.GetBool("isJump"))
         {
