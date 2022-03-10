@@ -83,8 +83,6 @@ public class TPSCharacterController : MonoBehaviour
         scs = GameObject.Find("ItemManager").GetComponent<Scene_Character_Setting>();
 
 
-        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Dog"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
-
         CallChangeMyAvatar(scs.hairColor, scs.top, scs.bottom);
         //ChangeMyAvatar(scs.hairColor, scs.top, scs.bottom);
     }

@@ -44,7 +44,7 @@ public class PlayerManager : MonoBehaviour, IPunObservable
 
         }
 
-
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Dog"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
 
 
 
