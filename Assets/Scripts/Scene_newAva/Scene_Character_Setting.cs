@@ -763,7 +763,7 @@ public class Scene_Character_Setting : MonoBehaviour
                 return HC09;
                 break;
             case "HC10":
-                return HC09;
+                return HC10;
                 break;
             case "HC11":
                 return HC11;
@@ -982,7 +982,7 @@ public class Scene_Character_Setting : MonoBehaviour
                 return C09;
                 break;
             case "C10":
-                return C09;
+                return C10;
                 break;
             default:
                 return null;
