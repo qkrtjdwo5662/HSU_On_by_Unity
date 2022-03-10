@@ -1081,7 +1081,7 @@ public class RandomBox : MonoBehaviour
             Draw();
             money -= 200;
             GatchaPanel.SetActive(true);
-            join.SetValueFireBase("Money",money);
+            join.SetValueFireBase("money",money);
             MyMoney.text = money.ToString();
         }
         else if (money <= 0)

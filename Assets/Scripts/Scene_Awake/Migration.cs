@@ -91,7 +91,7 @@ public class Migration : MonoBehaviour
 		reference.Child("P09").SetValueAsync(false);
 		reference.Child("P10").SetValueAsync(false);
 
-		reference.Child("money").SetValueAsync("2000");
+		reference.Child("money").SetValueAsync(2000);
 
 	}
 }

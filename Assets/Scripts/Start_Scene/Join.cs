@@ -282,7 +282,7 @@ public class Join : MonoBehaviourPunCallbacks
                 Debug.Log("D " + d1cleared + " " + d2cleared + " " + d3cleared + " " + d4cleared + " " + d5cleared);
                 Debug.Log("퀘스트 클리어 여부: " + ot0cleared);
 
-                money = dataSnapshot.Child("Money").GetValue(true).ToString();
+                money = dataSnapshot.Child("money").GetValue(true).ToString();
 
                 hc01 = dataSnapshot.Child("HC01").GetValue(true).ToString();
                 hc02 = dataSnapshot.Child("HC02").GetValue(true).ToString();
