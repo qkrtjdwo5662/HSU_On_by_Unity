@@ -1101,7 +1101,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   escButton: {fileID: 0}
   attackButton: {fileID: 0}
-  characterModel: {fileID: 0}
+  characterModel: {fileID: 786847656362740465}
   audioSourceWalk: {fileID: 1085764362}
   audioSourceRun: {fileID: 1085764361}
   moveSwitch: 1

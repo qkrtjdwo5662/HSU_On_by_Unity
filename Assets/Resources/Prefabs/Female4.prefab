@@ -723,7 +723,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   escButton: {fileID: 0}
   attackButton: {fileID: 0}
-  characterModel: {fileID: 0}
+  characterModel: {fileID: 7591176732092470247}
   audioSourceWalk: {fileID: 1713113564}
   audioSourceRun: {fileID: 1713113563}
   moveSwitch: 1

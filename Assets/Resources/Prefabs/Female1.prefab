@@ -1118,7 +1118,6 @@ GameObject:
   - component: {fileID: 8072549638314843391}
   - component: {fileID: 3413891556477492027}
   - component: {fileID: 893818850861460769}
-  - component: {fileID: -1584572801475371001}
   - component: {fileID: 842295028}
   - component: {fileID: 842295029}
   m_Layer: 0
@@ -1170,7 +1169,7 @@ MonoBehaviour:
   animator: {fileID: 2931654466966316652}
   escButton: {fileID: 0}
   attackButton: {fileID: 0}
-  characterModel: {fileID: 0}
+  characterModel: {fileID: 6707772380119968101}
   audioSourceWalk: {fileID: 842295029}
   audioSourceRun: {fileID: 842295028}
   moveSwitch: 1
@@ -1273,49 +1272,6 @@ MonoBehaviour:
   m_SynchronizeRotation: 0
   m_SynchronizeScale: 0
   m_UseLocal: 1
---- !u!114 &-1584572801475371001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3413891556477492024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3441734a964edff4cab34fa7be8408ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  model: {fileID: 747929968811628205}
-  HC01: {fileID: 0}
-  HC02: {fileID: 0}
-  HC03: {fileID: 0}
-  HC04: {fileID: 0}
-  HC05: {fileID: 0}
-  HC06: {fileID: 0}
-  HC07: {fileID: 0}
-  HC08: {fileID: 0}
-  HC09: {fileID: 0}
-  HC10: {fileID: 0}
-  C01: {fileID: 0}
-  C02: {fileID: 0}
-  C03: {fileID: 0}
-  C04: {fileID: 0}
-  C05: {fileID: 0}
-  C06: {fileID: 0}
-  C07: {fileID: 0}
-  C08: {fileID: 0}
-  C09: {fileID: 0}
-  C10: {fileID: 0}
-  P01: {fileID: 0}
-  P02: {fileID: 0}
-  P03: {fileID: 0}
-  P04: {fileID: 0}
-  P05: {fileID: 0}
-  P06: {fileID: 0}
-  P07: {fileID: 0}
-  P08: {fileID: 0}
-  P09: {fileID: 0}
-  P10: {fileID: 0}
 --- !u!82 &842295028
 AudioSource:
   m_ObjectHideFlags: 0

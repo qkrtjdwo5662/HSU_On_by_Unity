@@ -1,19 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Scene_Character_Setting : MonoBehaviour
 {
     public int WhatSelected = 0;
 
-    
+
     public string model = "";
-    
+
     public string pet;
 
-    public Texture hairColor, top, bottom;
+    public string hairColor, top, bottom;
 
 
     public string getModel()
@@ -154,31 +151,31 @@ public class Scene_Character_Setting : MonoBehaviour
             {
                 case "F1":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC01);
-                    hairColor = HC01;
+                    hairColor = "HC01";
                     break;
                 case "F3":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC11);
-                    hairColor = HC11;
+                    hairColor = "HC11";
                     break;
                 case "F4":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC21);
-                    hairColor = HC21;
+                    hairColor = "HC21";
                     break;
                 case "M1":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC31);
-                    hairColor = HC31;
+                    hairColor = "HC31";
                     break;
                 case "M2":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC41);
-                    hairColor = HC41;
+                    hairColor = "HC41";
                     break;
                 case "M3":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC51);
-                    hairColor = HC51;
+                    hairColor = "HC51";
                     break;
                 case "M4":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC61);
-                    hairColor = HC61;
+                    hairColor = "HC61";
                     break;
             }
         });
@@ -188,31 +185,31 @@ public class Scene_Character_Setting : MonoBehaviour
             {
                 case "F1":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC02);
-                    hairColor = HC02;
+                    hairColor = "HC02";
                     break;
                 case "F3":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC12);
-                    hairColor = HC12;
+                    hairColor = "HC12";
                     break;
                 case "F4":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC22);
-                    hairColor = HC22;
+                    hairColor = "HC22";
                     break;
                 case "M1":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC32);
-                    hairColor = HC32;
+                    hairColor = "HC32";
                     break;
                 case "M2":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC42);
-                    hairColor = HC42;
+                    hairColor = "HC42";
                     break;
                 case "M3":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC52);
-                    hairColor = HC52;
+                    hairColor = "HC52";
                     break;
                 case "M4":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC62);
-                    hairColor = HC62;
+                    hairColor = "HC62";
                     break;
             }
         });
@@ -222,31 +219,31 @@ public class Scene_Character_Setting : MonoBehaviour
             {
                 case "F1":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC03);
-                    hairColor = HC03;
+                    hairColor = "HC03";
                     break;
                 case "F3":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC13);
-                    hairColor = HC13;
+                    hairColor = "HC13";
                     break;
                 case "F4":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC23);
-                    hairColor = HC23;
+                    hairColor = "HC23";
                     break;
                 case "M1":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC33);
-                    hairColor = HC33;
+                    hairColor = "HC33";
                     break;
                 case "M2":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC43);
-                    hairColor = HC43;
+                    hairColor = "HC43";
                     break;
                 case "M3":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC53);
-                    hairColor = HC53;
+                    hairColor = "HC53";
                     break;
                 case "M4":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC63);
-                    hairColor = HC63;
+                    hairColor = "HC63";
                     break;
             }
         });
@@ -256,31 +253,31 @@ public class Scene_Character_Setting : MonoBehaviour
             {
                 case "F1":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC04);
-                    hairColor = HC04;
+                    hairColor = "HC04";
                     break;
                 case "F3":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC14);
-                    hairColor = HC14;
+                    hairColor = "HC14";
                     break;
                 case "F4":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC24);
-                    hairColor = HC24;
+                    hairColor = "HC24";
                     break;
                 case "M1":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC34);
-                    hairColor = HC34;
+                    hairColor = "HC34";
                     break;
                 case "M2":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC44);
-                    hairColor = HC44;
+                    hairColor = "HC44";
                     break;
                 case "M3":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC54);
-                    hairColor = HC54;
+                    hairColor = "HC54";
                     break;
                 case "M4":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC64);
-                    hairColor = HC64;
+                    hairColor = "HC64";
                     break;
             }
         });
@@ -290,31 +287,31 @@ public class Scene_Character_Setting : MonoBehaviour
             {
                 case "F1":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC05);
-                    hairColor = HC05;
+                    hairColor = "HC05";
                     break;
                 case "F3":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC15);
-                    hairColor = HC15;
+                    hairColor = "HC15";
                     break;
                 case "F4":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC25);
-                    hairColor = HC25;
+                    hairColor = "HC25";
                     break;
                 case "M1":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC35);
-                    hairColor = HC35;
+                    hairColor = "HC35";
                     break;
                 case "M2":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC45);
-                    hairColor = HC45;
+                    hairColor = "HC45";
                     break;
                 case "M3":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC55);
-                    hairColor = HC55;
+                    hairColor = "HC55";
                     break;
                 case "M4":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC65);
-                    hairColor = HC65;
+                    hairColor = "HC65";
                     break;
             }
         });
@@ -324,31 +321,31 @@ public class Scene_Character_Setting : MonoBehaviour
             {
                 case "F1":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC06);
-                    hairColor = HC06;
+                    hairColor = "HC06";
                     break;
                 case "F3":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC16);
-                    hairColor = HC16;
+                    hairColor = "HC16";
                     break;
                 case "F4":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC26);
-                    hairColor = HC26;
+                    hairColor = "HC26";
                     break;
                 case "M1":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC36);
-                    hairColor = HC36;
+                    hairColor = "HC36";
                     break;
                 case "M2":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC46);
-                    hairColor = HC46;
+                    hairColor = "HC46";
                     break;
                 case "M3":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC56);
-                    hairColor = HC56;
+                    hairColor = "HC56";
                     break;
                 case "M4":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC66);
-                    hairColor = HC66;
+                    hairColor = "HC66";
                     break;
             }
         });
@@ -358,31 +355,31 @@ public class Scene_Character_Setting : MonoBehaviour
             {
                 case "F1":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC07);
-                    hairColor = HC07;
+                    hairColor = "HC07";
                     break;
                 case "F3":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC17);
-                    hairColor = HC17;
+                    hairColor = "HC17";
                     break;
                 case "F4":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC27);
-                    hairColor = HC27;
+                    hairColor = "HC27";
                     break;
                 case "M1":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC37);
-                    hairColor = HC37;
+                    hairColor = "HC37";
                     break;
                 case "M2":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC47);
-                    hairColor = HC47;
+                    hairColor = "HC47";
                     break;
                 case "M3":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC57);
-                    hairColor = HC57;
+                    hairColor = "HC57";
                     break;
                 case "M4":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC67);
-                    hairColor = HC67;
+                    hairColor = "HC67";
                     break;
             }
         });
@@ -392,31 +389,31 @@ public class Scene_Character_Setting : MonoBehaviour
             {
                 case "F1":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC08);
-                    hairColor = HC08;
+                    hairColor = "HC08";
                     break;
                 case "F3":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC18);
-                    hairColor = HC18;
+                    hairColor = "HC18";
                     break;
                 case "F4":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC28);
-                    hairColor = HC28;
+                    hairColor = "HC28";
                     break;
                 case "M1":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC38);
-                    hairColor = HC38;
+                    hairColor = "HC38";
                     break;
                 case "M2":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC48);
-                    hairColor = HC48;
+                    hairColor = "HC48";
                     break;
                 case "M3":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC58);
-                    hairColor = HC58;
+                    hairColor = "HC58";
                     break;
                 case "M4":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC68);
-                    hairColor = HC68;
+                    hairColor = "HC68";
                     break;
             }
         });
@@ -426,31 +423,31 @@ public class Scene_Character_Setting : MonoBehaviour
             {
                 case "F1":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC09);
-                    hairColor = HC09;
+                    hairColor = "HC09";
                     break;
                 case "F3":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC19);
-                    hairColor = HC19;
+                    hairColor = "HC19";
                     break;
                 case "F4":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC29);
-                    hairColor = HC29;
+                    hairColor = "HC29";
                     break;
                 case "M1":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC39);
-                    hairColor = HC39;
+                    hairColor = "HC39";
                     break;
                 case "M2":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC49);
-                    hairColor = HC49;
+                    hairColor = "HC49";
                     break;
                 case "M3":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC59);
-                    hairColor = HC59;
+                    hairColor = "HC59";
                     break;
                 case "M4":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC69);
-                    hairColor = HC69;
+                    hairColor = "HC69";
                     break;
             }
         });
@@ -460,31 +457,31 @@ public class Scene_Character_Setting : MonoBehaviour
             {
                 case "F1":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC10);
-                    hairColor = HC10;
+                    hairColor = "HC10";
                     break;
                 case "F3":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC20);
-                    hairColor = HC20;
+                    hairColor = "HC20";
                     break;
                 case "F4":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC30);
-                    hairColor = HC30;
+                    hairColor = "HC30";
                     break;
                 case "M1":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC40);
-                    hairColor = HC40;
+                    hairColor = "HC40";
                     break;
                 case "M2":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC50);
-                    hairColor = HC50;
+                    hairColor = "HC50";
                     break;
                 case "M3":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC60);
-                    hairColor = HC60;
+                    hairColor = "HC60";
                     break;
                 case "M4":
                     CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].SetTexture("_MainTex", HC70);
-                    hairColor = HC70;
+                    hairColor = "HC70";
                     break;
             }
         });
@@ -495,52 +492,52 @@ public class Scene_Character_Setting : MonoBehaviour
         btnC01.onClick.AddListener(() =>
         {
             CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C01);
-            top = C01;
+            top = "C01";
         });
         btnC02.onClick.AddListener(() =>
         {
             CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C02);
-            top = C02;
+            top = "C02";
         });
         btnC03.onClick.AddListener(() =>
         {
             CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C03);
-            top = C03;
+            top = "C03";
         });
         btnC04.onClick.AddListener(() =>
         {
             CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C04);
-            top = C04;
+            top = "C04";
         });
         btnC05.onClick.AddListener(() =>
         {
             CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C05);
-            top = C05;
+            top = "C05";
         });
         btnC06.onClick.AddListener(() =>
         {
             CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C06);
-            top = C06;
+            top = "C06";
         });
         btnC07.onClick.AddListener(() =>
         {
             CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C07);
-            top = C07;
+            top = "C07";
         });
         btnC08.onClick.AddListener(() =>
         {
             CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C08);
-            top = C08;
+            top = "C08";
         });
         btnC09.onClick.AddListener(() =>
         {
             CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C09);
-            top = C09;
+            top = "C09";
         });
         btnC10.onClick.AddListener(() =>
         {
             CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetTexture("_MainTex", C10);
-            top = C10;
+            top = "C10";
         });
     }
     public void BBtn()
@@ -548,92 +545,101 @@ public class Scene_Character_Setting : MonoBehaviour
         btnP01.onClick.AddListener(() =>
         {
             CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P01);
-            bottom = P01;
+            bottom = "P01";
         });
         btnP02.onClick.AddListener(() =>
         {
             CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P02);
-            bottom = P02;
+            bottom = "P02";
         });
         btnP03.onClick.AddListener(() =>
         {
             CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P03);
-            bottom = P03;
+            bottom = "P03";
         });
         btnP04.onClick.AddListener(() =>
         {
             CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P04);
-            bottom = P04;
+            bottom = "P04";
         });
         btnP05.onClick.AddListener(() =>
         {
             CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P05);
-            bottom = P05;
+            bottom = "P05";
         });
         btnP06.onClick.AddListener(() =>
         {
             CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P06);
-            bottom = P06;
+            bottom = "P06";
         });
         btnP07.onClick.AddListener(() =>
         {
             CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P07);
-            bottom = P07;
+            bottom = "P07";
         });
         btnP08.onClick.AddListener(() =>
         {
             CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P08);
-            bottom = P08;
+            bottom = "P08";
         });
         btnP09.onClick.AddListener(() =>
         {
             CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P09);
-            bottom = P09;
+            bottom = "P09";
         });
         btnP10.onClick.AddListener(() =>
         {
             CurrentModel.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetTexture("_MainTex", P10);
-            bottom = P10;
+            bottom = "P10";
         });
         btnPET01.onClick.AddListener(() =>
         {
             pet = "Alpaca";
         });
 
-        btnPET02.onClick.AddListener(() => {
+        btnPET02.onClick.AddListener(() =>
+        {
 
             pet = "Duck";
         });
 
-        btnPET03.onClick.AddListener(() => {
+        btnPET03.onClick.AddListener(() =>
+        {
             pet = "Sheep";
         });
 
-        btnPET04.onClick.AddListener(() => {
+        btnPET04.onClick.AddListener(() =>
+        {
             pet = "Duck2";
         });
 
-        btnPET05.onClick.AddListener(() => {
+        btnPET05.onClick.AddListener(() =>
+        {
             pet = "Cat";
         });
 
-        btnPET06.onClick.AddListener(() => {
+        btnPET06.onClick.AddListener(() =>
+        {
             pet = "Goat";
         });
 
-        btnPET07.onClick.AddListener(() => {
+        btnPET07.onClick.AddListener(() =>
+        {
             pet = "Cow";
         });
 
-        btnPET08.onClick.AddListener(() => {
+        btnPET08.onClick.AddListener(() =>
+        {
             pet = "Horse";
         });
 
-        btnPET09.onClick.AddListener(() => {
+        btnPET09.onClick.AddListener(() =>
+        {
             pet = "Dog";
         });
 
-        btnPET10.onClick.AddListener(() => {
+        btnPET10.onClick.AddListener(() =>
+        {
             pet = "Rabbit";
         });
     }
@@ -723,6 +729,302 @@ public class Scene_Character_Setting : MonoBehaviour
             CurrentModel = M4;
             model = "M4";
         });
+    }
+
+    public Texture getHairColor(string hair)
+    {
+        switch (hair)
+        {
+            case "HC01":
+                return HC01;
+                break;
+            case "HC02":
+                return HC02;
+                break;
+            case "HC03":
+                return HC03;
+                break;
+            case "HC04":
+                return HC04;
+                break;
+            case "HC05":
+                return HC05;
+                break;
+            case "HC06":
+                return HC06;
+                break;
+            case "HC07":
+                return HC07;
+                break;
+            case "HC08":
+                return HC08;
+                break;
+            case "HC09":
+                return HC09;
+                break;
+            case "HC10":
+                return HC09;
+                break;
+            case "HC11":
+                return HC11;
+                break;
+            case "HC12":
+                return HC12;
+                break;
+            case "HC13":
+                return HC13;
+                break;
+            case "HC14":
+                return HC14;
+                break;
+            case "HC15":
+                return HC15;
+                break;
+            case "HC16":
+                return HC16;
+                break;
+            case "HC17":
+                return HC17;
+                break;
+            case "HC18":
+                return HC18;
+                break;
+            case "HC19":
+                return HC19;
+                break;
+            case "HC20":
+                return HC20;
+                break;
+            case "HC21":
+                return HC21;
+                break;
+            case "HC22":
+                return HC22;
+                break;
+            case "HC23":
+                return HC23;
+                break;
+            case "HC24":
+                return HC24;
+                break;
+            case "HC25":
+                return HC25;
+                break;
+            case "HC26":
+                return HC26;
+                break;
+            case "HC27":
+                return HC27;
+                break;
+            case "HC28":
+                return HC28;
+                break;
+            case "HC29":
+                return HC29;
+                break;
+            case "HC30":
+                return HC30;
+                break;
+            case "HC31":
+                return HC31;
+                break;
+            case "HC32":
+                return HC32;
+                break;
+            case "HC33":
+                return HC33;
+                break;
+            case "HC34":
+                return HC34;
+                break;
+            case "HC35":
+                return HC35;
+                break;
+            case "HC36":
+                return HC36;
+                break;
+            case "HC37":
+                return HC37;
+                break;
+            case "HC38":
+                return HC38;
+                break;
+            case "HC39":
+                return HC39;
+                break;
+            case "HC40":
+                return HC40;
+                break;
+            case "HC41":
+                return HC41;
+                break;
+            case "HC42":
+                return HC42;
+                break;
+            case "HC43":
+                return HC43;
+                break;
+            case "HC44":
+                return HC44;
+                break;
+            case "HC45":
+                return HC45;
+                break;
+            case "HC46":
+                return HC46;
+                break;
+            case "HC47":
+                return HC47;
+                break;
+            case "HC48":
+                return HC48;
+                break;
+            case "HC49":
+                return HC49;
+                break;
+            case "HC50":
+                return HC50;
+                break;
+            case "HC51":
+                return HC51;
+                break;
+            case "HC52":
+                return HC52;
+                break;
+            case "HC53":
+                return HC53;
+                break;
+            case "HC54":
+                return HC54;
+                break;
+            case "HC55":
+                return HC55;
+                break;
+            case "HC56":
+                return HC56;
+                break;
+            case "HC57":
+                return HC57;
+                break;
+            case "HC58":
+                return HC58;
+                break;
+            case "HC59":
+                return HC59;
+                break;
+            case "HC60":
+                return HC60;
+                break;
+            case "HC61":
+                return HC61;
+                break;
+            case "HC62":
+                return HC62;
+                break;
+            case "HC63":
+                return HC63;
+                break;
+            case "HC64":
+                return HC64;
+                break;
+            case "HC65":
+                return HC65;
+                break;
+            case "HC66":
+                return HC66;
+                break;
+            case "HC67":
+                return HC67;
+                break;
+            case "HC68":
+                return HC68;
+                break;
+            case "HC69":
+                return HC69;
+                break;
+            case "HC70":
+                return HC70;
+                break;
+            default:
+                return null;
+        }
+
+    }
+    public Texture getTop(string top)
+    {
+        switch (top)
+        {
+            case "C01":
+                return C01;
+                break;
+            case "C02":
+                return C02;
+                break;
+            case "C03":
+                return C03;
+                break;
+            case "C04":
+                return C04;
+                break;
+            case "C05":
+                return C05;
+                break;
+            case "C06":
+                return C06;
+                break;
+            case "C07":
+                return C07;
+                break;
+            case "C08":
+                return C08;
+                break;
+            case "C09":
+                return C09;
+                break;
+            case "C10":
+                return C09;
+                break;
+            default:
+                return null;
+        }
+    }
+    public Texture getBottom(string bottom)
+    {
+        switch (bottom)
+        {
+            case "P01":
+                return P01;
+                break;
+            case "P02":
+                return P02;
+                break;
+            case "P03":
+                return P03;
+                break;
+            case "P04":
+                return P04;
+                break;
+            case "P05":
+                return P05;
+                break;
+            case "P06":
+                return P06;
+                break;
+            case "P07":
+                return P07;
+                break;
+            case "P08":
+                return P08;
+                break;
+            case "P09":
+                return P09;
+                break;
+            case "P10":
+                return P10;
+                break;
+            default:
+                return null;
+        }
     }
     // Update is called once per frame
 }

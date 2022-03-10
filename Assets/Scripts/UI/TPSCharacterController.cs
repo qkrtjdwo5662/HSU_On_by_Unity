@@ -80,13 +80,13 @@ public class TPSCharacterController : MonoBehaviour
         audioSourceRun.mute = false;
         audioSourceRun.loop = true;
 
-        scs = GameObject.Find("Scene_Character_Setting").GetComponent<Scene_Character_Setting>();
+        scs = GameObject.Find("ItemManager").GetComponent<Scene_Character_Setting>();
 
 
-        PhotonNetwork.Instantiate(Path.Combine("Prefabs", ""), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Dog"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
 
-        //CallChangeMyAvatar(scs.hairColor, scs.top, scs.bottom);
-        ChangeMyAvatar(scs.hairColor, scs.top, scs.bottom);
+        CallChangeMyAvatar(scs.hairColor, scs.top, scs.bottom);
+        //ChangeMyAvatar(scs.hairColor, scs.top, scs.bottom);
     }
 
     private void escAction()
@@ -253,16 +253,17 @@ public class TPSCharacterController : MonoBehaviour
     }
 
 
-    public void CallChangeMyAvatar(Texture hair, Texture top, Texture bottom) 
+    public void CallChangeMyAvatar(string hair, string top, string bottom) 
     {
         PV.RPC("ChangeMyAvatar",RpcTarget.AllBuffered, hair, top, bottom);
     }
 
     [PunRPC]
-    public void ChangeMyAvatar(Texture hair, Texture top, Texture bottom)
+    public void ChangeMyAvatar(string hair, string top, string bottom)
     {
-        characterModel.materials[2].SetTexture("_MainTex",hair);
-        characterModel.materials[0].SetTexture("_MainTex", top);
-        characterModel.materials[1].SetTexture("_MainTex", bottom);
+
+        characterModel.materials[2].SetTexture("_MainTex",scs.getHairColor(hair));
+        characterModel.materials[0].SetTexture("_MainTex", scs.getTop(top));
+        characterModel.materials[1].SetTexture("_MainTex", scs.getBottom(bottom));
     }
 }
