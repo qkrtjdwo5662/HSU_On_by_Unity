@@ -46,7 +46,8 @@ public class Migration : MonoBehaviour
 
 		//필드추가 : reference.Child("필드이름").SetValueAsync();
 		//필드삭제 : reference.Child("필드이름").RemoveValueAsync();
-
+		
+		//추가 
 		reference.Child("HC01").SetValueAsync(false);
 		reference.Child("HC02").SetValueAsync(false);
 		reference.Child("HC03").SetValueAsync(false);
@@ -92,6 +93,56 @@ public class Migration : MonoBehaviour
 		reference.Child("P10").SetValueAsync(false);
 
 		reference.Child("money").SetValueAsync(2000);
+
+
+		//삭제
+		reference.Child("Hair01").RemoveValueAsync();
+		reference.Child("Hair02").RemoveValueAsync();
+		reference.Child("Hair03").RemoveValueAsync();
+		reference.Child("Hair04").RemoveValueAsync();
+		reference.Child("Hair05").RemoveValueAsync();
+		reference.Child("Hair06").RemoveValueAsync();
+		reference.Child("Hair07").RemoveValueAsync();
+		reference.Child("Hair08").RemoveValueAsync();
+		reference.Child("Hair09").RemoveValueAsync();
+		reference.Child("Hair10").RemoveValueAsync();
+
+		reference.Child("Shirts01").RemoveValueAsync();
+		reference.Child("Shirts02").RemoveValueAsync();
+		reference.Child("Shirts03").RemoveValueAsync();
+		reference.Child("Shirts04").RemoveValueAsync();
+		reference.Child("Shirts05").RemoveValueAsync();
+		reference.Child("Shirts06").RemoveValueAsync();
+		reference.Child("Shirts07").RemoveValueAsync();
+		reference.Child("Shirts08").RemoveValueAsync();
+		reference.Child("Shirts09").RemoveValueAsync();
+		reference.Child("Shirts10").RemoveValueAsync();
+
+		reference.Child("Pants01").RemoveValueAsync();
+		reference.Child("Pants02").RemoveValueAsync();
+		reference.Child("Pants03").RemoveValueAsync();
+		reference.Child("Pants04").RemoveValueAsync();
+		reference.Child("Pants05").RemoveValueAsync();
+		reference.Child("Pants06").RemoveValueAsync();
+		reference.Child("Pants07").RemoveValueAsync();
+		reference.Child("Pants08").RemoveValueAsync();
+		reference.Child("Pants09").RemoveValueAsync();
+		reference.Child("Pants10").RemoveValueAsync();
+
+		reference.Child("Pet01").RemoveValueAsync();
+		reference.Child("Pet02").RemoveValueAsync();
+		reference.Child("Pet03").RemoveValueAsync();
+		reference.Child("Pet04").RemoveValueAsync();
+		reference.Child("Pet05").RemoveValueAsync();
+		reference.Child("Pet06").RemoveValueAsync();
+		reference.Child("Pet07").RemoveValueAsync();
+		reference.Child("Pet08").RemoveValueAsync();
+		reference.Child("Pet09").RemoveValueAsync();
+		reference.Child("Pet10").RemoveValueAsync();
+
+
+		reference.Child("Money").RemoveValueAsync();
+
 
 	}
 }
