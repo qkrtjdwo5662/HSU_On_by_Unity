@@ -47,7 +47,7 @@ public class TPSCharacterController : MonoBehaviour
     public bool moveSwitch = true;
 
 
-    private Scene_Character_Setting scs;
+    public Scene_Character_Setting scs;
 
     // Start is called before the first frame update
     void Awake()
