@@ -49,6 +49,12 @@ public class TPSCharacterController : MonoBehaviour
 
     public Scene_Character_Setting scs;
 
+    public Texture topT;
+    public Texture bottomT;
+    public Texture hairColorT;
+
+
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -261,8 +267,11 @@ public class TPSCharacterController : MonoBehaviour
     public void ChangeMyAvatar(string hair, string top, string bottom)
     {
         Debug.Log(hair+top+bottom);
-        characterModel.materials[2].SetTexture("_MainTex",scs.getHairColor(hair));
-        characterModel.materials[0].SetTexture("_MainTex", scs.getTop(top));
-        characterModel.materials[1].SetTexture("_MainTex", scs.getBottom(bottom));
+        hairColorT = scs.getHairColor(hair);
+        topT = scs.getTop(top);
+        bottomT = scs.getBottom(bottom);
+        characterModel.materials[2].SetTexture("_MainTex",hairColorT);
+        characterModel.materials[0].SetTexture("_MainTex", topT);
+        characterModel.materials[1].SetTexture("_MainTex", bottomT);
     }
 }
