@@ -103,16 +103,31 @@ public class Scene_Character_Setting : MonoBehaviour
     public Button btnP09;
     public Button btnP10;
 
-    public Button btnPET01;
-    public Button btnPET02;
-    public Button btnPET03;
-    public Button btnPET04;
-    public Button btnPET05;
-    public Button btnPET06;
-    public Button btnPET07;
-    public Button btnPET08;
-    public Button btnPET09;
-    public Button btnPET10;
+    public Button btnPET01; //알파카
+    public Button btnPET02; //오리
+    public Button btnPET03; //양
+    public Button btnPET04; //오리2
+    public Button btnPET05; //고양이
+    public Button btnPET06; //염소
+    public Button btnPET07; //소
+    public Button btnPET08; //말
+    public Button btnPET09; //개
+    public Button btnPET10; //토끼
+
+
+    public GameObject Alpaca;
+    public GameObject Duck;
+    public GameObject Sheep;
+    public GameObject Duck2;
+    public GameObject Cat;
+    public GameObject Goat;
+    public GameObject Cow;
+    public GameObject Horse;
+    public GameObject Dog;
+    public GameObject Rabbit;
+
+
+
 
 
 
@@ -141,6 +156,9 @@ public class Scene_Character_Setting : MonoBehaviour
         DontDestroyOnLoad(this);
         selectAvatar();
         CurrentModel = null;
+        HCbtn();
+        BBtn();
+        CBtn();
     }
 
     public void HCbtn()
@@ -595,52 +613,153 @@ public class Scene_Character_Setting : MonoBehaviour
         btnPET01.onClick.AddListener(() =>
         {
             pet = "Alpaca";
+            Alpaca.SetActive(true);
+            Duck.SetActive(false);
+            Sheep.SetActive(false);
+            Duck2.SetActive(false);
+            Cat.SetActive(false);
+            Goat.SetActive(false);
+            Cow.SetActive(false);
+            Horse.SetActive(false);
+            Dog.SetActive(false);
+            Rabbit.SetActive(false);
+
         });
 
         btnPET02.onClick.AddListener(() =>
         {
 
             pet = "Duck";
+            Alpaca.SetActive(false);
+            Duck.SetActive(true);
+            Sheep.SetActive(false);
+            Duck2.SetActive(false);
+            Cat.SetActive(false);
+            Goat.SetActive(false);
+            Cow.SetActive(false);
+            Horse.SetActive(false);
+            Dog.SetActive(false);
+            Rabbit.SetActive(false);
         });
 
         btnPET03.onClick.AddListener(() =>
         {
             pet = "Sheep";
+            Alpaca.SetActive(false);
+            Duck.SetActive(false);
+            Sheep.SetActive(true);
+            Duck2.SetActive(false);
+            Cat.SetActive(false);
+            Goat.SetActive(false);
+            Cow.SetActive(false);
+            Horse.SetActive(false);
+            Dog.SetActive(false);
+            Rabbit.SetActive(false);
         });
 
         btnPET04.onClick.AddListener(() =>
         {
             pet = "Duck2";
+            Alpaca.SetActive(false);
+            Duck.SetActive(false);
+            Sheep.SetActive(false);
+            Duck2.SetActive(true);
+            Cat.SetActive(false);
+            Goat.SetActive(false);
+            Cow.SetActive(false);
+            Horse.SetActive(false);
+            Dog.SetActive(false);
+            Rabbit.SetActive(false);
         });
 
         btnPET05.onClick.AddListener(() =>
         {
             pet = "Cat";
+            Alpaca.SetActive(false);
+            Duck.SetActive(false);
+            Sheep.SetActive(false);
+            Duck2.SetActive(false);
+            Cat.SetActive(true);
+            Goat.SetActive(false);
+            Cow.SetActive(false);
+            Horse.SetActive(false);
+            Dog.SetActive(false);
+            Rabbit.SetActive(false);
         });
 
         btnPET06.onClick.AddListener(() =>
         {
             pet = "Goat";
+            Alpaca.SetActive(false);
+            Duck.SetActive(false);
+            Sheep.SetActive(false);
+            Duck2.SetActive(false);
+            Cat.SetActive(false);
+            Goat.SetActive(true);
+            Cow.SetActive(false);
+            Horse.SetActive(false);
+            Dog.SetActive(false);
+            Rabbit.SetActive(false);
         });
 
         btnPET07.onClick.AddListener(() =>
         {
-            pet = "Cow";
+            pet = "Cow"; 
+            Alpaca.SetActive(false);
+            Duck.SetActive(false);
+            Sheep.SetActive(false);
+            Duck2.SetActive(false);
+            Cat.SetActive(false);
+            Goat.SetActive(false);
+            Cow.SetActive(true);
+            Horse.SetActive(false);
+            Dog.SetActive(false);
+            Rabbit.SetActive(false);
         });
 
         btnPET08.onClick.AddListener(() =>
         {
             pet = "Horse";
+            Alpaca.SetActive(false);
+            Duck.SetActive(false);
+            Sheep.SetActive(false);
+            Duck2.SetActive(false);
+            Cat.SetActive(false);
+            Goat.SetActive(false);
+            Cow.SetActive(false);
+            Horse.SetActive(true);
+            Dog.SetActive(false);
+            Rabbit.SetActive(false);
         });
 
         btnPET09.onClick.AddListener(() =>
         {
             pet = "Dog";
+            Alpaca.SetActive(false);
+            Duck.SetActive(false);
+            Sheep.SetActive(false);
+            Duck2.SetActive(false);
+            Cat.SetActive(false);
+            Goat.SetActive(false);
+            Cow.SetActive(false);
+            Horse.SetActive(false);
+            Dog.SetActive(true);
+            Rabbit.SetActive(false);
         });
 
         btnPET10.onClick.AddListener(() =>
         {
             pet = "Rabbit";
+            Alpaca.SetActive(false);
+            Duck.SetActive(false);
+            Sheep.SetActive(false);
+            Duck2.SetActive(false);
+            Cat.SetActive(false);
+            Goat.SetActive(false);
+            Cow.SetActive(false);
+            Horse.SetActive(false);
+            Dog.SetActive(false);
+            Rabbit.SetActive(true);
         });
     }
     public void selectAvatar()

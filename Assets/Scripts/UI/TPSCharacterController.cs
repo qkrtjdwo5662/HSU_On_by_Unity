@@ -580,9 +580,11 @@ public class TPSCharacterController : MonoBehaviour
     public void ChangeMyAvatar(string hair, string top, string bottom)
     {
         Debug.Log(hair+top+bottom);
-
-        characterModel.materials[2].SetTexture("_MainTex",getHairColor(hair));
-        characterModel.materials[0].SetTexture("_MainTex", getTop(top));
-        characterModel.materials[1].SetTexture("_MainTex", getBottom(bottom));
+        if (!(hair==""))
+            characterModel.materials[2].SetTexture("_MainTex",getHairColor(hair));
+        if (!(top == ""))
+            characterModel.materials[0].SetTexture("_MainTex", getTop(top));
+        if (!(bottom == ""))
+            characterModel.materials[1].SetTexture("_MainTex", getBottom(bottom));
     }
 }

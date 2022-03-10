@@ -44,7 +44,41 @@ public class PlayerManager : MonoBehaviour, IPunObservable
 
         }
 
-        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Dog"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+        switch (scs.pet) {
+            case "Dog":
+                PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Dog"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+                break;
+            case "Cat":
+                PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Cat"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+                break;
+            case "Alpaca":
+                PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Alpaca"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+                break;
+            case "Duck":
+                PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Duck"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+                break;
+            case "Duck2":
+                PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Duck2"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+                break;
+            case "Cow":
+                PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Cow"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+                break;
+            case "Goat":
+                PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Goat"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+                break;
+            case "Horse":
+                PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Horse"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+                break;
+            case "Rabbit":
+                PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Rabbit"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+                break;
+             case "Sheep":
+                PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Sheep"), new Vector3(83f, 3f, 18f), Quaternion.identity, 0);
+                break;
+
+
+        }
+
 
 
 

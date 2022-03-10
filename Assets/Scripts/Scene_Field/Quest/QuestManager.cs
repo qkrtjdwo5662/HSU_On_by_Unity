@@ -1261,7 +1261,7 @@ public class QuestManager : MonoBehaviour
         money = join.money;
         int m = int.Parse(money);
         m += 200;
-        join.SetValueFireBase("money", money);
+        join.SetValueFireBase("money", m);
     }
 
 }
