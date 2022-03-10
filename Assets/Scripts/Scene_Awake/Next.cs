@@ -17,7 +17,7 @@ public class Next : MonoBehaviour
 
     public DataSnapshot ds;
     public noticeSaver ns;
-    string CurrentVersion = "1.4"; // OT Version
+    string CurrentVersion = "1.5"; // OT Version
     string ServerVersion;
     // Start is called before the first frame update
 
