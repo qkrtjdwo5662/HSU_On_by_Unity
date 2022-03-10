@@ -840,6 +840,7 @@ GameObject:
   - component: {fileID: 5733795074021351692}
   - component: {fileID: 4010059242443040171}
   - component: {fileID: -5589380705425840617}
+  - component: {fileID: 8552205139012925211}
   m_Layer: 0
   m_Name: Goat
   m_TagString: Untagged
@@ -928,9 +929,10 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 2
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: -5589380705425840617}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -950,6 +952,22 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &8552205139012925211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128218729657838476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters: []
+  m_SynchronizeLayers: []
 --- !u!1 &2128218729657838478
 GameObject:
   m_ObjectHideFlags: 0

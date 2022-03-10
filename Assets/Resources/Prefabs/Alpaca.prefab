@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 2418125465268483810}
   - component: {fileID: 1312075389487277234}
   - component: {fileID: -8222236627361779017}
-  - component: {fileID: 2642041954775780401}
+  - component: {fileID: 1205624791510988767}
   m_Layer: 0
   m_Name: Alpaca
   m_TagString: Untagged
@@ -401,10 +401,12 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 2
   observableSearch: 2
   ObservedComponents:
   - {fileID: 1312075389487277234}
+  - {fileID: 0}
+  - {fileID: 1205624791510988767}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -440,14 +442,16 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 2
   observableSearch: 2
   ObservedComponents:
   - {fileID: 1312075389487277234}
+  - {fileID: 0}
+  - {fileID: 1205624791510988767}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &2642041954775780401
+--- !u!114 &1205624791510988767
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -456,13 +460,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1602797679269863694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 2
+    Name: IsMove
+  - Type: 4
+    SynchronizeType: 2
+    Name: IsEat
+  m_SynchronizeLayers:
+  - SynchronizeType: 2
+    LayerIndex: 0
 --- !u!1 &1602797679269863696
 GameObject:
   m_ObjectHideFlags: 0

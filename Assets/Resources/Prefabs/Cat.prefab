@@ -645,6 +645,7 @@ GameObject:
   - component: {fileID: 8584816770129401594}
   - component: {fileID: 3891585125428388231}
   - component: {fileID: 244559922936540723}
+  - component: {fileID: -3869028670534032795}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Untagged
@@ -732,9 +733,11 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 2
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 244559922936540723}
+  - {fileID: -3869028670534032795}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -754,6 +757,30 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &-3869028670534032795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138943311638251078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 2
+    Name: IsMove
+  - Type: 4
+    SynchronizeType: 2
+    Name: IsEat
+  m_SynchronizeLayers:
+  - SynchronizeType: 2
+    LayerIndex: 0
 --- !u!1 &2138943311638251080
 GameObject:
   m_ObjectHideFlags: 0

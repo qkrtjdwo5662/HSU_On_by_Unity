@@ -260,7 +260,7 @@ public class TPSCharacterController : MonoBehaviour
     [PunRPC]
     public void ChangeMyAvatar(string hair, string top, string bottom)
     {
-
+        Debug.Log(hair+top+bottom);
         characterModel.materials[2].SetTexture("_MainTex",scs.getHairColor(hair));
         characterModel.materials[0].SetTexture("_MainTex", scs.getTop(top));
         characterModel.materials[1].SetTexture("_MainTex", scs.getBottom(bottom));

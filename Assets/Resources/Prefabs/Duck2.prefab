@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: -1051762383158886677}
   - component: {fileID: -8675299113885082766}
   - component: {fileID: 5825931120137355010}
+  - component: {fileID: -7267298576669020117}
   m_Layer: 0
   m_Name: Duck2
   m_TagString: Untagged
@@ -226,9 +227,11 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 2
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 5825931120137355010}
+  - {fileID: -7267298576669020117}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -248,6 +251,30 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &-7267298576669020117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222922564173367541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 2
+    Name: IsMove
+  - Type: 4
+    SynchronizeType: 2
+    Name: IsEat
+  m_SynchronizeLayers:
+  - SynchronizeType: 2
+    LayerIndex: 0
 --- !u!1 &1222922564173367543
 GameObject:
   m_ObjectHideFlags: 0
