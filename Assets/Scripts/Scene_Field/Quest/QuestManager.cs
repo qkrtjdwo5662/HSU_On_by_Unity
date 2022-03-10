@@ -12,6 +12,8 @@ public class QuestManager : MonoBehaviour
 {
     //Join.cs
     public Join join;
+    //돈
+    public string money;
     //OT_NPC1 Quiz
     public InputField OT_NPC1_Quiz_Answer;
     public Image OT_NPC1_Quiz_right, OT_NPC1_Quiz_Wrong;
@@ -198,11 +200,11 @@ public class QuestManager : MonoBehaviour
 
     Dictionary<int, QuestData> questList;
     FirebaseAuth auth;
-    
+
     public string myName = "0";
     public string myStdId;
 
-   
+
 
 
 
@@ -232,7 +234,7 @@ public class QuestManager : MonoBehaviour
         D4.interactable = false;
         D5.interactable = false; */
 
-       join = GameObject.Find("Join").GetComponent<Join>();
+        join = GameObject.Find("Join").GetComponent<Join>();
 
         IdentityID_text.text = join.getUserID().Substring(10);
         StuID_text.text = "학번 : " + join.getStdId() + "\n" + "이름 : " + join.getName();
@@ -245,83 +247,83 @@ public class QuestManager : MonoBehaviour
 
         if (join.ot1cleared.Equals("True"))
         {
-            OT1QuestClear();
+            OT1QuestCleared();
         }
 
         if (join.ot2cleared.Equals("True"))
         {
-            OT2QuestClear();
+            OT2QuestCleared();
         }
 
         if (join.ot3cleared.Equals("True"))
         {
-            OT3QuestClear();
+            OT3QuestCleared();
         }
 
         if (join.ot4cleared.Equals("True"))
         {
-            OT4QuestClear();
+            OT4QuestCleared();
         }
 
         if (join.ot5cleared.Equals("True"))
         {
-            OT5QuestClear();
+            OT5QuestCleared();
         }
 
 
         if (join.d1cleared.Equals("True"))
         {
-            Mission1QuestClear();
+            Mission1QuestCleared();
         }
 
         if (join.d2cleared.Equals("True"))
         {
-            Mission2QuestClear();
+            Mission2QuestCleared();
         }
 
         if (join.d3cleared.Equals("True"))
         {
-            Mission3QuestClear();
+            Mission3QuestCleared();
         }
 
         if (join.d4cleared.Equals("True"))
         {
-            Mission4QuestClear();
+            Mission4QuestCleared();
         }
 
         if (join.d5cleared.Equals("True"))
         {
-            Mission5QuestClear();
+            Mission5QuestCleared();
         }
 
 
         if (join.h1cleared.Equals("True"))
         {
-            Hidden1QuestClear();
+            Hidden1QuestCleared();
         }
 
         if (join.h2cleared.Equals("True"))
         {
-            Hidden2QuestClear();
+            Hidden2QuestCleared();
         }
 
         if (join.h3cleared.Equals("True"))
         {
-            Hidden3QuestClear();
+            Hidden3QuestCleared();
         }
 
         if (join.h4cleared.Equals("True"))
         {
-            Hidden4QuestClear();
+            Hidden4QuestCleared();
         }
 
         if (join.h5cleared.Equals("True"))
         {
-            Hidden5QuestClear();
+            Hidden5QuestCleared();
         }
     }
 
-    
+
 
     IEnumerator CoFade(float start, float end)
     {
@@ -350,10 +352,10 @@ public class QuestManager : MonoBehaviour
     {
         StartCoroutine(CoFade(1, 0));
     }
-    
+
     public void OT_NPC1_Quiz()
     {
-        if(OT_NPC1_Quiz_Answer.text == "창의열람실")
+        if (OT_NPC1_Quiz_Answer.text == "창의열람실")
         {
             OT_NPC1_Quiz_right.gameObject.SetActive(true);
         }
@@ -366,7 +368,7 @@ public class QuestManager : MonoBehaviour
 
     public void OT_NPC2_Quiz()
     {
-        if(OT_NPC2_Quiz_Answer.text == "원스톱지원센터")
+        if (OT_NPC2_Quiz_Answer.text == "원스톱지원센터")
         {
             OT_NPC2_Quiz_right.gameObject.SetActive(true);
         }
@@ -378,7 +380,7 @@ public class QuestManager : MonoBehaviour
     }
     public void OT_NPC3_Quiz()
     {
-        if(OT_NPC3_Quiz_Answer.text == "삶과꿈")
+        if (OT_NPC3_Quiz_Answer.text == "삶과꿈")
         {
             OT_NPC3_Quiz_right.gameObject.SetActive(true);
         }
@@ -701,7 +703,7 @@ public class QuestManager : MonoBehaviour
         join.SetValueFireBase("OT0");
         Debug.Log("Quest Open");
     }
-    
+
 
     //OT Mission
     public void OT1QuestClear()
@@ -718,6 +720,21 @@ public class QuestManager : MonoBehaviour
 
         join.SetValueFireBase("OT1");
         Debug.Log("OT1 clear & save");
+
+        plusMoney();
+    }
+
+    public void OT1QuestCleared()
+    {
+        OT2.interactable = true;
+
+        OTNPC1.gameObject.SetActive(false);
+        OTNPC2.gameObject.SetActive(true);
+
+        OT1Stamp.gameObject.SetActive(true);
+        OT1Complete.gameObject.SetActive(true);
+
+        OT_ButtonClick();
     }
 
     public void OT2QuestClear()
@@ -729,11 +746,25 @@ public class QuestManager : MonoBehaviour
 
         OT2Stamp.gameObject.SetActive(true);
         OT2Complete.gameObject.SetActive(true);
+        plusMoney();
 
         OT_ButtonClick();
 
         join.SetValueFireBase("OT2");
         Debug.Log("OT2 clear & save");
+    }
+
+    public void OT2QuestCleared()
+    {
+        OT3.interactable = true;
+
+        OTNPC2.gameObject.SetActive(false);
+        OTNPC3.gameObject.SetActive(true);
+
+        OT2Stamp.gameObject.SetActive(true);
+        OT2Complete.gameObject.SetActive(true);
+
+        OT_ButtonClick();
     }
 
     public void OT3QuestClear()
@@ -747,11 +778,23 @@ public class QuestManager : MonoBehaviour
         OT3Complete.gameObject.SetActive(true);
 
         OT_ButtonClick();
-
+        plusMoney();
         join.SetValueFireBase("OT3");
         Debug.Log("OT3 clear & save");
     }
+    public void OT3QuestCleared()
+    {
+        OT4.interactable = true;
 
+        OTNPC3.gameObject.SetActive(false);
+        OTNPC4.gameObject.SetActive(true);
+
+        OT3Stamp.gameObject.SetActive(true);
+        OT3Complete.gameObject.SetActive(true);
+
+        OT_ButtonClick();
+
+    }
     public void OT4QuestClear()
     {
         OT5.interactable = true;
@@ -763,11 +806,23 @@ public class QuestManager : MonoBehaviour
         OT4Complete.gameObject.SetActive(true);
 
         OT_ButtonClick();
-
+        plusMoney();
         join.SetValueFireBase("OT4");
         Debug.Log("OT4 clear & save");
     }
+    public void OT4QuestCleared()
+    {
+        OT5.interactable = true;
 
+        OTNPC4.gameObject.SetActive(false);
+        OTNPC5.gameObject.SetActive(true);
+
+        OT4Stamp.gameObject.SetActive(true);
+        OT4Complete.gameObject.SetActive(true);
+
+        OT_ButtonClick();
+
+    }
     public void OT5QuestClear()
     {
         OTNPC4.gameObject.SetActive(false);
@@ -776,9 +831,24 @@ public class QuestManager : MonoBehaviour
         OT5Complete.gameObject.SetActive(true);
 
         OT_ButtonClick();
-
+        plusMoney();
         join.SetValueFireBase("OT5");
         Debug.Log("OT5 clear & save");
+        NPC1.gameObject.SetActive(true);
+        OTNPC5.gameObject.SetActive(false);
+        M1.interactable = true;
+        //NPC0.gameObject.SetActive(false);
+        //NPC1.gameObject.SetActive(true);
+    }
+    public void OT5QuestCleared()
+    {
+        OTNPC4.gameObject.SetActive(false);
+
+        OT5Stamp.gameObject.SetActive(true);
+        OT5Complete.gameObject.SetActive(true);
+
+        OT_ButtonClick();
+
         NPC1.gameObject.SetActive(true);
         OTNPC5.gameObject.SetActive(false);
         M1.interactable = true;
@@ -798,11 +868,22 @@ public class QuestManager : MonoBehaviour
         M1Complete.gameObject.SetActive(true);
 
         M_ButtonClick();
-
+        plusMoney();
         join.SetValueFireBase("D1");
         Debug.Log("Mission1 clear & save");
     }
+    public void Mission1QuestCleared()
+    {
+        M2.interactable = true;
 
+        NPC1.gameObject.SetActive(false);
+        NPC2.gameObject.SetActive(true);
+
+        M1Stamp.gameObject.SetActive(true);
+        M1Complete.gameObject.SetActive(true);
+
+        M_ButtonClick();
+    }
     public void Mission2QuestClear()
     {
         M3.interactable = true;
@@ -814,11 +895,22 @@ public class QuestManager : MonoBehaviour
         M2Complete.gameObject.SetActive(true);
 
         M_ButtonClick();
-
+        plusMoney();
         join.SetValueFireBase("D2");
         Debug.Log("Mission2 clear & save");
     }
+    public void Mission2QuestCleared()
+    {
+        M3.interactable = true;
 
+        NPC2.gameObject.SetActive(false);
+        NPC3.gameObject.SetActive(true);
+
+        M2Stamp.gameObject.SetActive(true);
+        M2Complete.gameObject.SetActive(true);
+
+        M_ButtonClick();
+    }
     public void Mission3QuestClear()
     {
         M4.interactable = true;
@@ -830,9 +922,22 @@ public class QuestManager : MonoBehaviour
         M3Complete.gameObject.SetActive(true);
 
         M_ButtonClick();
-
+        plusMoney();
         join.SetValueFireBase("D3");
         Debug.Log("Mission3 clear & save");
+    }
+    public void Mission3QuestCleared()
+    {
+        M4.interactable = true;
+
+        NPC3.gameObject.SetActive(false);
+        NPC4.gameObject.SetActive(true);
+
+        M3Stamp.gameObject.SetActive(true);
+        M3Complete.gameObject.SetActive(true);
+
+        M_ButtonClick();
+
     }
 
     public void Mission4QuestClear()
@@ -846,11 +951,22 @@ public class QuestManager : MonoBehaviour
         M4Complete.gameObject.SetActive(true);
 
         M_ButtonClick();
-
+        plusMoney();
         join.SetValueFireBase("D4");
         Debug.Log("Mission4 clear & save");
     }
+    public void Mission4QuestCleared()
+    {
+        M5.interactable = true;
 
+        NPC4.gameObject.SetActive(false);
+        NPC5.gameObject.SetActive(true);
+
+        M4Stamp.gameObject.SetActive(true);
+        M4Complete.gameObject.SetActive(true);
+
+        M_ButtonClick();
+    }
     public void Mission5QuestClear()
     {
         NPC4.gameObject.SetActive(false);
@@ -859,12 +975,21 @@ public class QuestManager : MonoBehaviour
         M5Complete.gameObject.SetActive(true);
 
         M_ButtonClick();
-
+        plusMoney();
         join.SetValueFireBase("D5");
         Debug.Log("Mission5 clear & save");
 
     }
+    public void Mission5QuestCleared()
+    {
+        NPC4.gameObject.SetActive(false);
 
+        M5Stamp.gameObject.SetActive(true);
+        M5Complete.gameObject.SetActive(true);
+
+        M_ButtonClick();
+
+    }
     public void Hidden1QuestClear()
     {
         H1.interactable = true;
@@ -874,11 +999,20 @@ public class QuestManager : MonoBehaviour
         H1Complete.gameObject.SetActive(true);
 
         H_ButtonClick();
-
+        plusMoney();
         join.SetValueFireBase("H1");
         Debug.Log("HiddenMission1 clear & save");
     }
+    public void Hidden1QuestCleared()
+    {
+        H1.interactable = true;
+        H1Text.text = "꼬꼬&꾸꾸 밥 주기";
 
+        H1Stamp.gameObject.SetActive(true);
+        H1Complete.gameObject.SetActive(true);
+
+        H_ButtonClick();
+    }
 
     public void Hidden2QuestClear()
     {
@@ -889,11 +1023,20 @@ public class QuestManager : MonoBehaviour
         H2Complete.gameObject.SetActive(true);
 
         H_ButtonClick();
-
+        plusMoney();
         join.SetValueFireBase("H2");
         Debug.Log("HiddenMission2 clear & save");
     }
+    public void Hidden2QuestCleared()
+    {
+        H2.interactable = true;
+        H2Text.text = "그라지에 메뉴 맞추기";
 
+        H2Stamp.gameObject.SetActive(true);
+        H2Complete.gameObject.SetActive(true);
+
+        H_ButtonClick();
+    }
     public void Hidden3QuestClear()
     {
         H3.interactable = true;
@@ -903,9 +1046,19 @@ public class QuestManager : MonoBehaviour
         H3Complete.gameObject.SetActive(true);
 
         H_ButtonClick();
-
+        plusMoney();
         join.SetValueFireBase("H3");
         Debug.Log("HiddenMission3 clear & save");
+    }
+    public void Hidden3QuestCleared()
+    {
+        H3.interactable = true;
+        H3Text.text = "낱말퍼즐 풀기";
+
+        H3Stamp.gameObject.SetActive(true);
+        H3Complete.gameObject.SetActive(true);
+
+        H_ButtonClick();
     }
     public void Hidden4QuestClear()
     {
@@ -916,9 +1069,19 @@ public class QuestManager : MonoBehaviour
         H4Complete.gameObject.SetActive(true);
 
         H_ButtonClick();
-
+        plusMoney();
         join.SetValueFireBase("H4");
         Debug.Log("HiddenMission4 clear & save");
+    }
+    public void Hidden4QuestCleared()
+    {
+        H4.interactable = true;
+        H4Text.text = "틀린그림찾기";
+
+        H4Stamp.gameObject.SetActive(true);
+        H4Complete.gameObject.SetActive(true);
+
+        H_ButtonClick();
     }
     public void Hidden5QuestClear()
     {
@@ -929,9 +1092,19 @@ public class QuestManager : MonoBehaviour
         H5Complete.gameObject.SetActive(true);
 
         H_ButtonClick();
-
+        plusMoney();
         join.SetValueFireBase("H5");
         Debug.Log("HiddenMission5 clear & save");
+    }
+    public void Hidden5QuestCleared()
+    {
+        H5.interactable = true;
+        H5Text.text = "매출액 계산하기";
+
+        H5Stamp.gameObject.SetActive(true);
+        H5Complete.gameObject.SetActive(true);
+
+        H_ButtonClick();
     }
     //Clear
 
@@ -1083,6 +1256,12 @@ public class QuestManager : MonoBehaviour
 
         Debug.Log("Quest Reset");*/
     }
-
+    public void plusMoney()
+    {
+        money = join.money;
+        int m = int.Parse(money);
+        m += 200;
+        join.SetValueFireBase("money", money);
+    }
 
 }
