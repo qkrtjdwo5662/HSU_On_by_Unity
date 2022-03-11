@@ -41,7 +41,7 @@ public class PetAI : MonoBehaviour
         if (distance >= 2f && distance < 10f)
         {
             this.transform.LookAt(me.position);//날 바라보고
-            this.transform.Translate(Vector3.forward * Time.deltaTime * 2f);//날 따라와
+            this.transform.Translate(Vector3.forward * Time.deltaTime * 3f);//날 따라와
             ani.SetBool("IsEat", false);
             ani.SetBool("IsMove", true);
             
