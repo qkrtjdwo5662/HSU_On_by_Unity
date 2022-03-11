@@ -969,7 +969,7 @@ public class QuestManager : MonoBehaviour
     }
     public void Mission5QuestClear()
     {
-        NPC4.gameObject.SetActive(false);
+        NPC5.gameObject.SetActive(false);
 
         M5Stamp.gameObject.SetActive(true);
         M5Complete.gameObject.SetActive(true);
@@ -982,7 +982,7 @@ public class QuestManager : MonoBehaviour
     }
     public void Mission5QuestCleared()
     {
-        NPC4.gameObject.SetActive(false);
+        NPC5.gameObject.SetActive(false);
 
         M5Stamp.gameObject.SetActive(true);
         M5Complete.gameObject.SetActive(true);
