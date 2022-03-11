@@ -156,6 +156,9 @@ public class Scene_Character_Setting : MonoBehaviour
         DontDestroyOnLoad(this);
         selectAvatar();
         CurrentModel = null;
+        hairColor = "";
+        top = "";
+        bottom = "";
         HCbtn();
         BBtn();
         CBtn();
@@ -766,6 +769,7 @@ public class Scene_Character_Setting : MonoBehaviour
     {
         btnF1.onClick.AddListener(() =>
         {
+
             F1.SetActive(true);
             F3.SetActive(false);
             F4.SetActive(false);
@@ -778,6 +782,7 @@ public class Scene_Character_Setting : MonoBehaviour
         });
         btnF3.onClick.AddListener(() =>
         {
+  
             F1.SetActive(false);
             F3.SetActive(true);
             F4.SetActive(false);
@@ -790,6 +795,7 @@ public class Scene_Character_Setting : MonoBehaviour
         });
         btnF4.onClick.AddListener(() =>
         {
+
             F1.SetActive(false);
             F3.SetActive(false);
             F4.SetActive(true);
@@ -802,6 +808,7 @@ public class Scene_Character_Setting : MonoBehaviour
         });
         btnM1.onClick.AddListener(() =>
         {
+    
             F1.SetActive(false);
             F3.SetActive(false);
             F4.SetActive(false);
@@ -814,6 +821,7 @@ public class Scene_Character_Setting : MonoBehaviour
         });
         btnM2.onClick.AddListener(() =>
         {
+      
             F1.SetActive(false);
             F3.SetActive(false);
             F4.SetActive(false);
@@ -838,6 +846,7 @@ public class Scene_Character_Setting : MonoBehaviour
         });
         btnM4.onClick.AddListener(() =>
         {
+     
             F1.SetActive(false);
             F3.SetActive(false);
             F4.SetActive(false);
@@ -848,6 +857,8 @@ public class Scene_Character_Setting : MonoBehaviour
             CurrentModel = M4;
             model = "M4";
         });
+
+ 
     }
 
     
