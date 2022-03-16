@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class ChickenAI : MonoBehaviour
@@ -7,8 +8,11 @@ public class ChickenAI : MonoBehaviour
     private Animator ani;
     public Transform chickenTransform;
 
-    
-    
+
+    private PhotonView PV;
+
+    public ChickenTrigger t;
+
 
     public bool dead;
     private int nextBehaviour;
@@ -30,7 +34,11 @@ public class ChickenAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        PV = GetComponent<PhotonView>();
+        if (!PV.IsMine) {
+            Destroy(this);
+            Destroy(t);
+        }
         ani = GetComponent<Animator>();
         DoSomething();
 

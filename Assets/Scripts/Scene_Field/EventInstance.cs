@@ -133,15 +133,7 @@ public class EventInstance : MonoBehaviour
 
             if (PhotonNetwork.IsMasterClient) 
             {
-                for (int i = 0; i < chickens.Length; i++)
-                {
-                    if (chickens[i] == (null))
-                    {
-                        int x = r.Next(-105, -64);
-                        int z = r.Next(60, 81);
-                        chickens[i] = PhotonNetwork.Instantiate("Prefabs/Chicken", new Vector3(x, 1, z), Quaternion.identity, 0);
-                    }
-                }
+                SpawnChicken();
             }
             if (timer <= 0)
             {
@@ -155,5 +147,20 @@ public class EventInstance : MonoBehaviour
 
         
 
+    }
+
+
+    
+    void SpawnChicken()
+    {
+        for (int i = 0; i < chickens.Length; i++)
+        {
+            if (chickens[i] == (null))
+            {
+                int x = r.Next(-105, -64);
+                int z = r.Next(60, 81);
+                chickens[i] = PhotonNetwork.Instantiate("Prefabs/Chicken", new Vector3(x, 1, z), Quaternion.identity, 0);
+            }
+        }
     }
 }

@@ -601,6 +601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chickenTransform: {fileID: 8966051343935088646}
+  t: {fileID: 8966051342552044897}
   dead: 0
 --- !u!114 &6881193259471691843
 MonoBehaviour:
