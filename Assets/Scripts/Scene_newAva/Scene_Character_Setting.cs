@@ -156,9 +156,9 @@ public class Scene_Character_Setting : MonoBehaviour
         DontDestroyOnLoad(this);
         selectAvatar();
         CurrentModel = null;
-        hairColor = "";
-        top = "";
-        bottom = "";
+        hairColor = null;
+        top = null;
+        bottom = null;
         HCbtn();
         BBtn();
         CBtn();
@@ -778,6 +778,9 @@ public class Scene_Character_Setting : MonoBehaviour
             M3.SetActive(false);
             M4.SetActive(false);
             CurrentModel = F1;
+            hairColor = null;
+            top = null;
+            bottom = null;
             model = "F1";
         });
         btnF3.onClick.AddListener(() =>
@@ -791,6 +794,9 @@ public class Scene_Character_Setting : MonoBehaviour
             M3.SetActive(false);
             M4.SetActive(false);
             CurrentModel = F3;
+            hairColor = null;
+            top = null;
+            bottom = null;
             model = "F3";
         });
         btnF4.onClick.AddListener(() =>
@@ -804,6 +810,9 @@ public class Scene_Character_Setting : MonoBehaviour
             M3.SetActive(false);
             M4.SetActive(false);
             CurrentModel = F4;
+            hairColor = null;
+            top = null;
+            bottom = null;
             model = "F4";
         });
         btnM1.onClick.AddListener(() =>
@@ -817,6 +826,9 @@ public class Scene_Character_Setting : MonoBehaviour
             M3.SetActive(false);
             M4.SetActive(false);
             CurrentModel = M1;
+            hairColor = null;
+            top = null;
+            bottom = null;
             model = "M1";
         });
         btnM2.onClick.AddListener(() =>
@@ -830,6 +842,9 @@ public class Scene_Character_Setting : MonoBehaviour
             M3.SetActive(false);
             M4.SetActive(false);
             CurrentModel = M2;
+            hairColor = null;
+            top = null;
+            bottom = null;
             model = "M2";
         });
         btnM3.onClick.AddListener(() =>
@@ -842,6 +857,9 @@ public class Scene_Character_Setting : MonoBehaviour
             M3.SetActive(true);
             M4.SetActive(false);
             CurrentModel = M3;
+            hairColor = null;
+            top = null;
+            bottom = null;
             model = "M3";
         });
         btnM4.onClick.AddListener(() =>
@@ -855,6 +873,10 @@ public class Scene_Character_Setting : MonoBehaviour
             M3.SetActive(false);
             M4.SetActive(true);
             CurrentModel = M4;
+            hairColor = null;
+            top = null;
+            bottom = null;
+
             model = "M4";
         });
 
