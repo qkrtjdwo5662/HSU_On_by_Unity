@@ -10,20 +10,50 @@ public class NPC_Trigger : MonoBehaviour
     public GameObject MainNpcTalk;
     public GameObject TalkStart;
 
+    public Image TalkFade;
+    public float fadeTime = 1.5f;
+    public AnimationCurve fadeCurve;
+
     private Button startBtn; //대화하기 버튼
-    
+
 
 
     private GameObject CameraArm;
     private GameObject Me;
     private TPSCharacterController tps;
 
+    IEnumerator CoFade(float start, float end)
+    {
+        float currentTime = 0.0f;
+        float percent = 0.0f;
+        Color color = TalkFade.color;
+        while (percent < 1f)
+        {
+            currentTime += Time.deltaTime;
+            percent = currentTime / fadeTime;
 
+            color.a = Mathf.Lerp(start, end, fadeCurve.Evaluate(percent));
+
+            TalkFade.color = color;
+            yield return null;
+        }
+
+    }
+
+    public void FadeIn()
+    {
+        StartCoroutine(CoFade(0, 1));
+    }
+
+    public void FadeOut()
+    {
+        StartCoroutine(CoFade(1, 0));
+    }
 
     private void Start()
     {
         StartCoroutine(FindMe());
-        
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -31,17 +61,19 @@ public class NPC_Trigger : MonoBehaviour
 
         if (other.tag == "Player" && other.GetComponent<PhotonView>().IsMine)
         {
-           
+
             Dialog.SetActive(true);
             MainNpcTalk.SetActive(true);
-            if(!TalkStart.Equals(null))
+            if (!TalkStart.Equals(null))
                 TalkStart.SetActive(true);
+            //FadeIn();
+
         }
-			
-	}
+
+    }
 
 
-   
+
     // Update is called once per frame
     void OnTriggerExit(Collider other)
     {
@@ -54,15 +86,16 @@ public class NPC_Trigger : MonoBehaviour
                 TalkStart.SetActive(false);
             if (Dialog.activeInHierarchy)
                 CameraReturn();
-        }  
+            //FadeOut();
+        }
     }
 
     private void CameraWork()
     {
-        
-        StartCoroutine(MoveTo(CameraArm, this.transform.position + Vector3.down*2));
+
+        StartCoroutine(MoveTo(CameraArm, this.transform.position + Vector3.down * 2));
     }
-    public void CameraReturn() 
+    public void CameraReturn()
     {
         StartCoroutine(MoveTo(CameraArm, Me.transform.position));
     }
@@ -75,9 +108,9 @@ public class NPC_Trigger : MonoBehaviour
 
         while (true)
         {
-            count += Time.deltaTime*4;
+            count += Time.deltaTime * 4;
             obj.transform.position = Vector3.Lerp(wasPos, destination, count);
-            
+
 
             if (count >= 1)
             {
@@ -87,11 +120,11 @@ public class NPC_Trigger : MonoBehaviour
             }
             yield return null;
         }
-        
+
     }
     IEnumerator FindMe()
     {
-        
+
 
         while (true)
         {
@@ -109,4 +142,3 @@ public class NPC_Trigger : MonoBehaviour
         }
     }
 }
-
