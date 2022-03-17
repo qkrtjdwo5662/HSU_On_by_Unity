@@ -21,6 +21,7 @@ public class EventInstance : MonoBehaviour
     public Clock Clock;
     private Hashtable hashtable = new Hashtable();
     private bool isEventStart = false;
+    private bool isEvent2Start = false;
     
     private GameObject[] chickens = new GameObject[20];
     private System.Random r = new System.Random();
@@ -28,7 +29,22 @@ public class EventInstance : MonoBehaviour
     private GameObject Me;
     PhotonView PV;
 
+
+    public bool attend = false;
+
     public Button developButton;
+
+    [PunRPC]
+    public void addAttender(string msg)
+    {
+        hashtable.Add(msg, 1);
+    }
+
+
+
+
+
+
 
     [PunRPC]
     private void addRanker(string msg, int score)
@@ -81,7 +97,23 @@ public class EventInstance : MonoBehaviour
         }
         winnerPanel.SetActive(true);
         winnerBanner.text = string.Format("우승!     {0}      {1}점", winner, winnerScore);
+        hashtable = new Hashtable();
 
+    }
+    private void Event2Start() {
+        isEvent2Start = true;
+
+        if (attend == true)
+        {
+            PV.RPC("addAttender", RpcTarget.AllBuffered, PhotonNetwork.NickName);
+        }
+        
+
+
+
+    }
+    private void Event2End() { 
+    
     }
     private string HashToString(Hashtable hashtable)
     {
@@ -144,8 +176,20 @@ public class EventInstance : MonoBehaviour
                 }
             }
         }
+        if (Clock.clock.text.Equals("18:00"))
+        {
+            if (!isEvent2Start)
+            {
+                Event2Start();
+                //PV.RPC("EventStart",RpcTarget.AllBuffered);
+            }
+        }
 
-        
+        if (isEvent2Start)
+        {
+            
+        }
+
 
     }
 

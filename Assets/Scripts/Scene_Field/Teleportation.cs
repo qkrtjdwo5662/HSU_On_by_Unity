@@ -50,11 +50,11 @@ public class Teleportation : MonoBehaviour
                         break;
                     case Destination.NakSan:
                         ob.GetComponent<Transform>().position = new Vector3(0f, 0f, 0f);
-                        GameObject.Find("EnvironmentManager").GetComponent<EventInstance>().attand = true;
+                        GameObject.Find("EnvironmentManager").GetComponent<EventInstance>().attend = true;
                         break;
                     case Destination.NakSanEntry:
                         ob.GetComponent<Transform>().position = new Vector3(0f, 0f, 0f);
-                        GameObject.Find("EnvironmentManager").GetComponent<EventInstance>().attand = false;
+                        GameObject.Find("EnvironmentManager").GetComponent<EventInstance>().attend = false;
 
                         break;
                 }
