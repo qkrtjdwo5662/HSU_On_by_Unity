@@ -10,9 +10,6 @@ public class NPC_Trigger : MonoBehaviour
     public GameObject MainNpcTalk;
     public GameObject TalkStart;
 
-    public Image TalkFade;
-    public float fadeTime = 1.5f;
-    public AnimationCurve fadeCurve;
 
     private Button startBtn; //대화하기 버튼
 
@@ -22,33 +19,7 @@ public class NPC_Trigger : MonoBehaviour
     private GameObject Me;
     private TPSCharacterController tps;
 
-    IEnumerator CoFade(float start, float end)
-    {
-        float currentTime = 0.0f;
-        float percent = 0.0f;
-        Color color = TalkFade.color;
-        while (percent < 1f)
-        {
-            currentTime += Time.deltaTime;
-            percent = currentTime / fadeTime;
-
-            color.a = Mathf.Lerp(start, end, fadeCurve.Evaluate(percent));
-
-            TalkFade.color = color;
-            yield return null;
-        }
-
-    }
-
-    public void FadeIn()
-    {
-        StartCoroutine(CoFade(0, 1));
-    }
-
-    public void FadeOut()
-    {
-        StartCoroutine(CoFade(1, 0));
-    }
+   
 
     private void Start()
     {
