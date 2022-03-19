@@ -194,12 +194,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8913ddd565a48342a774c2fef54768d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterBody: {fileID: 2483171829935965052}
-  cameraArm: {fileID: 0}
-  movingSpeed: 1.5
-  character: {fileID: 2584119145783224300}
-  input: {fileID: 0}
-  escButton: {fileID: 0}
 --- !u!82 &55214104904220085
 AudioSource:
   m_ObjectHideFlags: 0
