@@ -19,7 +19,7 @@ public class No_Role_NPC_Trigger : MonoBehaviour
     private GameObject Me;
     private TPSCharacterController tps;
 
-    public enum No_Role { NPC1_Talk, NPC2_Talk, NPC3_Talk, NPC4_Talk, NPC5_Talk, NPC6_Talk, NPC7_Talk, NPC8_Talk, NPC9_Talk, NPC10_Talk }; // NPC 대화 열거형
+    public enum No_Role { NPC1_Talk, NPC2_Talk, NPC3_Talk, NPC4_Talk, NPC5_Talk, NPC6_Talk, NPC7_Talk, NPC8_Talk, NPC9_Talk, NPC10_Talk, NPC11_Talk, NPC12_Talk, NPC13_Talk }; // NPC 대화 열거형
     public No_Role NR;
     private void Start()
     {
@@ -238,6 +238,71 @@ public class No_Role_NPC_Trigger : MonoBehaviour
             NPC_X_Btn.onClick.AddListener(() => {
                 NPC_Btn_Count = 0;
                 NPC_Text_Next = "그라찌에에서 한번 주문해봐!!";
+                NPC_Text.text = NPC_Text_Next.ToString();
+            });
+        }
+        else if (NR == No_Role.NPC11_Talk)
+        {
+            switch (NPC_Btn_Count)
+            {
+                case 0:
+                    NPC_Text.text = "흐아암~ 배고픈데";
+                    NPC_Btn_Count++;
+                    break;
+                case 1:
+                    NPC_Text_Next = "배달은 언제오지...";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+            }
+            NPC_X_Btn.onClick.AddListener(() => {
+                NPC_Btn_Count = 0;
+                NPC_Text_Next = "흐아암~ 배고픈데";
+                NPC_Text.text = NPC_Text_Next.ToString();
+            });
+        }
+        else if (NR == No_Role.NPC12_Talk)
+        {
+            switch (NPC_Btn_Count)
+            {
+                case 0:
+                    NPC_Text.text = "미션은 잘 해결하고 있어?";
+                    NPC_Btn_Count++;
+                    break;
+                case 1:
+                    NPC_Text_Next = "돌아다녀보면서 상상프렌즈를 만나봐~!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+                case 2:
+                    NPC_Text_Next = "나는 아까 꼬꼬랑 친해졌어 ^_^";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+            }
+            NPC_X_Btn.onClick.AddListener(() => {
+                NPC_Btn_Count = 0;
+                NPC_Text_Next = "미션은 잘 해결하고 있어?";
+                NPC_Text.text = NPC_Text_Next.ToString();
+            });
+        }
+        else if (NR == No_Role.NPC13_Talk)
+        {
+            switch (NPC_Btn_Count)
+            {
+                case 0:
+                    NPC_Text.text = "우와.. ROTC 멋있다";
+                    NPC_Btn_Count++;
+                    break;
+                case 1:
+                    NPC_Text_Next = "나도 입단할 수 있을까?";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+            }
+            NPC_X_Btn.onClick.AddListener(() => {
+                NPC_Btn_Count = 0;
+                NPC_Text_Next = "우와.. ROTC 멋있다";
                 NPC_Text.text = NPC_Text_Next.ToString();
             });
         }
