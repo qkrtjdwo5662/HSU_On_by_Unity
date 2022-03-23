@@ -101,6 +101,7 @@ public class EventInstance : MonoBehaviour
         hashtable = new Hashtable();
 
     }
+    [PunRPC]
     private void Event2Start() {
         isEvent2Start = true;
 
@@ -134,7 +135,7 @@ public class EventInstance : MonoBehaviour
     void Start()
     {
         developButton.onClick.AddListener( ()=> {
-            PV.RPC("EventStart", RpcTarget.AllBuffered);
+            PV.RPC("Event2Start", RpcTarget.AllBuffered);
         });
         PV = GetComponent<PhotonView>();
         StartCoroutine(FindMe());
