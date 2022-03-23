@@ -55,6 +55,7 @@ MonoBehaviour:
   - ChangePants
   - ChangeMyAvatar
   - addAttender
+  - Event2Start
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

@@ -49,11 +49,11 @@ public class Teleportation : MonoBehaviour
                         ob.GetComponent<Transform>().position = new Vector3(-35.742f, 2.286f, 41.676f);
                         break;
                     case Destination.NakSan:
-                        ob.GetComponent<Transform>().position = new Vector3(0f, 0f, 0f);
+                        ob.GetComponent<Transform>().position = new Vector3(-444.86f, -6.24f, -146.08f);
                         GameObject.Find("EnvironmentManager").GetComponent<EventInstance>().attend = true;
                         break;
                     case Destination.NakSanEntry:
-                        ob.GetComponent<Transform>().position = new Vector3(0f, 0f, 0f);
+                        ob.GetComponent<Transform>().position = new Vector3(87.61545f, 12.72846f, 3f);
                         GameObject.Find("EnvironmentManager").GetComponent<EventInstance>().attend = false;
 
                         break;
