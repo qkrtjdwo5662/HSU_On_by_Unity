@@ -38,6 +38,7 @@ public class EventInstance : MonoBehaviour
     public void addAttender(string msg)
     {
         hashtable.Add(msg, 1);
+        Debug.Log("I'm Attender");
     }
 
 
@@ -106,8 +107,11 @@ public class EventInstance : MonoBehaviour
         if (attend == true)
         {
             PV.RPC("addAttender", RpcTarget.AllBuffered, PhotonNetwork.NickName);
+            
         }
         
+
+
 
 
 
