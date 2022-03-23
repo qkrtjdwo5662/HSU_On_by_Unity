@@ -49,7 +49,7 @@ public class TPSCharacterController : MonoBehaviour
 
     public Scene_Character_Setting scs;
 
-
+    public GameObject Bomb;
 
     public Texture HC01, HC11, HC21, HC31, HC41, HC51, HC61;
     public Texture HC02, HC12, HC22, HC32, HC42, HC52, HC62;
@@ -70,6 +70,8 @@ public class TPSCharacterController : MonoBehaviour
 
     // 하의
     public Texture P01, P02, P03, P04, P05, P06, P07, P08, P09, P10;
+
+    public bool isBomb = false;
 
 
     // Start is called before the first frame update
@@ -586,5 +588,33 @@ public class TPSCharacterController : MonoBehaviour
             characterModel.materials[0].SetTexture("_MainTex", getTop(top));
         if (!(bottom == null))
             characterModel.materials[1].SetTexture("_MainTex", getBottom(bottom));
+    }
+    public void WearBombRPC(string nickname) {
+        PV.RPC("WearBomb", RpcTarget.AllBuffered, nickname);
+    }
+
+    public void TakeOffBombRPC(string nickname) {
+        PV.RPC("TakeOffBomb", RpcTarget.AllBuffered, nickname);
+    }
+
+
+
+    [PunRPC]
+    public void WearBomb(string nickname) {
+        if (PhotonNetwork.NickName == nickname) {
+            Bomb.SetActive(true);
+            isBomb = true;
+        }
+
+    }
+   
+    [PunRPC]
+    public void TakeOffBomb(string nickname)
+    {
+        if (PhotonNetwork.NickName == nickname)
+        {
+            Bomb.SetActive(false);
+            isBomb = false;
+        }
     }
 }

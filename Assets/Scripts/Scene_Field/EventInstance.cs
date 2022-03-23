@@ -1,5 +1,6 @@
 ﻿using Photon.Pun;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +20,11 @@ public class EventInstance : MonoBehaviour
 
     public GameObject AttackButton;
     public Clock Clock;
+
     private Hashtable hashtable = new Hashtable();
+    private List<string> list = new List<string>();
+
+
     private bool isEventStart = false;
     private bool isEvent2Start = false;
     
@@ -37,14 +42,9 @@ public class EventInstance : MonoBehaviour
     [PunRPC]
     public void addAttender(string msg)
     {
-        hashtable.Add(msg, 1);
+        list.Add(PhotonNetwork.NickName);
         Debug.Log("I'm Attender");
     }
-
-
-
-
-
 
 
     [PunRPC]
@@ -110,13 +110,36 @@ public class EventInstance : MonoBehaviour
             PV.RPC("addAttender", RpcTarget.AllBuffered, PhotonNetwork.NickName);
             
         }
-        
+        if (PhotonNetwork.IsMasterClient)
+        {
+            int nextBomb = Random.Range(0, list.Count);
+            Debug.Log(nextBomb);
 
-
-
-
+            PV.RPC("orderBomb", RpcTarget.AllBuffered, list[nextBomb]);
+            Debug.Log(list[nextBomb]);
+        }
 
     }
+
+
+    [PunRPC]
+    public void orderBomb(string nickname) {
+        Me.GetComponent<TPSCharacterController>().WearBombRPC(nickname);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     private void Event2End() { 
     
     }
