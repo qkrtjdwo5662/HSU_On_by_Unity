@@ -19,7 +19,8 @@ public class No_Role_NPC_Trigger : MonoBehaviour
     private GameObject Me;
     private TPSCharacterController tps;
 
-    public enum No_Role { NPC1_Talk, NPC2_Talk, NPC3_Talk, NPC4_Talk, NPC5_Talk, NPC6_Talk, NPC7_Talk, NPC8_Talk, NPC9_Talk, NPC10_Talk, NPC11_Talk, NPC12_Talk, NPC13_Talk }; // NPC 대화 열거형
+    public enum No_Role { NPC1_Talk, NPC2_Talk, NPC3_Talk, NPC4_Talk, NPC5_Talk, NPC6_Talk, NPC7_Talk, NPC8_Talk, NPC9_Talk, NPC10_Talk, NPC11_Talk, NPC12_Talk, NPC13_Talk, NPC14_Talk, NPC15_Talk
+    , NPC16_Talk, NPC17_Talk, NPC18_Talk, NPC19_Talk, NPC20_Talk }; // NPC 대화 열거형
     public No_Role NR;
     private void Start()
     {
@@ -303,6 +304,151 @@ public class No_Role_NPC_Trigger : MonoBehaviour
             NPC_X_Btn.onClick.AddListener(() => {
                 NPC_Btn_Count = 0;
                 NPC_Text_Next = "우와.. ROTC 멋있다";
+                NPC_Text.text = NPC_Text_Next.ToString();
+            });
+        }
+        else if (NR == No_Role.NPC14_Talk)
+        {
+            switch (NPC_Btn_Count)
+            {
+                case 0:
+                    NPC_Text.text = "안녕하세요~!";
+                    NPC_Btn_Count++;
+                    break;
+                case 1:
+                    NPC_Text_Next = "저희는 이스터에그 NPC 개발자 NPC 입니다!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+                case 2:
+                    NPC_Text_Next = "저는 코딩하는 쿼카 팀장 황윤규입니다!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+            }
+            NPC_X_Btn.onClick.AddListener(() => {
+                NPC_Btn_Count = 0;
+                NPC_Text_Next = "안녕하세요~!";
+                NPC_Text.text = NPC_Text_Next.ToString();
+            });
+        }
+        else if (NR == No_Role.NPC15_Talk)
+        {
+            switch (NPC_Btn_Count)
+            {
+                case 0:
+                    NPC_Text.text = "안녕하세요~!";
+                    NPC_Btn_Count++;
+                    break;
+                case 1:
+                    NPC_Text_Next = "저는 컨텐츠 개발을 맡고 있는 심우호입니다!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+            }
+            NPC_X_Btn.onClick.AddListener(() => {
+                NPC_Btn_Count = 0;
+                NPC_Text_Next = "안녕하세요~!";
+                NPC_Text.text = NPC_Text_Next.ToString();
+            });
+        }
+        else if (NR == No_Role.NPC16_Talk)
+        {
+            switch (NPC_Btn_Count)
+            {
+                case 0:
+                    NPC_Text.text = "안녕하세요~!";
+                    NPC_Btn_Count++;
+                    break;
+                case 1:
+                    NPC_Text_Next = "저는 그래픽 디자인 개발을 맡고 있는 전희연입니다!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+            }
+            NPC_X_Btn.onClick.AddListener(() => {
+                NPC_Btn_Count = 0;
+                NPC_Text_Next = "안녕하세요~!";
+                NPC_Text.text = NPC_Text_Next.ToString();
+            });
+        }
+        else if (NR == No_Role.NPC17_Talk)
+        {
+            switch (NPC_Btn_Count)
+            {
+                case 0:
+                    NPC_Text.text = "안녕하세요~!";
+                    NPC_Btn_Count++;
+                    break;
+                case 1:
+                    NPC_Text_Next = "저는 데이터베이스 운영을 맡고 있는 박성재입니다!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+            }
+            NPC_X_Btn.onClick.AddListener(() => {
+                NPC_Btn_Count = 0;
+                NPC_Text_Next = "안녕하세요~!";
+                NPC_Text.text = NPC_Text_Next.ToString();
+            });
+        }
+        else if (NR == No_Role.NPC18_Talk)
+        {
+            switch (NPC_Btn_Count)
+            {
+                case 0:
+                    NPC_Text.text = "안녕하세요~!";
+                    NPC_Btn_Count++;
+                    break;
+                case 1:
+                    NPC_Text_Next = "저는 프로그래밍 개발을 맡고 있는 임수빈입니다!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+            }
+            NPC_X_Btn.onClick.AddListener(() => {
+                NPC_Btn_Count = 0;
+                NPC_Text_Next = "안녕하세요~!";
+                NPC_Text.text = NPC_Text_Next.ToString();
+            });
+        }
+        else if (NR == No_Role.NPC19_Talk)
+        {
+            switch (NPC_Btn_Count)
+            {
+                case 0:
+                    NPC_Text.text = "학군단 홍보라..";
+                    NPC_Btn_Count++;
+                    break;
+                case 1:
+                    NPC_Text_Next = "어떻게 하면 효율적으로 홍보할 수 있을까?";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+            }
+            NPC_X_Btn.onClick.AddListener(() => {
+                NPC_Btn_Count = 0;
+                NPC_Text_Next = "학군단 홍보라..";
+                NPC_Text.text = NPC_Text_Next.ToString();
+            });
+        }
+        else if (NR == No_Role.NPC20_Talk)
+        {
+            switch (NPC_Btn_Count)
+            {
+                case 0:
+                    NPC_Text.text = "나랑.. 같이..";
+                    NPC_Btn_Count++;
+                    break;
+                case 1:
+                    NPC_Text_Next = "학식 먹을 사람..?";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+            }
+            NPC_X_Btn.onClick.AddListener(() => {
+                NPC_Btn_Count = 0;
+                NPC_Text_Next = "나랑.. 같이..";
                 NPC_Text.text = NPC_Text_Next.ToString();
             });
         }
