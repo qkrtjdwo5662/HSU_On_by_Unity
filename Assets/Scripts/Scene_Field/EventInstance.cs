@@ -13,6 +13,9 @@ public class EventInstance : MonoBehaviour
     public Text ScoreBoard;
     public Text TimeBoard;
     public float timer = 120f;
+    public float event2Timer = 5.0f;
+    public string currentBomb;
+    public int currentBombIndex;
 
     public GameObject chatBox;
     public GameObject chatBtn_off;
@@ -112,11 +115,11 @@ public class EventInstance : MonoBehaviour
         }
         if (PhotonNetwork.IsMasterClient)
         {
-            int nextBomb = Random.Range(0, list.Count);
-            Debug.Log(nextBomb);
+            currentBombIndex = Random.Range(0, list.Count);
+            Debug.Log(currentBombIndex);
 
-            PV.RPC("orderBomb", RpcTarget.AllBuffered, list[nextBomb]);
-            Debug.Log(list[nextBomb]);
+            PV.RPC("orderBomb", RpcTarget.AllBuffered, list[currentBombIndex]);
+            Debug.Log(list[currentBombIndex]);
         }
 
     }
@@ -127,22 +130,12 @@ public class EventInstance : MonoBehaviour
         Me.GetComponent<TPSCharacterController>().WearBombRPC(nickname);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    private void Event2End() { 
-    
+    private void Event2End() {
+        ScoreBoard.text = "우승! " + list[0];
+        ScorePanel.SetActive(false);
+        isEvent2Start = false;
     }
+
     private string HashToString(Hashtable hashtable)
     {
         string result = "";
@@ -215,7 +208,24 @@ public class EventInstance : MonoBehaviour
 
         if (isEvent2Start)
         {
-            
+            TimeBoard.text = "남은시간 : " + (int)((event2Timer -= Time.deltaTime)) + "초";
+            if (PhotonNetwork.IsMasterClient)
+            {
+                if (event2Timer < 0)
+                {
+                    list.Remove(list[currentBombIndex]);
+                    currentBombIndex = Random.Range(0, list.Count);
+                    Debug.Log(currentBombIndex);
+
+                    PV.RPC("orderBomb", RpcTarget.AllBuffered, list[currentBombIndex]);
+                    Debug.Log(list[currentBombIndex]);
+
+                }
+                if (list.Count == 1)
+                {
+                    PV.RPC("Event2End",RpcTarget.AllBuffered, list[0]);
+                }
+            }
         }
 
 
