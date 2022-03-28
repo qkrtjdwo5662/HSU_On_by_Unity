@@ -316,12 +316,12 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                     NPC_Btn_Count++;
                     break;
                 case 1:
-                    NPC_Text_Next = "저희는 이스터에그 NPC 개발자 NPC 입니다!";
+                    NPC_Text_Next = "저희는 개발자 NPC 입니다!";
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
                     break;
                 case 2:
-                    NPC_Text_Next = "저는 코딩하는 쿼카 팀장 황윤규입니다!";
+                    NPC_Text_Next = "저는 코딩하는 쿼카 팀장 17학번 황윤규입니다!";
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
                     break;
@@ -341,7 +341,7 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                     NPC_Btn_Count++;
                     break;
                 case 1:
-                    NPC_Text_Next = "저는 컨텐츠 개발을 맡고 있는 심우호입니다!";
+                    NPC_Text_Next = "저는 컨텐츠 기획을 맡고 있는 19학번 심우호입니다!";
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
                     break;
@@ -361,7 +361,7 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                     NPC_Btn_Count++;
                     break;
                 case 1:
-                    NPC_Text_Next = "저는 그래픽 디자인 개발을 맡고 있는 전희연입니다!";
+                    NPC_Text_Next = "저는 그래픽 디자인을 맡고 있는 19학번 전희연입니다!";
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
                     break;
@@ -381,7 +381,7 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                     NPC_Btn_Count++;
                     break;
                 case 1:
-                    NPC_Text_Next = "저는 데이터베이스 운영을 맡고 있는 박성재입니다!";
+                    NPC_Text_Next = "저는 데이터베이스 관리를 맡고 있는 17학번 박성재입니다!";
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
                     break;
@@ -401,7 +401,7 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                     NPC_Btn_Count++;
                     break;
                 case 1:
-                    NPC_Text_Next = "저는 프로그래밍 개발을 맡고 있는 임수빈입니다!";
+                    NPC_Text_Next = "저는 프로그래밍을 맡고 있는 19학번 임수빈입니다!";
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
                     break;
@@ -503,15 +503,18 @@ public class No_Role_NPC_Trigger : MonoBehaviour
         if (other.tag == "Player" && other.GetComponent<PhotonView>().IsMine)
         {
 
-            Dialog.SetActive(false);
-            MainNpcTalk.SetActive(false);
-            if (!TalkStart.Equals(null))
-                TalkStart.SetActive(false);
-            if (Dialog.activeInHierarchy)
-                CameraReturn();
-            //FadeOut();
+            TurnOffChatBox();
         }
     }
+    void TurnOffChatBox() {
+        Dialog.SetActive(false);
+        MainNpcTalk.SetActive(false);
+        if (!TalkStart.Equals(null))
+            TalkStart.SetActive(false);
+        if (Dialog.activeInHierarchy)
+            CameraReturn();
+    }
+    
 
     private void CameraWork()
     {
