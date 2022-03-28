@@ -59,6 +59,7 @@ MonoBehaviour:
   - WearBomb
   - orderBomb
   - TakeOffBomb
+  - Event2End
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

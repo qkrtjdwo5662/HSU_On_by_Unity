@@ -25,7 +25,9 @@ public class EventInstance : MonoBehaviour
     public Clock Clock;
 
     private Hashtable hashtable = new Hashtable();
-    private List<string> list = new List<string>();
+    public ArrayList list = new ArrayList();
+
+    //private List<string> list = new List<string>();
 
 
     private bool isEventStart = false;
@@ -40,11 +42,22 @@ public class EventInstance : MonoBehaviour
 
     public bool attend = false;
 
+    public bool listFlag = false;
+
+
+
+
     public Button developButton;
+
+
+
+
+
 
     [PunRPC]
     public void addAttender(string msg)
     {
+        
         list.Add(PhotonNetwork.NickName);
         Debug.Log("I'm Attender");
     }
@@ -106,20 +119,30 @@ public class EventInstance : MonoBehaviour
     }
     [PunRPC]
     private void Event2Start() {
-        isEvent2Start = true;
-
+        
         if (attend == true)
         {
             PV.RPC("addAttender", RpcTarget.AllBuffered, PhotonNetwork.NickName);
+            PhotonNetwork.SetMasterClient(PhotonNetwork.LocalPlayer);
             
         }
         if (PhotonNetwork.IsMasterClient)
         {
+            
             currentBombIndex = Random.Range(0, list.Count);
             Debug.Log(currentBombIndex);
 
-            PV.RPC("orderBomb", RpcTarget.AllBuffered, list[currentBombIndex]);
-            Debug.Log(list[currentBombIndex]);
+            if (list.Count != 0)
+            {
+                isEvent2Start = true;
+                ScorePanel.SetActive(true);
+                PV.RPC("orderBomb", RpcTarget.AllBuffered, list[currentBombIndex]);
+                Debug.Log(list[currentBombIndex]);
+            }
+            else if (list.Count == 0) {
+                isEvent2Start = false;
+
+            }
         }
 
     }
@@ -130,10 +153,13 @@ public class EventInstance : MonoBehaviour
         Me.GetComponent<TPSCharacterController>().WearBombRPC(nickname);
     }
 
-    private void Event2End() {
-        ScoreBoard.text = "우승! " + list[0];
+    [PunRPC]
+    private void Event2End(string winner) {
+        winnerPanel.SetActive(true);
+        winnerBanner.text = "우승! " + winner;
         ScorePanel.SetActive(false);
         isEvent2Start = false;
+
     }
 
     private string HashToString(Hashtable hashtable)
@@ -213,25 +239,37 @@ public class EventInstance : MonoBehaviour
             {
                 if (event2Timer < 0)
                 {
-                    list.Remove(list[currentBombIndex]);
-                    currentBombIndex = Random.Range(0, list.Count);
-                    Debug.Log(currentBombIndex);
-
-                    PV.RPC("orderBomb", RpcTarget.AllBuffered, list[currentBombIndex]);
-                    Debug.Log(list[currentBombIndex]);
-
+                    listFlag = true;
+                    ManagementList();
                 }
-                if (list.Count == 1)
-                {
-                    PV.RPC("Event2End",RpcTarget.AllBuffered, list[0]);
-                }
+                
             }
         }
 
 
     }
 
+    void ManagementList() {
 
+        if (listFlag)
+        {
+            listFlag = false;
+            Debug.Log(currentBombIndex);
+            if (list.Count == 1)
+            {
+                string winner = list[0].ToString();
+                PV.RPC("Event2End", RpcTarget.AllBuffered, winner);
+                Debug.Log("우승자는 : " + winner);
+                list.RemoveAt(currentBombIndex);
+            }
+            else
+            {
+                currentBombIndex = Random.Range(0, list.Count);
+                PV.RPC("orderBomb", RpcTarget.AllBuffered, list[currentBombIndex]);
+                Debug.Log(list[currentBombIndex]);
+            }
+        }
+    }
     
     void SpawnChicken()
     {
