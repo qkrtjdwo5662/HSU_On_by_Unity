@@ -20,7 +20,7 @@ public class No_Role_NPC_Trigger : MonoBehaviour
     private TPSCharacterController tps;
 
     public enum No_Role { NPC1_Talk, NPC2_Talk, NPC3_Talk, NPC4_Talk, NPC5_Talk, NPC6_Talk, NPC7_Talk, NPC8_Talk, NPC9_Talk, NPC10_Talk, NPC11_Talk, NPC12_Talk, NPC13_Talk, NPC14_Talk, NPC15_Talk
-    , NPC16_Talk, NPC17_Talk, NPC18_Talk, NPC19_Talk, NPC20_Talk }; // NPC 대화 열거형
+    , NPC16_Talk, NPC17_Talk, NPC18_Talk, NPC19_Talk, NPC20_Talk, NPC32_Talk }; // NPC 대화 열거형
     public No_Role NR;
     private void Start()
     {
@@ -449,6 +449,31 @@ public class No_Role_NPC_Trigger : MonoBehaviour
             NPC_X_Btn.onClick.AddListener(() => {
                 NPC_Btn_Count = 0;
                 NPC_Text_Next = "나랑.. 같이..";
+                NPC_Text.text = NPC_Text_Next.ToString();
+            });
+        }
+        else if (NR == No_Role.NPC32_Talk)
+        {
+            switch (NPC_Btn_Count)
+            {
+                case 0:
+                    NPC_Text.text = "상상부기 안녕~!";
+                    NPC_Btn_Count++;
+                    break;
+                case 1:
+                    NPC_Text_Next = "한성냥이도 안녕!!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+                case 2:
+                    NPC_Text_Next = "꼬꼬랑 상찌도 안녕~~~!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+            }
+            NPC_X_Btn.onClick.AddListener(() => {
+                NPC_Btn_Count = 0;
+                NPC_Text_Next = "상상부기 안녕~!";
                 NPC_Text.text = NPC_Text_Next.ToString();
             });
         }
