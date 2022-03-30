@@ -74,6 +74,8 @@ public class TPSCharacterController : MonoBehaviour
     public bool isBomb = false;
 
 
+    private EventInstance e;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -527,4 +529,17 @@ public class TPSCharacterController : MonoBehaviour
             isBomb = false;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            Debug.Log("폭탄 옮기기");
+            e.event2Timer = 5.0f;
+            e.orderBomb(other.name);
+
+        }
+    }
+
+
 }
