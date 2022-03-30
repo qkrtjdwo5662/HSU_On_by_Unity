@@ -535,6 +535,7 @@ public class TPSCharacterController : MonoBehaviour
         if (other.tag == "Player")
         {
             Debug.Log("폭탄 옮기기");
+            TakeOffBomb(PhotonNetwork.NickName);
             e.event2Timer = 5.0f;
             e.orderBomb(other.name);
 
