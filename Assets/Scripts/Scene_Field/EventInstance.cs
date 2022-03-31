@@ -162,6 +162,18 @@ public class EventInstance : MonoBehaviour
 
     }
 
+    [PunRPC]
+    private void Event2Lose(string name) {
+        if (name == PhotonNetwork.NickName)
+        {
+            winnerPanel.SetActive(true);
+            winnerBanner.text = "아쉽지만, 다음기회에!";
+            ScorePanel.SetActive(false);
+            isEvent2Start = false;
+        }
+    }
+
+
     private string HashToString(Hashtable hashtable)
     {
         string result = "";
@@ -264,13 +276,15 @@ public class EventInstance : MonoBehaviour
             }
             else
             {
+                PV.RPC("Event2Lose", RpcTarget.AllBuffered, list[currentBombIndex]);
                 currentBombIndex = Random.Range(0, list.Count);
                 PV.RPC("orderBomb", RpcTarget.AllBuffered, list[currentBombIndex]);
                 Debug.Log(list[currentBombIndex]);
             }
         }
     }
-    
+
+
     void SpawnChicken()
     {
         for (int i = 0; i < chickens.Length; i++)
