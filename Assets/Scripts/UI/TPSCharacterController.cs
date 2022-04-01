@@ -99,7 +99,7 @@ public class TPSCharacterController : MonoBehaviour
         escButton.onClick.AddListener(escAction);
         attackButton = GameObject.Find("Canvas").transform.Find("AttackButton").GetComponent<Button>();
         attackButton.onClick.AddListener(AttackAction);
-
+        e = GameObject.Find("ervironmentManager").GetComponent<EventInstance>();
         join = GameObject.Find("Join").GetComponent<Join>();
         join.PVID = PV.ViewID;
         audioSourceWalk.mute = false;
@@ -504,7 +504,7 @@ public class TPSCharacterController : MonoBehaviour
     public void WearBombRPC(string nickname) {
         PV.RPC("WearBomb", RpcTarget.AllBuffered, nickname);
     }
-
+    
     public void TakeOffBombRPC(string nickname) {
         PV.RPC("TakeOffBomb", RpcTarget.AllBuffered, nickname);
     }
@@ -537,7 +537,10 @@ public class TPSCharacterController : MonoBehaviour
             Debug.Log("폭탄 옮기기");
             PV.RPC("TakeOffBomb", RpcTarget.AllBuffered, PhotonNetwork.NickName);
             e.event2Timer = 5.0f;
-            e.orderBomb(other.name);
+            other.GetComponent<TPSCharacterController>().WearBombRPC(
+                other.GetComponent<PhotonView>().Owner.NickName
+                ); ;
+            //e.orderBomb(other.name);
 
         }
     }

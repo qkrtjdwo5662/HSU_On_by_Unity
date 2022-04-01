@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Teleportation : MonoBehaviour
 {
 
-    public enum Destination {SangSangLobby, Grazie, SangSangEntry, YeonGuEntry, NakSan, NakSanEntry}
+    public enum Destination {SangSangLobby, Grazie, SangSangEntry, YeonGuEntry, NakSan, NakSanEntry, MiRae, MiRaeEntry}
     public Destination destiantion;
 
     bool DoTeleport = false;
@@ -55,7 +55,12 @@ public class Teleportation : MonoBehaviour
                     case Destination.NakSanEntry:
                         ob.GetComponent<Transform>().position = new Vector3(87.61545f, 12.72846f, 2f);
                         GameObject.Find("EnvironmentManager").GetComponent<EventInstance>().attend = false;
-
+                        break;
+                    case Destination.MiRae:
+                        ob.GetComponent<Transform>().position = new Vector3(-410, 3.34f, 51.735f);
+                        break;
+                    case Destination.MiRaeEntry:
+                        ob.GetComponent<Transform>().position = new Vector3(33f, 3.5f, 54.117f);
                         break;
                 }
             }
