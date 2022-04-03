@@ -9,6 +9,7 @@ public class No_Role_NPC_Trigger : MonoBehaviour
     public GameObject Dialog;
     public GameObject MainNpcTalk;
     public GameObject TalkStart;
+    public GameObject TalkPanel;
 
     public GameObject NPC; // NPC
 
@@ -20,7 +21,7 @@ public class No_Role_NPC_Trigger : MonoBehaviour
     private TPSCharacterController tps;
 
     public enum No_Role { NPC1_Talk, NPC2_Talk, NPC3_Talk, NPC4_Talk, NPC5_Talk, NPC6_Talk, NPC7_Talk, NPC8_Talk, NPC9_Talk, NPC10_Talk, NPC11_Talk, NPC12_Talk, NPC13_Talk, NPC14_Talk, NPC15_Talk
-    , NPC16_Talk, NPC17_Talk, NPC18_Talk, NPC19_Talk, NPC20_Talk, NPC32_Talk }; // NPC 대화 열거형
+    , NPC16_Talk, NPC17_Talk, NPC18_Talk, NPC19_Talk, NPC20_Talk, NPC31_Talk, NPC32_Talk, NPC33_Talk, NPC34_Talk, NPC35_Talk, NPC36_Talk, NPC37_Talk , NPC38_Talk, NPC39_Talk, NPC40_Talk }; // NPC 대화 열거형
     public No_Role NR;
     private void Start()
     {
@@ -38,17 +39,23 @@ public class No_Role_NPC_Trigger : MonoBehaviour
     {
         if (NR == No_Role.NPC1_Talk)
         {
-            //NPC1_Btn.onClick.AddListener(NPC1_Btn_Count++);
-            if (NPC_Btn_Count >= 1)
+            switch (NPC_Btn_Count)
             {
-                NPC_Text_Next = "너도 신기하지 않니?";
-                NPC_Text.text = NPC_Text_Next.ToString();
-
-            }
-            else if (NPC_Btn_Count == 0)
-            {
-                NPC_Text.text = "여기가 바로 가상 한성대학교?";
-                NPC_Btn_Count++;
+                case 0:
+                    NPC_Text.text = "여기가 바로 가상 한성대학교?";
+                    NPC_Btn_Count++;
+                    break;
+                case 1:
+                    NPC_Text_Next = "너도 신기하지 않니?";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    break;
+                case 2:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "여기가 바로 가상 한성대학교?";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
+                    break;
             }
             NPC_X_Btn.onClick.AddListener(() =>
             {
@@ -59,16 +66,24 @@ public class No_Role_NPC_Trigger : MonoBehaviour
         }
         else if (NR == No_Role.NPC2_Talk)
         {
-            if (NPC_Btn_Count >= 1)
+            switch (NPC_Btn_Count)
             {
-                NPC_Text_Next = "아직까진 날이 춥구나.. (덜덜)";
-                NPC_Text.text = NPC_Text_Next.ToString();
-
-            }
-            else if (NPC_Btn_Count == 0)
-            {
-                NPC_Text.text = "멋 좀 내려고 한 껏 차려입고 왔는데";
-                NPC_Btn_Count++;
+                case 0:
+                    NPC_Text.text = "멋 좀 내려고 한 껏 차려입고 왔는데";
+                    NPC_Btn_Count++;
+                    break;
+                case 1:
+                    NPC_Text_Next = "아직까진 날이 춥구나.. (덜덜)";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+                case 2:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "멋 좀 내려고 한 껏 차려입고 왔는데";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
+                    break;
             }
             NPC_X_Btn.onClick.AddListener(() => {
                 NPC_Btn_Count = 0;
@@ -94,6 +109,13 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
                     break;
+                case 3:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "저기요 혹시 길 좀 물어봐도 될까요?";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
+                    break;
             }
 
             NPC_X_Btn.onClick.AddListener(() => {
@@ -115,6 +137,13 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
                     break;
+                case 2:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "안녕? 만나서 반가워!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
+                    break;
             }
             NPC_X_Btn.onClick.AddListener(() => {
                 NPC_Btn_Count = 0;
@@ -134,6 +163,13 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                     NPC_Text_Next = "춰보자..(헉헉)";
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
+                    break;
+                case 2:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "..나를 .. 따라서.. 신나게 춤을 ..";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
                     break;
             }
             NPC_X_Btn.onClick.AddListener(() => {
@@ -155,6 +191,13 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
                     break;
+                case 2:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "오예~ 한성대학교 메타버스 최고~!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
+                    break;
             }
             NPC_X_Btn.onClick.AddListener(() => {
                 NPC_Btn_Count = 0;
@@ -174,6 +217,13 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                     NPC_Text_Next = "그럼 날 따라해봐~~!";
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
+                    break;
+                case 2:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "너도 춤에 관심있니??";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
                     break;
             }
             NPC_X_Btn.onClick.AddListener(() => {
@@ -195,6 +245,13 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
                     break;
+                case 2:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "타닥..타닥타닥";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
+                    break;
             }
             NPC_X_Btn.onClick.AddListener(() => {
                 NPC_Btn_Count = 0;
@@ -214,6 +271,13 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                     NPC_Text_Next = "생과일 주스도 있네 뭐 마시지?";
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
+                    break;
+                case 2:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "우와 그라찌에 커피 완전 싸다~!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
                     break;
             }
             NPC_X_Btn.onClick.AddListener(() => {
@@ -235,6 +299,13 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
                     break;
+                case 2:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "그라찌에에서 한번 주문해봐!!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
+                    break;
             }
             NPC_X_Btn.onClick.AddListener(() => {
                 NPC_Btn_Count = 0;
@@ -254,6 +325,13 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                     NPC_Text_Next = "배달은 언제오지...";
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
+                    break;
+                case 2:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "흐아암~ 배고픈데";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
                     break;
             }
             NPC_X_Btn.onClick.AddListener(() => {
@@ -280,6 +358,13 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
                     break;
+                case 3:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "미션은 잘 해결하고 있어?";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
+                    break;
             }
             NPC_X_Btn.onClick.AddListener(() => {
                 NPC_Btn_Count = 0;
@@ -299,6 +384,13 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                     NPC_Text_Next = "나도 입단할 수 있을까?";
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
+                    break;
+                case 2:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "우와.. ROTC 멋있다";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
                     break;
             }
             NPC_X_Btn.onClick.AddListener(() => {
@@ -325,6 +417,13 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
                     break;
+                case 3:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "안녕하세요~!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
+                    break;
             }
             NPC_X_Btn.onClick.AddListener(() => {
                 NPC_Btn_Count = 0;
@@ -341,9 +440,16 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                     NPC_Btn_Count++;
                     break;
                 case 1:
-                    NPC_Text_Next = "저는 컨텐츠 기획을 맡고 있는 19학번 심우호입니다!";
+                    NPC_Text_Next = "저는 컨텐츠 기획 및 기능 구현을 맡고 있는 19학번 심우호입니다!";
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
+                    break;
+                case 2:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "안녕하세요~!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
                     break;
             }
             NPC_X_Btn.onClick.AddListener(() => {
@@ -365,6 +471,13 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
                     break;
+                case 2:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "안녕하세요~!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
+                    break;
             }
             NPC_X_Btn.onClick.AddListener(() => {
                 NPC_Btn_Count = 0;
@@ -384,6 +497,13 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                     NPC_Text_Next = "저는 데이터베이스 관리를 맡고 있는 17학번 박성재입니다!";
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
+                    break;
+                case 2:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "안녕하세요~!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
                     break;
             }
             NPC_X_Btn.onClick.AddListener(() => {
@@ -405,6 +525,13 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
                     break;
+                case 2:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "안녕하세요~!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
+                    break;
             }
             NPC_X_Btn.onClick.AddListener(() => {
                 NPC_Btn_Count = 0;
@@ -424,6 +551,13 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                     NPC_Text_Next = "어떻게 하면 효율적으로 홍보할 수 있을까?";
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
+                    break;
+                case 2:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "학군단 홍보라..";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
                     break;
             }
             NPC_X_Btn.onClick.AddListener(() => {
@@ -445,10 +579,44 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
                     break;
+                case 2:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "나랑.. 같이..";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
+                    break;
             }
             NPC_X_Btn.onClick.AddListener(() => {
                 NPC_Btn_Count = 0;
                 NPC_Text_Next = "나랑.. 같이..";
+                NPC_Text.text = NPC_Text_Next.ToString();
+            });
+        }
+        else if (NR == No_Role.NPC31_Talk)
+        {
+            switch (NPC_Btn_Count)
+            {
+                case 0:
+                    NPC_Text.text = "혹시 상상부기 프렌즈들을 아니?";
+                    NPC_Btn_Count++;
+                    break;
+                case 1:
+                    NPC_Text_Next = "저기 포토존에서 기념사진을 찍어봐~!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+                case 2:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "혹시 상상부기 프렌즈들을 아니?";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
+                    break;
+            }
+            NPC_X_Btn.onClick.AddListener(() => {
+                NPC_Btn_Count = 0;
+                NPC_Text_Next = "혹시 상상부기 프렌즈들을 아니?";
                 NPC_Text.text = NPC_Text_Next.ToString();
             });
         }
@@ -470,10 +638,150 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                     NPC_Text.text = NPC_Text_Next.ToString();
                     NPC_Btn_Count++;
                     break;
+                case 3:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "상상부기 안녕~!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
+                    break;
             }
             NPC_X_Btn.onClick.AddListener(() => {
                 NPC_Btn_Count = 0;
                 NPC_Text_Next = "상상부기 안녕~!";
+                NPC_Text.text = NPC_Text_Next.ToString();
+            });
+        }
+        else if (NR == No_Role.NPC33_Talk)
+        {
+            switch (NPC_Btn_Count)
+            {
+                case 0:
+                    NPC_Text.text = "맞아맞아! 들었던거 같아!";
+                    NPC_Btn_Count++;
+                    break;
+                case 1:
+                    NPC_Text_Next = "예약제라고 했던거 같은데?";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+                case 2:
+                    NPC_Text_Next = "예약하러 가볼까?!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+                case 3:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "맞아맞아! 들었던거 같아!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
+                    break;
+            }
+            NPC_X_Btn.onClick.AddListener(() => {
+                NPC_Btn_Count = 0;
+                NPC_Text_Next = "맞아맞아! 들었던거 같아!";
+                NPC_Text.text = NPC_Text_Next.ToString();
+            });
+        }
+        else if (NR == No_Role.NPC34_Talk)
+        {
+            switch (NPC_Btn_Count)
+            {
+                case 0:
+                    NPC_Text.text = "혹시 들어본 적 있니?";
+                    NPC_Btn_Count++;
+                    break;
+                case 1:
+                    NPC_Text_Next = "상상파크에서 3D 프린터를 쓸 수 있다는데..";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+                case 2:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "혹시 들어본 적 있니?";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
+                    break;
+            }
+            NPC_X_Btn.onClick.AddListener(() => {
+                NPC_Btn_Count = 0;
+                NPC_Text_Next = "혹시 들어본 적 있니?";
+                NPC_Text.text = NPC_Text_Next.ToString();
+            });
+        }
+        else if (NR == No_Role.NPC35_Talk)
+        {
+            switch (NPC_Btn_Count)
+            {
+                case 0:
+                    NPC_Text.text = "어서오세요 ~";
+                    NPC_Btn_Count++;
+                    break;
+                case 1:
+                    NPC_Text_Next = "여기는 학술정보관 입니다!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+                case 2:
+                    NPC_Text_Next = "본 건물에서는 이용객 분들을 위하여";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+                case 3:
+                    NPC_Text_Next = "정숙해주시길 바랍니다..!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+                case 4:
+                    NPC_Text_Next = "그럼 편안한 이용 되십시오 ~~";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+                case 5:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "어서오세요 ~";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
+                    break;
+            }
+            NPC_X_Btn.onClick.AddListener(() => {
+                NPC_Btn_Count = 0;
+                NPC_Text_Next = "어서오세요 ~";
+                NPC_Text.text = NPC_Text_Next.ToString();
+            });
+        }
+        else if (NR == No_Role.NPC36_Talk)
+        {
+            switch (NPC_Btn_Count)
+            {
+                case 0:
+                    NPC_Text.text = "엘리베이터 버튼이 왜 안눌리지..?";
+                    NPC_Btn_Count++;
+                    break;
+                case 1:
+                    NPC_Text_Next = "혹시 고장났나...";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+                case 2:
+                    NPC_Text_Next = "하는 수 없지 계단으로 올라가는 수밖에";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+                case 3:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "엘리베이터 버튼이 왜 안눌리지..?";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
+                    break;
+            }
+            NPC_X_Btn.onClick.AddListener(() => {
+                NPC_Btn_Count = 0;
+                NPC_Text_Next = "엘리베이터 버튼이 왜 안눌리지..?";
                 NPC_Text.text = NPC_Text_Next.ToString();
             });
         }
