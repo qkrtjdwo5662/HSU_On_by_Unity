@@ -51,6 +51,8 @@ public class TPSCharacterController : MonoBehaviour
 
     public GameObject Bomb;
 
+    public ChangeMask CM;
+
     public Texture HC01, HC11, HC21, HC31, HC41, HC51, HC61;
     public Texture HC02, HC12, HC22, HC32, HC42, HC52, HC62;
     public Texture HC03, HC13, HC23, HC33, HC43, HC53, HC63;
@@ -186,14 +188,21 @@ public class TPSCharacterController : MonoBehaviour
         animator.SetBool("isRun", isRun);
         if (isMove && moveSwitch)
         {
+            if (animator.GetBool("conversation") || animator.GetBool("dance") || animator.GetBool("lose") || animator.GetBool("victory") || animator.GetBool("yes") || animator.GetBool("no")) {
+                CM.AlloffMaskRPC();
+                animator.SetBool("conversation", false);
+                animator.SetBool("dance", false);
+                animator.SetBool("victory", false);
+                animator.SetBool("lose", false);
+                animator.SetBool("yes", false);
+                animator.SetBool("no", false);
+            }
             time = 0.0f;
-            animator.SetBool("conversation", false);
-            animator.SetBool("dance", false);
-            animator.SetBool("victory", false);
-            animator.SetBool("lose", false);
-            animator.SetBool("yes", false);
-            animator.SetBool("no", false);
             animator.SetBool("attack1", false);
+
+
+
+
             
             // 카메라가 바라보는 방향
             Vector3 lookForward = new Vector3(cameraArm.forward.x, 0f, cameraArm.forward.z).normalized;

@@ -61,6 +61,12 @@ MonoBehaviour:
   - TakeOffBomb
   - Event2End
   - Event2Lose
+  - DoDance
+  - DoDespair
+  - DoNo
+  - DoVictory
+  - DoYes
+  - AllofMask
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
