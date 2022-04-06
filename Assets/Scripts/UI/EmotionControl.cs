@@ -12,6 +12,7 @@ public class EmotionControl : MonoBehaviour
     public Button victory;
     public Button lose;
     public GameObject EmotionPanel;
+    public ChangeMask CM;
 
     public Animator animator;
     public PhotonView PV;
@@ -37,6 +38,8 @@ public class EmotionControl : MonoBehaviour
             no.onClick.AddListener(DoNo);
             victory.onClick.AddListener(DoVictoy);
             lose.onClick.AddListener(DoLose);
+            CM.AddListenerStart();
+
         }
         else if (!PV.IsMine) {
             Destroy(this);
