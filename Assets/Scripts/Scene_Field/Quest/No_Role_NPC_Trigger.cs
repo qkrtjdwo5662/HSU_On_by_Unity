@@ -785,6 +785,144 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                 NPC_Text.text = NPC_Text_Next.ToString();
             });
         }
+        else if (NR == No_Role.NPC37_Talk)
+        {
+            switch (NPC_Btn_Count)
+            {
+                case 0:
+                    NPC_Text.text = "혹시 공부하러 온거니?";
+                    NPC_Btn_Count++;
+                    break;
+                case 1:
+                    NPC_Text_Next = "여기는 카페 분위기 나는 창의 열람실이야!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+                case 2:
+                    NPC_Text_Next = "집중 열람실 보단 정숙하는 분위기는 아닌 곳이지";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+                case 3:
+                    NPC_Text_Next = "그래도 공부하는 곳이니 너무 시끄럽게 떠들진 말아줘~~";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+                case 4:
+                    NPC_Text_Next = "그럼 공부 화이팅!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+                case 5:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "혹시 공부하러 온거니?";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
+                    break;
+            }
+            NPC_X_Btn.onClick.AddListener(() => {
+                NPC_Btn_Count = 0;
+                NPC_Text_Next = "혹시 공부하러 온거니?";
+                NPC_Text.text = NPC_Text_Next.ToString();
+            });
+        }
+        else if (NR == No_Role.NPC38_Talk)
+        {
+            switch (NPC_Btn_Count)
+            {
+                case 0:
+                    NPC_Text.text = "버스가 언제오지...";
+                    NPC_Btn_Count++;
+                    break;
+                case 1:
+                    NPC_Text_Next = "앗! 새치기 하지 마세요!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+                case 2:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "버스가 언제오지...";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
+                    break;
+            }
+            NPC_X_Btn.onClick.AddListener(() => {
+                NPC_Btn_Count = 0;
+                NPC_Text_Next = "버스가 언제오지...";
+                NPC_Text.text = NPC_Text_Next.ToString();
+            });
+        }
+        else if (NR == No_Role.NPC39_Talk)
+        {
+            switch (NPC_Btn_Count)
+            {
+                case 0:
+                    NPC_Text.text = "여기는,, 집중열람실이야..(소근)";
+                    NPC_Btn_Count++;
+                    break;
+                case 1:
+                    NPC_Text_Next = "다른 사람에게 피해가지 않도록 무조건 정숙해야해";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+                case 2:
+                    NPC_Text_Next = "그리고 집중열람실은 노트북을 가져오면 안돼";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+                case 3:
+                    NPC_Text_Next = "혹시 가져왔다면 3층 창의열람실로 가주길 바래~";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+                case 4:
+                    NPC_Text_Next = "그럼 공부 화이팅!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+                case 5:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "여기는,, 집중열람실이야..(소근)";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
+                    break;
+            }
+            NPC_X_Btn.onClick.AddListener(() => {
+                NPC_Btn_Count = 0;
+                NPC_Text_Next = "여기는,, 집중열람실이야..(소근)";
+                NPC_Text.text = NPC_Text_Next.ToString();
+            });
+        }
+        else if (NR == No_Role.NPC40_Talk)
+        {
+            switch (NPC_Btn_Count)
+            {
+                case 0:
+                    NPC_Text.text = "여기가 바로 동아리 방들이 모여있는 인성관이구나!";
+                    NPC_Btn_Count++;
+                    break;
+                case 1:
+                    NPC_Text_Next = "정말 여러가지 동아리들이 있네 흠.. 난 무슨 동아리하지?";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
+                    break;
+                case 2:
+                    NPC_Btn_Count = 0;
+                    NPC_Text_Next = "여기가 바로 동아리 방들이 모여있는 인성관이구나!";
+                    NPC_Text.text = NPC_Text_Next.ToString();
+                    TalkPanel.SetActive(false);
+                    CameraReturn();
+                    break;
+            }
+            NPC_X_Btn.onClick.AddListener(() => {
+                NPC_Btn_Count = 0;
+                NPC_Text_Next = "여기가 바로 동아리 방들이 모여있는 인성관이구나!";
+                NPC_Text.text = NPC_Text_Next.ToString();
+            });
+        }
     }
 
     void OnTriggerEnter(Collider other)
