@@ -48,6 +48,7 @@ public class No_Role_NPC_Trigger : MonoBehaviour
                 case 1:
                     NPC_Text_Next = "너도 신기하지 않니?";
                     NPC_Text.text = NPC_Text_Next.ToString();
+                    NPC_Btn_Count++;
                     break;
                 case 2:
                     NPC_Btn_Count = 0;
