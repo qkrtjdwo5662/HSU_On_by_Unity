@@ -101,7 +101,7 @@ public class TPSCharacterController : MonoBehaviour
         escButton.onClick.AddListener(escAction);
         attackButton = GameObject.Find("Canvas").transform.Find("AttackButton").GetComponent<Button>();
         attackButton.onClick.AddListener(AttackAction);
-        e = GameObject.Find("ervironmentManager").GetComponent<EventInstance>();
+        e = GameObject.Find("EnvironmentManager").GetComponent<EventInstance>();
         join = GameObject.Find("Join").GetComponent<Join>();
         join.PVID = PV.ViewID;
         audioSourceWalk.mute = false;
