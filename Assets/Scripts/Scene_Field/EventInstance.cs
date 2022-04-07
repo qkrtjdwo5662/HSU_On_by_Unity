@@ -124,7 +124,9 @@ public class EventInstance : MonoBehaviour
         {
             PV.RPC("addAttender", RpcTarget.AllBuffered, PhotonNetwork.NickName);
             PhotonNetwork.SetMasterClient(PhotonNetwork.LocalPlayer);
-            
+            ScorePanel.SetActive(true);
+            isEvent2Start = true;
+
         }
         if (PhotonNetwork.IsMasterClient)
         {
@@ -134,8 +136,6 @@ public class EventInstance : MonoBehaviour
 
             if (list.Count != 0)
             {
-                isEvent2Start = true;
-                ScorePanel.SetActive(true);
                 PV.RPC("orderBomb", RpcTarget.AllBuffered, list[currentBombIndex]);
                 Debug.Log(list[currentBombIndex]);
             }
@@ -151,6 +151,7 @@ public class EventInstance : MonoBehaviour
     [PunRPC]
     public void orderBomb(string nickname) {
         Me.GetComponent<TPSCharacterController>().WearBombRPC(nickname);
+        timer = 5.0f;
     }
 
     [PunRPC]
