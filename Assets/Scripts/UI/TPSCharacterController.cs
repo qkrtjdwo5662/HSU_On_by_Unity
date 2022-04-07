@@ -522,7 +522,7 @@ public class TPSCharacterController : MonoBehaviour
 
     [PunRPC]
     public void WearBomb(string nickname) {
-        if (PhotonNetwork.NickName == nickname) {
+        if (PV.Owner.NickName == nickname) {
             Bomb.SetActive(true);
             isBomb = true;
         }
@@ -532,7 +532,7 @@ public class TPSCharacterController : MonoBehaviour
     [PunRPC]
     public void TakeOffBomb(string nickname)
     {
-        if (PhotonNetwork.NickName == nickname)
+        if (PV.Owner.NickName == nickname)
         {
             Bomb.SetActive(false);
             isBomb = false;
