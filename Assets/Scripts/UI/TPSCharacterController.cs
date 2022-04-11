@@ -525,6 +525,7 @@ public class TPSCharacterController : MonoBehaviour
         if (PV.Owner.NickName == nickname) {
             Bomb.SetActive(true);
             isBomb = true;
+            e.event2Timer = 5.0f;
         }
 
     }
@@ -542,14 +543,13 @@ public class TPSCharacterController : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
 
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && isBomb)
         {
             Debug.Log("폭탄 옮기기");
             PV.RPC("TakeOffBomb", RpcTarget.AllBuffered, PhotonNetwork.NickName);
-            e.event2Timer = 5.0f;
             other.gameObject.GetComponent<TPSCharacterController>().WearBombRPC(
                 other.gameObject.GetComponent<PhotonView>().Owner.NickName
-                ); ;
+                );
             //e.orderBomb(other.name);
 
         }

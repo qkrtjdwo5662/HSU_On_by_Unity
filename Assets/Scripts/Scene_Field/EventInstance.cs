@@ -58,7 +58,7 @@ public class EventInstance : MonoBehaviour
     public void addAttender(string msg)
     {
         
-        list.Add(PhotonNetwork.NickName);
+        list.Add(msg);
         Debug.Log("I'm Attender");
     }
 
@@ -125,6 +125,9 @@ public class EventInstance : MonoBehaviour
             PV.RPC("addAttender", RpcTarget.AllBuffered, PhotonNetwork.NickName);
             PhotonNetwork.SetMasterClient(PhotonNetwork.LocalPlayer);
             ScorePanel.SetActive(true);
+            chatBox.SetActive(false);
+            chatBtn_off.SetActive(false);
+            chatBtn_on.SetActive(true);
             isEvent2Start = true;
 
         }
@@ -134,12 +137,12 @@ public class EventInstance : MonoBehaviour
             currentBombIndex = Random.Range(0, list.Count);
             Debug.Log(currentBombIndex);
 
-            if (list.Count != 0)
+            if (list.Count > 1)
             {
                 PV.RPC("orderBomb", RpcTarget.AllBuffered, list[currentBombIndex]);
                 Debug.Log(list[currentBombIndex]);
             }
-            else if (list.Count == 0) {
+            else if (list.Count <= 1) {
                 isEvent2Start = false;
 
             }
@@ -171,6 +174,7 @@ public class EventInstance : MonoBehaviour
             winnerBanner.text = "아쉽지만, 다음기회에!";
             ScorePanel.SetActive(false);
             isEvent2Start = false;
+            Me.GetComponent<Transform>().position = new Vector3(33f, 3.5f, 54.117f);
         }
     }
 
