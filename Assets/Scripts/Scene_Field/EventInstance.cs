@@ -159,6 +159,7 @@ public class EventInstance : MonoBehaviour
 
     [PunRPC]
     private void Event2End(string winner) {
+        Me.GetComponent<TPSCharacterController>().TakeOffBombRPC(PhotonNetwork.NickName);
         winnerPanel.SetActive(true);
         winnerBanner.text = "우승! " + winner;
         ScorePanel.SetActive(false);
@@ -174,7 +175,7 @@ public class EventInstance : MonoBehaviour
             winnerBanner.text = "아쉽지만, 다음기회에!";
             ScorePanel.SetActive(false);
             isEvent2Start = false;
-            Me.GetComponent<Transform>().position = new Vector3(33f, 3.5f, 54.117f);
+            Me.GetComponent<Transform>().position = new Vector3(87.61545f, 12.72846f, 2f);
         }
     }
 
@@ -275,7 +276,7 @@ public class EventInstance : MonoBehaviour
             if (list.Count == 1)
             {
                 string winner = list[0].ToString();
-                PV.RPC("Event2End", RpcTarget.AllBuffered, winner);
+                PV.RPC("Event2End", RpcTarget.All, winner);
                 Me.GetComponent<TPSCharacterController>().TakeOffBombRPC(PhotonNetwork.NickName);
                 Debug.Log("우승자는 : " + winner);
 
@@ -283,7 +284,7 @@ public class EventInstance : MonoBehaviour
             }
             else
             {
-                PV.RPC("Event2Lose", RpcTarget.AllBuffered, list[currentBombIndex]);
+                PV.RPC("Event2Lose", RpcTarget.All, list[currentBombIndex]);
                 currentBombIndex = Random.Range(0, list.Count);
                 PV.RPC("orderBomb", RpcTarget.AllBuffered, list[currentBombIndex]);
                 Debug.Log(list[currentBombIndex]);
