@@ -137,12 +137,12 @@ public class EventInstance : MonoBehaviour
             currentBombIndex = Random.Range(0, list.Count);
             Debug.Log(currentBombIndex);
 
-            if (list.Count > 1)
+            if (list.Count >= 1)
             {
                 PV.RPC("orderBomb", RpcTarget.AllBuffered, list[currentBombIndex]);
                 Debug.Log(list[currentBombIndex]);
             }
-            else if (list.Count <= 1) {
+            else if (list.Count == 0) {
                 isEvent2Start = false;
 
             }
@@ -276,7 +276,9 @@ public class EventInstance : MonoBehaviour
             {
                 string winner = list[0].ToString();
                 PV.RPC("Event2End", RpcTarget.AllBuffered, winner);
+                Me.GetComponent<TPSCharacterController>().TakeOffBombRPC(PhotonNetwork.NickName);
                 Debug.Log("우승자는 : " + winner);
+
                 list.RemoveAt(currentBombIndex);
             }
             else
