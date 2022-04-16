@@ -154,6 +154,7 @@ public class EventInstance : MonoBehaviour
     [PunRPC]
     public void orderBomb(string nickname) {
         Me.GetComponent<TPSCharacterController>().WearBombRPC(nickname);
+        currentBomb = nickname;
         timer = 5.0f;
     }
 
@@ -253,6 +254,7 @@ public class EventInstance : MonoBehaviour
         if (isEvent2Start)
         {
             TimeBoard.text = "남은시간 : " + (int)((event2Timer -= Time.deltaTime)) + "초";
+            ScoreBoard.text = "\n"+"현재 폭탄 :" + currentBomb;
             if (PhotonNetwork.IsMasterClient)
             {
                 if (event2Timer < 0)
