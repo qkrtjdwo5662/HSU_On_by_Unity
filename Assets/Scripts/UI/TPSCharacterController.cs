@@ -511,11 +511,11 @@ public class TPSCharacterController : MonoBehaviour
             characterModel.materials[1].SetTexture("_MainTex", getBottom(bottom));
     }
     public void WearBombRPC(string nickname) {
-        PV.RPC("WearBomb", RpcTarget.AllBuffered, nickname);
+        PV.RPC("WearBomb", RpcTarget.All, nickname);
     }
     
     public void TakeOffBombRPC(string nickname) {
-        PV.RPC("TakeOffBomb", RpcTarget.AllBuffered, nickname);
+        PV.RPC("TakeOffBomb", RpcTarget.All, nickname);
     }
 
 

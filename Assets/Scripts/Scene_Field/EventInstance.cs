@@ -176,6 +176,7 @@ public class EventInstance : MonoBehaviour
             winnerBanner.text = "아쉽지만, 다음기회에!";
             ScorePanel.SetActive(false);
             isEvent2Start = false;
+            Me.GetComponent<TPSCharacterController>().TakeOffBomb(name);
             Me.GetComponent<Transform>().position = new Vector3(87.61545f, 12.72846f, 2f);
         }
     }
