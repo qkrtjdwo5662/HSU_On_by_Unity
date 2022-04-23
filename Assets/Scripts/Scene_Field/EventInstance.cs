@@ -150,6 +150,9 @@ public class EventInstance : MonoBehaviour
 
     }
 
+    public void orderBombRPC(string name) {
+        PV.RPC("orderbomb",RpcTarget.All,name);
+    }
 
     [PunRPC]
     public void orderBomb(string nickname) {
