@@ -31,6 +31,7 @@ public class Teleportation : MonoBehaviour
             if (start <= 1.0f)
             {
                 im.color += new Color(0, 0, 0, Time.deltaTime);
+                ob.GetComponent<TPSCharacterController>().moveSwitch = false;
             }
             else if (start > 1.0f && start < 1.1f)
             {
@@ -70,6 +71,7 @@ public class Teleportation : MonoBehaviour
             }
             else if (start > finish)
             {
+                ob.GetComponent<TPSCharacterController>().moveSwitch = true;
                 start = 0.0f;
                 DoTeleport = false;
             }
