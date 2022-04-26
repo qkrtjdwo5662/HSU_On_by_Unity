@@ -547,10 +547,10 @@ public class TPSCharacterController : MonoBehaviour
         {
             Debug.Log("폭탄 옮기기");
             PV.RPC("TakeOffBomb", RpcTarget.All, PhotonNetwork.NickName);
-/*            other.gameObject.GetComponent<TPSCharacterController>().WearBombRPC(
-                other.gameObject.GetComponent<PhotonView>().Owner.NickName
-                );*/
-            
+            /*            other.gameObject.GetComponent<TPSCharacterController>().WearBombRPC(
+                            other.gameObject.GetComponent<PhotonView>().Owner.NickName
+                            );*/
+            PhotonNetwork.SetMasterClient(PhotonNetwork.LocalPlayer);
             e.orderBombRPC(other.gameObject.GetComponent<PhotonView>().Owner.NickName);
 
         }

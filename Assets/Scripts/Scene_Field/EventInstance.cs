@@ -139,7 +139,7 @@ public class EventInstance : MonoBehaviour
 
             if (list.Count >= 1)
             {
-                PV.RPC("orderBomb", RpcTarget.AllBuffered, list[currentBombIndex]);
+                orderBombRPC(list[currentBombIndex].ToString());
                 Debug.Log(list[currentBombIndex]);
             }
             else if (list.Count == 0) {
@@ -151,7 +151,7 @@ public class EventInstance : MonoBehaviour
     }
 
     public void orderBombRPC(string name) {
-        PV.RPC("orderbomb",RpcTarget.All,name);
+        PV.RPC("orderBomb",RpcTarget.All,name);
     }
 
     [PunRPC]
