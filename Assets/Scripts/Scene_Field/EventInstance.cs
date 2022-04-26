@@ -278,7 +278,6 @@ public class EventInstance : MonoBehaviour
         if (listFlag)
         {
             listFlag = false;
-            Debug.Log(currentBombIndex);
             if (list.Count == 1)
             {
                 string winner = list[0].ToString();
@@ -292,7 +291,7 @@ public class EventInstance : MonoBehaviour
             {
                 PV.RPC("Event2Lose", RpcTarget.All, list[currentBombIndex]);
                 currentBombIndex = Random.Range(0, list.Count);
-                PV.RPC("orderBomb", RpcTarget.AllBuffered, list[currentBombIndex]);
+                PV.RPC("orderBomb", RpcTarget.All, list[currentBombIndex]);
                 Debug.Log(list[currentBombIndex]);
             }
         }

@@ -545,12 +545,9 @@ public class TPSCharacterController : MonoBehaviour
 
         if (other.gameObject.tag == "Player" && isBomb)
         {
-            Debug.Log("폭탄 옮기기");
             PV.RPC("TakeOffBomb", RpcTarget.All, PhotonNetwork.NickName);
-            /*            other.gameObject.GetComponent<TPSCharacterController>().WearBombRPC(
-                            other.gameObject.GetComponent<PhotonView>().Owner.NickName
-                            );*/
             PhotonNetwork.SetMasterClient(PhotonNetwork.LocalPlayer);
+            Debug.Log(PhotonNetwork.MasterClient + "is master");
             e.orderBombRPC(other.gameObject.GetComponent<PhotonView>().Owner.NickName);
 
         }
