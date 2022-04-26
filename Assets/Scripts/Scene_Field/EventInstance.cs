@@ -158,6 +158,7 @@ public class EventInstance : MonoBehaviour
     public void orderBomb(string nickname) {
         Me.GetComponent<TPSCharacterController>().WearBombRPC(nickname);
         currentBomb = nickname;
+        currentBombIndex = list.IndexOf(currentBomb);
         timer = 5.0f;
     }
 
