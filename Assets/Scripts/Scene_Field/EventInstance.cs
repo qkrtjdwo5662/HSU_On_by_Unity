@@ -113,7 +113,7 @@ public class EventInstance : MonoBehaviour
             }
         }
         winnerPanel.SetActive(true);
-        winnerBanner.text = string.Format("우승!     {0}      {1}점", winner, winnerScore);
+        winnerBanner.text = string.Format("우승!     {0}      {1}점"+ "\n 상금 600원이 지급됩니다!", winner, winnerScore);
         join.AddMoney(winner);
         hashtable = new Hashtable();
 
