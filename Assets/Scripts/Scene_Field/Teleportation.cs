@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Teleportation : MonoBehaviour
 {
 
-    public enum Destination {SangSangLobby, Grazie, SangSangEntry, YeonGuEntry, NakSan, NakSanEntry, MiRae, MiRaeEntry}
+    public enum Destination { SangSangLobby, Grazie, SangSangEntry, YeonGuEntry, NakSan, NakSanEntry, MiRae, MiRaeEntry, goto3, goto4, goto5, return2, return3, return4}
     public Destination destiantion;
 
     bool DoTeleport = false;
@@ -62,6 +62,24 @@ public class Teleportation : MonoBehaviour
                         break;
                     case Destination.MiRaeEntry:
                         ob.GetComponent<Transform>().position = new Vector3(33f, 3.5f, 54.117f);
+                        break;
+                    case Destination.goto3:
+                        ob.GetComponent<Transform>().position = new Vector3(-476f, 3.29f, 115.39f);
+                        break;
+                    case Destination.goto4:
+                        ob.GetComponent<Transform>().position = new Vector3(-483.95f, 3.2f, 323.42f);
+                        break;
+                    case Destination.goto5:
+                        ob.GetComponent<Transform>().position = new Vector3(-567f, 3.34f, 114.64f);
+                        break;
+                    case Destination.return2:
+                        ob.GetComponent<Transform>().position = new Vector3(-423.86f, 3.39f, 55f);
+                        break;
+                    case Destination.return3:
+                        ob.GetComponent<Transform>().position = new Vector3(-476f, 3.38f, 110.09f);
+                        break;
+                    case Destination.return4:
+                        ob.GetComponent<Transform>().position = new Vector3(-486f, 4.93f, 324.07f);
                         break;
                 }
             }
