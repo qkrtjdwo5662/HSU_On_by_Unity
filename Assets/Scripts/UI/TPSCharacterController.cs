@@ -525,6 +525,7 @@ public class TPSCharacterController : MonoBehaviour
         if (PV.Owner.NickName == nickname) {
             Bomb.SetActive(true);
             isBomb = true;
+            movingSpeed = 5.0f;
             e.event2Timer = 5.0f;
         }
 
@@ -536,6 +537,7 @@ public class TPSCharacterController : MonoBehaviour
         if (PV.Owner.NickName == nickname)
         {
             Bomb.SetActive(false);
+            movingSpeed = 3.0f;
             isBomb = false;
         }
     }

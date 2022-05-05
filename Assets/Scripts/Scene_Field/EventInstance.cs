@@ -50,7 +50,7 @@ public class EventInstance : MonoBehaviour
     public Button developButton;
 
 
-
+    private Join join;
 
 
 
@@ -114,6 +114,7 @@ public class EventInstance : MonoBehaviour
         }
         winnerPanel.SetActive(true);
         winnerBanner.text = string.Format("우승!     {0}      {1}점", winner, winnerScore);
+        join.AddMoney(winner);
         hashtable = new Hashtable();
 
     }
@@ -166,9 +167,10 @@ public class EventInstance : MonoBehaviour
     private void Event2End(string winner) {
         Me.GetComponent<TPSCharacterController>().TakeOffBombRPC(PhotonNetwork.NickName);
         winnerPanel.SetActive(true);
-        winnerBanner.text = "우승! " + winner;
+        winnerBanner.text = "우승! " + winner + "\n 상금 600원이 지급됩니다!";
         ScorePanel.SetActive(false);
         isEvent2Start = false;
+        join.AddMoney(winner);
 
     }
 
@@ -205,6 +207,7 @@ public class EventInstance : MonoBehaviour
         });
         PV = GetComponent<PhotonView>();
         StartCoroutine(FindMe());
+        StartCoroutine(FindJoin());
     }
 
 
@@ -212,6 +215,18 @@ public class EventInstance : MonoBehaviour
         while (true) {
             Me = GameObject.Find("Me");
             if (Me != null) {
+                break;
+            }
+            yield return null;
+        }
+    }
+    IEnumerator FindJoin()
+    {
+        while (true)
+        {
+            join = GameObject.Find("Join").GetComponent<Join>();
+            if (Me != null)
+            {
                 break;
             }
             yield return null;

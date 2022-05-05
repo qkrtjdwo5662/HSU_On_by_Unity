@@ -431,6 +431,11 @@ public class Join : MonoBehaviourPunCallbacks
         reference.Child(msg).SetValueAsync(money);
 
     }
+    public void AddMoney(string nickname) {
+        if (nickname.Equals(PhotonNetwork.NickName)) {
+            SetValueFireBase("money", int.Parse(money) + 600);
+        }
+    }
     public class JoinDB
     {
         public string UserID;
