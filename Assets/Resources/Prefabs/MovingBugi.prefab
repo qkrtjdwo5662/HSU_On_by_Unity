@@ -101,7 +101,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1837535103578956816}
   - component: {fileID: 1354436544698662573}
-  - component: {fileID: 8462982310005086603}
   m_Layer: 0
   m_Name: MovingBugi
   m_TagString: Untagged
@@ -144,19 +143,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8462982310005086603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1354436544698662570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edee90a68d5d1ce4b99683f65678b977, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTr: {fileID: 0}
 --- !u!1 &3212404155158961065
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,7 +447,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6048915791651291242}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: -2.7109127, z: 0.45073012}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 309.9376, y: 309.9376, z: 309.9376}
   m_Children:
   - {fileID: 2453325277744130940}
