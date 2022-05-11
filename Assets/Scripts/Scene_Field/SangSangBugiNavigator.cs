@@ -27,7 +27,7 @@ public class SangSangBugiNavigator : MonoBehaviour
 		Me = GameObject.Find("Me");
 		nvAgent = GetComponent<NavMeshAgent>();
 		tr = GetComponent<Transform>();
-		ani.SetBool("isMove",false);
+		ani.SetBool("isMove",false);
 		//추적 Object에 적용된 NavMeshAgent 컴포넌트에 추적대상 설정         
 		nvAgent.destination = destiantion;
 	}
@@ -47,10 +47,10 @@ public class SangSangBugiNavigator : MonoBehaviour
 		{
 			nvAgent.destination = destiantion;
 		}
-		if (Vector3.Distance(this.transform.position, Me.trnasform.position >= 2.5f)) {
-			moveSwitch = false;
-			this.transform.LookAt(Me);
-		}
+	//	if (Vector3.Distance(this.transform.position, Me.trnasform.position >= 2.5f)) {
+		//	moveSwitch = false;
+			//this.transform.LookAt(Me);
+		//}
 	}
     private void OnTriggerEnter(Collider other)
     {

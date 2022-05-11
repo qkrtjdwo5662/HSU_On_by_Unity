@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FindWayManager : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class FindWayManager : MonoBehaviour
     public SangSangBugiNavigator navi;
     public Vector3 destination;
     public Button btn;
-    public Panel pl;
+    
 
 
 
