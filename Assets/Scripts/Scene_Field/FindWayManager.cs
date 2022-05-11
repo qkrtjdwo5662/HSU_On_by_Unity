@@ -15,7 +15,9 @@ public class FindWayManager : MonoBehaviour
     public void GotoDestination(float x, float y, float z) 
     {
         bugi.SetActive(true);
+        bugi.transform.position = GameObject.Find("Me").GetComponent<Transform>().position;
         navi.destiantion = new Vector3(x, y, z);
+        navi.StartGuide();
 
     }
     void Start()

@@ -27,10 +27,19 @@ public class SangSangBugiNavigator : MonoBehaviour
 		Me = GameObject.Find("Me");
 		nvAgent = GetComponent<NavMeshAgent>();
 		tr = GetComponent<Transform>();
-		ani.SetBool("isMove",true);
+		ani.SetBool("isMove",false);
 		//추적 Object에 적용된 NavMeshAgent 컴포넌트에 추적대상 설정         
 		nvAgent.destination = destiantion;
 	}
+
+
+	public void StartGuide() {
+		ani.SetBool("isMove", true);
+		moveSwitch = true;
+		isArrive = false;
+	}
+
+
 	// Update is called once per frame     
 	void Update()
 	{
@@ -47,8 +56,10 @@ public class SangSangBugiNavigator : MonoBehaviour
     {
 		if (other.tag == "Player")
 		{
-
-			if (!isArrive)
+			if(isArrive) {
+				//음성 출
+			}
+			else if (!isArrive)
 			{
 				moveSwitch = true;
 			}
