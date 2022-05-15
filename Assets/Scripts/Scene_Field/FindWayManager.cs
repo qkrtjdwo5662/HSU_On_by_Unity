@@ -40,65 +40,109 @@ public class FindWayManager : MonoBehaviour
     public Button HakSongBtn;
     public Button MiRaeBtn;
 
+    public GameObject NaviUI;
+    public Button GoBtn;
+    public GameObject miniMap;
 
-    public void GotoDestination(Transform t) 
+    private Transform temp;
+    private GameObject Me;
+    public void openNaviUI(Transform t) 
+    {
+        temp = t;
+        NaviUI.SetActive(true);
+
+    }
+    public void GotoDestination(Transform t)
     {
         bugi.SetActive(true);
-        bugi.transform.position = GameObject.Find("Me").GetComponent<Transform>().position + new Vector3(0, 2, 0);
         navi.StartGuide(t);
 
     }
+
     void Start()
     {
         EntryBtn.onClick.AddListener(()=> {
-            GotoDestination(Entry.transform);
+            openNaviUI(Entry.transform);
+            miniMap.SetActive(false);
         });
         SangSangBtn.onClick.AddListener(() => {
-            GotoDestination(SangSang.transform);
+            openNaviUI(SangSang.transform);
+            miniMap.SetActive(false);
+
         });        
         YeonGuBtn.onClick.AddListener(() => {
-            GotoDestination(YeonGu.transform);
+            openNaviUI(YeonGu.transform);
+            miniMap.SetActive(false);
+
         });
         NakSanBtn.onClick.AddListener(() => {
-            GotoDestination(NakSan.transform);
+            openNaviUI(NakSan.transform);
+            miniMap.SetActive(false);
+
         });
         ChangUiBtn.onClick.AddListener(() => {
-            GotoDestination(ChangUi.transform);
+            openNaviUI(ChangUi.transform);
+            miniMap.SetActive(false);
+
         });
 /*        WooChonBtn.onClick.AddListener(() => {
             GotoDestination(WooChon.transform);
+            miniMap.SetActive(false);
+
         });*/
         JanDiBtn.onClick.AddListener(() => {
-            GotoDestination(JanDi.transform);
+            openNaviUI(JanDi.transform);
+            miniMap.SetActive(false);
+
         });
         JinRiBtn.onClick.AddListener(() => {
-            GotoDestination(JinRi.transform);
+            openNaviUI(JinRi.transform);
+            miniMap.SetActive(false);
+
         });
         TamGuBtn.onClick.AddListener(() => {
-            GotoDestination(TamGu.transform);
+            openNaviUI(TamGu.transform);
+            miniMap.SetActive(false);
+
         });
         GongHakABtn.onClick.AddListener(() => {
-            GotoDestination(GongHakA.transform);
+            openNaviUI(GongHakA.transform);
+            miniMap.SetActive(false);
+
         });
         GongHakBBtn.onClick.AddListener(() => {
-            GotoDestination(GongHakB.transform);
+            openNaviUI(GongHakB.transform);
+            miniMap.SetActive(false);
+
         });
         JiSunBtn.onClick.AddListener(() => {
-            GotoDestination(JiSun.transform);
+            openNaviUI(JiSun.transform);
+            miniMap.SetActive(false);
+
         });
         HakSongBtn.onClick.AddListener(() => {
-            GotoDestination(HakSong.transform);
+            openNaviUI(HakSong.transform);
+            miniMap.SetActive(false);
+
         });
         MiRaeBtn.onClick.AddListener(() => {
-            GotoDestination(MiRae.transform);
+            openNaviUI(MiRae.transform);
+            miniMap.SetActive(false);
+
         });
 
-
+        GoBtn.onClick.AddListener(()=> {
+            NaviUI.SetActive(false);
+            GotoDestination(temp);
+        });
+        Me = GameObject.Find("Me");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (!bugi.activeInHierarchy) {
+            bugi.transform.position = Me.transform.position;
+        }
     }
 }
