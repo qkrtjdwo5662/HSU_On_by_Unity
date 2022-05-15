@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class SangSangBugiNavigator : MonoBehaviour
 {
@@ -21,6 +22,11 @@ public class SangSangBugiNavigator : MonoBehaviour
 	public TextMeshPro text;
 	private GameObject CameraArm;
 
+	public GameObject EndBugiPanel;
+	public Button endBtn;
+	public Button naviEndBtn;
+	public AudioSource audio;
+	public AudioClip c;
 
 	[SerializeField]
 	private GameObject Me;
@@ -33,6 +39,16 @@ public class SangSangBugiNavigator : MonoBehaviour
 		ani.SetBool("isMove", false);
 		CameraArm = GameObject.Find("Camera Arm");
 
+		naviEndBtn.onClick.AddListener(()=> {
+			naviEndBtn.gameObject.SetActive(false);
+			EndBugiPanel.SetActive(true);
+			audio.PlayOneShot(c);
+		});
+		endBtn.onClick.AddListener(()=> {
+			EndBugiPanel.SetActive(false);
+			this.gameObject.SetActive(false);
+
+		});
 		//추적 Object에 적용된 NavMeshAgent 컴포넌트에 추적대상 설정         
 	}
 
@@ -76,17 +92,19 @@ public class SangSangBugiNavigator : MonoBehaviour
 	{
         if (other.tag == "Player")
         {
-            if (!isArrive)
-            {
-                nvAgent.isStopped = false;
+			if (!isArrive)
+			{
+				nvAgent.isStopped = false;
 				ani.SetBool("isMove", true);
 				SpeechDialog.SetActive(false);
 
 			}
+			else if (isArrive) {
+				naviEndBtn.gameObject.SetActive(true);
+			}
 		}
         if (other.tag == "Destination")
         {
-			Debug.Log("@@@@@@@@@");
             nvAgent.isStopped = true;
             isArrive = true;
             ani.SetBool("isMove", false);
