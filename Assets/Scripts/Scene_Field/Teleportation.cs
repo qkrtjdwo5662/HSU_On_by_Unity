@@ -67,19 +67,19 @@ public class Teleportation : MonoBehaviour
                         ob.GetComponent<Transform>().position = new Vector3(-476f, 3.29f, 115.39f);
                         break;
                     case Destination.goto4:
-                        ob.GetComponent<Transform>().position = new Vector3(-483.95f, 3.2f, 323.42f);
+                        ob.GetComponent<Transform>().position = new Vector3(-466.19f, 3.43f, 334.01f);
                         break;
                     case Destination.goto5:
-                        ob.GetComponent<Transform>().position = new Vector3(-567f, 3.34f, 114.64f);
+                        ob.GetComponent<Transform>().position = new Vector3(-577.36f, 3.34f, 114.64f);
                         break;
                     case Destination.return2:
                         ob.GetComponent<Transform>().position = new Vector3(-423.86f, 3.39f, 55f);
                         break;
                     case Destination.return3:
-                        ob.GetComponent<Transform>().position = new Vector3(-476f, 3.38f, 110.09f);
+                        ob.GetComponent<Transform>().position = new Vector3(-472f, 3.38f, 110.09f);
                         break;
                     case Destination.return4:
-                        ob.GetComponent<Transform>().position = new Vector3(-486f, 4.93f, 324.07f);
+                        ob.GetComponent<Transform>().position = new Vector3(-467.54f, 3.43f, 332.41f);
                         break;
                 }
             }
