@@ -54,6 +54,7 @@ public class FindWayManager : MonoBehaviour
     {
         temp = t;
         GoBugiPanel.SetActive(true);
+        bugi.transform.position = Me.transform.position;
 
     }
     public void GotoDestination(Transform t)
@@ -372,7 +373,7 @@ public class FindWayManager : MonoBehaviour
             GoBugiPanel.SetActive(false);
             GotoDestination(temp);
         });
-        Me = GameObject.Find("Me");
+        StartCoroutine(FindMe());
     }
 
     // Update is called once per frame
@@ -380,6 +381,25 @@ public class FindWayManager : MonoBehaviour
     {
         if (!bugi.activeInHierarchy) {
             bugi.transform.position = Me.transform.position;
+        }
+    }
+    IEnumerator FindMe()
+    {
+
+
+        while (true)
+        {
+            Me = GameObject.Find("Me");
+
+            if (Me != null)
+            {
+                tps = Me.GetComponent<TPSCharacterController>();
+                CameraArm = Me.transform.Find("Camera Arm").gameObject;
+                startBtn = MainNpcTalk.transform.Find("Talk0").GetComponentInChildren<Button>();
+                startBtn.onClick.AddListener(CameraWork);
+                break;
+            }
+            yield return null;
         }
     }
 }
