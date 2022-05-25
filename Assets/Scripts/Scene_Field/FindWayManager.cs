@@ -393,10 +393,6 @@ public class FindWayManager : MonoBehaviour
 
             if (Me != null)
             {
-                tps = Me.GetComponent<TPSCharacterController>();
-                CameraArm = Me.transform.Find("Camera Arm").gameObject;
-                startBtn = MainNpcTalk.transform.Find("Talk0").GetComponentInChildren<Button>();
-                startBtn.onClick.AddListener(CameraWork);
                 break;
             }
             yield return null;
