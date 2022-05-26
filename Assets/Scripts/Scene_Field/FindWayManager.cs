@@ -23,6 +23,7 @@ public class FindWayManager : MonoBehaviour
     public Transform JiSun;
     public Transform HakSong;
     public Transform MiRae;
+    public Transform Hakgun;
     
     public Button EntryBtn;
     public Button SangSangBtn;
@@ -39,6 +40,7 @@ public class FindWayManager : MonoBehaviour
     public Button JiSunBtn;
     public Button HakSongBtn;
     public Button MiRaeBtn;
+    public Button HakgunBtn;
 
     public GameObject GoBugiPanel;
     public Button GoBtn;
@@ -85,6 +87,7 @@ public class FindWayManager : MonoBehaviour
             JiSun.gameObject.SetActive(false);
             HakSong.gameObject.SetActive(false);
             MiRae.gameObject.SetActive(false);
+            Hakgun.gameObject.SetActive(false);
 });
         SangSangBtn.onClick.AddListener(() => {
             audio.PlayOneShot(c);
@@ -105,6 +108,7 @@ public class FindWayManager : MonoBehaviour
             JiSun.gameObject.SetActive(false);
             HakSong.gameObject.SetActive(false);
             MiRae.gameObject.SetActive(false);
+            Hakgun.gameObject.SetActive(false);
         });        
         YeonGuBtn.onClick.AddListener(() => {
             audio.PlayOneShot(c);
@@ -125,6 +129,7 @@ public class FindWayManager : MonoBehaviour
             JiSun.gameObject.SetActive(false);
             HakSong.gameObject.SetActive(false);
             MiRae.gameObject.SetActive(false);
+            Hakgun.gameObject.SetActive(false);
         });
         NakSanBtn.onClick.AddListener(() => {
             audio.PlayOneShot(c);
@@ -145,6 +150,7 @@ public class FindWayManager : MonoBehaviour
             JiSun.gameObject.SetActive(false);
             HakSong.gameObject.SetActive(false);
             MiRae.gameObject.SetActive(false);
+            Hakgun.gameObject.SetActive(false);
         });
         ChangUiBtn.onClick.AddListener(() => {
             audio.PlayOneShot(c);
@@ -165,11 +171,12 @@ public class FindWayManager : MonoBehaviour
             JiSun.gameObject.SetActive(false);
             HakSong.gameObject.SetActive(false);
             MiRae.gameObject.SetActive(false);
+            Hakgun.gameObject.SetActive(false);
         });
-        /*        
+
         WooChonBtn.onClick.AddListener(() => {
             audio.PlayOneShot(c);
-            GotoDestination(WooChon.transform);
+            openNaviUI(WooChon.transform);
             miniMap.SetActive(false);
             Entry.gameObject.SetActive(false);
             SangSang.gameObject.SetActive(false);
@@ -186,8 +193,9 @@ public class FindWayManager : MonoBehaviour
             JiSun.gameObject.SetActive(false);
             HakSong.gameObject.SetActive(false);
             MiRae.gameObject.SetActive(false);
+            Hakgun.gameObject.SetActive(false);
         });
-        */
+
         JanDiBtn.onClick.AddListener(() => {
             audio.PlayOneShot(c);
             openNaviUI(JanDi.transform);
@@ -207,6 +215,7 @@ public class FindWayManager : MonoBehaviour
             JiSun.gameObject.SetActive(false);
             HakSong.gameObject.SetActive(false);
             MiRae.gameObject.SetActive(false);
+            Hakgun.gameObject.SetActive(false);
         });
         JinRiBtn.onClick.AddListener(() => {
             audio.PlayOneShot(c);
@@ -227,6 +236,7 @@ public class FindWayManager : MonoBehaviour
             JiSun.gameObject.SetActive(false);
             HakSong.gameObject.SetActive(false);
             MiRae.gameObject.SetActive(false);
+            Hakgun.gameObject.SetActive(false);
         });
         TamGuBtn.onClick.AddListener(() => {
             audio.PlayOneShot(c);
@@ -247,6 +257,7 @@ public class FindWayManager : MonoBehaviour
             JiSun.gameObject.SetActive(false);
             HakSong.gameObject.SetActive(false);
             MiRae.gameObject.SetActive(false);
+            Hakgun.gameObject.SetActive(false);
         });
         GongHakABtn.onClick.AddListener(() => {
             audio.PlayOneShot(c);
@@ -267,6 +278,7 @@ public class FindWayManager : MonoBehaviour
             JiSun.gameObject.SetActive(false);
             HakSong.gameObject.SetActive(false);
             MiRae.gameObject.SetActive(false);
+            Hakgun.gameObject.SetActive(false);
         });
         GongHakBBtn.onClick.AddListener(() => {
             audio.PlayOneShot(c);
@@ -287,6 +299,7 @@ public class FindWayManager : MonoBehaviour
             JiSun.gameObject.SetActive(false);
             HakSong.gameObject.SetActive(false);
             MiRae.gameObject.SetActive(false);
+            Hakgun.gameObject.SetActive(false);
         });
         SangBilBtn.onClick.AddListener(() => {
             audio.PlayOneShot(c);
@@ -307,6 +320,7 @@ public class FindWayManager : MonoBehaviour
             JiSun.gameObject.SetActive(false);
             HakSong.gameObject.SetActive(false);
             MiRae.gameObject.SetActive(false);
+            Hakgun.gameObject.SetActive(false);
         });
         JiSunBtn.onClick.AddListener(() => {
             audio.PlayOneShot(c);
@@ -327,6 +341,7 @@ public class FindWayManager : MonoBehaviour
             JiSun.gameObject.SetActive(true);
             HakSong.gameObject.SetActive(false);
             MiRae.gameObject.SetActive(false);
+            Hakgun.gameObject.SetActive(false);
         });
         HakSongBtn.onClick.AddListener(() => {
             audio.PlayOneShot(c);
@@ -347,6 +362,7 @@ public class FindWayManager : MonoBehaviour
             JiSun.gameObject.SetActive(false);
             HakSong.gameObject.SetActive(true);
             MiRae.gameObject.SetActive(false);
+            Hakgun.gameObject.SetActive(false);
         });
         MiRaeBtn.onClick.AddListener(() => {
             audio.PlayOneShot(c);
@@ -367,6 +383,28 @@ public class FindWayManager : MonoBehaviour
             JiSun.gameObject.SetActive(false);
             HakSong.gameObject.SetActive(false);
             MiRae.gameObject.SetActive(true);
+            Hakgun.gameObject.SetActive(false);
+        });
+        HakgunBtn.onClick.AddListener(() => {
+            audio.PlayOneShot(c);
+            openNaviUI(Hakgun.transform);
+            miniMap.SetActive(false);
+            Entry.gameObject.SetActive(false);
+            SangSang.gameObject.SetActive(false);
+            YeonGu.gameObject.SetActive(false);
+            NakSan.gameObject.SetActive(false);
+            ChangUi.gameObject.SetActive(false);
+            WooChon.gameObject.SetActive(false);
+            JanDi.gameObject.SetActive(false);
+            JinRi.gameObject.SetActive(false);
+            TamGu.gameObject.SetActive(false);
+            GongHakA.gameObject.SetActive(false);
+            GongHakB.gameObject.SetActive(false);
+            SangBil.gameObject.SetActive(false);
+            JiSun.gameObject.SetActive(false);
+            HakSong.gameObject.SetActive(false);
+            MiRae.gameObject.SetActive(false);
+            Hakgun.gameObject.SetActive(true);
         });
 
         GoBtn.onClick.AddListener(()=> {
