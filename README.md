@@ -1,20 +1,16 @@
 # HSU_On by Unity
+
 Google Play Store 출시
-
 Apple App Store 출시
-
 누적 다운로드 900+
 
-
+앱에 대한 자세한 설명은 이곳에 있습니다.
+https://dequista.tistory.com/3
 
 2021 한성공학경진대회 금상
-
 2021 한성대학교 대동제 공식 앱
-
 2021 C&C 창의융합경진대회 대상
-
 2022학년도 한성대학교 신입생 오리엔테이션 공식 앱
-
 2022 한성대학교 컴퓨터공학부 캡스톤디자인 작품 발표회 우수상
 
 - [![Video Label](https://img.youtube.com/vi/7eomOVaag4c/0.jpg)](https://www.youtube.com/watch?v=7eomOVaag4c)
