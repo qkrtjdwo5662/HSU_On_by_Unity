@@ -48,6 +48,8 @@ public class EventInstance : MonoBehaviour
 
 
     public Button developButton;
+    public Button developButton2;
+
 
 
     private Join join;
@@ -202,7 +204,10 @@ public class EventInstance : MonoBehaviour
 
     void Start()
     {
-        developButton.onClick.AddListener( ()=> {
+        developButton.onClick.AddListener(() => {
+            PV.RPC("EventStart", RpcTarget.AllBuffered);
+        });
+        developButton2.onClick.AddListener( ()=> {
             PV.RPC("Event2Start", RpcTarget.AllBuffered);
         });
         PV = GetComponent<PhotonView>();

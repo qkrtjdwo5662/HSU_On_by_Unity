@@ -35,76 +35,79 @@ public class ChickenAI : MonoBehaviour
     void Start()
     {
         PV = GetComponent<PhotonView>();
-        if (!PV.IsMine) {
-            Destroy(this);
-            Destroy(t);
+        if (PV.IsMine) {
+            DoSomething();
+            ani = GetComponent<Animator>();
         }
-        ani = GetComponent<Animator>();
-        DoSomething();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
-        if (dead) {
-            transform.Find("Toon Chicken").gameObject.SetActive(false);
-            if (time > 1.0f) {
-                Destroy(chickenTransform.gameObject);
-            } 
-        }
-        else if (ani.GetBool("Walk"))
+        if (PV.IsMine)
         {
-            if (time >= 3.0f)
+            time += Time.deltaTime;
+            if (dead)
             {
-                time = 0.0f;
-                ani.SetBool("Walk", false);
-                DoSomething();
+                transform.Find("Toon Chicken").gameObject.SetActive(false);
+                if (time > 1.0f)
+                {
+                    Destroy(chickenTransform.gameObject);
+                }
             }
-            else
+            else if (ani.GetBool("Walk"))
             {
-                chickenTransform.Translate(Vector3.forward * Time.deltaTime * 1.5f);
-            }
+                if (time >= 3.0f)
+                {
+                    time = 0.0f;
+                    ani.SetBool("Walk", false);
+                    DoSomething();
+                }
+                else
+                {
+                    chickenTransform.Translate(Vector3.forward * Time.deltaTime * 1.5f);
+                }
 
-        }
-        else if (ani.GetBool("Run"))
-        {
-            if (time >= 4.0f)
+            }
+            else if (ani.GetBool("Run"))
             {
-                time = 0.0f;
-                ani.SetBool("Run", false);
-                DoSomething();
+                if (time >= 4.0f)
+                {
+                    time = 0.0f;
+                    ani.SetBool("Run", false);
+                    DoSomething();
+                }
+                else
+                {
+                    chickenTransform.Translate(Vector3.forward * Time.deltaTime * 4);
+                }
+            }
+            else if (ani.GetBool("Eat"))
+            {
+                if (time >= 2.0f)
+                {
+                    time = 0.0f;
+                    ani.SetBool("Eat", false);
+                    DoSomething();
+                }
+            }
+            else if (ani.GetBool("TurnHead"))
+            {
+                if (time >= 2.0f)
+                {
+                    time = 0.0f;
+                    ani.SetBool("TurnHead", false);
+                    DoSomething();
+                }
             }
             else
             {
-                chickenTransform.Translate(Vector3.forward * Time.deltaTime * 4);
-            }
-        }
-        else if (ani.GetBool("Eat"))
-        {
-            if (time >= 2.0f)
-            {
-                time = 0.0f;
-                ani.SetBool("Eat", false);
-                DoSomething();
-            }
-        }
-        else if (ani.GetBool("TurnHead"))
-        {
-            if (time >= 2.0f)
-            {
-                time = 0.0f;
-                ani.SetBool("TurnHead", false);
-                DoSomething();
-            }
-        }
-        else
-        {
-            if (time >= 3.0f)
-            {
-                time = 0.0f;
-                DoSomething();
+                if (time >= 3.0f)
+                {
+                    time = 0.0f;
+                    DoSomething();
+                }
             }
         }
 
