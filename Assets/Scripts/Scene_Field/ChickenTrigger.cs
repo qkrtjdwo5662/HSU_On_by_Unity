@@ -11,7 +11,7 @@ public class ChickenTrigger : MonoBehaviour
 
     private void Start()
     {
-        e = GameObject.Find("EventManager").GetComponent<EventInstance>();
+        e = GameObject.Find("EnvironmentManager").GetComponent<EventInstance>();
         
     }
 

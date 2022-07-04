@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ChickenAI : MonoBehaviour
 {
-    private Animator ani;
+    public Animator ani;
     public Transform chickenTransform;
 
 
@@ -37,7 +37,9 @@ public class ChickenAI : MonoBehaviour
         PV = GetComponent<PhotonView>();
         if (PV.IsMine) {
             DoSomething();
-            ani = GetComponent<Animator>();
+        }
+        else if (!PV.IsMine) {
+            Destroy(this);
         }
 
     }
