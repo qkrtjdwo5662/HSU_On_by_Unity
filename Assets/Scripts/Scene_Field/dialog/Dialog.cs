@@ -40,7 +40,10 @@ public class Dialog : MonoBehaviour
         talkData.Add("No_Button", new string[]
         {
             "빠이빠이빠이빠이빠이",
-            "수고해 학생 ~"
+            "수고해 학생 ~",
+            "1111111111111",
+            "2222222222222222",
+            "3333333333333"
         });
     }
 

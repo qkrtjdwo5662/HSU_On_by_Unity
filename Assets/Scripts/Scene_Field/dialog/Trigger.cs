@@ -8,7 +8,8 @@ public class Trigger : MonoBehaviour
 {
     public Dialog dialog; //dialog script
     public int size = 0; // dialog talkdata length
-
+    public int size_Yes = 0;
+    public int size_No = 0;
     public GameObject Talk0; //Button object
     public Button StartButton; //button from Talk0
 
@@ -28,6 +29,9 @@ public class Trigger : MonoBehaviour
     void Start()
     {
         size = dialog.getSize(gameObject.name);
+        size_Yes = dialog.getSize(YesButton.name);
+        size_No = dialog.getSize(NoButton.name);
+
         StartButton.onClick.AddListener(() => //lamda function
         {
 
@@ -80,13 +84,13 @@ public class Trigger : MonoBehaviour
             StartCoroutine(TypingEffect1());
             NextButton2.onClick.AddListener(() =>
             {
-                if (ButtonCount < size)
+                if (ButtonCount < size_Yes)
                 {
                     StartCoroutine(TypingEffect1());
                     ButtonCount++;
                     
                 }
-                else
+                else 
                 {
                     ButtonCount = 0;
                     Talk1.SetActive(false);
@@ -108,10 +112,35 @@ public class Trigger : MonoBehaviour
         });
         NoButton.onClick.AddListener(() =>
         {
+            ButtonCount = 0;
+            Talk2.SetActive(false);
+            NextButton2.gameObject.SetActive(true);
+            Debug.Log(NoButton.name);
+            StopCoroutine(TypingEffect());
+            StopCoroutine(TypingEffect1());
             //GetTalk(No, ButtonCount)가져오기
             //Problem 1. GetTalk의 값을 여기서 지정해주는 것이 가능한가?
             //Solution TypingEffect1()함수 추가
+
             StartCoroutine(TypingEffect2());
+            NextButton2.onClick.AddListener(() =>
+            {
+                if (ButtonCount < size_No)
+                {
+                    StartCoroutine(TypingEffect2());
+                    ButtonCount++;
+
+                }
+                else
+                {
+                    ButtonCount = 0;
+                    Talk1.SetActive(false);
+                    NextButton.gameObject.SetActive(true); // NextButton 꺼진거 다시키기
+                    NextButton2.gameObject.SetActive(false);
+                    Talk2.SetActive(false);
+                    //카메라 리턴
+                }
+            });
         });
 
     }
