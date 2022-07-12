@@ -8,8 +8,9 @@ public class Trigger : MonoBehaviour
 {
     public Dialog dialog; //dialog script
     public int size = 0; // dialog talkdata length
-    public int size_Yes = 0;
-    public int size_No = 0;
+    public int size_Y = 0;
+    public int size_N = 0;
+
     public GameObject Talk0; //Button object
     public Button StartButton; //button from Talk0
 
@@ -29,8 +30,8 @@ public class Trigger : MonoBehaviour
     void Start()
     {
         size = dialog.getSize(gameObject.name);
-        size_Yes = dialog.getSize(YesButton.name);
-        size_No = dialog.getSize(NoButton.name);
+        size_Y = dialog.getSize(gameObject.name + "_Yes");
+        size_N = dialog.getSize(gameObject.name + "_No");
 
         StartButton.onClick.AddListener(() => //lamda function
         {
@@ -38,14 +39,14 @@ public class Trigger : MonoBehaviour
             Talk0.SetActive(false);
             Talk1.SetActive(true);
             Debug.Log(gameObject.name);
-            StartCoroutine(TypingEffect());
+            StartCoroutine(TypingEffect(gameObject.name));
             //카메라 온
 
         });
         NextButton.onClick.AddListener(() => {
             if (ButtonCount < size)
             {
-                StartCoroutine(TypingEffect());
+                StartCoroutine(TypingEffect(gameObject.name));
                 ButtonCount++;
                 if (ButtonCount == size - 1)
                 {
@@ -70,6 +71,7 @@ public class Trigger : MonoBehaviour
             Talk1.SetActive(false);
             NextButton.gameObject.SetActive(true); // X버튼 눌렀을때 NextButton 다시켜기
             Talk2.SetActive(false);
+            StopAllCoroutines(); // coroutine all stop
             //카메라 리턴
         });
         YesButton.onClick.AddListener(() =>
@@ -78,26 +80,26 @@ public class Trigger : MonoBehaviour
             Talk2.SetActive(false);
             NextButton2.gameObject.SetActive(true);
             Debug.Log(YesButton.name);
-            StopCoroutine(TypingEffect());
-            StopCoroutine(TypingEffect2());
 
-            StartCoroutine(TypingEffect1());
+            StopAllCoroutines();
+
+            StartCoroutine(TypingEffect(gameObject.name+"_Yes"));
             NextButton2.onClick.AddListener(() =>
             {
-                if (ButtonCount < size_Yes)
+                if (ButtonCount < size_Y)
                 {
-                    StartCoroutine(TypingEffect1());
+                    StartCoroutine(TypingEffect(gameObject.name + "_Yes"));
                     ButtonCount++;
-                    
-                }
-                else 
-                {
-                    ButtonCount = 0;
-                    Talk1.SetActive(false);
-                    NextButton.gameObject.SetActive(true); // NextButton 꺼진거 다시키기
-                    NextButton2.gameObject.SetActive(false);
-                    Talk2.SetActive(false);
-                    //카메라 리턴
+                    if(ButtonCount == size_Y)
+                    {
+                        ButtonCount = 0;
+                        Talk1.SetActive(false);
+                        NextButton.gameObject.SetActive(true); // NextButton 꺼진거 다시키기
+                        NextButton2.gameObject.SetActive(false);
+                        Talk2.SetActive(false);
+                        StopAllCoroutines();
+                        //카메라 리턴
+                    }
                 }
             });
             //GetTalk(Yes, ButtonCount)가져오기
@@ -116,18 +118,23 @@ public class Trigger : MonoBehaviour
             Talk2.SetActive(false);
             NextButton2.gameObject.SetActive(true);
             Debug.Log(NoButton.name);
-            StopCoroutine(TypingEffect());
-            StopCoroutine(TypingEffect1());
+            /*if (이넘 뭐다) { 
+                함수를 막 써줘
+                return;
+            } */
+
+
             //GetTalk(No, ButtonCount)가져오기
             //Problem 1. GetTalk의 값을 여기서 지정해주는 것이 가능한가?
             //Solution TypingEffect1()함수 추가
+            StopAllCoroutines();
 
-            StartCoroutine(TypingEffect2());
+            StartCoroutine(TypingEffect(gameObject.name + "_No"));
             NextButton2.onClick.AddListener(() =>
             {
-                if (ButtonCount < size_No)
+                if (ButtonCount < size_N)
                 {
-                    StartCoroutine(TypingEffect2());
+                    StartCoroutine(TypingEffect(gameObject.name + "_No"));
                     ButtonCount++;
 
                 }
@@ -138,6 +145,7 @@ public class Trigger : MonoBehaviour
                     NextButton.gameObject.SetActive(true); // NextButton 꺼진거 다시키기
                     NextButton2.gameObject.SetActive(false);
                     Talk2.SetActive(false);
+                    StopAllCoroutines();
                     //카메라 리턴
                 }
             });
@@ -160,28 +168,11 @@ public class Trigger : MonoBehaviour
         Talk1.SetActive(false);
         //카메라 리턴
     }
-    IEnumerator TypingEffect()
+    IEnumerator TypingEffect(string key)
     {
-        for (int i = 0; i < dialog.GetTalk(gameObject.name, ButtonCount).Length; i++)
+        for (int i = 0; i < dialog.GetTalk(key, ButtonCount).Length; i++)
         {
-            text.text = dialog.GetTalk(gameObject.name, ButtonCount).Substring(0, i);
-            yield return new WaitForSeconds(0.02f);
-        }
-    }
-    IEnumerator TypingEffect1()
-    {
-        for (int i = 0; i < dialog.GetTalk(YesButton.name, ButtonCount).Length; i++)
-        {
-            text.text = dialog.GetTalk(YesButton.name, ButtonCount).Substring(0, i);
-            yield return new WaitForSeconds(0.02f);
-        }
-    }
-
-    IEnumerator TypingEffect2()
-    {
-        for (int i = 0; i < dialog.GetTalk(NoButton.name, ButtonCount).Length; i++)
-        {
-            text.text = dialog.GetTalk(NoButton.name, ButtonCount).Substring(0, i);
+            text.text = dialog.GetTalk(key, ButtonCount).Substring(0, i);
             yield return new WaitForSeconds(0.02f);
         }
     }

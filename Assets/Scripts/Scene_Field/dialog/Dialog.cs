@@ -30,14 +30,14 @@ public class Dialog : MonoBehaviour
             "내가 근처에 암호를 숨겨놨어 !숨겨진 암호를 찾고 나를 찾아와서 암호를 맞추면 미션 클리어야 ~ ",
             "미션 바로 시작해 볼까 ??"
         });
-        talkData.Add("Yes_Button", new string[]
+        talkData.Add("TestNPC0_Yes", new string[]
         {
             "굳구구구구구구구구",
             "멋지군",
             "1111111111",
             "222222222222"
         });
-        talkData.Add("No_Button", new string[]
+        talkData.Add("TestNPC0_No", new string[]
         {
             "빠이빠이빠이빠이빠이",
             "수고해 학생 ~",
