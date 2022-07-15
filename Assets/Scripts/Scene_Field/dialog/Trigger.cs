@@ -6,34 +6,37 @@ using UnityEngine.UI;
 
 public class Trigger : MonoBehaviour
 {
-    public Dialog dialog; //dialog script
-    public int size = 0; // dialog talkdata length
-    public int size_Y = 0;
-    public int size_N = 0;
+    public Dialog dialog; //dialog.cs
+    public QuestManager qm;// QusetManager.cs
+
+    public int size = 0; // dialog talkdata[gameObject] length
+    public int size_Y = 0; //  dialog talkdata[gameObject + _Yes] length
+    public int size_N = 0; // dialog talkdata[gameObject + _No] length
 
     public GameObject Talk0; //Button object
     public Button StartButton; //button from Talk0
 
     public GameObject Talk1; // Text, Button Object
-    public Button NextButton; // button from Talk1(next)
+    public Button NextButton; // button from Talk1 (main dialog, next)
     public Text text; // text from Talk1
     public int ButtonCount = 0; // Nextbutton click count
     public Button XButton; // button from Talk1(exit)
-    public Button NextButton2; // button from Talk2
-    public Button NextButton3; // button from 
+    public Button NextButton2; // button from Talk1 (yes dialog, next)
+    public Button NextButton3; // button from Talk1 (no dialog, next)
 
     public GameObject Talk2;
     public Button YesButton; // button from Talk2(yes)
     public Button NoButton; // button from Talk2(no)
 
-    public QuestManager qm;
+    
     
     public enum NPC
 	{
-        OT_NPC0, OT_NPC1, OT_NPC2, OT_NPC3, OT_NPC4, OT_NPC5 // OT_NPC
+        OT_NPC0, OT_NPC1, OT_NPC2, OT_NPC3, OT_NPC4, OT_NPC5, // OT_NPC
+        H_NPC1, H_NPC2, H_NPC3, H_NPC4, H_NPC5 // Hidden_NPC
     }
     public NPC npc;
-    // Start is called before the first frame update
+    
     void Start()
     {
         size = dialog.getSize(gameObject.name);
@@ -96,6 +99,7 @@ public class Trigger : MonoBehaviour
                 qm.QuestOpen();
                return;
             }
+
             
 
 
@@ -126,10 +130,7 @@ public class Trigger : MonoBehaviour
             Talk2.SetActive(false);
             NextButton3.gameObject.SetActive(true);
             Debug.Log(YesButton.name);
-            /*if (이넘 뭐다) { 
-               함수를 막 써줘
-               return;
-           } */
+            
             StartCoroutine(TypingEffect(gameObject.name + "_No"));
 
 
