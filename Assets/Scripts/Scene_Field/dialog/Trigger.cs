@@ -27,6 +27,8 @@ public class Trigger : MonoBehaviour
     public GameObject Talk2;
     public Button YesButton; // button from Talk2(yes)
     public Button NoButton; // button from Talk2(no)
+    public InputField InputField;
+    public Button SubmitButton;
 
     
     
@@ -48,7 +50,7 @@ public class Trigger : MonoBehaviour
 
             Talk0.SetActive(false);
             Talk1.SetActive(true);
-            Debug.Log(gameObject.name);
+            Debug.Log(this.npc);
             StartCoroutine(TypingEffect(gameObject.name));
             //카메라 온
 
@@ -61,9 +63,19 @@ public class Trigger : MonoBehaviour
                 ButtonCount++;
                 if (ButtonCount == size - 1)
                 {
-                    NextButton.gameObject.SetActive(false); // Talk2와 NextButton이 겹쳐 보이는 문제
+                    NextButton.gameObject.SetActive(false);
                     NextButton2.gameObject.SetActive(false);
-                    Talk2.SetActive(true);
+                    if (npc == NPC.OT_NPC0) 
+                    {
+                        Talk2.SetActive(true); // Yes/No Button ON
+                        YesButton.gameObject.SetActive(true);
+                        NoButton.gameObject.SetActive(true);
+                    }
+                    if (npc == NPC.OT_NPC1)
+                    {
+                        InputField.gameObject.SetActive(true);
+                        SubmitButton.gameObject.SetActive(true);
+                    }
                 }
             }
             else
@@ -100,9 +112,6 @@ public class Trigger : MonoBehaviour
                return;
             }
 
-            
-
-
         });
         NextButton2.onClick.AddListener(() =>
         {
@@ -129,7 +138,7 @@ public class Trigger : MonoBehaviour
             ButtonCount = 0;
             Talk2.SetActive(false);
             NextButton3.gameObject.SetActive(true);
-            Debug.Log(YesButton.name);
+            Debug.Log(NoButton.name);
             
             StartCoroutine(TypingEffect(gameObject.name + "_No"));
 
@@ -156,6 +165,24 @@ public class Trigger : MonoBehaviour
             }
         });
 
+        SubmitButton.onClick.AddListener(() =>
+        {
+            ButtonCount = 0;
+            Talk2.SetActive(false);
+            if(InputField.text == "창의열람실")
+			{
+                NextButton2.gameObject.SetActive(true);
+                //correct
+                StartCoroutine(gameObject.name + "_Yes");
+			}
+            else
+			{
+                NextButton.gameObject.SetActive(true);
+                //wrong
+                InputField.text = "";
+                StartCoroutine(gameObject.name + "_No");
+            }
+        });
 
     }
 
