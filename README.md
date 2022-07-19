@@ -1,7 +1,7 @@
 # HSU_On by Unity
 한성대학교 메타버스 캠퍼스 : HSU_On  
 Presented by Team CodingQuokka  
-Made by 황윤규 박성재 전희연 심우호 임수빈
+Made by 황윤규 박성재 전희연 심우호 임수빈  
 using Unity3D 2019, Photon Network, Firebase, 3DS MAX. Blender
   
   
