@@ -29,8 +29,7 @@ public class Trigger : MonoBehaviour
     public Button NoButton; // button from Talk2(no)
 
     public InputField InputField;
-    public Button SubmitButton_NPC1Quiz;
-    public Button SubmitButton_NPC2Quiz;
+    public Button SubmitButton;
 
 
 
@@ -88,20 +87,19 @@ public class Trigger : MonoBehaviour
                         {
                             Talk2.SetActive(true);
                             InputField.gameObject.SetActive(true);
-                            SubmitButton_NPC1Quiz.gameObject.SetActive(true);
-                        }
-                        if (npc == NPC.OT_NPC2_Sub)
-						{
-                            ButtonCount = 0;
-                            Talk1.SetActive(false);
-                            NextButton.gameObject.SetActive(true); // NextButton 꺼진거 다시키기
-                            Talk2.SetActive(false);
+                            SubmitButton.gameObject.SetActive(true);
                         }
                         if (npc == NPC.OT_NPC2)
 						{
                             Talk2.SetActive(true);
                             InputField.gameObject.SetActive(true);
-                            SubmitButton_NPC2Quiz.gameObject.SetActive(true);
+                            SubmitButton.gameObject.SetActive(true);
+                        }
+                        if (npc == NPC.OT_NPC3)
+                        {
+                            Talk2.SetActive(true);
+                            InputField.gameObject.SetActive(true);
+                            SubmitButton.gameObject.SetActive(true);
                         }
                     }
                 }
@@ -127,8 +125,8 @@ public class Trigger : MonoBehaviour
                 YesButton.gameObject.SetActive(false);
                 NoButton.gameObject.SetActive(false);
                 InputField.gameObject.SetActive(false);
-                SubmitButton_NPC1Quiz.gameObject.SetActive(false);
-                SubmitButton_NPC2Quiz.gameObject.SetActive(false);
+                SubmitButton.gameObject.SetActive(false);
+                SubmitButton.gameObject.SetActive(false);
                 StopAllCoroutines(); // coroutine all stop
                 //카메라 리턴
             });
@@ -199,42 +197,60 @@ public class Trigger : MonoBehaviour
                 }
             });
 
-            SubmitButton_NPC1Quiz.onClick.AddListener(() =>
+            SubmitButton.onClick.AddListener(() =>
             {
                 ButtonCount = 0;
                 Talk2.SetActive(false);
-                if (InputField.text == "창의열람실")
+                if (npc == NPC.OT_NPC1)
                 {
-                    StartCoroutine(TypingEffect(this.gameObject.name + "_Yes"));
-                    NextButton2.gameObject.SetActive(true);
-                    //correct
+                    if (InputField.text == "창의열람실")
+                    {
+                        StartCoroutine(TypingEffect(this.gameObject.name + "_Yes"));
+                        NextButton2.gameObject.SetActive(true);
+                        //correct
+                    }
+                    else
+                    {
+                        InputField.text = "";// answer reset
+                        StartCoroutine(TypingEffect(this.gameObject.name + "_No"));
+                        NextButton3.gameObject.SetActive(true);
+                        //wrong
+                    }
                 }
-                else
+                if (npc == NPC.OT_NPC2)
+				{
+                    if (InputField.text == "원스톱지원센터")
+                    {
+                        StartCoroutine(TypingEffect(this.gameObject.name + "_Yes"));
+                        NextButton2.gameObject.SetActive(true);
+                        //correct
+                    }
+                    else
+                    {
+                        InputField.text = "";// answer reset
+                        StartCoroutine(TypingEffect(this.gameObject.name + "_No"));
+                        NextButton3.gameObject.SetActive(true);
+                        //wrong
+                    }
+                }
+                if (npc == NPC.OT_NPC3)
                 {
-                    InputField.text = "";// answer reset
-                    StartCoroutine(TypingEffect(this.gameObject.name + "_No"));
-                    NextButton3.gameObject.SetActive(true);
-                    //wrong
+                    if (InputField.text == "삶과꿈")
+                    {
+                        StartCoroutine(TypingEffect(this.gameObject.name + "_Yes"));
+                        NextButton2.gameObject.SetActive(true);
+                        //correct
+                    }
+                    else
+                    {
+                        InputField.text = "";// answer reset
+                        StartCoroutine(TypingEffect(this.gameObject.name + "_No"));
+                        NextButton3.gameObject.SetActive(true);
+                        //wrong
+                    }
                 }
             });
-            SubmitButton_NPC2Quiz.onClick.AddListener(() =>
-            {
-                ButtonCount = 0;
-                Talk2.SetActive(false);
-                if (InputField.text == "원스톱지원센터")
-                {
-                    StartCoroutine(TypingEffect(this.gameObject.name + "_Yes"));
-                    NextButton2.gameObject.SetActive(true);
-                    //correct
-                }
-                else
-                {
-                    InputField.text = "";// answer reset
-                    StartCoroutine(TypingEffect(this.gameObject.name + "_No"));
-                    NextButton3.gameObject.SetActive(true);
-                    //wrong
-                }
-            });
+            
         }
     }
     public void OnTriggerExit(Collider other)
@@ -255,10 +271,8 @@ public class Trigger : MonoBehaviour
         YesButton.gameObject.SetActive(false);
         NoButton.onClick.RemoveAllListeners();
         NoButton.gameObject.SetActive(false);
-        SubmitButton_NPC1Quiz.onClick.RemoveAllListeners();
-        SubmitButton_NPC1Quiz.gameObject.SetActive(false);
-        SubmitButton_NPC2Quiz.onClick.RemoveAllListeners();
-        SubmitButton_NPC2Quiz.gameObject.SetActive(false);
+        SubmitButton.onClick.RemoveAllListeners();
+        SubmitButton.gameObject.SetActive(false);
         InputField.gameObject.SetActive(false);
     }
     IEnumerator TypingEffect(string key)
