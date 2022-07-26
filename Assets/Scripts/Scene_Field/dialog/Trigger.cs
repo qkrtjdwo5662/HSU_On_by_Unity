@@ -27,15 +27,18 @@ public class Trigger : MonoBehaviour
     public GameObject Talk2;
     public Button YesButton; // button from Talk2(yes)
     public Button NoButton; // button from Talk2(no)
-    public InputField InputField;
-    public Button SubmitButton;
 
-    
-    
+    public InputField InputField;
+    public Button SubmitButton_NPC1Quiz;
+    public Button SubmitButton_NPC2Quiz;
+
+
+
     public enum NPC
 	{
         OT_NPC0, OT_NPC1, OT_NPC2, OT_NPC3, OT_NPC4, OT_NPC5, // OT_NPC
-        H_NPC1, H_NPC2, H_NPC3, H_NPC4, H_NPC5 // Hidden_NPC
+        H_NPC1, H_NPC2, H_NPC3, H_NPC4, H_NPC5, // Hidden_NPC
+        OT_NPC2_Sub // etc
     }
     public NPC npc;
     
@@ -85,7 +88,20 @@ public class Trigger : MonoBehaviour
                         {
                             Talk2.SetActive(true);
                             InputField.gameObject.SetActive(true);
-                            SubmitButton.gameObject.SetActive(true);
+                            SubmitButton_NPC1Quiz.gameObject.SetActive(true);
+                        }
+                        if (npc == NPC.OT_NPC2_Sub)
+						{
+                            ButtonCount = 0;
+                            Talk1.SetActive(false);
+                            NextButton.gameObject.SetActive(true); // NextButton 꺼진거 다시키기
+                            Talk2.SetActive(false);
+                        }
+                        if (npc == NPC.OT_NPC2)
+						{
+                            Talk2.SetActive(true);
+                            InputField.gameObject.SetActive(true);
+                            SubmitButton_NPC2Quiz.gameObject.SetActive(true);
                         }
                     }
                 }
@@ -111,7 +127,8 @@ public class Trigger : MonoBehaviour
                 YesButton.gameObject.SetActive(false);
                 NoButton.gameObject.SetActive(false);
                 InputField.gameObject.SetActive(false);
-                SubmitButton.gameObject.SetActive(false);
+                SubmitButton_NPC1Quiz.gameObject.SetActive(false);
+                SubmitButton_NPC2Quiz.gameObject.SetActive(false);
                 StopAllCoroutines(); // coroutine all stop
                 //카메라 리턴
             });
@@ -182,11 +199,29 @@ public class Trigger : MonoBehaviour
                 }
             });
 
-            SubmitButton.onClick.AddListener(() =>
+            SubmitButton_NPC1Quiz.onClick.AddListener(() =>
             {
                 ButtonCount = 0;
                 Talk2.SetActive(false);
                 if (InputField.text == "창의열람실")
+                {
+                    StartCoroutine(TypingEffect(this.gameObject.name + "_Yes"));
+                    NextButton2.gameObject.SetActive(true);
+                    //correct
+                }
+                else
+                {
+                    InputField.text = "";// answer reset
+                    StartCoroutine(TypingEffect(this.gameObject.name + "_No"));
+                    NextButton3.gameObject.SetActive(true);
+                    //wrong
+                }
+            });
+            SubmitButton_NPC2Quiz.onClick.AddListener(() =>
+            {
+                ButtonCount = 0;
+                Talk2.SetActive(false);
+                if (InputField.text == "원스톱지원센터")
                 {
                     StartCoroutine(TypingEffect(this.gameObject.name + "_Yes"));
                     NextButton2.gameObject.SetActive(true);
@@ -220,8 +255,10 @@ public class Trigger : MonoBehaviour
         YesButton.gameObject.SetActive(false);
         NoButton.onClick.RemoveAllListeners();
         NoButton.gameObject.SetActive(false);
-        SubmitButton.onClick.RemoveAllListeners();
-        SubmitButton.gameObject.SetActive(false);
+        SubmitButton_NPC1Quiz.onClick.RemoveAllListeners();
+        SubmitButton_NPC1Quiz.gameObject.SetActive(false);
+        SubmitButton_NPC2Quiz.onClick.RemoveAllListeners();
+        SubmitButton_NPC2Quiz.gameObject.SetActive(false);
         InputField.gameObject.SetActive(false);
     }
     IEnumerator TypingEffect(string key)
