@@ -54,7 +54,7 @@ public class Dialog : MonoBehaviour
         });
         talkData.Add("TestNPC1_No", new string[]{
             "틀렸어! 다시한번 풀어볼까? ",
-            "학술정보관의 대표적인 시설 이름은?\n(힌트: ㅊㅇㅇㄹㅅ) "
+            "준비가 되면 다시 말을 걸어줘 ~ "
         });
         talkData.Add("TestNPC1_Mission", new string[]
         {
