@@ -107,6 +107,12 @@ public class Trigger : MonoBehaviour
                             InputField.gameObject.SetActive(true);
                             SubmitButton.gameObject.SetActive(true);
                         }
+                        if (npc == NPC.H_NPC1)
+                        {
+                            Talk2.SetActive(true);
+                            InputField.gameObject.SetActive(true);
+                            SubmitButton.gameObject.SetActive(true);
+                        }
                     }
                 }
                 else
@@ -258,6 +264,87 @@ public class Trigger : MonoBehaviour
                 if (npc == NPC.OT_NPC4)
                 {
                     if (InputField.text == "상상스테이지")
+                    {
+                        StartCoroutine(TypingEffect(this.gameObject.name + "_Yes"));
+                        NextButton2.gameObject.SetActive(true);
+                        //correct
+                    }
+                    else
+                    {
+                        InputField.text = "";// answer reset
+                        StartCoroutine(TypingEffect(this.gameObject.name + "_No"));
+                        NextButton3.gameObject.SetActive(true);
+                        //wrong
+                    }
+                }
+
+                if (npc == NPC.H_NPC1)
+                {
+                    if (InputField.text == "아침밴드")
+                    {
+                        StartCoroutine(TypingEffect(this.gameObject.name + "_Yes"));
+                        NextButton2.gameObject.SetActive(true);
+                        //correct
+                    }
+                    else
+                    {
+                        InputField.text = "";// answer reset
+                        StartCoroutine(TypingEffect(this.gameObject.name + "_No"));
+                        NextButton3.gameObject.SetActive(true);
+                        //wrong
+                    }
+                }
+                if (npc == NPC.H_NPC2)
+                {
+                    if (InputField.text == "포도")
+                    {
+                        StartCoroutine(TypingEffect(this.gameObject.name + "_Yes"));
+                        NextButton2.gameObject.SetActive(true);
+                        //correct
+                    }
+                    else
+                    {
+                        InputField.text = "";// answer reset
+                        StartCoroutine(TypingEffect(this.gameObject.name + "_No"));
+                        NextButton3.gameObject.SetActive(true);
+                        //wrong
+                    }
+                }
+                if (npc == NPC.H_NPC3)
+                {
+                    if (InputField.text == "대동제")
+                    {
+                        StartCoroutine(TypingEffect(this.gameObject.name + "_Yes"));
+                        NextButton2.gameObject.SetActive(true);
+                        //correct
+                    }
+                    else
+                    {
+                        InputField.text = "";// answer reset
+                        StartCoroutine(TypingEffect(this.gameObject.name + "_No"));
+                        NextButton3.gameObject.SetActive(true);
+                        //wrong
+                    }
+                }
+                if (npc == NPC.H_NPC4)
+                {
+                    if (InputField.text == "박태민")
+                    {
+                        StartCoroutine(TypingEffect(this.gameObject.name + "_Yes"));
+                        NextButton2.gameObject.SetActive(true);
+                        //correct
+                    }
+                    else
+                    {
+                        InputField.text = "";// answer reset
+                        StartCoroutine(TypingEffect(this.gameObject.name + "_No"));
+                        NextButton3.gameObject.SetActive(true);
+                        //wrong
+                    }
+                }
+                if (npc == NPC.H_NPC5)
+                {
+                    if (InputField.text == "70500")
                     {
                         StartCoroutine(TypingEffect(this.gameObject.name + "_Yes"));
                         NextButton2.gameObject.SetActive(true);
