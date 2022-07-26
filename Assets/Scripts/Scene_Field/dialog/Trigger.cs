@@ -101,6 +101,12 @@ public class Trigger : MonoBehaviour
                             InputField.gameObject.SetActive(true);
                             SubmitButton.gameObject.SetActive(true);
                         }
+                        if (npc == NPC.OT_NPC4)
+                        {
+                            Talk2.SetActive(true);
+                            InputField.gameObject.SetActive(true);
+                            SubmitButton.gameObject.SetActive(true);
+                        }
                     }
                 }
                 else
@@ -236,6 +242,22 @@ public class Trigger : MonoBehaviour
                 if (npc == NPC.OT_NPC3)
                 {
                     if (InputField.text == "삶과꿈")
+                    {
+                        StartCoroutine(TypingEffect(this.gameObject.name + "_Yes"));
+                        NextButton2.gameObject.SetActive(true);
+                        //correct
+                    }
+                    else
+                    {
+                        InputField.text = "";// answer reset
+                        StartCoroutine(TypingEffect(this.gameObject.name + "_No"));
+                        NextButton3.gameObject.SetActive(true);
+                        //wrong
+                    }
+                }
+                if (npc == NPC.OT_NPC4)
+                {
+                    if (InputField.text == "상상스테이지")
                     {
                         StartCoroutine(TypingEffect(this.gameObject.name + "_Yes"));
                         NextButton2.gameObject.SetActive(true);
